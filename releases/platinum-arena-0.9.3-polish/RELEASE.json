@@ -1,0 +1,47 @@
+{
+  "candidate_sha256": "47970d69c1eb4a5ad1bc10cf287168906e61a281590ac87960361fb14d6a51d1",
+  "production_build": true,
+  "validation_only": false,
+  "directional_species": 493,
+  "checks": {
+    "native_story_live_battle": "pending",
+    "native_story_battle_return": "pending",
+    "native_save_reload": "pending",
+    "native_build": "passed",
+    "host_combat_party_capture_rewards": "passed",
+    "sprite_asset_validation": "passed",
+    "creator_save_compatibility": "passed",
+    "creator_red_leaf_runtime": "passed",
+    "battle_lab_1v1_shield_fx": "passed",
+    "battle_lab_2v2_final_rom": "pending"
+  },
+  "tested": [
+    "Full modified256MiB ROM build and overlay/DMA layout audit.",
+    "All493 directional asset identities,138528frames and unchanged worst-four pose-memory bound.",
+    "Core combat, held shields/chip/clashes/criticals, native party/capture/rewards and navigation sanitizer regressions.",
+    "Six-base creator host/legacy-save checks; Lucas/Brendan/Red and Leaf previews verified in this ROM.",
+    "Battle Lab1v1 and new effects/shield rendering in this ROM."
+  ],
+  "not_tested": [
+    "Full campaign, real DS hardware and long sessions.",
+    "All female creator states, complex move scripts, full abilities/weather/held-item rules.",
+    "Complete tag/NPC partner battle coverage.",
+    "The finalD native story battle/return/save replay remains pending; previewA passed these checks."
+  ],
+  "preview_a_checks": "Allthree native story battle/return/save-reload checks passed in previewA1413f0c56a23; these are not substituted for finalD.",
+  "stage": "polish demo",
+  "version": "0.9.3",
+  "rom": "Platinum-Arena-0.9.3-POLISH.nds",
+  "bytes": 268435456,
+  "sha256": "47970d69c1eb4a5ad1bc10cf287168906e61a281590ac87960361fb14d6a51d1",
+  "source_snapshot": {
+    "zip": "/workspace/platinum-port/validation/source-snapshots/ArenaPlus-Platinum-0.9.3-source-8ea13dfe77ba.zip",
+    "bytes": 31514775,
+    "sha256": "da5e4cbe68162c69d82309f460271ff0864f047033e793d329b7cfd05a325a59",
+    "snapshot_id": "8ea13dfe77babf5868e46b97c8a4bebcad2d9c75c77ae868339b020545f2e014",
+    "base_commit": "1dc13dcea40c04ab53f1f607de46023dc409ef20",
+    "session_source_sha256": "d75c1fd8b52541ac0d7502b1abb94ab902c750c31319670da1ec073af43fd0e6",
+    "tracked_modified_count": 12,
+    "added_file_count": 2134
+  }
+}
