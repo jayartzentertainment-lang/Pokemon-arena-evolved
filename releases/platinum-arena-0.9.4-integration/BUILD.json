@@ -1,0 +1,35 @@
+{
+  "version": "0.9.4",
+  "build_exit_code": 0,
+  "rom": "/workspace/platinum-port/validation/candidates/ArenaPlus-Platinum-0.9.4-INTEGRATION-3eab0f6b819f.nds",
+  "rom_bytes": 268435456,
+  "rom_sha256": "3eab0f6b819f3c1747f2fa5949558061d7d861b6d27e48f9e3413714afabbca5",
+  "build_log": "/workspace/platinum-port/validation/v094/build.log",
+  "build_log_sha256": "7df8f0906b34247c63ba4f225a8592803edb7b90300236d625da03469795948d",
+  "base_repository": "pret/pokeplatinum",
+  "base_commit": "1dc13dcea40c04ab53f1f607de46023dc409ef20",
+  "checks": {
+    "native_compile_link": "passed",
+    "gameplay": "pending_user_playtest",
+    "emulator": "not_run_per_user_instruction",
+    "hardware": "pending_user_playtest"
+  },
+  "source_sha256": {
+    "include/arena/combat.h": "63c06bc51c9a864b73096557fc65127228959ce352bad6be450efe06afa8c955",
+    "include/arena/render.h": "fc3d831029d7658f30f730f152b0fd19a09260a40208b3a6cca90641c9ae1990",
+    "include/arena/beam_effects.h": "7ac0163b3d17cfa9a9e0cd703d47155dabcbadefe1fa5de7bebfc6fc28ce0284",
+    "include/arena/heap.h": "122de184c1c097380788ba3baec0515c0bb5a5dd95ecbd5a6fcfd22f983259ab",
+    "src/arena/combat.c": "320ed90a446eb3c14b44e4163cc07537d44444993c4eb9bc0c5d4ed969d1ccfb",
+    "src/arena/render.c": "0d02682a297d73205a4daae0d408e4c3158eb6ff8fd7a8124ce51f41e5888f6a",
+    "src/arena/session.c": "ef65cb918cfcd818ce447d7e3a445a5a9a3ac72d3b4c056db6f1dd0c92a2ff6b",
+    "src/arena/vendor/arena_moves.c": "9717134f9d7bc5d4e4fefdabc1e242cc7401ed7d9760c12ab85957b26cbee667",
+    "src/arena/beam_effects.c": "40fd0f2ec62dccb4c2134cf7c494d1360f245ef8b775ab8e09133e99bbee9a35",
+    "src/arena/move_sounds.inc": "123cf22551ed788fd829570975a3a69a1e62da15194562bae2ca03dfe57cdfe6",
+    "src/heap.c": "e33f218a899609acb06eea1ceac081f36fb6c167c032b0c07af782d063f8cb98",
+    "platinum.us/main.lsf.in": "a724e0be547eee343d4e7b3448ac754c891cad845eeb52fbe3f0c31b3198ad80"
+  },
+  "sound_mapping_unchanged": true,
+  "object_vram_bytes": 64512,
+  "object_vram_limit": 65536,
+  "additional_live_effect_ram_bytes": 8192
+}

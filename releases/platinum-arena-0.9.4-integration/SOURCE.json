@@ -1,0 +1,10 @@
+{
+  "zip": "/workspace/platinum-port/release/integration-094/Platinum-Arena-0.9.4-SOURCE.zip",
+  "bytes": 31565461,
+  "sha256": "ab00099d24ccf48b1694d11ed643f4f9f64a558ef0a7f6ee3aefab69c65ff151",
+  "snapshot_id": "0213a628493520cb47df55873a0d916c73d99dea1a3d0a09f402f167ebab8d16",
+  "base_commit": "1dc13dcea40c04ab53f1f607de46023dc409ef20",
+  "session_source_sha256": "ef65cb918cfcd818ce447d7e3a445a5a9a3ac72d3b4c056db6f1dd0c92a2ff6b",
+  "tracked_modified_count": 13,
+  "added_file_count": 2148
+}

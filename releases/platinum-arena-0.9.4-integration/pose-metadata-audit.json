@@ -1,0 +1,346 @@
+{
+  "scope": "Read-only metadata inspection; no sprite imports or gameplay tests. Local extension XML excludes 187 accepted sets.",
+  "source_commit": "d25607ff4746957df10bdb78db090887cd94f1f8",
+  "local_xml_count": 306,
+  "local_unique_dex": 306,
+  "local_hurt_count": 306,
+  "local_charge_count": 306,
+  "local_guard_count": 0,
+  "priority_upstream": [
+    {
+      "dex": 6,
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/d25607ff4746957df10bdb78db090887cd94f1f8/sprite/0006/AnimData.xml",
+      "status": 200,
+      "poses": [
+        "Attack",
+        "Charge",
+        "Double",
+        "Faint",
+        "Hop",
+        "Hurt",
+        "Idle",
+        "Rotate",
+        "Shoot",
+        "Sleep",
+        "SpAttack",
+        "Strike",
+        "Swing",
+        "Walk"
+      ],
+      "selected": {
+        "Idle": {
+          "copy_of": null,
+          "width": "40",
+          "height": "48",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Walk": {
+          "copy_of": null,
+          "width": "40",
+          "height": "48",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Attack": {
+          "copy_of": null,
+          "width": "80",
+          "height": "88",
+          "frames": 14,
+          "rush_frame": "2",
+          "hit_frame": "5",
+          "return_frame": "8"
+        },
+        "Shoot": {
+          "copy_of": null,
+          "width": "56",
+          "height": "56",
+          "frames": 11,
+          "rush_frame": null,
+          "hit_frame": "2",
+          "return_frame": "6"
+        },
+        "SpAttack": {
+          "copy_of": "Shoot",
+          "width": null,
+          "height": null,
+          "frames": 0,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Hurt": {
+          "copy_of": null,
+          "width": "64",
+          "height": "64",
+          "frames": 2,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Charge": {
+          "copy_of": null,
+          "width": "48",
+          "height": "48",
+          "frames": 10,
+          "rush_frame": null,
+          "hit_frame": "5",
+          "return_frame": "9"
+        }
+      }
+    },
+    {
+      "dex": 9,
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/d25607ff4746957df10bdb78db090887cd94f1f8/sprite/0009/AnimData.xml",
+      "status": 200,
+      "poses": [
+        "Attack",
+        "Charge",
+        "Double",
+        "Hop",
+        "Hurt",
+        "Idle",
+        "Ricochet",
+        "Rotate",
+        "Shoot",
+        "Sleep",
+        "Swing",
+        "Walk",
+        "Withdraw"
+      ],
+      "selected": {
+        "Idle": {
+          "copy_of": null,
+          "width": "40",
+          "height": "40",
+          "frames": 8,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Walk": {
+          "copy_of": null,
+          "width": "32",
+          "height": "40",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Attack": {
+          "copy_of": null,
+          "width": "64",
+          "height": "72",
+          "frames": 13,
+          "rush_frame": "1",
+          "hit_frame": "7",
+          "return_frame": "10"
+        },
+        "Shoot": {
+          "copy_of": null,
+          "width": "48",
+          "height": "56",
+          "frames": 6,
+          "rush_frame": null,
+          "hit_frame": "1",
+          "return_frame": "3"
+        },
+        "Hurt": {
+          "copy_of": null,
+          "width": "40",
+          "height": "40",
+          "frames": 2,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Charge": {
+          "copy_of": null,
+          "width": "40",
+          "height": "40",
+          "frames": 10,
+          "rush_frame": null,
+          "hit_frame": "5",
+          "return_frame": "9"
+        }
+      }
+    },
+    {
+      "dex": 130,
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/d25607ff4746957df10bdb78db090887cd94f1f8/sprite/0130/AnimData.xml",
+      "status": 200,
+      "poses": [
+        "Attack",
+        "Charge",
+        "Double",
+        "Hop",
+        "Hurt",
+        "Idle",
+        "RearUp",
+        "Rotate",
+        "Rumble",
+        "Shoot",
+        "Sleep",
+        "Strike",
+        "Swing",
+        "Walk"
+      ],
+      "selected": {
+        "Idle": {
+          "copy_of": null,
+          "width": "72",
+          "height": "128",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Walk": {
+          "copy_of": null,
+          "width": "88",
+          "height": "128",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Attack": {
+          "copy_of": null,
+          "width": "104",
+          "height": "136",
+          "frames": 10,
+          "rush_frame": "1",
+          "hit_frame": "3",
+          "return_frame": "6"
+        },
+        "Shoot": {
+          "copy_of": null,
+          "width": "104",
+          "height": "128",
+          "frames": 12,
+          "rush_frame": null,
+          "hit_frame": "2",
+          "return_frame": "6"
+        },
+        "Hurt": {
+          "copy_of": null,
+          "width": "72",
+          "height": "120",
+          "frames": 2,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Charge": {
+          "copy_of": null,
+          "width": "96",
+          "height": "112",
+          "frames": 10,
+          "rush_frame": null,
+          "hit_frame": "5",
+          "return_frame": "9"
+        }
+      }
+    },
+    {
+      "dex": 131,
+      "url": "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/d25607ff4746957df10bdb78db090887cd94f1f8/sprite/0131/AnimData.xml",
+      "status": 200,
+      "poses": [
+        "Attack",
+        "Charge",
+        "Double",
+        "Hop",
+        "Hurt",
+        "Idle",
+        "RearUp",
+        "Rotate",
+        "Shoot",
+        "Sleep",
+        "Sound",
+        "Strike",
+        "Swing",
+        "Walk"
+      ],
+      "selected": {
+        "Idle": {
+          "copy_of": null,
+          "width": "48",
+          "height": "56",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Walk": {
+          "copy_of": null,
+          "width": "48",
+          "height": "56",
+          "frames": 4,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Attack": {
+          "copy_of": null,
+          "width": "88",
+          "height": "88",
+          "frames": 12,
+          "rush_frame": "2",
+          "hit_frame": "4",
+          "return_frame": "7"
+        },
+        "Shoot": {
+          "copy_of": null,
+          "width": "64",
+          "height": "72",
+          "frames": 12,
+          "rush_frame": null,
+          "hit_frame": "2",
+          "return_frame": "5"
+        },
+        "Hurt": {
+          "copy_of": null,
+          "width": "56",
+          "height": "96",
+          "frames": 2,
+          "rush_frame": null,
+          "hit_frame": null,
+          "return_frame": null
+        },
+        "Charge": {
+          "copy_of": null,
+          "width": "48",
+          "height": "72",
+          "frames": 10,
+          "rush_frame": null,
+          "hit_frame": "5",
+          "return_frame": "9"
+        }
+      }
+    }
+  ],
+  "verified_charizard_http_200_files": [
+    "AnimData.xml",
+    "Hurt-Anim.png",
+    "Hurt-Offsets.png",
+    "Hurt-Shadow.png",
+    "Charge-Anim.png",
+    "Charge-Offsets.png",
+    "Charge-Shadow.png",
+    "credits.txt"
+  ],
+  "verified_folder_url": "https://github.com/PMDCollab/SpriteCollab/tree/d25607ff4746957df10bdb78db090887cd94f1f8/sprite/0006",
+  "reference_site_access": {
+    "https://sprites.pmdcollab.org/": "Proxy403; site content not inspected",
+    "https://skytemple.org/": "Proxy403; site content not inspected",
+    "https://wiki.skytemple.org/": "Proxy403; site content not inspected",
+    "https://libresprite.github.io/": "Proxy403; site content not inspected",
+    "https://www.aseprite.org/": "Proxy403; site content not inspected",
+    "https://www.piskelapp.com/": "Proxy403; site content not inspected"
+  }
+}
