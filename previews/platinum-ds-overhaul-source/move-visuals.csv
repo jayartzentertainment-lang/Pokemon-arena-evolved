@@ -1,0 +1,468 @@
+﻿id,name,constant,family,family_id,flags,reason
+1,Pound,MOVE_POUND,HIT,4,0,Authored body motion and event-driven physical contact
+2,Karate Chop,MOVE_KARATE_CHOP,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+3,DoubleSlap,MOVE_DOUBLE_SLAP,HIT,4,0,Authored body motion and event-driven physical contact
+4,Comet Punch,MOVE_COMET_PUNCH,HIT,4,0,Authored body motion and event-driven physical contact
+5,Mega Punch,MOVE_MEGA_PUNCH,HIT,4,0,Authored body motion and event-driven physical contact
+6,Pay Day,MOVE_PAY_DAY,STEEL,20,0,Explicit move-family override
+7,Fire Punch,MOVE_FIRE_PUNCH,FIRE,0,0,"Shared, type-appropriate sprite family"
+8,Ice Punch,MOVE_ICE_PUNCH,ICE,3,0,"Shared, type-appropriate sprite family"
+9,ThunderPunch,MOVE_THUNDER_PUNCH,BOLT,28,0,"Shared, type-appropriate sprite family"
+10,Scratch,MOVE_SCRATCH,HIT,4,4,Authored body motion and event-driven physical contact
+11,ViceGrip,MOVE_VICE_GRIP,HIT,4,0,Authored body motion and event-driven physical contact
+12,Guillotine,MOVE_GUILLOTINE,HIT,4,0,Authored body motion and event-driven physical contact
+13,Razor Wind,MOVE_RAZOR_WIND,WIND,16,0,Explicit move-family override
+14,Swords Dance,MOVE_SWORDS_DANCE,SWORDS,25,0,Explicit move-family override
+15,Cut,MOVE_CUT,HIT,4,4,Authored body motion and event-driven physical contact
+16,Gust,MOVE_GUST,WIND,16,0,"Shared, type-appropriate sprite family"
+17,Wing Attack,MOVE_WING_ATTACK,WIND,16,0,"Shared, type-appropriate sprite family"
+18,Whirlwind,MOVE_WHIRLWIND,WIND,16,0,Explicit move-family override
+19,Fly,MOVE_FLY,WIND,16,0,"Shared, type-appropriate sprite family"
+20,Bind,MOVE_BIND,HIT,4,0,Authored body motion and event-driven physical contact
+21,Slam,MOVE_SLAM,HIT,4,0,Authored body motion and event-driven physical contact
+22,Vine Whip,MOVE_VINE_WHIP,LEAF,8,0,"Shared, type-appropriate sprite family"
+23,Stomp,MOVE_STOMP,HIT,4,0,Authored body motion and event-driven physical contact
+24,Double Kick,MOVE_DOUBLE_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+25,Mega Kick,MOVE_MEGA_KICK,HIT,4,0,Authored body motion and event-driven physical contact
+26,Jump Kick,MOVE_JUMP_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+27,Rolling Kick,MOVE_ROLLING_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+28,Sand-Attack,MOVE_SAND_ATTACK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+29,Headbutt,MOVE_HEADBUTT,HIT,4,0,Authored body motion and event-driven physical contact
+30,Horn Attack,MOVE_HORN_ATTACK,HIT,4,0,Authored body motion and event-driven physical contact
+31,Fury Attack,MOVE_FURY_ATTACK,HIT,4,0,Authored body motion and event-driven physical contact
+32,Horn Drill,MOVE_HORN_DRILL,HIT,4,0,Authored body motion and event-driven physical contact
+33,Tackle,MOVE_TACKLE,HIT,4,0,Authored body motion and event-driven physical contact
+34,Body Slam,MOVE_BODY_SLAM,HIT,4,0,Authored body motion and event-driven physical contact
+35,Wrap,MOVE_WRAP,HIT,4,0,Authored body motion and event-driven physical contact
+36,Take Down,MOVE_TAKE_DOWN,HIT,4,0,Authored body motion and event-driven physical contact
+37,Thrash,MOVE_THRASH,HIT,4,0,Authored body motion and event-driven physical contact
+38,Double-Edge,MOVE_DOUBLE_EDGE,HIT,4,0,Authored body motion and event-driven physical contact
+39,Tail Whip,MOVE_TAIL_WHIP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+40,Poison Sting,MOVE_POISON_STING,POISON,13,0,"Shared, type-appropriate sprite family"
+41,Twineedle,MOVE_TWINEEDLE,BUG,18,0,"Shared, type-appropriate sprite family"
+42,Pin Missile,MOVE_PIN_MISSILE,BUG,18,0,"Shared, type-appropriate sprite family"
+43,Leer,MOVE_LEER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+44,Bite,MOVE_BITE,SHADOW,10,0,"Shared, type-appropriate sprite family"
+45,Growl,MOVE_GROWL,SOUND,21,0,Shared expanding sound-ring animation
+46,Roar,MOVE_ROAR,SOUND,21,0,Shared expanding sound-ring animation
+47,Sing,MOVE_SING,SOUND,21,0,Shared expanding sound-ring animation
+48,Supersonic,MOVE_SUPERSONIC,SOUND,21,0,Shared expanding sound-ring animation
+49,SonicBoom,MOVE_SONIC_BOOM,SOUND,21,0,Shared expanding sound-ring animation
+50,Disable,MOVE_DISABLE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+51,Acid,MOVE_ACID,POISON,13,0,"Shared, type-appropriate sprite family"
+52,Ember,MOVE_EMBER,FIRE,0,0,"Shared, type-appropriate sprite family"
+53,Flamethrower,MOVE_FLAMETHROWER,FIRE,0,0,"Shared, type-appropriate sprite family"
+54,Mist,MOVE_MIST,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+55,Water Gun,MOVE_WATER_GUN,WATER,1,0,"Shared, type-appropriate sprite family"
+56,Hydro Pump,MOVE_HYDRO_PUMP,WATER,1,0,"Shared, type-appropriate sprite family"
+57,Surf,MOVE_SURF,WATER,1,0,"Shared, type-appropriate sprite family"
+58,Ice Beam,MOVE_ICE_BEAM,ICE,3,0,"Shared, type-appropriate sprite family"
+59,Blizzard,MOVE_BLIZZARD,ICE,3,0,"Shared, type-appropriate sprite family"
+60,Psybeam,MOVE_PSYBEAM,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+61,BubbleBeam,MOVE_BUBBLE_BEAM,PULSE,22,0,Explicit move-family override
+62,Aurora Beam,MOVE_AURORA_BEAM,ICE,3,0,"Shared, type-appropriate sprite family"
+63,Hyper Beam,MOVE_HYPER_BEAM,ENERGY,27,0,Explicit move-family override
+64,Peck,MOVE_PECK,WIND,16,0,"Shared, type-appropriate sprite family"
+65,Drill Peck,MOVE_DRILL_PECK,WIND,16,0,"Shared, type-appropriate sprite family"
+66,Submission,MOVE_SUBMISSION,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+67,Low Kick,MOVE_LOW_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+68,Counter,MOVE_COUNTER,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+69,Seismic Toss,MOVE_SEISMIC_TOSS,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+70,Strength,MOVE_STRENGTH,HIT,4,0,Authored body motion and event-driven physical contact
+71,Absorb,MOVE_ABSORB,LEAF,8,0,"Shared, type-appropriate sprite family"
+72,Mega Drain,MOVE_MEGA_DRAIN,LEAF,8,0,"Shared, type-appropriate sprite family"
+73,Leech Seed,MOVE_LEECH_SEED,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+74,Growth,MOVE_GROWTH,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+75,Razor Leaf,MOVE_RAZOR_LEAF,LEAF,8,0,"Shared, type-appropriate sprite family"
+76,SolarBeam,MOVE_SOLAR_BEAM,GRASS_ENERGY,23,0,Explicit move-family override
+77,PoisonPowder,MOVE_POISON_POWDER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+78,Stun Spore,MOVE_STUN_SPORE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+79,Sleep Powder,MOVE_SLEEP_POWDER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+80,Petal Dance,MOVE_PETAL_DANCE,LEAF,8,0,"Shared, type-appropriate sprite family"
+81,String Shot,MOVE_STRING_SHOT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+82,Dragon Rage,MOVE_DRAGON_RAGE,DRAGON,19,0,"Shared, type-appropriate sprite family"
+83,Fire Spin,MOVE_FIRE_SPIN,FIRE,0,0,"Shared, type-appropriate sprite family"
+84,ThunderShock,MOVE_THUNDER_SHOCK,BOLT,28,0,"Shared, type-appropriate sprite family"
+85,Thunderbolt,MOVE_THUNDERBOLT,BOLT,28,0,"Shared, type-appropriate sprite family"
+86,Thunder Wave,MOVE_THUNDER_WAVE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+87,Thunder,MOVE_THUNDER,BOLT,28,0,"Shared, type-appropriate sprite family"
+88,Rock Throw,MOVE_ROCK_THROW,ROCK,15,0,"Shared, type-appropriate sprite family"
+89,Earthquake,MOVE_EARTHQUAKE,GROUND,14,0,"Shared, type-appropriate sprite family"
+90,Fissure,MOVE_FISSURE,GROUND,14,0,"Shared, type-appropriate sprite family"
+91,Dig,MOVE_DIG,GROUND,14,0,"Shared, type-appropriate sprite family"
+92,Toxic,MOVE_TOXIC,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+93,Confusion,MOVE_CONFUSION,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+94,Psychic,MOVE_PSYCHIC,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+95,Hypnosis,MOVE_HYPNOSIS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+96,Meditate,MOVE_MEDITATE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+97,Agility,MOVE_AGILITY,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+98,Quick Attack,MOVE_QUICK_ATTACK,HIT,4,0,Authored body motion and event-driven physical contact
+99,Rage,MOVE_RAGE,HIT,4,0,Authored body motion and event-driven physical contact
+100,Teleport,MOVE_TELEPORT,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+101,Night Shade,MOVE_NIGHT_SHADE,SHADOW,10,0,"Shared, type-appropriate sprite family"
+102,Mimic,MOVE_MIMIC,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+103,Screech,MOVE_SCREECH,SOUND,21,0,Shared expanding sound-ring animation
+104,Double Team,MOVE_DOUBLE_TEAM,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+105,Recover,MOVE_RECOVER,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+106,Harden,MOVE_HARDEN,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+107,Minimize,MOVE_MINIMIZE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+108,SmokeScreen,MOVE_SMOKE_SCREEN,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+109,Confuse Ray,MOVE_CONFUSE_RAY,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+110,Withdraw,MOVE_WITHDRAW,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+111,Defense Curl,MOVE_DEFENSE_CURL,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+112,Barrier,MOVE_BARRIER,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+113,Light Screen,MOVE_LIGHT_SCREEN,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+114,Haze,MOVE_HAZE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+115,Reflect,MOVE_REFLECT,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+116,Focus Energy,MOVE_FOCUS_ENERGY,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+117,Bide,MOVE_BIDE,HIT,4,0,Authored body motion and event-driven physical contact
+118,Metronome,MOVE_METRONOME,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+119,Mirror Move,MOVE_MIRROR_MOVE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+120,Selfdestruct,MOVE_SELFDESTRUCT,ENERGY,27,0,"Shared, type-appropriate sprite family"
+121,Egg Bomb,MOVE_EGG_BOMB,ENERGY,27,0,"Shared, type-appropriate sprite family"
+122,Lick,MOVE_LICK,SHADOW,10,0,"Shared, type-appropriate sprite family"
+123,Smog,MOVE_SMOG,POISON,13,0,"Shared, type-appropriate sprite family"
+124,Sludge,MOVE_SLUDGE,POISON,13,0,"Shared, type-appropriate sprite family"
+125,Bone Club,MOVE_BONE_CLUB,GROUND,14,0,"Shared, type-appropriate sprite family"
+126,Fire Blast,MOVE_FIRE_BLAST,FIRE,0,0,"Shared, type-appropriate sprite family"
+127,Waterfall,MOVE_WATERFALL,WATER,1,0,"Shared, type-appropriate sprite family"
+128,Clamp,MOVE_CLAMP,WATER,1,0,"Shared, type-appropriate sprite family"
+129,Swift,MOVE_SWIFT,ENERGY,27,1,Swift-specific star; no unrelated move inherits this sprite
+130,Skull Bash,MOVE_SKULL_BASH,HIT,4,0,Authored body motion and event-driven physical contact
+131,Spike Cannon,MOVE_SPIKE_CANNON,ENERGY,27,0,"Shared, type-appropriate sprite family"
+132,Constrict,MOVE_CONSTRICT,HIT,4,0,Authored body motion and event-driven physical contact
+133,Amnesia,MOVE_AMNESIA,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+134,Kinesis,MOVE_KINESIS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+135,Softboiled,MOVE_SOFTBOILED,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+136,Hi Jump Kick,MOVE_HI_JUMP_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+137,Glare,MOVE_GLARE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+138,Dream Eater,MOVE_DREAM_EATER,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+139,Poison Gas,MOVE_POISON_GAS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+140,Barrage,MOVE_BARRAGE,ENERGY,27,0,"Shared, type-appropriate sprite family"
+141,Leech Life,MOVE_LEECH_LIFE,BUG,18,0,"Shared, type-appropriate sprite family"
+142,Lovely Kiss,MOVE_LOVELY_KISS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+143,Sky Attack,MOVE_SKY_ATTACK,WIND,16,0,"Shared, type-appropriate sprite family"
+144,Transform,MOVE_TRANSFORM,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+145,Bubble,MOVE_BUBBLE,PULSE,22,0,Explicit move-family override
+146,Dizzy Punch,MOVE_DIZZY_PUNCH,HIT,4,0,Authored body motion and event-driven physical contact
+147,Spore,MOVE_SPORE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+148,Flash,MOVE_FLASH,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+149,Psywave,MOVE_PSYWAVE,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+150,Splash,MOVE_SPLASH,BUFF,11,2,Intentional body animation only; no projectile or damage VFX
+151,Acid Armor,MOVE_ACID_ARMOR,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+152,Crabhammer,MOVE_CRABHAMMER,WATER,1,0,"Shared, type-appropriate sprite family"
+153,Explosion,MOVE_EXPLOSION,ENERGY,27,0,"Shared, type-appropriate sprite family"
+154,Fury Swipes,MOVE_FURY_SWIPES,HIT,4,0,Authored body motion and event-driven physical contact
+155,Bonemerang,MOVE_BONEMERANG,GROUND,14,0,"Shared, type-appropriate sprite family"
+156,Rest,MOVE_REST,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+157,Rock Slide,MOVE_ROCK_SLIDE,ROCK,15,0,"Shared, type-appropriate sprite family"
+158,Hyper Fang,MOVE_HYPER_FANG,HIT,4,0,Authored body motion and event-driven physical contact
+159,Sharpen,MOVE_SHARPEN,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+160,Conversion,MOVE_CONVERSION,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+161,Tri Attack,MOVE_TRI_ATTACK,ENERGY,27,0,Explicit move-family override
+162,Super Fang,MOVE_SUPER_FANG,HIT,4,0,Authored body motion and event-driven physical contact
+163,Slash,MOVE_SLASH,HIT,4,4,Authored body motion and event-driven physical contact
+164,Substitute,MOVE_SUBSTITUTE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+165,Struggle,MOVE_STRUGGLE,HIT,4,0,Authored body motion and event-driven physical contact
+166,Sketch,MOVE_SKETCH,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+167,Triple Kick,MOVE_TRIPLE_KICK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+168,Thief,MOVE_THIEF,SHADOW,10,0,"Shared, type-appropriate sprite family"
+169,Spider Web,MOVE_SPIDER_WEB,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+170,Mind Reader,MOVE_MIND_READER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+171,Nightmare,MOVE_NIGHTMARE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+172,Flame Wheel,MOVE_FLAME_WHEEL,FIRE,0,0,"Shared, type-appropriate sprite family"
+173,Snore,MOVE_SNORE,SOUND,21,0,Shared expanding sound-ring animation
+174,Curse,MOVE_CURSE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+175,Flail,MOVE_FLAIL,HIT,4,0,Authored body motion and event-driven physical contact
+176,Conversion 2,MOVE_CONVERSION_2,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+177,Aeroblast,MOVE_AEROBLAST,WIND,16,0,"Shared, type-appropriate sprite family"
+178,Cotton Spore,MOVE_COTTON_SPORE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+179,Reversal,MOVE_REVERSAL,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+180,Spite,MOVE_SPITE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+181,Powder Snow,MOVE_POWDER_SNOW,ICE,3,0,"Shared, type-appropriate sprite family"
+182,Protect,MOVE_PROTECT,GUARD,5,0,Explicit move-family override
+183,Mach Punch,MOVE_MACH_PUNCH,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+184,Scary Face,MOVE_SCARY_FACE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+185,Faint Attack,MOVE_FAINT_ATTACK,SHADOW,10,0,"Shared, type-appropriate sprite family"
+186,Sweet Kiss,MOVE_SWEET_KISS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+187,Belly Drum,MOVE_BELLY_DRUM,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+188,Sludge Bomb,MOVE_SLUDGE_BOMB,POISON,13,0,"Shared, type-appropriate sprite family"
+189,Mud-Slap,MOVE_MUD_SLAP,GROUND,14,0,"Shared, type-appropriate sprite family"
+190,Octazooka,MOVE_OCTAZOOKA,WATER,1,0,"Shared, type-appropriate sprite family"
+191,Spikes,MOVE_SPIKES,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+192,Zap Cannon,MOVE_ZAP_CANNON,BOLT,28,0,"Shared, type-appropriate sprite family"
+193,Foresight,MOVE_FORESIGHT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+194,Destiny Bond,MOVE_DESTINY_BOND,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+195,Perish Song,MOVE_PERISH_SONG,SOUND,21,0,Shared expanding sound-ring animation
+196,Icy Wind,MOVE_ICY_WIND,ICE,3,0,"Shared, type-appropriate sprite family"
+197,Detect,MOVE_DETECT,GUARD,5,0,Explicit move-family override
+198,Bone Rush,MOVE_BONE_RUSH,GROUND,14,0,"Shared, type-appropriate sprite family"
+199,Lock-On,MOVE_LOCK_ON,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+200,Outrage,MOVE_OUTRAGE,DRAGON,19,0,"Shared, type-appropriate sprite family"
+201,Sandstorm,MOVE_SANDSTORM,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+202,Giga Drain,MOVE_GIGA_DRAIN,LEAF,8,0,"Shared, type-appropriate sprite family"
+203,Endure,MOVE_ENDURE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+204,Charm,MOVE_CHARM,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+205,Rollout,MOVE_ROLLOUT,ROCK,15,0,"Shared, type-appropriate sprite family"
+206,False Swipe,MOVE_FALSE_SWIPE,HIT,4,4,Authored body motion and event-driven physical contact
+207,Swagger,MOVE_SWAGGER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+208,Milk Drink,MOVE_MILK_DRINK,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+209,Spark,MOVE_SPARK,BOLT,28,0,"Shared, type-appropriate sprite family"
+210,Fury Cutter,MOVE_FURY_CUTTER,BUG,18,4,"Shared, type-appropriate sprite family"
+211,Steel Wing,MOVE_STEEL_WING,STEEL,20,0,"Shared, type-appropriate sprite family"
+212,Mean Look,MOVE_MEAN_LOOK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+213,Attract,MOVE_ATTRACT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+214,Sleep Talk,MOVE_SLEEP_TALK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+215,Heal Bell,MOVE_HEAL_BELL,SOUND,21,0,Shared expanding sound-ring animation
+216,Return,MOVE_RETURN,HIT,4,0,Authored body motion and event-driven physical contact
+217,Present,MOVE_PRESENT,ENERGY,27,0,"Shared, type-appropriate sprite family"
+218,Frustration,MOVE_FRUSTRATION,HIT,4,0,Authored body motion and event-driven physical contact
+219,Safeguard,MOVE_SAFEGUARD,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+220,Pain Split,MOVE_PAIN_SPLIT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+221,Sacred Fire,MOVE_SACRED_FIRE,FIRE,0,0,"Shared, type-appropriate sprite family"
+222,Magnitude,MOVE_MAGNITUDE,GROUND,14,0,"Shared, type-appropriate sprite family"
+223,DynamicPunch,MOVE_DYNAMIC_PUNCH,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+224,Megahorn,MOVE_MEGAHORN,BUG,18,0,"Shared, type-appropriate sprite family"
+225,DragonBreath,MOVE_DRAGON_BREATH,DRAGON,19,0,"Shared, type-appropriate sprite family"
+226,Baton Pass,MOVE_BATON_PASS,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+227,Encore,MOVE_ENCORE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+228,Pursuit,MOVE_PURSUIT,SHADOW,10,0,"Shared, type-appropriate sprite family"
+229,Rapid Spin,MOVE_RAPID_SPIN,HIT,4,0,Authored body motion and event-driven physical contact
+230,Sweet Scent,MOVE_SWEET_SCENT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+231,Iron Tail,MOVE_IRON_TAIL,STEEL,20,0,"Shared, type-appropriate sprite family"
+232,Metal Claw,MOVE_METAL_CLAW,STEEL,20,4,"Shared, type-appropriate sprite family"
+233,Vital Throw,MOVE_VITAL_THROW,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+234,Morning Sun,MOVE_MORNING_SUN,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+235,Synthesis,MOVE_SYNTHESIS,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+236,Moonlight,MOVE_MOONLIGHT,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+237,Hidden Power,MOVE_HIDDEN_POWER,ENERGY,27,0,Explicit move-family override
+238,Cross Chop,MOVE_CROSS_CHOP,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+239,Twister,MOVE_TWISTER,DRAGON,19,0,"Shared, type-appropriate sprite family"
+240,Rain Dance,MOVE_RAIN_DANCE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+241,Sunny Day,MOVE_SUNNY_DAY,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+242,Crunch,MOVE_CRUNCH,SHADOW,10,0,"Shared, type-appropriate sprite family"
+243,Mirror Coat,MOVE_MIRROR_COAT,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+244,Psych Up,MOVE_PSYCH_UP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+245,ExtremeSpeed,MOVE_EXTREME_SPEED,HIT,4,0,Authored body motion and event-driven physical contact
+246,AncientPower,MOVE_ANCIENT_POWER,ROCK,15,0,"Shared, type-appropriate sprite family"
+247,Shadow Ball,MOVE_SHADOW_BALL,SHADOW_ORB,24,0,Explicit move-family override
+248,Future Sight,MOVE_FUTURE_SIGHT,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+249,Rock Smash,MOVE_ROCK_SMASH,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+250,Whirlpool,MOVE_WHIRLPOOL,WATER,1,0,"Shared, type-appropriate sprite family"
+251,Beat Up,MOVE_BEAT_UP,SHADOW,10,0,"Shared, type-appropriate sprite family"
+252,Fake Out,MOVE_FAKE_OUT,HIT,4,0,Authored body motion and event-driven physical contact
+253,Uproar,MOVE_UPROAR,SOUND,21,0,Shared expanding sound-ring animation
+254,Stockpile,MOVE_STOCKPILE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+255,Spit Up,MOVE_SPIT_UP,ENERGY,27,0,"Shared, type-appropriate sprite family"
+256,Swallow,MOVE_SWALLOW,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+257,Heat Wave,MOVE_HEAT_WAVE,FIRE,0,0,"Shared, type-appropriate sprite family"
+258,Hail,MOVE_HAIL,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+259,Torment,MOVE_TORMENT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+260,Flatter,MOVE_FLATTER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+261,Will-O-Wisp,MOVE_WILL_O_WISP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+262,Memento,MOVE_MEMENTO,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+263,Facade,MOVE_FACADE,HIT,4,0,Authored body motion and event-driven physical contact
+264,Focus Punch,MOVE_FOCUS_PUNCH,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+265,SmellingSalt,MOVE_SMELLING_SALT,HIT,4,0,Authored body motion and event-driven physical contact
+266,Follow Me,MOVE_FOLLOW_ME,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+267,Nature Power,MOVE_NATURE_POWER,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+268,Charge,MOVE_CHARGE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+269,Taunt,MOVE_TAUNT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+270,Helping Hand,MOVE_HELPING_HAND,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+271,Trick,MOVE_TRICK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+272,Role Play,MOVE_ROLE_PLAY,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+273,Wish,MOVE_WISH,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+274,Assist,MOVE_ASSIST,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+275,Ingrain,MOVE_INGRAIN,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+276,Superpower,MOVE_SUPERPOWER,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+277,Magic Coat,MOVE_MAGIC_COAT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+278,Recycle,MOVE_RECYCLE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+279,Revenge,MOVE_REVENGE,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+280,Brick Break,MOVE_BRICK_BREAK,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+281,Yawn,MOVE_YAWN,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+282,Knock Off,MOVE_KNOCK_OFF,SHADOW,10,0,"Shared, type-appropriate sprite family"
+283,Endeavor,MOVE_ENDEAVOR,HIT,4,0,Authored body motion and event-driven physical contact
+284,Eruption,MOVE_ERUPTION,FIRE,0,0,"Shared, type-appropriate sprite family"
+285,Skill Swap,MOVE_SKILL_SWAP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+286,Imprison,MOVE_IMPRISON,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+287,Refresh,MOVE_REFRESH,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+288,Grudge,MOVE_GRUDGE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+289,Snatch,MOVE_SNATCH,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+290,Secret Power,MOVE_SECRET_POWER,ENERGY,27,0,"Shared, type-appropriate sprite family"
+291,Dive,MOVE_DIVE,WATER,1,0,"Shared, type-appropriate sprite family"
+292,Arm Thrust,MOVE_ARM_THRUST,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+293,Camouflage,MOVE_CAMOUFLAGE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+294,Tail Glow,MOVE_TAIL_GLOW,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+295,Luster Purge,MOVE_LUSTER_PURGE,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+296,Mist Ball,MOVE_MIST_BALL,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+297,FeatherDance,MOVE_FEATHER_DANCE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+298,Teeter Dance,MOVE_TEETER_DANCE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+299,Blaze Kick,MOVE_BLAZE_KICK,FIRE,0,0,"Shared, type-appropriate sprite family"
+300,Mud Sport,MOVE_MUD_SPORT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+301,Ice Ball,MOVE_ICE_BALL,ICE,3,0,"Shared, type-appropriate sprite family"
+302,Needle Arm,MOVE_NEEDLE_ARM,LEAF,8,0,"Shared, type-appropriate sprite family"
+303,Slack Off,MOVE_SLACK_OFF,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+304,Hyper Voice,MOVE_HYPER_VOICE,SOUND,21,0,Shared expanding sound-ring animation
+305,Poison Fang,MOVE_POISON_FANG,POISON,13,0,"Shared, type-appropriate sprite family"
+306,Crush Claw,MOVE_CRUSH_CLAW,HIT,4,4,Authored body motion and event-driven physical contact
+307,Blast Burn,MOVE_BLAST_BURN,FIRE,0,0,"Shared, type-appropriate sprite family"
+308,Hydro Cannon,MOVE_HYDRO_CANNON,WATER,1,0,"Shared, type-appropriate sprite family"
+309,Meteor Mash,MOVE_METEOR_MASH,STEEL,20,0,"Shared, type-appropriate sprite family"
+310,Astonish,MOVE_ASTONISH,SHADOW,10,0,"Shared, type-appropriate sprite family"
+311,Weather Ball,MOVE_WEATHER_BALL,ENERGY,27,0,Explicit move-family override
+312,Aromatherapy,MOVE_AROMATHERAPY,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+313,Fake Tears,MOVE_FAKE_TEARS,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+314,Air Cutter,MOVE_AIR_CUTTER,WIND,16,0,"Shared, type-appropriate sprite family"
+315,Overheat,MOVE_OVERHEAT,FIRE,0,0,"Shared, type-appropriate sprite family"
+316,Odor Sleuth,MOVE_ODOR_SLEUTH,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+317,Rock Tomb,MOVE_ROCK_TOMB,ROCK,15,0,"Shared, type-appropriate sprite family"
+318,Silver Wind,MOVE_SILVER_WIND,BUG,18,0,"Shared, type-appropriate sprite family"
+319,Metal Sound,MOVE_METAL_SOUND,SOUND,21,0,Shared expanding sound-ring animation
+320,GrassWhistle,MOVE_GRASS_WHISTLE,SOUND,21,0,Shared expanding sound-ring animation
+321,Tickle,MOVE_TICKLE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+322,Cosmic Power,MOVE_COSMIC_POWER,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+323,Water Spout,MOVE_WATER_SPOUT,WATER,1,0,"Shared, type-appropriate sprite family"
+324,Signal Beam,MOVE_SIGNAL_BEAM,BUG,18,0,"Shared, type-appropriate sprite family"
+325,Shadow Punch,MOVE_SHADOW_PUNCH,SHADOW,10,0,"Shared, type-appropriate sprite family"
+326,Extrasensory,MOVE_EXTRASENSORY,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+327,Sky Uppercut,MOVE_SKY_UPPERCUT,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+328,Sand Tomb,MOVE_SAND_TOMB,GROUND,14,0,"Shared, type-appropriate sprite family"
+329,Sheer Cold,MOVE_SHEER_COLD,ICE,3,0,"Shared, type-appropriate sprite family"
+330,Muddy Water,MOVE_MUDDY_WATER,WATER,1,0,"Shared, type-appropriate sprite family"
+331,Bullet Seed,MOVE_BULLET_SEED,LEAF,8,0,"Shared, type-appropriate sprite family"
+332,Aerial Ace,MOVE_AERIAL_ACE,WIND,16,0,"Shared, type-appropriate sprite family"
+333,Icicle Spear,MOVE_ICICLE_SPEAR,ICE,3,0,"Shared, type-appropriate sprite family"
+334,Iron Defense,MOVE_IRON_DEFENSE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+335,Block,MOVE_BLOCK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+336,Howl,MOVE_HOWL,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+337,Dragon Claw,MOVE_DRAGON_CLAW,DRAGON,19,4,"Shared, type-appropriate sprite family"
+338,Frenzy Plant,MOVE_FRENZY_PLANT,LEAF,8,0,"Shared, type-appropriate sprite family"
+339,Bulk Up,MOVE_BULK_UP,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+340,Bounce,MOVE_BOUNCE,WIND,16,0,"Shared, type-appropriate sprite family"
+341,Mud Shot,MOVE_MUD_SHOT,GROUND,14,0,"Shared, type-appropriate sprite family"
+342,Poison Tail,MOVE_POISON_TAIL,POISON,13,0,"Shared, type-appropriate sprite family"
+343,Covet,MOVE_COVET,HIT,4,0,Authored body motion and event-driven physical contact
+344,Volt Tackle,MOVE_VOLT_TACKLE,BOLT,28,0,"Shared, type-appropriate sprite family"
+345,Magical Leaf,MOVE_MAGICAL_LEAF,LEAF,8,0,"Shared, type-appropriate sprite family"
+346,Water Sport,MOVE_WATER_SPORT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+347,Calm Mind,MOVE_CALM_MIND,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+348,Leaf Blade,MOVE_LEAF_BLADE,LEAF,8,4,"Shared, type-appropriate sprite family"
+349,Dragon Dance,MOVE_DRAGON_DANCE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+350,Rock Blast,MOVE_ROCK_BLAST,ROCK,15,0,"Shared, type-appropriate sprite family"
+351,Shock Wave,MOVE_SHOCK_WAVE,BOLT,28,0,"Shared, type-appropriate sprite family"
+352,Water Pulse,MOVE_WATER_PULSE,PULSE,22,0,Explicit move-family override
+353,Doom Desire,MOVE_DOOM_DESIRE,STEEL,20,0,"Shared, type-appropriate sprite family"
+354,Psycho Boost,MOVE_PSYCHO_BOOST,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+355,Roost,MOVE_ROOST,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+356,Gravity,MOVE_GRAVITY,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+357,Miracle Eye,MOVE_MIRACLE_EYE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+358,Wake-Up Slap,MOVE_WAKE_UP_SLAP,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+359,Hammer Arm,MOVE_HAMMER_ARM,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+360,Gyro Ball,MOVE_GYRO_BALL,STEEL,20,0,"Shared, type-appropriate sprite family"
+361,Healing Wish,MOVE_HEALING_WISH,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+362,Brine,MOVE_BRINE,WATER,1,0,"Shared, type-appropriate sprite family"
+363,Natural Gift,MOVE_NATURAL_GIFT,ENERGY,27,0,"Shared, type-appropriate sprite family"
+364,Feint,MOVE_FEINT,ENERGY,27,0,"Shared, type-appropriate sprite family"
+365,Pluck,MOVE_PLUCK,WIND,16,0,"Shared, type-appropriate sprite family"
+366,Tailwind,MOVE_TAILWIND,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+367,Acupressure,MOVE_ACUPRESSURE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+368,Metal Burst,MOVE_METAL_BURST,STEEL,20,0,"Shared, type-appropriate sprite family"
+369,U-turn,MOVE_U_TURN,BUG,18,0,"Shared, type-appropriate sprite family"
+370,Close Combat,MOVE_CLOSE_COMBAT,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+371,Payback,MOVE_PAYBACK,SHADOW,10,0,"Shared, type-appropriate sprite family"
+372,Assurance,MOVE_ASSURANCE,SHADOW,10,0,"Shared, type-appropriate sprite family"
+373,Embargo,MOVE_EMBARGO,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+374,Fling,MOVE_FLING,SHADOW,10,0,"Shared, type-appropriate sprite family"
+375,Psycho Shift,MOVE_PSYCHO_SHIFT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+376,Trump Card,MOVE_TRUMP_CARD,ENERGY,27,0,Explicit move-family override
+377,Heal Block,MOVE_HEAL_BLOCK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+378,Wring Out,MOVE_WRING_OUT,ENERGY,27,0,"Shared, type-appropriate sprite family"
+379,Power Trick,MOVE_POWER_TRICK,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+380,Gastro Acid,MOVE_GASTRO_ACID,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+381,Lucky Chant,MOVE_LUCKY_CHANT,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+382,Me First,MOVE_ME_FIRST,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+383,Copycat,MOVE_COPYCAT,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+384,Power Swap,MOVE_POWER_SWAP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+385,Guard Swap,MOVE_GUARD_SWAP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+386,Punishment,MOVE_PUNISHMENT,SHADOW,10,0,"Shared, type-appropriate sprite family"
+387,Last Resort,MOVE_LAST_RESORT,HIT,4,0,Authored body motion and event-driven physical contact
+388,Worry Seed,MOVE_WORRY_SEED,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+389,Sucker Punch,MOVE_SUCKER_PUNCH,SHADOW,10,0,"Shared, type-appropriate sprite family"
+390,Toxic Spikes,MOVE_TOXIC_SPIKES,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+391,Heart Swap,MOVE_HEART_SWAP,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+392,Aqua Ring,MOVE_AQUA_RING,PULSE,22,0,Explicit move-family override
+393,Magnet Rise,MOVE_MAGNET_RISE,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+394,Flare Blitz,MOVE_FLARE_BLITZ,FIRE,0,0,"Shared, type-appropriate sprite family"
+395,Force Palm,MOVE_FORCE_PALM,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+396,Aura Sphere,MOVE_AURA_SPHERE,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+397,Rock Polish,MOVE_ROCK_POLISH,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+398,Poison Jab,MOVE_POISON_JAB,POISON,13,0,"Shared, type-appropriate sprite family"
+399,Dark Pulse,MOVE_DARK_PULSE,SHADOW_ORB,24,0,Explicit move-family override
+400,Night Slash,MOVE_NIGHT_SLASH,SHADOW,10,4,"Shared, type-appropriate sprite family"
+401,Aqua Tail,MOVE_AQUA_TAIL,WATER,1,0,"Shared, type-appropriate sprite family"
+402,Seed Bomb,MOVE_SEED_BOMB,LEAF,8,0,"Shared, type-appropriate sprite family"
+403,Air Slash,MOVE_AIR_SLASH,WIND,16,0,"Shared, type-appropriate sprite family"
+404,X-Scissor,MOVE_X_SCISSOR,BUG,18,4,"Shared, type-appropriate sprite family"
+405,Bug Buzz,MOVE_BUG_BUZZ,SOUND,21,0,Shared expanding sound-ring animation
+406,Dragon Pulse,MOVE_DRAGON_PULSE,DRAGON,19,0,"Shared, type-appropriate sprite family"
+407,Dragon Rush,MOVE_DRAGON_RUSH,DRAGON,19,0,"Shared, type-appropriate sprite family"
+408,Power Gem,MOVE_POWER_GEM,ROCK,15,0,"Shared, type-appropriate sprite family"
+409,Drain Punch,MOVE_DRAIN_PUNCH,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+410,Vacuum Wave,MOVE_VACUUM_WAVE,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+411,Focus Blast,MOVE_FOCUS_BLAST,FIGHTING,17,0,"Shared, type-appropriate sprite family"
+412,Energy Ball,MOVE_ENERGY_BALL,GRASS_ENERGY,23,0,Explicit move-family override
+413,Brave Bird,MOVE_BRAVE_BIRD,WIND,16,0,"Shared, type-appropriate sprite family"
+414,Earth Power,MOVE_EARTH_POWER,GROUND,14,0,"Shared, type-appropriate sprite family"
+415,Switcheroo,MOVE_SWITCHEROO,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+416,Giga Impact,MOVE_GIGA_IMPACT,HIT,4,0,Authored body motion and event-driven physical contact
+417,Nasty Plot,MOVE_NASTY_PLOT,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+418,Bullet Punch,MOVE_BULLET_PUNCH,STEEL,20,0,"Shared, type-appropriate sprite family"
+419,Avalanche,MOVE_AVALANCHE,ICE,3,0,"Shared, type-appropriate sprite family"
+420,Ice Shard,MOVE_ICE_SHARD,ICE,3,0,"Shared, type-appropriate sprite family"
+421,Shadow Claw,MOVE_SHADOW_CLAW,SHADOW,10,4,"Shared, type-appropriate sprite family"
+422,Thunder Fang,MOVE_THUNDER_FANG,BOLT,28,0,"Shared, type-appropriate sprite family"
+423,Ice Fang,MOVE_ICE_FANG,ICE,3,0,"Shared, type-appropriate sprite family"
+424,Fire Fang,MOVE_FIRE_FANG,FIRE,0,0,"Shared, type-appropriate sprite family"
+425,Shadow Sneak,MOVE_SHADOW_SNEAK,SHADOW,10,0,"Shared, type-appropriate sprite family"
+426,Mud Bomb,MOVE_MUD_BOMB,GROUND,14,0,"Shared, type-appropriate sprite family"
+427,Psycho Cut,MOVE_PSYCHO_CUT,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+428,Zen Headbutt,MOVE_ZEN_HEADBUTT,PSYCHIC,9,0,"Shared, type-appropriate sprite family"
+429,Mirror Shot,MOVE_MIRROR_SHOT,STEEL,20,0,"Shared, type-appropriate sprite family"
+430,Flash Cannon,MOVE_FLASH_CANNON,STEEL,20,0,"Shared, type-appropriate sprite family"
+431,Rock Climb,MOVE_ROCK_CLIMB,HIT,4,0,Authored body motion and event-driven physical contact
+432,Defog,MOVE_DEFOG,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+433,Trick Room,MOVE_TRICK_ROOM,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+434,Draco Meteor,MOVE_DRACO_METEOR,DRAGON,19,0,"Shared, type-appropriate sprite family"
+435,Discharge,MOVE_DISCHARGE,BOLT,28,0,"Shared, type-appropriate sprite family"
+436,Lava Plume,MOVE_LAVA_PLUME,FIRE,0,0,"Shared, type-appropriate sprite family"
+437,Leaf Storm,MOVE_LEAF_STORM,LEAF,8,0,"Shared, type-appropriate sprite family"
+438,Power Whip,MOVE_POWER_WHIP,LEAF,8,0,"Shared, type-appropriate sprite family"
+439,Rock Wrecker,MOVE_ROCK_WRECKER,ROCK,15,0,"Shared, type-appropriate sprite family"
+440,Cross Poison,MOVE_CROSS_POISON,POISON,13,0,"Shared, type-appropriate sprite family"
+441,Gunk Shot,MOVE_GUNK_SHOT,POISON,13,0,"Shared, type-appropriate sprite family"
+442,Iron Head,MOVE_IRON_HEAD,STEEL,20,0,"Shared, type-appropriate sprite family"
+443,Magnet Bomb,MOVE_MAGNET_BOMB,STEEL,20,0,"Shared, type-appropriate sprite family"
+444,Stone Edge,MOVE_STONE_EDGE,ROCK,15,0,"Shared, type-appropriate sprite family"
+445,Captivate,MOVE_CAPTIVATE,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+446,Stealth Rock,MOVE_STEALTH_ROCK,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+447,Grass Knot,MOVE_GRASS_KNOT,LEAF,8,0,"Shared, type-appropriate sprite family"
+448,Chatter,MOVE_CHATTER,SOUND,21,0,Shared expanding sound-ring animation
+449,Judgment,MOVE_JUDGMENT,ENERGY,27,0,Explicit move-family override
+450,Bug Bite,MOVE_BUG_BITE,BUG,18,0,"Shared, type-appropriate sprite family"
+451,Charge Beam,MOVE_CHARGE_BEAM,BOLT,28,0,"Shared, type-appropriate sprite family"
+452,Wood Hammer,MOVE_WOOD_HAMMER,LEAF,8,0,"Shared, type-appropriate sprite family"
+453,Aqua Jet,MOVE_AQUA_JET,WATER,1,0,"Shared, type-appropriate sprite family"
+454,Attack Order,MOVE_ATTACK_ORDER,BUG,18,0,"Shared, type-appropriate sprite family"
+455,Defend Order,MOVE_DEFEND_ORDER,BUFF,11,0,Shared status presentation; mechanics coverage is separate
+456,Heal Order,MOVE_HEAL_ORDER,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+457,Head Smash,MOVE_HEAD_SMASH,ROCK,15,0,"Shared, type-appropriate sprite family"
+458,Double Hit,MOVE_DOUBLE_HIT,HIT,4,0,Authored body motion and event-driven physical contact
+459,Roar of Time,MOVE_ROAR_OF_TIME,DRAGON,19,0,"Shared, type-appropriate sprite family"
+460,Spacial Rend,MOVE_SPACIAL_REND,DRAGON,19,0,"Shared, type-appropriate sprite family"
+461,Lunar Dance,MOVE_LUNAR_DANCE,HEAL,26,0,Shared healing particles; does not add missing healing mechanics
+462,Crush Grip,MOVE_CRUSH_GRIP,HIT,4,0,Authored body motion and event-driven physical contact
+463,Magma Storm,MOVE_MAGMA_STORM,FIRE,0,0,"Shared, type-appropriate sprite family"
+464,Dark Void,MOVE_DARK_VOID,DEBUFF,12,0,Shared status presentation; mechanics coverage is separate
+465,Seed Flare,MOVE_SEED_FLARE,GRASS_ENERGY,23,0,Explicit move-family override
+466,Ominous Wind,MOVE_OMINOUS_WIND,SHADOW,10,0,"Shared, type-appropriate sprite family"
+467,Shadow Force,MOVE_SHADOW_FORCE,SHADOW,10,0,"Shared, type-appropriate sprite family"

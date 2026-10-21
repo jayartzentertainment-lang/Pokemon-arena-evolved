@@ -1,0 +1,1089 @@
+{
+  "kind": "SOURCE UPDATE ONLY",
+  "base": "Delivered Platinum Arena 0.9.6 source, upstream pret/pokeplatinum 1dc13dcea40c04ab53f1f607de46023dc409ef20",
+  "no_rom_built": true,
+  "files": [
+    {
+      "path": "include/arena/beam_effects.h",
+      "bytes": 1030,
+      "sha256": "b80d9eb25363f92e26f81a77a343e477a6f85f56a2a1af6eabfbf4f45f65630f",
+      "baseline_sha256": "7ac0163b3d17cfa9a9e0cd703d47155dabcbadefe1fa5de7bebfc6fc28ce0284"
+    },
+    {
+      "path": "include/arena/combat.h",
+      "bytes": 8345,
+      "sha256": "2fa223cd4df67cf8e69bc2f02368cd2abca0a071611f72576b734dbd85d55007",
+      "baseline_sha256": "4e1644b864d576717bc3f91d02ad4794e9779bf86041798aaaff12863cbc4aaf"
+    },
+    {
+      "path": "include/arena/extra_effects.h",
+      "bytes": 544,
+      "sha256": "c8612977f10c20ca7124a257f1d0664ff1041f7609d217ee70c05c4c2682c1d7",
+      "baseline_sha256": "920ed424e53bdde05c4451e0c20d19dafc65b1821f268c9a03968646b8ebd448"
+    },
+    {
+      "path": "include/arena/presentation.h",
+      "bytes": 1805,
+      "sha256": "272a1c538b75db80eccc29f39628e9e5a2c6c78d081a883fcfd7c94cfa5cb48c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "platinum.us/main.lsf.in",
+      "bytes": 47192,
+      "sha256": "dacdf23c127a4b727a75ffd247ec41f04abb3fed1c19dd59df3aafba2a087569",
+      "baseline_sha256": "a724e0be547eee343d4e7b3448ac754c891cad845eeb52fbe3f0c31b3198ad80"
+    },
+    {
+      "path": "res/arena/beam-effects/README.md",
+      "bytes": 2339,
+      "sha256": "39a78d1987651b168a606cc886c7c05703b962519f4c3b08ba04bb75f104d1cd",
+      "baseline_sha256": "1c75892ca81cf21d1c61d2dfcc7ca0fa27bc6c18b44c93b7795d87a4a46f02fc"
+    },
+    {
+      "path": "res/arena/beam-effects/manifest.json",
+      "bytes": 5433,
+      "sha256": "eac3b29eb17cb3f65373622363ca9163c869e32b59c9dc0e39feb73c340077a8",
+      "baseline_sha256": "705ef6f37ecb4d418d3ddde61bd36c1c9c45a2c8352f7a0a55e59fd18ddce20c"
+    },
+    {
+      "path": "res/arena/beam-effects/source/0/105.png",
+      "bytes": 2126,
+      "sha256": "4fd29d3358af69de4de118ae187ed3db01e2e8333830cae884b3b13eaad61c68",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/beam-effects/source/0/107.png",
+      "bytes": 4623,
+      "sha256": "6211ce364b149c42d0c8dd958ff6b755cc861694fa034305223bc954f3fe003e",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/CREDITS.md",
+      "bytes": 1088,
+      "sha256": "8338444dc9391e59793272bf1bb60102091ee36495668235e6319db658644873",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/README.md",
+      "bytes": 4513,
+      "sha256": "daac48f2ea8edc487671207497d30952004a11d17aef06d828d84a386cd32d37",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/beam-sprites.png",
+      "bytes": 30865,
+      "sha256": "e208295cbe76e0d5a988c5b3838590dc028cacb719f17471d238612e85feb52c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/effect-loop.gif",
+      "bytes": 60034,
+      "sha256": "e1bf971fef661b33f04c5e56c78433ff07b945bdd54054b9732f3d6fee8823ae",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/effect-sprites.png",
+      "bytes": 29977,
+      "sha256": "3e5e0e4a05b14a7dff2bf002b77e5656c3eacd7e7fb7237d0b345a69ba516a38",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/effect-tiles.bin",
+      "bytes": 32768,
+      "sha256": "963ad222788ada969cd932d8465dd50cbd71f1996f61a4896d73ccef4d0b5663",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/manifest.json",
+      "bytes": 58933,
+      "sha256": "8fc1d288594a7d95e26d4cfb763602e6ff0df6830a7b89ad09bba71d4ac37f81",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/move-visuals.csv",
+      "bytes": 41566,
+      "sha256": "3c7e7155ffd35113fe3788c8a73b2b6d88e5be482d989b2d67e4a6c2f7f92b97",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/move-visuals.json",
+      "bytes": 105252,
+      "sha256": "e914e890835c8f2edf751bf38086869905b8a76fe167dce52733073fcfa39104",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/dp/Energy-Ball.png",
+      "bytes": 9815,
+      "sha256": "eb45dff0368f3b03a5bf1f5e6f172cb65d7cebf2e14fcd7a92a738ac7eff3731",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/dp/Mud-Shot.png",
+      "bytes": 71994,
+      "sha256": "e9893b76cd70ce9b9498783ed6ec627398ab136919995a411b6f3e86812fe857",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/dp/Water-Pulse.png",
+      "bytes": 24045,
+      "sha256": "abcff0042f777c85515586906775db2d15b0420ab26b691271a9d5bc077b4c65",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/0/111.png",
+      "bytes": 3393,
+      "sha256": "61fd2eaa2f6a94d30bc298d13958c01ef2149f9f9daf485c0106470c5e3e803b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0089/000/003.png",
+      "bytes": 344,
+      "sha256": "233dc022528dc3c824d95527b592ea1a9c23960a0405add1f21244a7f144fe8e",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0089/000/005.png",
+      "bytes": 410,
+      "sha256": "9b50d5e7e2bd52f4c65901179d01933139bc1b66c70d2a3e28e72903aeb86a21",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0089/000/008.png",
+      "bytes": 410,
+      "sha256": "9b50d5e7e2bd52f4c65901179d01933139bc1b66c70d2a3e28e72903aeb86a21",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0089/000/010.png",
+      "bytes": 510,
+      "sha256": "8658f4e5644dc99413df6438b5cfed812c17e1f2c5e39543c8c9fa4cf80a1fec",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0105/000/001.png",
+      "bytes": 339,
+      "sha256": "29f3a855131f9eeee2aab41864afa39d89f28bed76964c0991050b1d58b66d8a",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0105/000/003.png",
+      "bytes": 338,
+      "sha256": "af6a73fccc61d72a3cf52b34ea038d20d748bf6f3e98fc1481fb5445671bb87e",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0105/000/004.png",
+      "bytes": 367,
+      "sha256": "2a00c204aedd5141e82f0cbac4cfbbd05e36e8f34e53b43e6a67bbb763a49b97",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0105/000/006.png",
+      "bytes": 402,
+      "sha256": "ee95ab3b1de9e854fa8284a3b697808fc0b89997b402cdc7e07a2c026040524d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0130/000/012.png",
+      "bytes": 438,
+      "sha256": "2dd6da5d4fa95c901b778c10435a85bd9c2d6dfc15690d43d654261a87578b5b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0130/000/024.png",
+      "bytes": 427,
+      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0130/000/036.png",
+      "bytes": 427,
+      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0130/000/048.png",
+      "bytes": 427,
+      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0150/000/004.png",
+      "bytes": 637,
+      "sha256": "8b2fa9eb1157e1070e09efcdf380eed1a93aae543934f58789d0ba2ccac6f425",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0150/000/006.png",
+      "bytes": 645,
+      "sha256": "50b028a9523f194da903f91c1f05d2a1d05c0a1b1ca933012483b5e1e62c2849",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0150/000/009.png",
+      "bytes": 661,
+      "sha256": "d20667bdacce9b4284b76ea20ee7facc13585cce8ee9d57ba790e76c3cb3e06a",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0150/000/011.png",
+      "bytes": 700,
+      "sha256": "635e22bae73af5b66d7df4edcb530bdb406dd44829f40c01f45266aed782ace3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0163/000/008.png",
+      "bytes": 1459,
+      "sha256": "a282a2c9c8e1d35183aec8e418ee683b34cfc1732e22cfc4a6d9c2bf6d4ba0d2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0163/000/017.png",
+      "bytes": 1744,
+      "sha256": "e85c15918bdb52c82e3327e6b11c5fc005c6ee966798c756074aa2a1a82d4366",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0163/000/025.png",
+      "bytes": 1860,
+      "sha256": "0bbbfdf86378d5074962665d2b8026ec76e4901857c80404d5c4472b7247ec13",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0163/000/034.png",
+      "bytes": 1331,
+      "sha256": "54230dc80f8ed810900f4f48ecf0d05267fdc8ee851a96e50788a67abbecde2c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0164/000/005.png",
+      "bytes": 611,
+      "sha256": "084b527395ccab4b828a96bef8d3df74dec17c4cbb0e7657600508eaa1cbe2de",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0164/000/009.png",
+      "bytes": 510,
+      "sha256": "4b8ecaaeea815e1fd99387bedf4e254283933715d873f3e900302d74344bb47d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0164/000/014.png",
+      "bytes": 1162,
+      "sha256": "aea466f9366c835169055454b3b80ce2aa8d24df37fa672fe9cd1189f7d300e2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0164/000/018.png",
+      "bytes": 360,
+      "sha256": "d6c903afaf5908119253275ee9dcedf37612a4145160b471c22660109aa00e8d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0171/000/007.png",
+      "bytes": 747,
+      "sha256": "bcdcd60077ee4e564ebd8bb327b75540fe6cede26075e7e9887a2a6760df16c6",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0171/000/013.png",
+      "bytes": 1291,
+      "sha256": "466887a771be499337dd84d4c5b318de9478079e8f530c25f339921937f46a91",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0171/000/020.png",
+      "bytes": 930,
+      "sha256": "07f5731c123777ad91d0d861a3406406804a35789b9c7d4ca19c63f249071584",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0171/000/026.png",
+      "bytes": 1517,
+      "sha256": "add664525b0609dfb771307c105553d5935fdc3a120f9ed51a0b017fbbf3443f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0176/000/006.png",
+      "bytes": 922,
+      "sha256": "b49e65eebd9e3e3a3157278fbcb223165ce99ab63d523bea039122d0211e7c71",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0176/000/012.png",
+      "bytes": 971,
+      "sha256": "3f020feaf48274e1c00b0c6f69c99c9d8e732f5b0d8dac00b9760416d38a4cf9",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0176/000/018.png",
+      "bytes": 963,
+      "sha256": "89cbb4419db3e3d2da9f5520a203adce65fa5ff0018394b91ec3c3ccefa89444",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0176/000/024.png",
+      "bytes": 822,
+      "sha256": "cf500993ff2d98eb4b4ede4411518d1f7ee6311da818b038c89b90e20af864b8",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0177/000/008.png",
+      "bytes": 751,
+      "sha256": "ca88362949aa963afc671482eed0869cfc7bf9092a43ec6ae27c10e36b5b989f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0177/000/017.png",
+      "bytes": 512,
+      "sha256": "3d999f521ea9f2402fefb2a3d68749285d8e707073df3858c9f32dd4fa83107d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0177/000/025.png",
+      "bytes": 579,
+      "sha256": "d1862bdf3e3cf4b7c8b77132f060b9ef27f15837bfaea7ff0abebf4b699f7fd5",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0177/000/036.png",
+      "bytes": 438,
+      "sha256": "f97df18434240cefab98d8e25119be7a673a93df9b6d2a790d99ca1f1d5409b9",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0182/000/005.png",
+      "bytes": 866,
+      "sha256": "05ec471b8be0d07dd75aa5c8d988d2943e982abb59854ff88426392730902a5c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0182/000/011.png",
+      "bytes": 1071,
+      "sha256": "6b0d24491c0012f8315c24862faa05d643b69e0cc9abef0e3301ca8cc3853556",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0182/000/016.png",
+      "bytes": 1106,
+      "sha256": "c95e844c18726a5a3ca595f13f344502cb8219007b78a00cfdbc162b0f48aa57",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0182/000/022.png",
+      "bytes": 1000,
+      "sha256": "a919da40a56b2529080e82e58d69d7ae8e484163c8fd294ac55c6b07cbfd3648",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0239/000/001.png",
+      "bytes": 516,
+      "sha256": "69471839f6d24760a049f78a7433ff769501f88d4aecceb73ab4a73ad44e4db2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0239/000/003.png",
+      "bytes": 654,
+      "sha256": "8cecc8a6edcd69c3def279295cd8970db20663d12397f27c2b9899f89f582ab8",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0239/000/004.png",
+      "bytes": 605,
+      "sha256": "4a99803fe2c5b5518a45d1f54b48bd6c789775d3efcfd6f90448e1dfeffe6d5c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0239/000/006.png",
+      "bytes": 613,
+      "sha256": "6a3127699ff5b56cae882615ed91b44b070240742b97fcadc7669ccd800ea15b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0240/000/009.png",
+      "bytes": 753,
+      "sha256": "1a14ffe3c83c64f4d7f1e3689cc5a17268b73a2bfcc035124a79bc0b0081ac4f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0240/000/018.png",
+      "bytes": 834,
+      "sha256": "f31573306be77ea984851bcb78f2f2cb70182caaf7bfa318031a02330dd877e5",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0240/000/026.png",
+      "bytes": 753,
+      "sha256": "1a14ffe3c83c64f4d7f1e3689cc5a17268b73a2bfcc035124a79bc0b0081ac4f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0240/000/035.png",
+      "bytes": 720,
+      "sha256": "cca1fdcf101267f3bceeb8c3525fa394c2d57b2bd5e3f0e5c90efaff1a264fac",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0244/000/005.png",
+      "bytes": 159,
+      "sha256": "498bccbc23b150f1310ea38c48c2513587aadd8c0d25f567e9903d0e685f839d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0244/000/010.png",
+      "bytes": 168,
+      "sha256": "cf9a7f39b0dda0f5049e731f624f02b0d208ceef1937461fd8026476407706ca",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0244/000/014.png",
+      "bytes": 150,
+      "sha256": "14ab2a1b12d1c770cfc291b4da597141ad479137e293e3fcd1fbd24e17a29d43",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/source/extra/2/move_VFX/0244/000/019.png",
+      "bytes": 157,
+      "sha256": "bfa0a2871149851a6c5dfdd94f55007b5fb1b000a177d2b5a6790da183b1d51d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bolt-0.png",
+      "bytes": 227,
+      "sha256": "da789e7b70e3a213257d87e57d5fc457f11ad5550c67de877eb311c07b17fe3c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bolt-1.png",
+      "bytes": 178,
+      "sha256": "b93648cc04d69571922c3c978951d0b4bfc2ba10c7738a54f60e6d7129ab281f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bolt-2.png",
+      "bytes": 214,
+      "sha256": "fe1feea0b7cd5ac9455b7d335fcd81ad03521bd9fc532d9d3769847955b1f1ba",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bolt-3.png",
+      "bytes": 227,
+      "sha256": "489961d1218ba0aa45f4c6339df19f94a0564dfbb291bd3b9978d2d2f7cd767e",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bug-0.png",
+      "bytes": 399,
+      "sha256": "d0634a018c1be2aefca27aaa2f624f4359a4add160c2af04e3ab9e74d7bb9473",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bug-1.png",
+      "bytes": 378,
+      "sha256": "74bae6b590fbc842eaf22d841954f5d1afbb6cbfcf1cf25e6519cf5848633898",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bug-2.png",
+      "bytes": 350,
+      "sha256": "b47ed6190034047ef78dbd2949c466005652cf14e3f812b1dd296ac4fde05429",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/bug-3.png",
+      "bytes": 351,
+      "sha256": "aa7d8214fbaf8d5f59ba483f644b2dfd2fc29097d485516d2ab5dea2c65a88dd",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/dragon-0.png",
+      "bytes": 529,
+      "sha256": "74b7803cf5c753e9df0fadd67ab2bc94e0e741ec8657d91ac7f802177ca641f1",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/dragon-1.png",
+      "bytes": 555,
+      "sha256": "b975da8edd08e9a89e53e1e491cc5183b369be9a33c8b70fcc869561911894b0",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/dragon-2.png",
+      "bytes": 529,
+      "sha256": "74b7803cf5c753e9df0fadd67ab2bc94e0e741ec8657d91ac7f802177ca641f1",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/dragon-3.png",
+      "bytes": 521,
+      "sha256": "905c00ddfa3a567df7bf45415863773a1bb1991d4dc842b3f3a59bded6e57498",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/energy-0.png",
+      "bytes": 226,
+      "sha256": "521eef6e7ca6ecff769cb8af3130e5a90131a72c150e41d7aa816c71ff5b6d8b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/energy-1.png",
+      "bytes": 301,
+      "sha256": "7b3c3182285441e767b435ddf277d5bff5d0782a950521246b6523bebfcdd08f",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/energy-2.png",
+      "bytes": 265,
+      "sha256": "26ca5114c0190e65e71b3446c3b5a8fe97607eb09924da54dd52f9ef82090237",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/energy-3.png",
+      "bytes": 257,
+      "sha256": "97bd54de3b80e7f2c3968df3cf5ef0468c7baeb9accb2165ead65201586bc1f9",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/fighting-0.png",
+      "bytes": 317,
+      "sha256": "b169d56374320f560a986ef867e2c8b0a55d4afc21badb29f26593530134af9e",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/fighting-1.png",
+      "bytes": 437,
+      "sha256": "a3334c6c1b03ecfff1afebb7e015c91978b6810221a46e424c5821c6c519107c",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/fighting-2.png",
+      "bytes": 368,
+      "sha256": "9f853ab3250c832784fd6f0aaf38d9d1796b742f1e92356068d0502e40e8dd60",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/fighting-3.png",
+      "bytes": 532,
+      "sha256": "cd20098c80488fb011ef95c0401998c9428c2eeee0a08894dfde5c226ddec551",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/grass_energy-0.png",
+      "bytes": 498,
+      "sha256": "d30bd413c56c2af75ce5396239a6b0938ff978ef19a73c836ac682971fc7dde3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/grass_energy-1.png",
+      "bytes": 510,
+      "sha256": "9b9ac90b56357a727f54f51981b551841ae8e9c67867ff895a00863871de1534",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/grass_energy-2.png",
+      "bytes": 534,
+      "sha256": "ecb0397a19209ed5ee7861fd2237919a8e232d9a6d44bea0299fa1bf33ea06c3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/grass_energy-3.png",
+      "bytes": 504,
+      "sha256": "b18e3ed1bb202574984cc269604be0c08b372a994029d4f84121b822da1a3932",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/ground-0.png",
+      "bytes": 227,
+      "sha256": "6db4b44a47ab124c805b7735f4a77332dd6a11be68624e734dd0406e7ad286a4",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/ground-1.png",
+      "bytes": 252,
+      "sha256": "fdcfc1c5588b00b6e197371eaf37997ddbb032035e0958fc0ab007b188b6d8f6",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/ground-2.png",
+      "bytes": 245,
+      "sha256": "c5464955b653d29f83b22c19cc276e2f3c55a642210c83f0c98f184f28230fb2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/ground-3.png",
+      "bytes": 249,
+      "sha256": "4c0261b1ce2986e30b15e1e13f4d5f643420563d726396c89ab2e7c5efb64cf9",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/heal-0.png",
+      "bytes": 383,
+      "sha256": "22b16818af6f5ad6f54ce23e3e9ceba7bb37965219b147882bbc4438fbfc0e7d",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/heal-1.png",
+      "bytes": 395,
+      "sha256": "ae9430a0be754723cd815a9ef5404faaa1ed77962579917a3df1bc0802071256",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/heal-2.png",
+      "bytes": 338,
+      "sha256": "4d22ab6663c136898e07d6d493d43b981a85480ac90cf3097bdbb1d5a3bb95d8",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/heal-3.png",
+      "bytes": 383,
+      "sha256": "5fbb413a4b957976ec7948471e54adfe3cd93ccecb66ebe23fae7db1dcf747fb",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/poison-0.png",
+      "bytes": 414,
+      "sha256": "1d6dec76a9e05d8dd0214422578dff14c360ced00490f313a2a517a1f6857cfc",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/poison-1.png",
+      "bytes": 492,
+      "sha256": "be9d2ed712c3892bdfc8149f2084242ebf7378593655ebcc6d82084820d3c546",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/poison-2.png",
+      "bytes": 513,
+      "sha256": "e48599d17847767ef1895a0f9edb09f6882e20d5db3622efccfa01ce0f64b322",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/poison-3.png",
+      "bytes": 389,
+      "sha256": "6bef879c9ab9c3bbcd3509195591f894f4b813fa27a25201d769ec5a102d8de1",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/pulse-0.png",
+      "bytes": 461,
+      "sha256": "e6ce7358f5e4555b4cfc5c0a0ed403e24fb1495b8188ada2b16309feb03a65e5",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/pulse-1.png",
+      "bytes": 425,
+      "sha256": "790c5e740576a76e4039c77c24122615eae76a25d5ac6940b4b2a4d54adc5bd1",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/pulse-2.png",
+      "bytes": 425,
+      "sha256": "790c5e740576a76e4039c77c24122615eae76a25d5ac6940b4b2a4d54adc5bd1",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/pulse-3.png",
+      "bytes": 461,
+      "sha256": "e6ce7358f5e4555b4cfc5c0a0ed403e24fb1495b8188ada2b16309feb03a65e5",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/rock-0.png",
+      "bytes": 383,
+      "sha256": "f54aebd9b8e5e32da63fa5b0682a2da87fc3d94f5bb0288850e4bf9faaf81c26",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/rock-1.png",
+      "bytes": 546,
+      "sha256": "2a9f7502896996bc06f4755e0adc7fbf5fe2742b8befc5db85245336de6da5d8",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/rock-2.png",
+      "bytes": 552,
+      "sha256": "64701a1622cce553023c98179c2a2bf40a3730595c5fd5bd7b5ba7ee15d1a910",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/rock-3.png",
+      "bytes": 521,
+      "sha256": "15ab355b61df1b2cbf6952eb6a28940738955bec70fddce0872d30329afb5714",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/shadow_orb-0.png",
+      "bytes": 520,
+      "sha256": "3fdda8e01ba25d126c3a43a43bd3f5b820e20570e31c345a264b053ece41644a",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/shadow_orb-1.png",
+      "bytes": 542,
+      "sha256": "2bff01c339d69e2f592a7f25496b50457d3847a0d37c35325ab2ec931d6aca5b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/shadow_orb-2.png",
+      "bytes": 542,
+      "sha256": "4c13aa6f12568049c8679deebc73d380991581a3e0ac27661dc3d7a6dfa7f4ba",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/shadow_orb-3.png",
+      "bytes": 458,
+      "sha256": "1796186154e73816963632fa73d9ee7bc43056fc0c3e999b31870e91af06db57",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/sound-0.png",
+      "bytes": 223,
+      "sha256": "d01e4870ad1daa71420e942183003f5d0f3f39b6cf6cf0fe54fd10cb34ba2d83",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/sound-1.png",
+      "bytes": 398,
+      "sha256": "d640ea702c2c2d0b00194456969f90869441509d3d706ac5235ff80bd561cd9b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/sound-2.png",
+      "bytes": 398,
+      "sha256": "d640ea702c2c2d0b00194456969f90869441509d3d706ac5235ff80bd561cd9b",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/sound-3.png",
+      "bytes": 341,
+      "sha256": "657738bb4ff46227ca0b1de6052de3d48dceeb6872171e9b577ad3f733fbcdb8",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/steel-0.png",
+      "bytes": 239,
+      "sha256": "ed0f414d28490199f1a7a299f715a475a1b4aa106d9bb69ae88f98ce72db7911",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/steel-1.png",
+      "bytes": 187,
+      "sha256": "6662fb534eba40ee6273a1fa91853da1fd0b28ea33adee290c88ca65a05d6313",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/steel-2.png",
+      "bytes": 212,
+      "sha256": "039b5f28ebf9b6565694fd0deeebe201f782ebbb5d1ad923a453f9489ed9f9e2",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/steel-3.png",
+      "bytes": 181,
+      "sha256": "91be98bdcc28c09f9729595b0673141466d454552dd39db514bb9bed80d5ed05",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/swords-0.png",
+      "bytes": 279,
+      "sha256": "da1fc1d4257a6508f44ce7cc85c18055d4f37e2057fe1452474e4b138bbaecc3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/swords-1.png",
+      "bytes": 266,
+      "sha256": "2895d6557a059024de067d51fe617f5692c504d86a58303443a8feb9b1da5384",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/swords-2.png",
+      "bytes": 266,
+      "sha256": "2895d6557a059024de067d51fe617f5692c504d86a58303443a8feb9b1da5384",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/swords-3.png",
+      "bytes": 266,
+      "sha256": "2895d6557a059024de067d51fe617f5692c504d86a58303443a8feb9b1da5384",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/wind-0.png",
+      "bytes": 141,
+      "sha256": "134cb424b6e61939edc40f419c310e00125513f5b81a85e9444922071854d9c0",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/wind-1.png",
+      "bytes": 140,
+      "sha256": "3ed6ab3febc0f11ef960f4812c131abd7847d20eb015aea1200a785b8b3462bd",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/wind-2.png",
+      "bytes": 121,
+      "sha256": "8f2d06e2cd94d8da9369c05dd1bf7f49f84702f92af99aa5ab43630bae35ca95",
+      "baseline_sha256": null
+    },
+    {
+      "path": "res/arena/ds-overhaul/transparent-frames/wind-3.png",
+      "bytes": 145,
+      "sha256": "01b01582c8fc7f67502a90b53b7caafab6c3f4cea35e6b8088c51b171cfff306",
+      "baseline_sha256": null
+    },
+    {
+      "path": "src/arena/beam_effects.c",
+      "bytes": 222243,
+      "sha256": "fe61b627beaac8a45f86fa51462e25508885236779e1dbb9a2ad4170d1829ef8",
+      "baseline_sha256": "40fd0f2ec62dccb4c2134cf7c494d1360f245ef8b775ab8e09133e99bbee9a35"
+    },
+    {
+      "path": "src/arena/combat.c",
+      "bytes": 61338,
+      "sha256": "0a8cdb3ac5c35e1afb2f6a31f39ec28d1261082af61ae6df8d3cf9519621ec7b",
+      "baseline_sha256": "99bccc674e0b41b27f62253bc6269adbd237b529e6e068b0f284469555ac9749"
+    },
+    {
+      "path": "src/arena/extra_effects.c",
+      "bytes": 64944,
+      "sha256": "7b302f87dd689b53ee8954549582ae30c4e4a628ce5c2437f4998878b3714bd1",
+      "baseline_sha256": "b3fa716e965c0d2bd90c1a62b177bb48a14ae0175de39b335c2ad67cc7b3f906"
+    },
+    {
+      "path": "src/arena/polish_effect_art.inc",
+      "bytes": 166516,
+      "sha256": "430a988a91e8ba6799aa916e3767ba486443cd33ba2e76674eb2aaa3c0b72f72",
+      "baseline_sha256": null
+    },
+    {
+      "path": "src/arena/presentation.c",
+      "bytes": 1063,
+      "sha256": "635e8a49175e48d109ce47f7da570cc11ba4887608f385deaa393c3aa15b5686",
+      "baseline_sha256": null
+    },
+    {
+      "path": "src/arena/presentation_moves.inc",
+      "bytes": 26310,
+      "sha256": "182ea190656a8aee03aeb24f70a1bda8f470f3098f2b4df5ae7c69d19f40a7ec",
+      "baseline_sha256": null
+    },
+    {
+      "path": "src/arena/render.c",
+      "bytes": 63172,
+      "sha256": "e62b0d1eedd9dd8b376e133f289428772e2fce7d424de5f35ea9ca888e7cf3f5",
+      "baseline_sha256": "58b8852ae06b140dc7e5b0994908283bca02fe8692f85b9729795ac0661deb1e"
+    },
+    {
+      "path": "tests/arena/test_presentation.c",
+      "bytes": 3798,
+      "sha256": "92cc650836f5d6a304efd43771e155f47bcea53aac25ce202ead80bd3ffa2eb7",
+      "baseline_sha256": null
+    },
+    {
+      "path": "tools/arena/export_polish_previews.py",
+      "bytes": 2897,
+      "sha256": "72ab6ecce8cdd7edb7ff58b087caec6e49b6c9b4942a06d343502f8b5dfb61f0",
+      "baseline_sha256": null
+    },
+    {
+      "path": "tools/arena/generate_presentation.py",
+      "bytes": 5878,
+      "sha256": "6e04fa29014ee840a9c42992d80f60001f237d5abb11520d4a7a57d9d7977d24",
+      "baseline_sha256": null
+    },
+    {
+      "path": "tools/arena/import_beam_effects.py",
+      "bytes": 9697,
+      "sha256": "c380a6c4d7dbc000e98c32d595e7c810389c7caa27595517630eaef59d9736a7",
+      "baseline_sha256": "f14efd86738dfa5abedcf262d93f385183e6bfe4397b48286b65831ae83d481f"
+    },
+    {
+      "path": "tools/arena/import_extra_effects.py",
+      "bytes": 7531,
+      "sha256": "20cee8a562765894a49fdf81213e6e0838a8e0cad3b7b725811b9c9bed3fddec",
+      "baseline_sha256": "95dbca64b9cbd73256401868e765bcc7372fb86da8ba0aa2f8da78418c4c14f5"
+    },
+    {
+      "path": "tools/arena/import_polish_effects.py",
+      "bytes": 10578,
+      "sha256": "cd407be782116100ceffe16e0ab20c1eb10a2d02c268c0ef60d45db0aded3175",
+      "baseline_sha256": null
+    },
+    {
+      "path": "tools/arena/test_presentation.py",
+      "bytes": 1063,
+      "sha256": "a3a1f22d1747c60f40c93d2bcf06095898888413960d30ed94418b97c9f6b48c",
+      "baseline_sha256": null
+    }
+  ],
+  "verification": {
+    "no_rom_built": true,
+    "native_object_compilation": {
+      "no_rom_built": true,
+      "no_link_performed": true,
+      "checks": {
+        "src/arena/render.c": {
+          "returncode": 0,
+          "object_bytes": 243480
+        },
+        "src/arena/presentation.c": {
+          "returncode": 0,
+          "object_bytes": 16944
+        },
+        "src/arena/combat.c": {
+          "returncode": 0,
+          "object_bytes": 107392
+        },
+        "src/arena/extra_effects.c": {
+          "returncode": 0,
+          "object_bytes": 12992
+        },
+        "src/arena/beam_effects.c": {
+          "returncode": 0,
+          "object_bytes": 47912
+        },
+        "src/arena/session.c": {
+          "returncode": 0,
+          "object_bytes": 109832
+        }
+      }
+    },
+    "retained_asset_rebuild_identical": true,
+    "selected_original_hashes_verified": 52,
+    "new_families": 16,
+    "new_4bpp_frames": 64,
+    "source_tile_bytes": 32768,
+    "main_obj_vram_bytes": 65344,
+    "main_obj_vram_limit": 65536,
+    "additional_reserved_obj_vram_bytes": 0,
+    "worst_additional_vblank_upload_bytes": 8192,
+    "replaced_dispatch_groups": {
+      "primitive_orb_placeholder": {
+        "moves": 35,
+        "ids": [
+          16,
+          40,
+          41,
+          42,
+          51,
+          88,
+          90,
+          123,
+          124,
+          125,
+          143,
+          155,
+          157,
+          188,
+          189,
+          198,
+          246,
+          317,
+          318,
+          328,
+          341,
+          350,
+          396,
+          403,
+          405,
+          408,
+          410,
+          411,
+          414,
+          426,
+          439,
+          441,
+          444,
+          448,
+          454
+        ],
+        "new_families": [
+          "BUG",
+          "FIGHTING",
+          "GROUND",
+          "POISON",
+          "ROCK",
+          "SOUND",
+          "WIND"
+        ]
+      },
+      "shared_swift_star_fallback_review": {
+        "moves": 32,
+        "ids": [
+          6,
+          49,
+          82,
+          84,
+          85,
+          87,
+          121,
+          131,
+          140,
+          161,
+          173,
+          192,
+          217,
+          225,
+          237,
+          253,
+          255,
+          290,
+          311,
+          353,
+          363,
+          364,
+          368,
+          376,
+          378,
+          406,
+          429,
+          434,
+          443,
+          449,
+          459,
+          460
+        ],
+        "new_families": [
+          "BOLT",
+          "DRAGON",
+          "ENERGY",
+          "SOUND",
+          "STEEL"
+        ]
+      },
+      "neutral_water_beam_fallback": {
+        "moves": 9,
+        "ids": [
+          60,
+          63,
+          76,
+          177,
+          247,
+          324,
+          351,
+          430,
+          451
+        ],
+        "new_families": [
+          "BOLT",
+          "BUG",
+          "ENERGY",
+          "GRASS_ENERGY",
+          "PSYCHIC",
+          "SHADOW_ORB",
+          "STEEL",
+          "WIND"
+        ]
+      }
+    },
+    "limits": [
+      "No native ROM link, emulator run or hardware performance measurement.",
+      "Explicit move mapping does not mean 467 unique animations or complete mechanics.",
+      "Creator and bottom-screen UI are unchanged in this source pass."
+    ],
+    "portable_checks": {
+      "presentation": "Passed under AddressSanitizer and UndefinedBehaviorSanitizer",
+      "combat_polish": "Passed existing held-guard, heavy-chip, beam/projectile clash, critical damage and movement checks"
+    }
+  }
+}
