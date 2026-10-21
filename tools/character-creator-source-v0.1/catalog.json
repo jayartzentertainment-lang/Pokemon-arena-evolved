@@ -1,0 +1,1084 @@
+{
+  "schema_version": 1,
+  "canvas": [
+    128,
+    192
+  ],
+  "cell": [
+    32,
+    48
+  ],
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "layer_order": [
+    "body",
+    "bottoms",
+    "tops",
+    "hair",
+    "headgear",
+    "accessories"
+  ],
+  "default_selection": {
+    "body": "A",
+    "skin": "0",
+    "bottoms": "1/0",
+    "tops": "1/0",
+    "hair": "1/0",
+    "headgear": "0",
+    "accessories": "0"
+  },
+  "bodies": {
+    "A": {
+      "label": "Body A",
+      "skins": {
+        "0": {
+          "path": "sources/base graphics/overworld walk/0A.png",
+          "sha256": "600e2c446326d15a79349dab9c7f2618add631ef8c61aea2d4f2c3a3df1e2fd6"
+        },
+        "1": {
+          "path": "sources/base graphics/overworld walk/1A.png",
+          "sha256": "cc293ded584b19fb291fd44681fa05a9032bd1a5fe6513116d6ce20c0f3c5106"
+        },
+        "2": {
+          "path": "sources/base graphics/overworld walk/2A.png",
+          "sha256": "aaa13afd57900a4682d8b028855ed31ccbc2aa21da266050c09f36231a6a15d5"
+        },
+        "3": {
+          "path": "sources/base graphics/overworld walk/3A.png",
+          "sha256": "993854ee9e9cce768e198cdb92afb9cc7481ad5c3c75d6fe736d47e1aed67712"
+        }
+      }
+    },
+    "B": {
+      "label": "Body B",
+      "skins": {
+        "0": {
+          "path": "sources/base graphics/overworld walk/0B.png",
+          "sha256": "9847ad5b01c37c943b9fefe711786ffac4b7740455007b98f49dbd27d0686c98"
+        },
+        "1": {
+          "path": "sources/base graphics/overworld walk/1B.png",
+          "sha256": "1094410db2b17abd4f89be5bc4b3d02dbd713cdddc36ebad3017a8d4f8670ef0"
+        },
+        "2": {
+          "path": "sources/base graphics/overworld walk/2B.png",
+          "sha256": "be6636a47ae0efb028a81677837f82e160c2b34a715b8a157193076e5d2305d3"
+        },
+        "3": {
+          "path": "sources/base graphics/overworld walk/3B.png",
+          "sha256": "38ec11b73dbce8a8d672722e269dbb702d21449787cfeb99a81d41ccd696e544"
+        }
+      }
+    }
+  },
+  "layers": {
+    "bottoms": {
+      "0": {
+        "label": "None",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/0A.png",
+            "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/0B.png",
+            "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/0": {
+        "label": "Bottoms 1/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/0A.png",
+            "sha256": "c1ab55e9b873540f5e059a8e3c676a4666dfc34e29464b0e2632eb8a44473b8b"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/0B.png",
+            "sha256": "2ab5c861838a95fd4468d81e8fb66f917b117cb82c9235247335a9c7a31ef27c"
+          }
+        },
+        "offsets": {}
+      },
+      "1/1": {
+        "label": "Bottoms 1/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/1A.png",
+            "sha256": "4852c4b3ae08396ad5ec9b8156becf29956b5930099cd9bd7dd35a1d21cf8549"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/1B.png",
+            "sha256": "dcfada2f3649885ab29f37e28daf82735b71a55fa22b607475cc6366249a2629"
+          }
+        },
+        "offsets": {}
+      },
+      "1/2": {
+        "label": "Bottoms 1/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/2A.png",
+            "sha256": "ab31440498ca8ae7ccc5f740e5af2aabed7987cce1497ff44965823f7c355872"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/2B.png",
+            "sha256": "4f03f880bc4ed38ba2da8eeb15cf67e2758d24df275438a432a00ae88c268d42"
+          }
+        },
+        "offsets": {}
+      },
+      "1/3": {
+        "label": "Bottoms 1/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/3A.png",
+            "sha256": "036880fa1f1fb5acf4f262a639c5c036bcb2e37aea9a48a6f224c6be2d92e51e"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/3B.png",
+            "sha256": "28dd38f252ed8ff53c5c792b964ed37334e85193c98b96f3aca4a60ad1acce68"
+          }
+        },
+        "offsets": {}
+      },
+      "1/4": {
+        "label": "Bottoms 1/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/4A.png",
+            "sha256": "108240f38e483d9b9906de2a2f61391927e17057fa0863ef69280f0015692c6b"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/4B.png",
+            "sha256": "47fab338ee1d39660b661346bfa3cf4d88111d8dc6e511381ee4aa503f194080"
+          }
+        },
+        "offsets": {}
+      },
+      "1/5": {
+        "label": "Bottoms 1/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/1/5A.png",
+            "sha256": "ab1cb4751d2f91fb6747096f41898d8337e68e146d553d3d69ecbb5ce1f8f2bb"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/1/5B.png",
+            "sha256": "07a3b7a12eb99b24e62b95014eed3ff7cfee01c2f2bcb8a607e93fc31c9449f8"
+          }
+        },
+        "offsets": {}
+      },
+      "2": {
+        "label": "Bottoms 2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/2A.png",
+            "sha256": "786957e131c6eb8fa21529af483a387b10936d75d0efe61fa41c795279d92a7c"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/2B.png",
+            "sha256": "735f0bb11b7894ab2911b8a42f1f9dd45a8a5fcf1e4c10dd321b6213b23ce574"
+          }
+        },
+        "offsets": {}
+      },
+      "3": {
+        "label": "Bottoms 3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/3A.png",
+            "sha256": "f9f4758151c159e9f367260fac00c9687cc0f7510b6edba9f7d3ba344be041a6"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/3B.png",
+            "sha256": "5e965e090b79185ec3d70c66b6e6b692b4dd7fc65544249dfac5573b5bcab22d"
+          }
+        },
+        "offsets": {}
+      },
+      "4/0": {
+        "label": "Bottoms 4/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/4/0A.png",
+            "sha256": "e1c0b80d77a88ed94016a8a9143fb5ba22bc437d8a84f1270ed78338d3b4dc80"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/4/0B.png",
+            "sha256": "57564d159cd56b0119964e244f1b07d15b7c3439cb3cde20a3b7713fdf1b04f6"
+          }
+        },
+        "offsets": {}
+      },
+      "4/1": {
+        "label": "Bottoms 4/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/4/1A.png",
+            "sha256": "0b489118bade3aefa7c4832867fb481af83a82ac8a6d63520a30d46fe9dba6c6"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/4/1B.png",
+            "sha256": "87ab451efc59b9a787d77d80de66589019618d8050241af60c307f7407279449"
+          }
+        },
+        "offsets": {}
+      },
+      "4/2": {
+        "label": "Bottoms 4/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/4/2A.png",
+            "sha256": "0085c5b0909b671150886205cbab3f10d264b0c68dcf1c580ea8af10818be05a"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/4/2B.png",
+            "sha256": "56b7cd00ec8b89b23bda349b5a3557600d440edd48c0c3fbc0f0cd62f617fdbd"
+          }
+        },
+        "offsets": {}
+      },
+      "4/3": {
+        "label": "Bottoms 4/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/bottoms/4/3A.png",
+            "sha256": "da06375894f3d99958f6a18c56dd6f08430927ad41e6cd73bc4c19e055b55392"
+          },
+          "B": {
+            "path": "sources/overworld walk/bottoms/4/3B.png",
+            "sha256": "fca23ee1e33193bf8723e162656439efc5eef908bf2d4c1dd3ded3e91c695bbb"
+          }
+        },
+        "offsets": {}
+      }
+    },
+    "tops": {
+      "0": {
+        "label": "None",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/0A.png",
+            "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/0B.png",
+            "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/0": {
+        "label": "Tops 1/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/0A.png",
+            "sha256": "23ac21e970b8279031752da83c77a00c2d2141e034710c261ea91908dc4b4b26"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/0B.png",
+            "sha256": "bec71df97325ff35df0363a67842d36b1f4c33de2dccd660d99e464ad5cd9e99"
+          }
+        },
+        "offsets": {}
+      },
+      "1/1": {
+        "label": "Tops 1/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/1A.png",
+            "sha256": "5599caed8e867f6e3db354e2690bd7537e5f294e1cdaa1a8176f61a3d06a0ef0"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/1B.png",
+            "sha256": "5d9a6d7572cc2cff8084c7295730bf099770706e7ac2f3e6c4ace002aace7ec2"
+          }
+        },
+        "offsets": {}
+      },
+      "1/2": {
+        "label": "Tops 1/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/2A.png",
+            "sha256": "4f38e0c939be9a15d4a42e19953d0cd6689e98f05427a5b0d25f5cf059a68895"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/2B.png",
+            "sha256": "994617a97adb76ad58672303869db3dbaed0c0307d2cc775ffe13c9cc1b4ca00"
+          }
+        },
+        "offsets": {}
+      },
+      "1/3": {
+        "label": "Tops 1/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/3A.png",
+            "sha256": "ad4646f00414c2ab127e4623380e86e05b4854ed4231bf4d7ac333b8e056dad2"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/3B.png",
+            "sha256": "a839ab2b62ed44344bc68b304d9a465d88097e3092886a0599abdb48cc4f934a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/4": {
+        "label": "Tops 1/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/4A.png",
+            "sha256": "ad051ff03fe3bb84657694f7b1b69a831f91a71164ff4c696b44b9b48105d765"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/4B.png",
+            "sha256": "7eaa66cc3e864de0dcdd8958bde05af21530cf87d8a6a5fcdf6827299a9a724e"
+          }
+        },
+        "offsets": {}
+      },
+      "1/5": {
+        "label": "Tops 1/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/1/5A.png",
+            "sha256": "9bf0cb406521c66217432d156f139a9654ee96de722b648eb4a547ece6adba83"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/1/5B.png",
+            "sha256": "878d34e147ffd7b8b09f09f8e1c556034cedf9061335f021f3b4fbfad1116456"
+          }
+        },
+        "offsets": {}
+      },
+      "2": {
+        "label": "Tops 2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/2A.png",
+            "sha256": "9eeef49731dbd670d54b4ffe0e1517a5316a33c2ae46c2d52811756606b3e5a0"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/2B.png",
+            "sha256": "b46b2ae72fee858e78fbb65c4fb4467d5dc19b8178962110ec36e90d4500f211"
+          }
+        },
+        "offsets": {}
+      },
+      "3/0": {
+        "label": "Tops 3/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/3/0A.png",
+            "sha256": "de3a3fea317d3077386f9df658ba77d060c82f08b40fac124489f58af406a0ea"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/3/0B.png",
+            "sha256": "c85fe327afb288c4cebc1be3f28a6b2be307a67f5acdca187372d4d59b5f5905"
+          }
+        },
+        "offsets": {}
+      },
+      "3/1": {
+        "label": "Tops 3/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/3/1A.png",
+            "sha256": "9a1067ef04df20b188d19429479f5de68909508cff989aaa618687a44570bd44"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/3/1B.png",
+            "sha256": "6acf3dad0fbb4abecc925b4f4b0d76b4b2106ad2f434f04380b9d1e29fa85daa"
+          }
+        },
+        "offsets": {}
+      },
+      "3/2": {
+        "label": "Tops 3/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/3/2A.png",
+            "sha256": "03e7073a290f87d7abd6ac85d27b68cc88853d455d3bf47fb0af07c12ac8fce9"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/3/2B.png",
+            "sha256": "3d4c04cd32d96e0d348f9a9378c19357b365bf323e2dd59f117d21f6923f512a"
+          }
+        },
+        "offsets": {}
+      },
+      "4/0": {
+        "label": "Tops 4/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/4/0A.png",
+            "sha256": "8425ea9f3f9aaec09134118bd3ec4db76eb37dd11aebfb2b46222371ca220e32"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/4/0B.png",
+            "sha256": "92e59099ef99bf9124e8f5d65b26c39f1e4dee3c564815ce2c159fe967d2a330"
+          }
+        },
+        "offsets": {}
+      },
+      "4/1": {
+        "label": "Tops 4/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/4/1A.png",
+            "sha256": "8d02d0dc3d2b8d6933b2678fe7947bb2d9c74203a8fbcacd1d776b8914aad710"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/4/1B.png",
+            "sha256": "04e2403f724a3542c682d8ab621cfd1ed858fde8b623704872a23d92265e8df0"
+          }
+        },
+        "offsets": {}
+      },
+      "4/2": {
+        "label": "Tops 4/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/4/2A.png",
+            "sha256": "2bce8433d973cae1175e8e469cb3a43cb82f1af3e7cbec5dd6bb90b79202ce51"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/4/2B.png",
+            "sha256": "d5d8b1eac1b8de182fb8f4f7dd8ad8d735356b805b88781a6ad8346868903388"
+          }
+        },
+        "offsets": {}
+      },
+      "4/3": {
+        "label": "Tops 4/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/tops/4/3A.png",
+            "sha256": "717066bc2b1f5d72206a8007024d75028433e6eff8d041f6d8e2eb1e04cc3f08"
+          },
+          "B": {
+            "path": "sources/overworld walk/tops/4/3B.png",
+            "sha256": "f897951ec2ac1c99b68284d953cdec99a1d49053698cb9d4c47fec5d1e84a22e"
+          }
+        },
+        "offsets": {}
+      }
+    },
+    "hair": {
+      "0": {
+        "label": "None",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/0A.png",
+            "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/0B.png",
+            "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/0": {
+        "label": "Hair 1/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/0A.png",
+            "sha256": "b072631422839b2154d6805414bf1d25c9593e5a82d8ba88c7495df97c4a6003"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/0B.png",
+            "sha256": "71638e619a77a29080cbd62261ebb25c82168f6103a656f3ff25948ad68a45d4"
+          }
+        },
+        "offsets": {}
+      },
+      "1/1": {
+        "label": "Hair 1/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/1A.png",
+            "sha256": "be0ef7ba314b5c811545a3694952a307e2eb5b39314ffd5cd9c3d37b14cf004c"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/1B.png",
+            "sha256": "759f2fffc6e921e96c63794288b83b8afb163c25de5a30f3ecde6193cb63d702"
+          }
+        },
+        "offsets": {}
+      },
+      "1/2": {
+        "label": "Hair 1/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/2A.png",
+            "sha256": "65708d119c9830302beebbc28b44f7f2df543b764ce3f6c5da34295a5a52a575"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/2B.png",
+            "sha256": "a9b8a85b0bb090717dd5d4b246c58a1552e5bd0f2b3669ee8904fdf6f37a958d"
+          }
+        },
+        "offsets": {}
+      },
+      "1/3": {
+        "label": "Hair 1/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/3A.png",
+            "sha256": "b6e6be1839be782d5b619e6a5780b331310bef0cafb93b582fb50ce1a46acefb"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/3B.png",
+            "sha256": "7ba65afd1cc0cc8b5c205c6c97330ed05d0936688b720ff2414560359b5029f4"
+          }
+        },
+        "offsets": {}
+      },
+      "1/4": {
+        "label": "Hair 1/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/4A.png",
+            "sha256": "c69262f9cd28bb1dff153bb4473688e46c1470c9ab34870cd098efabaaf4dc9b"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/4B.png",
+            "sha256": "0d2dc512e93b59367aee80ca821fe11969bab743e9bbfe8213b6f8a42bbd451a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/5": {
+        "label": "Hair 1/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/5A.png",
+            "sha256": "a98444c6d79107625bda8a57bc68c9cd31f4e3acfefe295650c22690ece0ecb7"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/5B.png",
+            "sha256": "d904fcce5958522660d0a8295f57eab48dbce7bea758a3f8120c6f0c01524f38"
+          }
+        },
+        "offsets": {}
+      },
+      "1/6": {
+        "label": "Hair 1/6",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/1/6A.png",
+            "sha256": "90346a9415d117ed0d04699d1a1e6fd92747c9248c8d2c439b9ed447e39c8a32"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/1/6B.png",
+            "sha256": "675129a45b5951f7b88aa1df3ff7d4c30bd45bbe7552c1715384a5ff8ec247a8"
+          }
+        },
+        "offsets": {}
+      },
+      "2/0": {
+        "label": "Hair 2/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/0A.png",
+            "sha256": "4b54e7cfe80c5e6e9b5b0cc8a91c585ae8faddcde0a42d243f187e49bb0e280f"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/0B.png",
+            "sha256": "c01255f9bf5f9c9498ec6bc9f8a9a25c83f845db74fbc2938f5401cbe0fe52ea"
+          }
+        },
+        "offsets": {}
+      },
+      "2/1": {
+        "label": "Hair 2/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/1A.png",
+            "sha256": "eff5b4c8eb0411709adfdb77186c934eff55b3b397a5ec40f1fcafe8abf6a292"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/1B.png",
+            "sha256": "60054bf0f8653c55f119fe85e3aaef63d7037f4d9f0e02fc07f3c964b58355d2"
+          }
+        },
+        "offsets": {}
+      },
+      "2/2": {
+        "label": "Hair 2/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/2A.png",
+            "sha256": "24aa6aead293f211840ef4ef44ac6f91e880c244753d8a686551b677e6f62c8b"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/2B.png",
+            "sha256": "21d6ea08cf14dae7965da3c2c0524f1e7d5408162d467ba2d94513fa8067416f"
+          }
+        },
+        "offsets": {}
+      },
+      "2/3": {
+        "label": "Hair 2/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/3A.png",
+            "sha256": "bb0c8c6dba458972c416e44c789ec3bfcb1bbc5c4c0638e9442cae8dd2a7a79a"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/3B.png",
+            "sha256": "f09cd9b1e4c3c3f9ebbe613fd29b8a82226786b6af0e84d19b841faf48928fe4"
+          }
+        },
+        "offsets": {}
+      },
+      "2/4": {
+        "label": "Hair 2/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/4A.png",
+            "sha256": "a89d8726e93fdf345e6f641041aa3a2ae62b64c8fef52ac7cf57ce78f880a22e"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/4B.png",
+            "sha256": "0d2741544c3efbaeae0c4653058b42dc52ac31044a647a30b8c0c09f68bf70ab"
+          }
+        },
+        "offsets": {}
+      },
+      "2/5": {
+        "label": "Hair 2/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/5A.png",
+            "sha256": "447d58d417685b48693854fc57241d08592be1251b23f000651127eebdb43251"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/5B.png",
+            "sha256": "b8098167af33e5b4c95f5999f95a1198a138329bacc0f76f927a13369647a07c"
+          }
+        },
+        "offsets": {}
+      },
+      "2/6": {
+        "label": "Hair 2/6",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/2/6A.png",
+            "sha256": "529298a235def0f994e501869824557d1bcf63c908b02bbe6ba897df870d8f96"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/2/6B.png",
+            "sha256": "538136136fceec8983f5c7fbff9ea062455d61272392cec6e5d0357d663234a4"
+          }
+        },
+        "offsets": {}
+      },
+      "3/0": {
+        "label": "Hair 3/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/0A.png",
+            "sha256": "87cd9f61c724e631b1a1c2e7b22fbc78777d2b5a7b68df0b41212aabce773b93"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/0B.png",
+            "sha256": "ea5e4c20642240a2b5993ddd6fe2bf20239926da5a0012013152dbeb1953626b"
+          }
+        },
+        "offsets": {}
+      },
+      "3/1": {
+        "label": "Hair 3/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/1A.png",
+            "sha256": "bde2b3423cf6b80a910fed75c1b997871b31f83dcbb51b5c32715fe41eedcdf8"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/1B.png",
+            "sha256": "119c740a15ba8bf044ccbfdd8e41c63770ada8d214b203461e1451c652736c55"
+          }
+        },
+        "offsets": {}
+      },
+      "3/2": {
+        "label": "Hair 3/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/2A.png",
+            "sha256": "4ebd5be498e5d0dfdfebeb0a9de5aad7263cc95795a938649e61d01d38fd3269"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/2B.png",
+            "sha256": "2ca625975cfc68df60c8ca23a09acc77e758972c24abf21b45493cf36357cc2b"
+          }
+        },
+        "offsets": {}
+      },
+      "3/3": {
+        "label": "Hair 3/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/3A.png",
+            "sha256": "93b6abf66ab8a5ed0e809a9db92f00710c0bc5f7072cd6e13c3347894976f153"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/3B.png",
+            "sha256": "bdc9c054d4e6b894fef6dc05aeef36ab84c8a389e5653af8a055fb0178201b66"
+          }
+        },
+        "offsets": {}
+      },
+      "3/4": {
+        "label": "Hair 3/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/4A.png",
+            "sha256": "40cd8e02112f69e7727d530ddd6235d808607765ede35c208cd7c3c0bae67f29"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/4B.png",
+            "sha256": "5a845c6255d258011f2f95e0dcf58b031a30f3c1087625031e9cec3ddbfd0b3e"
+          }
+        },
+        "offsets": {}
+      },
+      "3/5": {
+        "label": "Hair 3/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/5A.png",
+            "sha256": "8d4fb857dc9d73988085f5dcd696c48bdeeb63183bcdf0953eb8fd146fee54e8"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/5B.png",
+            "sha256": "d985b7ea4e5c7d4843be96207564746d515a473a5103442c85a88fb95f26b432"
+          }
+        },
+        "offsets": {}
+      },
+      "3/6": {
+        "label": "Hair 3/6",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/3/6A.png",
+            "sha256": "f48d636c88fdda51e22dbfc43cf947ff714bef6b8c62ef70273d189157142a8e"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/3/6B.png",
+            "sha256": "d54046124adc8398e2c2b008be2ebc0536c3d7383fe9f0ec157f67ff79506862"
+          }
+        },
+        "offsets": {}
+      },
+      "4/0": {
+        "label": "Hair 4/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/0A.png",
+            "sha256": "c1d9459ba2fe1e923a5969bc78a1921a06319d7035c511ffe5979dd053df9ae3"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/0B.png",
+            "sha256": "b963d03307c96d2d3fda1ea974da04f317427e45410cdbd7b53070126db651aa"
+          }
+        },
+        "offsets": {}
+      },
+      "4/1": {
+        "label": "Hair 4/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/1A.png",
+            "sha256": "b368ade56c487313ba58c7e3128cb1bf99fe20f9f9f8985d550669af56a57706"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/1B.png",
+            "sha256": "152699756d046e4af9c5d0cda76c44e9dc3b830cdb580c8ac23c77940381012b"
+          }
+        },
+        "offsets": {}
+      },
+      "4/2": {
+        "label": "Hair 4/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/2A.png",
+            "sha256": "5e5c74fb0f0e322154d5a1905c0f5154a1c31d6546c5f4c9ce1fe09f9970cfc2"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/2B.png",
+            "sha256": "708602e2962c0724893406008551d434f247758e96f2ff1eaa2c692f1bcb8a49"
+          }
+        },
+        "offsets": {}
+      },
+      "4/3": {
+        "label": "Hair 4/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/3A.png",
+            "sha256": "cd6fc2983a475e4a509b3851407b98da9c8043b81ac8f518f8f816a61fb175b4"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/3B.png",
+            "sha256": "fdc39749627cff582cf0c2737d765a1a11aac2fc4c58e887fc382ac52a755041"
+          }
+        },
+        "offsets": {}
+      },
+      "4/4": {
+        "label": "Hair 4/4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/4A.png",
+            "sha256": "e1a56344298738411d6c935d3b7df636ab796c8e65c3d3aedd6438610f1115f4"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/4B.png",
+            "sha256": "c9a32ff545bf276ef074974baa58e40d80ef8048e582b5a54337e8682efd9d23"
+          }
+        },
+        "offsets": {}
+      },
+      "4/5": {
+        "label": "Hair 4/5",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/5A.png",
+            "sha256": "8907930bad32613f38f8fdbb16dfbee66a44fde5c0f1f080bdc73123dfeba9f2"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/5B.png",
+            "sha256": "11d043063cebdf43b3f38314e0eb9ffe4e6a3f03211641eeb61b203bb0c099c7"
+          }
+        },
+        "offsets": {}
+      },
+      "4/6": {
+        "label": "Hair 4/6",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/hair/4/6A.png",
+            "sha256": "588435c5a5f71a68514778f44efb338ed600cb64c99b3d3925758b0bd3168264"
+          },
+          "B": {
+            "path": "sources/overworld walk/hair/4/6B.png",
+            "sha256": "686fed89bb98d35c892f689873f49e934f7b4f8b9d771e36fc00a4934063a619"
+          }
+        },
+        "offsets": {}
+      }
+    },
+    "headgear": {
+      "0": {
+        "label": "None",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/0A.png",
+            "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/0B.png",
+            "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a"
+          }
+        },
+        "offsets": {}
+      },
+      "1/0": {
+        "label": "Headgear 1/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/1/0A.png",
+            "sha256": "cec244ebfacbbd353ecb7ea1283c31b8056bfd9f0211359d8c7071d0b61a3fe0"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/1/0B.png",
+            "sha256": "cec244ebfacbbd353ecb7ea1283c31b8056bfd9f0211359d8c7071d0b61a3fe0"
+          }
+        },
+        "offsets": {}
+      },
+      "1/1": {
+        "label": "Headgear 1/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/1/1A.png",
+            "sha256": "8aa4c540372aea115a0854849b3e10ecd97f168a3c21e8d32e6a893b34254036"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/1/1B.png",
+            "sha256": "8aa4c540372aea115a0854849b3e10ecd97f168a3c21e8d32e6a893b34254036"
+          }
+        },
+        "offsets": {}
+      },
+      "1/2": {
+        "label": "Headgear 1/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/1/2A.png",
+            "sha256": "4ba5b68616070b153cd1848ce96755d4ac9433db49683578a1eadb02b3808814"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/1/2B.png",
+            "sha256": "4ba5b68616070b153cd1848ce96755d4ac9433db49683578a1eadb02b3808814"
+          }
+        },
+        "offsets": {}
+      },
+      "2/0": {
+        "label": "Headgear 2/0",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/2/0A.png",
+            "sha256": "b19bc8d3bfb9c691a39b3060399f14b90de2409826f3668781fd4c7876a131b0"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/2/0B.png",
+            "sha256": "ab05ec4c2d2bf5b9dfed1c785119cf906b1c91604c7ef23ee465f5d69e8f43ea"
+          }
+        },
+        "offsets": {}
+      },
+      "2/1": {
+        "label": "Headgear 2/1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/2/1A.png",
+            "sha256": "281d8e059440370603ef88d6e04a26b6b20264931e74357622db8013df201dc9"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/2/1B.png",
+            "sha256": "1241d4c65754b07636f87f7a125c6c2375e4703e789f9bb854a2700d16f4bd1a"
+          }
+        },
+        "offsets": {}
+      },
+      "2/2": {
+        "label": "Headgear 2/2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/2/2A.png",
+            "sha256": "ab4aebf2d9de2768fb4027fbc3367c9adf3caaac09af0322c841d410c267c53a"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/2/2B.png",
+            "sha256": "62337106be97ca8ef86c05957000f1be35b009ac5800c8ccff4e75142286d13e"
+          }
+        },
+        "offsets": {}
+      },
+      "2/3": {
+        "label": "Headgear 2/3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/2/3A.png",
+            "sha256": "9d8b68350181da38d82a847e658af0c3f7e93fdc194a3d1472179e8d939ada2c"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/2/3B.png",
+            "sha256": "7aca04f272a43addb084ba35163a9584dc650d6ad48c3ad31c33b34d0dd5dfeb"
+          }
+        },
+        "offsets": {}
+      },
+      "3": {
+        "label": "Headgear 3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/3A.png",
+            "sha256": "7ca2735be5d0f7dafcfe53baef0d403098a6d3018e20932dcceae86f9990a05b"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/3B.png",
+            "sha256": "7ca2735be5d0f7dafcfe53baef0d403098a6d3018e20932dcceae86f9990a05b"
+          }
+        },
+        "offsets": {}
+      },
+      "4": {
+        "label": "Headgear 4",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/headgear/4A.png",
+            "sha256": "1ea89d20e4c0eabbc3f7314483e650805ad7b89bfd00026d53ab9d46dc480110"
+          },
+          "B": {
+            "path": "sources/overworld walk/headgear/4B.png",
+            "sha256": "1ea89d20e4c0eabbc3f7314483e650805ad7b89bfd00026d53ab9d46dc480110"
+          }
+        },
+        "offsets": {}
+      }
+    },
+    "accessories": {
+      "0": {
+        "label": "None",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/accessories/0A.png",
+            "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a"
+          },
+          "B": {
+            "path": "sources/overworld walk/accessories/0B.png",
+            "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a"
+          }
+        },
+        "offsets": {}
+      },
+      "1": {
+        "label": "Accessories 1",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/accessories/1A.png",
+            "sha256": "99ea02d175c43af9dd59a43e620684c18668471d12c1f6ce4599610bba4d07d1"
+          },
+          "B": {
+            "path": "sources/overworld walk/accessories/1B.png",
+            "sha256": "99ea02d175c43af9dd59a43e620684c18668471d12c1f6ce4599610bba4d07d1"
+          }
+        },
+        "offsets": {}
+      },
+      "2": {
+        "label": "Accessories 2",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/accessories/2A.png",
+            "sha256": "a0c4c92584a0780e57b2c0dfaf6314e95dd79ca857117630eb12c6ba2150d848"
+          },
+          "B": {
+            "path": "sources/overworld walk/accessories/2B.png",
+            "sha256": "ccd8c0dca810e1dae5b724db6c2c27713a7d01be136fa43f5ff9af89e9946f3c"
+          }
+        },
+        "offsets": {}
+      },
+      "3": {
+        "label": "Accessories 3",
+        "files": {
+          "A": {
+            "path": "sources/overworld walk/accessories/3A.png",
+            "sha256": "1e6cdf809eca77a6d9269bd8d49ce91dd3ac75cacf1327eaa5289c1a7db9d2f4"
+          },
+          "B": {
+            "path": "sources/overworld walk/accessories/3B.png",
+            "sha256": "a147138963a2875ebebea42bf8809560c7a9adcd3deef8496eb48b6a913d01a4"
+          }
+        },
+        "offsets": {}
+      }
+    }
+  }
+}

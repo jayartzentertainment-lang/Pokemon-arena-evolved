@@ -1,0 +1,36 @@
+{
+  "scope": "Standalone source-art tool only",
+  "rom_build": false,
+  "game_integration": false,
+  "emulator_or_gameplay": false,
+  "gui_run": false,
+  "checks": {
+    "CLI_exports": [
+      {
+        "body": "A",
+        "exit_code": 0,
+        "visible_rgb_colours": 13,
+        "partial_alpha_pixels": 0,
+        "sources_match_original": true
+      },
+      {
+        "body": "B",
+        "exit_code": 0,
+        "visible_rgb_colours": 17,
+        "partial_alpha_pixels": 0,
+        "sources_match_original": true
+      }
+    ],
+    "all_158_source_files_byte_identical": true,
+    "transparent_196px_sheet_normalization": true,
+    "fixed_grid_equals_unshifted_source_over": true,
+    "per_direction_offsets": true,
+    "clipping_rejected": true,
+    "parent_directory_traversal_rejected": true
+  },
+  "limits": [
+    "GUI source provided but not run in this headless environment",
+    "No DS palette, native32px rig, savedata or gameplay integration",
+    "Not every artwork combination visually reviewed"
+  ]
+}
