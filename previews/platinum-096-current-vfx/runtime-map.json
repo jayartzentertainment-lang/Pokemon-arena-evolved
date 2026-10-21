@@ -1,0 +1,5398 @@
+{
+  "version": "0.9.6",
+  "scope": "Current source dispatch for canonical equipped move IDs1..467. Source inspection only; no build/test/emulator. Actual in-battle frame placement still depends on combat state, actor pose, direction and camera.",
+  "source_evidence": [
+    "src/arena/vendor/arena_moves.c:ArenaMoves_Get/ArenaMoves_Beam",
+    "src/arena/move_data.c:sMoveInfo/sFallbackProfiles",
+    "src/arena/render.c:EffectFamily/Beam/Actor/ArenaRender_Draw/ArenaRender_New",
+    "src/arena/v096_effect_art.inc:ArenaV096_BaseFrame/ArenaV096_Frame",
+    "src/arena/combat.c:SpawnProjectile/ActionStep",
+    "src/arena/session.c:PracticeTeam",
+    "src/arena/combat_native_rules.inc:sNativeRules plus combat.c:ApplyStatus for event trigger examples"
+  ],
+  "priority_findings": [
+    "15 sustained beam move IDs; only4 source strip styles.",
+    "Flamethrower, FireBlast, SacredFire share MEDIUM/THIN; HydroPump uses WATER; IceBeam/AuroraBeam use ICE.",
+    "Nine other beam identities use WATER pixels recolored to two neutral gray/white colors.",
+    "WaterGun/WaterPulse/Surf/BubbleBeam share WATER atlas8..11; they do not use HydroPump beam art.",
+    "Any projectile with ARENA_VIS_STAR uses Swift sprite before type dispatch.",
+    "Old arena_extra_tiles/arena_extra_palette are compiled historical assets but the current renderer loads arena_v096_tiles/arena_v096_palette instead.",
+    "Manifest compatible_moves and canonical_move_candidates are not runtime dispatch."
+  ],
+  "counts": {
+    "canonical_nonzero_move_ids": 467,
+    "primary_assignments": 467,
+    "sustained_beams": 15,
+    "hand_authored_profiles": 94
+  },
+  "lab_blastoise": {
+    "default_species_slots": [
+      "Charizard",
+      "Gyarados",
+      "Blastoise",
+      "Lapras"
+    ],
+    "default_free_mode_moves": [
+      {
+        "id": 352,
+        "name": "Water Pulse",
+        "constant": "MOVE_WATER_PULSE"
+      },
+      {
+        "id": 56,
+        "name": "Hydro Pump",
+        "constant": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "id": 33,
+        "name": "Tackle",
+        "constant": "MOVE_TACKLE"
+      },
+      {
+        "id": 129,
+        "name": "Swift",
+        "constant": "MOVE_SWIFT"
+      }
+    ],
+    "default_free_mode_runtime_art": [
+      "ATLAS_WATER",
+      "BEAM_WATER",
+      "MOTION_RUSH with HIT contacts",
+      "SWIFT_STAR"
+    ],
+    "clash_mode_foe_blastoise_moves": [
+      {
+        "id": 56,
+        "name": "Hydro Pump",
+        "constant": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "id": 56,
+        "name": "Hydro Pump",
+        "constant": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "id": 33,
+        "name": "Tackle",
+        "constant": "MOVE_TACKLE"
+      },
+      {
+        "id": 129,
+        "name": "Swift",
+        "constant": "MOVE_SWIFT"
+      }
+    ],
+    "note": "PracticeTeam obtains native primary type; Blastoise type11 selects WaterPulse in beamByType despite that array name. Slot1 HydroPump; slot2 Tackle; slot3 Swift. Clash mode foes instead get HydroPump in slot0."
+  },
+  "key_moves": [
+    {
+      "id": 53,
+      "name": "Flamethrower",
+      "constant": "MOVE_FLAMETHROWER",
+      "runtime_art": "BEAM_FIRE_THIN_MEDIUM",
+      "profile_kind": "ARENA_MOVE_CONE",
+      "visual_enum": "ARENA_VIS_EMBER",
+      "profile_source": "hand_authored",
+      "windup": 24,
+      "active": 64,
+      "recovery": 105,
+      "range": 120,
+      "note": "Sustained 4-frame beam strip, not the v096 contact/projectile atlas."
+    },
+    {
+      "id": 56,
+      "name": "Hydro Pump",
+      "constant": "MOVE_HYDRO_PUMP",
+      "runtime_art": "BEAM_WATER",
+      "profile_kind": "ARENA_MOVE_CONE",
+      "visual_enum": "ARENA_VIS_WATER",
+      "profile_source": "hand_authored",
+      "windup": 30,
+      "active": 48,
+      "recovery": 100,
+      "range": 120,
+      "note": "Sustained 4-frame beam strip, not the v096 contact/projectile atlas."
+    },
+    {
+      "id": 55,
+      "name": "Water Gun",
+      "constant": "MOVE_WATER_GUN",
+      "runtime_art": "ATLAS_WATER",
+      "profile_kind": "ARENA_MOVE_PROJECTILE",
+      "visual_enum": "ARENA_VIS_WATER",
+      "profile_source": "hand_authored",
+      "windup": 10,
+      "active": 1,
+      "recovery": 31,
+      "range": 160,
+      "note": "Shares the WATER projectile atlas; not a sustained beam."
+    },
+    {
+      "id": 352,
+      "name": "Water Pulse",
+      "constant": "MOVE_WATER_PULSE",
+      "runtime_art": "ATLAS_WATER",
+      "profile_kind": "ARENA_MOVE_PROJECTILE",
+      "visual_enum": "ARENA_VIS_WATER",
+      "profile_source": "generated_fallback",
+      "windup": 15,
+      "active": 1,
+      "recovery": 42,
+      "range": 176,
+      "note": "Shares the WATER projectile atlas; not a sustained beam."
+    },
+    {
+      "id": 57,
+      "name": "Surf",
+      "constant": "MOVE_SURF",
+      "runtime_art": "ATLAS_WATER",
+      "profile_kind": "ARENA_MOVE_PROJECTILE",
+      "visual_enum": "ARENA_VIS_WATER",
+      "profile_source": "hand_authored",
+      "windup": 22,
+      "active": 1,
+      "recovery": 75,
+      "range": 186,
+      "note": "Shares the WATER projectile atlas; not a sustained beam."
+    },
+    {
+      "id": 61,
+      "name": "BubbleBeam",
+      "constant": "MOVE_BUBBLE_BEAM",
+      "runtime_art": "ATLAS_WATER",
+      "profile_kind": "ARENA_MOVE_PROJECTILE",
+      "visual_enum": "ARENA_VIS_WATER",
+      "profile_source": "generated_fallback",
+      "windup": 16,
+      "active": 1,
+      "recovery": 43,
+      "range": 176,
+      "note": "Shares the WATER projectile atlas; not a sustained beam."
+    },
+    {
+      "id": 58,
+      "name": "Ice Beam",
+      "constant": "MOVE_ICE_BEAM",
+      "runtime_art": "BEAM_ICE",
+      "profile_kind": "ARENA_MOVE_CONE",
+      "visual_enum": "ARENA_VIS_GUST",
+      "profile_source": "hand_authored",
+      "windup": 19,
+      "active": 40,
+      "recovery": 80,
+      "range": 120,
+      "note": "Sustained 4-frame beam strip, not the v096 contact/projectile atlas."
+    },
+    {
+      "id": 63,
+      "name": "Hyper Beam",
+      "constant": "MOVE_HYPER_BEAM",
+      "runtime_art": "BEAM_NEUTRAL_WATER",
+      "profile_kind": "ARENA_MOVE_CONE",
+      "visual_enum": "ARENA_VIS_STAR",
+      "profile_source": "hand_authored",
+      "windup": 96,
+      "active": 72,
+      "recovery": 180,
+      "range": 120,
+      "note": "Sustained 4-frame beam strip, not the v096 contact/projectile atlas."
+    }
+  ],
+  "assets": {
+    "ATLAS_FIRE": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0005/000/004.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0005/000/009.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0005/000/013.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0005/000/018.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_WATER": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0103/000/006.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0103/000/012.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0103/000/016.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0103/000/022.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_ELECTRIC": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0215/000/009.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0215/000/017.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0215/000/026.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0215/000/034.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_ICE": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0141/000/002.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0141/000/003.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0141/000/005.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/2/move_VFX/0141/000/006.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_HIT": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_0.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_1.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_3.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_6.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_GUARD": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            7,
+            120,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            33,
+            120,
+            55
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            74,
+            120,
+            110
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            124,
+            120,
+            172
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            187,
+            120,
+            236
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            124,
+            120,
+            172
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            74,
+            120,
+            110
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/0/24.png",
+          "crop": [
+            0,
+            33,
+            120,
+            55
+          ]
+        }
+      ]
+    },
+    "ATLAS_CLASH": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "ticks_per_frame": 6,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_390.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_392.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_394.png",
+          "crop": null
+        },
+        {
+          "source": "res/arena/v096-effects/source/extra/1/Effects/Effects_397.png",
+          "crop": null
+        }
+      ]
+    },
+    "ATLAS_SLASH": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Scratch-Shadow-Claw.png",
+          "crop": [
+            122,
+            0,
+            185,
+            78
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Scratch-Shadow-Claw.png",
+          "crop": [
+            122,
+            0,
+            185,
+            78
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Scratch-Shadow-Claw.png",
+          "crop": [
+            122,
+            0,
+            185,
+            78
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Scratch-Shadow-Claw.png",
+          "crop": [
+            122,
+            0,
+            185,
+            78
+          ]
+        }
+      ]
+    },
+    "ATLAS_LEAF": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Leaves.png",
+          "crop": [
+            0,
+            0,
+            21,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Leaves.png",
+          "crop": [
+            21,
+            0,
+            42,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Leaves.png",
+          "crop": [
+            0,
+            17,
+            21,
+            35
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Leaves.png",
+          "crop": [
+            21,
+            17,
+            42,
+            35
+          ]
+        }
+      ]
+    },
+    "ATLAS_PSYCHIC": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Psycho-Cut.png",
+          "crop": [
+            0,
+            0,
+            44,
+            96
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Psycho-Cut.png",
+          "crop": [
+            44,
+            0,
+            101,
+            96
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Psycho-Cut.png",
+          "crop": [
+            101,
+            0,
+            161,
+            96
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Psycho-Cut.png",
+          "crop": [
+            161,
+            0,
+            217,
+            96
+          ]
+        }
+      ]
+    },
+    "ATLAS_SHADOW": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Shadow-Force.png",
+          "crop": [
+            0,
+            60,
+            28,
+            103
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Shadow-Force.png",
+          "crop": [
+            28,
+            60,
+            56,
+            103
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Shadow-Force.png",
+          "crop": [
+            56,
+            60,
+            86,
+            103
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Shadow-Force.png",
+          "crop": [
+            86,
+            60,
+            144,
+            103
+          ]
+        }
+      ]
+    },
+    "ATLAS_BUFF": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            0,
+            3,
+            9,
+            13
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            0,
+            3,
+            9,
+            13
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            0,
+            3,
+            9,
+            13
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            0,
+            3,
+            9,
+            13
+          ]
+        }
+      ]
+    },
+    "ATLAS_DEBUFF": {
+      "kind": "compiled_32x32_atlas",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_v096_tiles",
+      "palette_symbol": "arena_v096_palette",
+      "palette_bank": 13,
+      "frame_indices": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "ticks_per_frame": 3,
+      "source_frames": [
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            353,
+            7,
+            360,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            353,
+            7,
+            360,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            353,
+            7,
+            360,
+            17
+          ]
+        },
+        {
+          "source": "res/arena/v096-effects/source/dp/Status.png",
+          "crop": [
+            353,
+            7,
+            360,
+            17
+          ]
+        }
+      ]
+    },
+    "BEAM_MEDIUM": {
+      "kind": "compiled_beam_strip",
+      "compiled_source": "src/arena/beam_effects.c",
+      "symbol": "arena_beam_tiles",
+      "style_index": 0,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_size": [
+        128,
+        32
+      ],
+      "ticks_per_frame": 4,
+      "palette_symbol": "arena_beam_palette",
+      "palette_bank": 11,
+      "source": "res/arena/beam-effects/source/0/104.png",
+      "crops": [
+        [
+          4,
+          4,
+          132,
+          36
+        ],
+        [
+          4,
+          44,
+          132,
+          76
+        ],
+        [
+          4,
+          84,
+          132,
+          116
+        ],
+        [
+          4,
+          124,
+          132,
+          156
+        ]
+      ]
+    },
+    "BEAM_THIN": {
+      "kind": "compiled_beam_strip",
+      "compiled_source": "src/arena/beam_effects.c",
+      "symbol": "arena_beam_tiles",
+      "style_index": 1,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_size": [
+        128,
+        32
+      ],
+      "ticks_per_frame": 4,
+      "palette_symbol": "arena_beam_palette",
+      "palette_bank": 11,
+      "source": "res/arena/beam-effects/source/0/106.png",
+      "crops": [
+        [
+          4,
+          4,
+          132,
+          36
+        ],
+        [
+          4,
+          44,
+          132,
+          76
+        ],
+        [
+          4,
+          84,
+          132,
+          116
+        ],
+        [
+          4,
+          124,
+          132,
+          156
+        ]
+      ]
+    },
+    "BEAM_WATER": {
+      "kind": "compiled_beam_strip",
+      "compiled_source": "src/arena/beam_effects.c",
+      "symbol": "arena_beam_tiles",
+      "style_index": 2,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_size": [
+        128,
+        32
+      ],
+      "ticks_per_frame": 4,
+      "palette_symbol": "arena_beam_palette",
+      "palette_bank": 11,
+      "source": "res/arena/beam-effects/source/0/102.png",
+      "crops": [
+        [
+          4,
+          4,
+          132,
+          36
+        ],
+        [
+          4,
+          44,
+          132,
+          76
+        ],
+        [
+          4,
+          84,
+          132,
+          116
+        ],
+        [
+          4,
+          124,
+          132,
+          156
+        ]
+      ]
+    },
+    "BEAM_ICE": {
+      "kind": "compiled_beam_strip",
+      "compiled_source": "src/arena/beam_effects.c",
+      "symbol": "arena_beam_tiles",
+      "style_index": 3,
+      "frame_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_size": [
+        128,
+        32
+      ],
+      "ticks_per_frame": 4,
+      "palette_symbol": "arena_beam_palette",
+      "palette_bank": 11,
+      "source": "res/arena/beam-effects/source/0/108.png",
+      "crops": [
+        [
+          4,
+          4,
+          132,
+          36
+        ],
+        [
+          4,
+          44,
+          132,
+          76
+        ],
+        [
+          4,
+          84,
+          132,
+          116
+        ],
+        [
+          4,
+          124,
+          132,
+          156
+        ]
+      ]
+    },
+    "BEAM_FIRE_THIN_MEDIUM": {
+      "kind": "conditional_beam",
+      "assets": [
+        "BEAM_THIN",
+        "BEAM_MEDIUM"
+      ],
+      "selection": "THIN while not clashing and (age < 6 or remaining < 6); MEDIUM otherwise. age = clamp(actionTick-profile.windup,0,255). remaining = clamp(profile.windup+profile.active-actionTick,0,255).",
+      "palette_modification": "None to nontransparent source colors; global spare colors14/15 are set gray/white."
+    },
+    "BEAM_NEUTRAL_WATER": {
+      "kind": "beam_recolor",
+      "asset": "BEAM_WATER",
+      "pixel_modification": "For each nonzero palette index: 1..3 -> 14; 4..15 -> 15. Preserve index0 transparency.",
+      "palette_modification": {
+        "14": "0x6318",
+        "15": "0x7fff"
+      },
+      "note": "All nine neutral sustained beam identities share the WATER silhouette; named source-family candidates do not override this branch."
+    },
+    "SWIFT_STAR": {
+      "kind": "compiled_16x16_sprite",
+      "compiled_source": "src/arena/swift_art.inc",
+      "symbol": "arena_swift_tiles",
+      "frame_indices": [
+        0,
+        1
+      ],
+      "ticks_per_frame": 4,
+      "palette_bank": 15,
+      "source": "res/arena/move-effects/source/Swift.png",
+      "source_crops": [
+        [
+          194,
+          131,
+          218,
+          155
+        ],
+        [
+          195,
+          360,
+          219,
+          384
+        ]
+      ],
+      "dispatch_precedence": "Any projectile whose profile.visual == ARENA_VIS_STAR, before native-type family selection."
+    },
+    "PRIMITIVE_ORB": {
+      "kind": "generated_8x8_primitives",
+      "source": "src/arena/render.c:1189",
+      "palette_bank": 15,
+      "selection": "Native type chooses ElementOrb(); normally includes up to two same-orb trails when projectile.radius >= 5.",
+      "type_to_tile": {
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "7": 13,
+        "17": 13,
+        "15": 14,
+        "16": 14,
+        "4": 15,
+        "5": 15,
+        "default": 16
+      },
+      "note": "These are code-drawn circles, not imported sprites. STAR precedence handles many special attacks before this fallback."
+    },
+    "CONTACT_GLINT": {
+      "kind": "compiled_8x8_sprite",
+      "compiled_source": "src/arena/swift_art.inc",
+      "symbol": "arena_contact_glint",
+      "palette_bank": 15,
+      "triggers": [
+        "COMBAT_SPARK with life>3",
+        "COMBAT_TRAIL with life>3"
+      ]
+    },
+    "DASH_WIND": {
+      "kind": "compiled_32x16_sprite",
+      "compiled_source": "src/arena/v096_effect_art.inc",
+      "symbol": "arena_wind_tiles",
+      "frame_indices": [
+        0,
+        1
+      ],
+      "selection": "frame0 while event.age<3, otherwise frame1",
+      "palette_bank": 15,
+      "palette_slots": {
+        "1": "0x7fff",
+        "13": 24339,
+        "14": 28602,
+        "15": 15989
+      },
+      "triggers": [
+        "COMBAT_DASH_TRAIL"
+      ],
+      "note": "Dash input effect, not assigned by move identity."
+    },
+    "MOTION_MELEE": {
+      "kind": "actor_motion_and_events",
+      "note": "No independent launch sprite from this kind. Followthrough, held shield, stage changes, generic startup rings and contacts can add effects."
+    },
+    "MOTION_RUSH": {
+      "kind": "actor_motion_and_events",
+      "note": "No independent launch sprite from this kind. Followthrough, held shield, stage changes, generic startup rings and contacts can add effects."
+    },
+    "MOTION_SELF": {
+      "kind": "actor_motion_and_events",
+      "note": "No independent launch sprite from this kind. Followthrough, held shield, stage changes, generic startup rings and contacts can add effects."
+    }
+  },
+  "display_groups": {
+    "MOTION_MELEE": {
+      "primary_move_count": 102,
+      "moves": [
+        {
+          "id": 1,
+          "name": "Pound",
+          "constant": "MOVE_POUND"
+        },
+        {
+          "id": 2,
+          "name": "Karate Chop",
+          "constant": "MOVE_KARATE_CHOP"
+        },
+        {
+          "id": 3,
+          "name": "DoubleSlap",
+          "constant": "MOVE_DOUBLE_SLAP"
+        },
+        {
+          "id": 4,
+          "name": "Comet Punch",
+          "constant": "MOVE_COMET_PUNCH"
+        },
+        {
+          "id": 7,
+          "name": "Fire Punch",
+          "constant": "MOVE_FIRE_PUNCH"
+        },
+        {
+          "id": 8,
+          "name": "Ice Punch",
+          "constant": "MOVE_ICE_PUNCH"
+        },
+        {
+          "id": 9,
+          "name": "ThunderPunch",
+          "constant": "MOVE_THUNDER_PUNCH"
+        },
+        {
+          "id": 10,
+          "name": "Scratch",
+          "constant": "MOVE_SCRATCH"
+        },
+        {
+          "id": 11,
+          "name": "ViceGrip",
+          "constant": "MOVE_VICE_GRIP"
+        },
+        {
+          "id": 12,
+          "name": "Guillotine",
+          "constant": "MOVE_GUILLOTINE"
+        },
+        {
+          "id": 15,
+          "name": "Cut",
+          "constant": "MOVE_CUT"
+        },
+        {
+          "id": 17,
+          "name": "Wing Attack",
+          "constant": "MOVE_WING_ATTACK"
+        },
+        {
+          "id": 19,
+          "name": "Fly",
+          "constant": "MOVE_FLY"
+        },
+        {
+          "id": 20,
+          "name": "Bind",
+          "constant": "MOVE_BIND"
+        },
+        {
+          "id": 21,
+          "name": "Slam",
+          "constant": "MOVE_SLAM"
+        },
+        {
+          "id": 22,
+          "name": "Vine Whip",
+          "constant": "MOVE_VINE_WHIP"
+        },
+        {
+          "id": 23,
+          "name": "Stomp",
+          "constant": "MOVE_STOMP"
+        },
+        {
+          "id": 24,
+          "name": "Double Kick",
+          "constant": "MOVE_DOUBLE_KICK"
+        },
+        {
+          "id": 27,
+          "name": "Rolling Kick",
+          "constant": "MOVE_ROLLING_KICK"
+        },
+        {
+          "id": 29,
+          "name": "Headbutt",
+          "constant": "MOVE_HEADBUTT"
+        },
+        {
+          "id": 30,
+          "name": "Horn Attack",
+          "constant": "MOVE_HORN_ATTACK"
+        },
+        {
+          "id": 31,
+          "name": "Fury Attack",
+          "constant": "MOVE_FURY_ATTACK"
+        },
+        {
+          "id": 32,
+          "name": "Horn Drill",
+          "constant": "MOVE_HORN_DRILL"
+        },
+        {
+          "id": 34,
+          "name": "Body Slam",
+          "constant": "MOVE_BODY_SLAM"
+        },
+        {
+          "id": 35,
+          "name": "Wrap",
+          "constant": "MOVE_WRAP"
+        },
+        {
+          "id": 44,
+          "name": "Bite",
+          "constant": "MOVE_BITE"
+        },
+        {
+          "id": 64,
+          "name": "Peck",
+          "constant": "MOVE_PECK"
+        },
+        {
+          "id": 67,
+          "name": "Low Kick",
+          "constant": "MOVE_LOW_KICK"
+        },
+        {
+          "id": 68,
+          "name": "Counter",
+          "constant": "MOVE_COUNTER"
+        },
+        {
+          "id": 69,
+          "name": "Seismic Toss",
+          "constant": "MOVE_SEISMIC_TOSS"
+        },
+        {
+          "id": 91,
+          "name": "Dig",
+          "constant": "MOVE_DIG"
+        },
+        {
+          "id": 99,
+          "name": "Rage",
+          "constant": "MOVE_RAGE"
+        },
+        {
+          "id": 117,
+          "name": "Bide",
+          "constant": "MOVE_BIDE"
+        },
+        {
+          "id": 122,
+          "name": "Lick",
+          "constant": "MOVE_LICK"
+        },
+        {
+          "id": 128,
+          "name": "Clamp",
+          "constant": "MOVE_CLAMP"
+        },
+        {
+          "id": 132,
+          "name": "Constrict",
+          "constant": "MOVE_CONSTRICT"
+        },
+        {
+          "id": 141,
+          "name": "Leech Life",
+          "constant": "MOVE_LEECH_LIFE"
+        },
+        {
+          "id": 146,
+          "name": "Dizzy Punch",
+          "constant": "MOVE_DIZZY_PUNCH"
+        },
+        {
+          "id": 152,
+          "name": "Crabhammer",
+          "constant": "MOVE_CRABHAMMER"
+        },
+        {
+          "id": 154,
+          "name": "Fury Swipes",
+          "constant": "MOVE_FURY_SWIPES"
+        },
+        {
+          "id": 162,
+          "name": "Super Fang",
+          "constant": "MOVE_SUPER_FANG"
+        },
+        {
+          "id": 163,
+          "name": "Slash",
+          "constant": "MOVE_SLASH"
+        },
+        {
+          "id": 167,
+          "name": "Triple Kick",
+          "constant": "MOVE_TRIPLE_KICK"
+        },
+        {
+          "id": 168,
+          "name": "Thief",
+          "constant": "MOVE_THIEF"
+        },
+        {
+          "id": 172,
+          "name": "Flame Wheel",
+          "constant": "MOVE_FLAME_WHEEL"
+        },
+        {
+          "id": 175,
+          "name": "Flail",
+          "constant": "MOVE_FLAIL"
+        },
+        {
+          "id": 179,
+          "name": "Reversal",
+          "constant": "MOVE_REVERSAL"
+        },
+        {
+          "id": 185,
+          "name": "Faint Attack",
+          "constant": "MOVE_FAINT_ATTACK"
+        },
+        {
+          "id": 206,
+          "name": "False Swipe",
+          "constant": "MOVE_FALSE_SWIPE"
+        },
+        {
+          "id": 209,
+          "name": "Spark",
+          "constant": "MOVE_SPARK"
+        },
+        {
+          "id": 210,
+          "name": "Fury Cutter",
+          "constant": "MOVE_FURY_CUTTER"
+        },
+        {
+          "id": 211,
+          "name": "Steel Wing",
+          "constant": "MOVE_STEEL_WING"
+        },
+        {
+          "id": 216,
+          "name": "Return",
+          "constant": "MOVE_RETURN"
+        },
+        {
+          "id": 218,
+          "name": "Frustration",
+          "constant": "MOVE_FRUSTRATION"
+        },
+        {
+          "id": 228,
+          "name": "Pursuit",
+          "constant": "MOVE_PURSUIT"
+        },
+        {
+          "id": 229,
+          "name": "Rapid Spin",
+          "constant": "MOVE_RAPID_SPIN"
+        },
+        {
+          "id": 232,
+          "name": "Metal Claw",
+          "constant": "MOVE_METAL_CLAW"
+        },
+        {
+          "id": 233,
+          "name": "Vital Throw",
+          "constant": "MOVE_VITAL_THROW"
+        },
+        {
+          "id": 238,
+          "name": "Cross Chop",
+          "constant": "MOVE_CROSS_CHOP"
+        },
+        {
+          "id": 242,
+          "name": "Crunch",
+          "constant": "MOVE_CRUNCH"
+        },
+        {
+          "id": 249,
+          "name": "Rock Smash",
+          "constant": "MOVE_ROCK_SMASH"
+        },
+        {
+          "id": 252,
+          "name": "Fake Out",
+          "constant": "MOVE_FAKE_OUT"
+        },
+        {
+          "id": 263,
+          "name": "Facade",
+          "constant": "MOVE_FACADE"
+        },
+        {
+          "id": 265,
+          "name": "SmellingSalt",
+          "constant": "MOVE_SMELLING_SALT"
+        },
+        {
+          "id": 279,
+          "name": "Revenge",
+          "constant": "MOVE_REVENGE"
+        },
+        {
+          "id": 280,
+          "name": "Brick Break",
+          "constant": "MOVE_BRICK_BREAK"
+        },
+        {
+          "id": 282,
+          "name": "Knock Off",
+          "constant": "MOVE_KNOCK_OFF"
+        },
+        {
+          "id": 283,
+          "name": "Endeavor",
+          "constant": "MOVE_ENDEAVOR"
+        },
+        {
+          "id": 292,
+          "name": "Arm Thrust",
+          "constant": "MOVE_ARM_THRUST"
+        },
+        {
+          "id": 299,
+          "name": "Blaze Kick",
+          "constant": "MOVE_BLAZE_KICK"
+        },
+        {
+          "id": 301,
+          "name": "Ice Ball",
+          "constant": "MOVE_ICE_BALL"
+        },
+        {
+          "id": 302,
+          "name": "Needle Arm",
+          "constant": "MOVE_NEEDLE_ARM"
+        },
+        {
+          "id": 305,
+          "name": "Poison Fang",
+          "constant": "MOVE_POISON_FANG"
+        },
+        {
+          "id": 306,
+          "name": "Crush Claw",
+          "constant": "MOVE_CRUSH_CLAW"
+        },
+        {
+          "id": 310,
+          "name": "Astonish",
+          "constant": "MOVE_ASTONISH"
+        },
+        {
+          "id": 325,
+          "name": "Shadow Punch",
+          "constant": "MOVE_SHADOW_PUNCH"
+        },
+        {
+          "id": 337,
+          "name": "Dragon Claw",
+          "constant": "MOVE_DRAGON_CLAW"
+        },
+        {
+          "id": 342,
+          "name": "Poison Tail",
+          "constant": "MOVE_POISON_TAIL"
+        },
+        {
+          "id": 343,
+          "name": "Covet",
+          "constant": "MOVE_COVET"
+        },
+        {
+          "id": 348,
+          "name": "Leaf Blade",
+          "constant": "MOVE_LEAF_BLADE"
+        },
+        {
+          "id": 358,
+          "name": "Wake-Up Slap",
+          "constant": "MOVE_WAKE_UP_SLAP"
+        },
+        {
+          "id": 360,
+          "name": "Gyro Ball",
+          "constant": "MOVE_GYRO_BALL"
+        },
+        {
+          "id": 365,
+          "name": "Pluck",
+          "constant": "MOVE_PLUCK"
+        },
+        {
+          "id": 369,
+          "name": "U-turn",
+          "constant": "MOVE_U_TURN"
+        },
+        {
+          "id": 371,
+          "name": "Payback",
+          "constant": "MOVE_PAYBACK"
+        },
+        {
+          "id": 372,
+          "name": "Assurance",
+          "constant": "MOVE_ASSURANCE"
+        },
+        {
+          "id": 386,
+          "name": "Punishment",
+          "constant": "MOVE_PUNISHMENT"
+        },
+        {
+          "id": 395,
+          "name": "Force Palm",
+          "constant": "MOVE_FORCE_PALM"
+        },
+        {
+          "id": 400,
+          "name": "Night Slash",
+          "constant": "MOVE_NIGHT_SLASH"
+        },
+        {
+          "id": 409,
+          "name": "Drain Punch",
+          "constant": "MOVE_DRAIN_PUNCH"
+        },
+        {
+          "id": 418,
+          "name": "Bullet Punch",
+          "constant": "MOVE_BULLET_PUNCH"
+        },
+        {
+          "id": 419,
+          "name": "Avalanche",
+          "constant": "MOVE_AVALANCHE"
+        },
+        {
+          "id": 421,
+          "name": "Shadow Claw",
+          "constant": "MOVE_SHADOW_CLAW"
+        },
+        {
+          "id": 422,
+          "name": "Thunder Fang",
+          "constant": "MOVE_THUNDER_FANG"
+        },
+        {
+          "id": 423,
+          "name": "Ice Fang",
+          "constant": "MOVE_ICE_FANG"
+        },
+        {
+          "id": 424,
+          "name": "Fire Fang",
+          "constant": "MOVE_FIRE_FANG"
+        },
+        {
+          "id": 425,
+          "name": "Shadow Sneak",
+          "constant": "MOVE_SHADOW_SNEAK"
+        },
+        {
+          "id": 440,
+          "name": "Cross Poison",
+          "constant": "MOVE_CROSS_POISON"
+        },
+        {
+          "id": 450,
+          "name": "Bug Bite",
+          "constant": "MOVE_BUG_BITE"
+        },
+        {
+          "id": 453,
+          "name": "Aqua Jet",
+          "constant": "MOVE_AQUA_JET"
+        },
+        {
+          "id": 458,
+          "name": "Double Hit",
+          "constant": "MOVE_DOUBLE_HIT"
+        },
+        {
+          "id": 462,
+          "name": "Crush Grip",
+          "constant": "MOVE_CRUSH_GRIP"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 1,
+          "name": "Pound",
+          "constant": "MOVE_POUND"
+        },
+        {
+          "id": 2,
+          "name": "Karate Chop",
+          "constant": "MOVE_KARATE_CHOP"
+        },
+        {
+          "id": 3,
+          "name": "DoubleSlap",
+          "constant": "MOVE_DOUBLE_SLAP"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "MOTION_RUSH": {
+      "primary_move_count": 49,
+      "moves": [
+        {
+          "id": 5,
+          "name": "Mega Punch",
+          "constant": "MOVE_MEGA_PUNCH"
+        },
+        {
+          "id": 25,
+          "name": "Mega Kick",
+          "constant": "MOVE_MEGA_KICK"
+        },
+        {
+          "id": 26,
+          "name": "Jump Kick",
+          "constant": "MOVE_JUMP_KICK"
+        },
+        {
+          "id": 33,
+          "name": "Tackle",
+          "constant": "MOVE_TACKLE"
+        },
+        {
+          "id": 36,
+          "name": "Take Down",
+          "constant": "MOVE_TAKE_DOWN"
+        },
+        {
+          "id": 37,
+          "name": "Thrash",
+          "constant": "MOVE_THRASH"
+        },
+        {
+          "id": 38,
+          "name": "Double-Edge",
+          "constant": "MOVE_DOUBLE_EDGE"
+        },
+        {
+          "id": 65,
+          "name": "Drill Peck",
+          "constant": "MOVE_DRILL_PECK"
+        },
+        {
+          "id": 66,
+          "name": "Submission",
+          "constant": "MOVE_SUBMISSION"
+        },
+        {
+          "id": 70,
+          "name": "Strength",
+          "constant": "MOVE_STRENGTH"
+        },
+        {
+          "id": 98,
+          "name": "Quick Attack",
+          "constant": "MOVE_QUICK_ATTACK"
+        },
+        {
+          "id": 127,
+          "name": "Waterfall",
+          "constant": "MOVE_WATERFALL"
+        },
+        {
+          "id": 130,
+          "name": "Skull Bash",
+          "constant": "MOVE_SKULL_BASH"
+        },
+        {
+          "id": 136,
+          "name": "Hi Jump Kick",
+          "constant": "MOVE_HI_JUMP_KICK"
+        },
+        {
+          "id": 158,
+          "name": "Hyper Fang",
+          "constant": "MOVE_HYPER_FANG"
+        },
+        {
+          "id": 165,
+          "name": "Struggle",
+          "constant": "MOVE_STRUGGLE"
+        },
+        {
+          "id": 183,
+          "name": "Mach Punch",
+          "constant": "MOVE_MACH_PUNCH"
+        },
+        {
+          "id": 200,
+          "name": "Outrage",
+          "constant": "MOVE_OUTRAGE"
+        },
+        {
+          "id": 205,
+          "name": "Rollout",
+          "constant": "MOVE_ROLLOUT"
+        },
+        {
+          "id": 223,
+          "name": "DynamicPunch",
+          "constant": "MOVE_DYNAMIC_PUNCH"
+        },
+        {
+          "id": 224,
+          "name": "Megahorn",
+          "constant": "MOVE_MEGAHORN"
+        },
+        {
+          "id": 231,
+          "name": "Iron Tail",
+          "constant": "MOVE_IRON_TAIL"
+        },
+        {
+          "id": 245,
+          "name": "ExtremeSpeed",
+          "constant": "MOVE_EXTREME_SPEED"
+        },
+        {
+          "id": 264,
+          "name": "Focus Punch",
+          "constant": "MOVE_FOCUS_PUNCH"
+        },
+        {
+          "id": 276,
+          "name": "Superpower",
+          "constant": "MOVE_SUPERPOWER"
+        },
+        {
+          "id": 291,
+          "name": "Dive",
+          "constant": "MOVE_DIVE"
+        },
+        {
+          "id": 309,
+          "name": "Meteor Mash",
+          "constant": "MOVE_METEOR_MASH"
+        },
+        {
+          "id": 327,
+          "name": "Sky Uppercut",
+          "constant": "MOVE_SKY_UPPERCUT"
+        },
+        {
+          "id": 332,
+          "name": "Aerial Ace",
+          "constant": "MOVE_AERIAL_ACE"
+        },
+        {
+          "id": 340,
+          "name": "Bounce",
+          "constant": "MOVE_BOUNCE"
+        },
+        {
+          "id": 344,
+          "name": "Volt Tackle",
+          "constant": "MOVE_VOLT_TACKLE"
+        },
+        {
+          "id": 359,
+          "name": "Hammer Arm",
+          "constant": "MOVE_HAMMER_ARM"
+        },
+        {
+          "id": 370,
+          "name": "Close Combat",
+          "constant": "MOVE_CLOSE_COMBAT"
+        },
+        {
+          "id": 387,
+          "name": "Last Resort",
+          "constant": "MOVE_LAST_RESORT"
+        },
+        {
+          "id": 389,
+          "name": "Sucker Punch",
+          "constant": "MOVE_SUCKER_PUNCH"
+        },
+        {
+          "id": 394,
+          "name": "Flare Blitz",
+          "constant": "MOVE_FLARE_BLITZ"
+        },
+        {
+          "id": 398,
+          "name": "Poison Jab",
+          "constant": "MOVE_POISON_JAB"
+        },
+        {
+          "id": 401,
+          "name": "Aqua Tail",
+          "constant": "MOVE_AQUA_TAIL"
+        },
+        {
+          "id": 404,
+          "name": "X-Scissor",
+          "constant": "MOVE_X_SCISSOR"
+        },
+        {
+          "id": 407,
+          "name": "Dragon Rush",
+          "constant": "MOVE_DRAGON_RUSH"
+        },
+        {
+          "id": 413,
+          "name": "Brave Bird",
+          "constant": "MOVE_BRAVE_BIRD"
+        },
+        {
+          "id": 416,
+          "name": "Giga Impact",
+          "constant": "MOVE_GIGA_IMPACT"
+        },
+        {
+          "id": 428,
+          "name": "Zen Headbutt",
+          "constant": "MOVE_ZEN_HEADBUTT"
+        },
+        {
+          "id": 431,
+          "name": "Rock Climb",
+          "constant": "MOVE_ROCK_CLIMB"
+        },
+        {
+          "id": 438,
+          "name": "Power Whip",
+          "constant": "MOVE_POWER_WHIP"
+        },
+        {
+          "id": 442,
+          "name": "Iron Head",
+          "constant": "MOVE_IRON_HEAD"
+        },
+        {
+          "id": 452,
+          "name": "Wood Hammer",
+          "constant": "MOVE_WOOD_HAMMER"
+        },
+        {
+          "id": 457,
+          "name": "Head Smash",
+          "constant": "MOVE_HEAD_SMASH"
+        },
+        {
+          "id": 467,
+          "name": "Shadow Force",
+          "constant": "MOVE_SHADOW_FORCE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 5,
+          "name": "Mega Punch",
+          "constant": "MOVE_MEGA_PUNCH"
+        },
+        {
+          "id": 25,
+          "name": "Mega Kick",
+          "constant": "MOVE_MEGA_KICK"
+        },
+        {
+          "id": 26,
+          "name": "Jump Kick",
+          "constant": "MOVE_JUMP_KICK"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "SWIFT_STAR": {
+      "primary_move_count": 33,
+      "moves": [
+        {
+          "id": 6,
+          "name": "Pay Day",
+          "constant": "MOVE_PAY_DAY"
+        },
+        {
+          "id": 49,
+          "name": "SonicBoom",
+          "constant": "MOVE_SONIC_BOOM"
+        },
+        {
+          "id": 82,
+          "name": "Dragon Rage",
+          "constant": "MOVE_DRAGON_RAGE"
+        },
+        {
+          "id": 84,
+          "name": "ThunderShock",
+          "constant": "MOVE_THUNDER_SHOCK"
+        },
+        {
+          "id": 85,
+          "name": "Thunderbolt",
+          "constant": "MOVE_THUNDERBOLT"
+        },
+        {
+          "id": 87,
+          "name": "Thunder",
+          "constant": "MOVE_THUNDER"
+        },
+        {
+          "id": 121,
+          "name": "Egg Bomb",
+          "constant": "MOVE_EGG_BOMB"
+        },
+        {
+          "id": 129,
+          "name": "Swift",
+          "constant": "MOVE_SWIFT"
+        },
+        {
+          "id": 131,
+          "name": "Spike Cannon",
+          "constant": "MOVE_SPIKE_CANNON"
+        },
+        {
+          "id": 140,
+          "name": "Barrage",
+          "constant": "MOVE_BARRAGE"
+        },
+        {
+          "id": 161,
+          "name": "Tri Attack",
+          "constant": "MOVE_TRI_ATTACK"
+        },
+        {
+          "id": 173,
+          "name": "Snore",
+          "constant": "MOVE_SNORE"
+        },
+        {
+          "id": 192,
+          "name": "Zap Cannon",
+          "constant": "MOVE_ZAP_CANNON"
+        },
+        {
+          "id": 217,
+          "name": "Present",
+          "constant": "MOVE_PRESENT"
+        },
+        {
+          "id": 225,
+          "name": "DragonBreath",
+          "constant": "MOVE_DRAGON_BREATH"
+        },
+        {
+          "id": 237,
+          "name": "Hidden Power",
+          "constant": "MOVE_HIDDEN_POWER"
+        },
+        {
+          "id": 253,
+          "name": "Uproar",
+          "constant": "MOVE_UPROAR"
+        },
+        {
+          "id": 255,
+          "name": "Spit Up",
+          "constant": "MOVE_SPIT_UP"
+        },
+        {
+          "id": 290,
+          "name": "Secret Power",
+          "constant": "MOVE_SECRET_POWER"
+        },
+        {
+          "id": 311,
+          "name": "Weather Ball",
+          "constant": "MOVE_WEATHER_BALL"
+        },
+        {
+          "id": 353,
+          "name": "Doom Desire",
+          "constant": "MOVE_DOOM_DESIRE"
+        },
+        {
+          "id": 363,
+          "name": "Natural Gift",
+          "constant": "MOVE_NATURAL_GIFT"
+        },
+        {
+          "id": 364,
+          "name": "Feint",
+          "constant": "MOVE_FEINT"
+        },
+        {
+          "id": 368,
+          "name": "Metal Burst",
+          "constant": "MOVE_METAL_BURST"
+        },
+        {
+          "id": 376,
+          "name": "Trump Card",
+          "constant": "MOVE_TRUMP_CARD"
+        },
+        {
+          "id": 378,
+          "name": "Wring Out",
+          "constant": "MOVE_WRING_OUT"
+        },
+        {
+          "id": 406,
+          "name": "Dragon Pulse",
+          "constant": "MOVE_DRAGON_PULSE"
+        },
+        {
+          "id": 429,
+          "name": "Mirror Shot",
+          "constant": "MOVE_MIRROR_SHOT"
+        },
+        {
+          "id": 434,
+          "name": "Draco Meteor",
+          "constant": "MOVE_DRACO_METEOR"
+        },
+        {
+          "id": 443,
+          "name": "Magnet Bomb",
+          "constant": "MOVE_MAGNET_BOMB"
+        },
+        {
+          "id": 449,
+          "name": "Judgment",
+          "constant": "MOVE_JUDGMENT"
+        },
+        {
+          "id": 459,
+          "name": "Roar of Time",
+          "constant": "MOVE_ROAR_OF_TIME"
+        },
+        {
+          "id": 460,
+          "name": "Spacial Rend",
+          "constant": "MOVE_SPACIAL_REND"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 129,
+          "name": "Swift",
+          "constant": "MOVE_SWIFT"
+        },
+        {
+          "id": 85,
+          "name": "Thunderbolt",
+          "constant": "MOVE_THUNDERBOLT"
+        },
+        {
+          "id": 225,
+          "name": "DragonBreath",
+          "constant": "MOVE_DRAGON_BREATH"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "ATLAS_HIT": {
+      "primary_move_count": 68,
+      "moves": [
+        {
+          "id": 13,
+          "name": "Razor Wind",
+          "constant": "MOVE_RAZOR_WIND"
+        },
+        {
+          "id": 18,
+          "name": "Whirlwind",
+          "constant": "MOVE_WHIRLWIND"
+        },
+        {
+          "id": 28,
+          "name": "Sand-Attack",
+          "constant": "MOVE_SAND_ATTACK"
+        },
+        {
+          "id": 39,
+          "name": "Tail Whip",
+          "constant": "MOVE_TAIL_WHIP"
+        },
+        {
+          "id": 43,
+          "name": "Leer",
+          "constant": "MOVE_LEER"
+        },
+        {
+          "id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL"
+        },
+        {
+          "id": 46,
+          "name": "Roar",
+          "constant": "MOVE_ROAR"
+        },
+        {
+          "id": 47,
+          "name": "Sing",
+          "constant": "MOVE_SING"
+        },
+        {
+          "id": 48,
+          "name": "Supersonic",
+          "constant": "MOVE_SUPERSONIC"
+        },
+        {
+          "id": 50,
+          "name": "Disable",
+          "constant": "MOVE_DISABLE"
+        },
+        {
+          "id": 77,
+          "name": "PoisonPowder",
+          "constant": "MOVE_POISON_POWDER"
+        },
+        {
+          "id": 81,
+          "name": "String Shot",
+          "constant": "MOVE_STRING_SHOT"
+        },
+        {
+          "id": 89,
+          "name": "Earthquake",
+          "constant": "MOVE_EARTHQUAKE"
+        },
+        {
+          "id": 92,
+          "name": "Toxic",
+          "constant": "MOVE_TOXIC"
+        },
+        {
+          "id": 102,
+          "name": "Mimic",
+          "constant": "MOVE_MIMIC"
+        },
+        {
+          "id": 103,
+          "name": "Screech",
+          "constant": "MOVE_SCREECH"
+        },
+        {
+          "id": 118,
+          "name": "Metronome",
+          "constant": "MOVE_METRONOME"
+        },
+        {
+          "id": 119,
+          "name": "Mirror Move",
+          "constant": "MOVE_MIRROR_MOVE"
+        },
+        {
+          "id": 120,
+          "name": "Selfdestruct",
+          "constant": "MOVE_SELFDESTRUCT"
+        },
+        {
+          "id": 137,
+          "name": "Glare",
+          "constant": "MOVE_GLARE"
+        },
+        {
+          "id": 139,
+          "name": "Poison Gas",
+          "constant": "MOVE_POISON_GAS"
+        },
+        {
+          "id": 142,
+          "name": "Lovely Kiss",
+          "constant": "MOVE_LOVELY_KISS"
+        },
+        {
+          "id": 144,
+          "name": "Transform",
+          "constant": "MOVE_TRANSFORM"
+        },
+        {
+          "id": 148,
+          "name": "Flash",
+          "constant": "MOVE_FLASH"
+        },
+        {
+          "id": 153,
+          "name": "Explosion",
+          "constant": "MOVE_EXPLOSION"
+        },
+        {
+          "id": 166,
+          "name": "Sketch",
+          "constant": "MOVE_SKETCH"
+        },
+        {
+          "id": 169,
+          "name": "Spider Web",
+          "constant": "MOVE_SPIDER_WEB"
+        },
+        {
+          "id": 170,
+          "name": "Mind Reader",
+          "constant": "MOVE_MIND_READER"
+        },
+        {
+          "id": 174,
+          "name": "Curse",
+          "constant": "MOVE_CURSE"
+        },
+        {
+          "id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE"
+        },
+        {
+          "id": 186,
+          "name": "Sweet Kiss",
+          "constant": "MOVE_SWEET_KISS"
+        },
+        {
+          "id": 191,
+          "name": "Spikes",
+          "constant": "MOVE_SPIKES"
+        },
+        {
+          "id": 193,
+          "name": "Foresight",
+          "constant": "MOVE_FORESIGHT"
+        },
+        {
+          "id": 195,
+          "name": "Perish Song",
+          "constant": "MOVE_PERISH_SONG"
+        },
+        {
+          "id": 199,
+          "name": "Lock-On",
+          "constant": "MOVE_LOCK_ON"
+        },
+        {
+          "id": 201,
+          "name": "Sandstorm",
+          "constant": "MOVE_SANDSTORM"
+        },
+        {
+          "id": 204,
+          "name": "Charm",
+          "constant": "MOVE_CHARM"
+        },
+        {
+          "id": 207,
+          "name": "Swagger",
+          "constant": "MOVE_SWAGGER"
+        },
+        {
+          "id": 212,
+          "name": "Mean Look",
+          "constant": "MOVE_MEAN_LOOK"
+        },
+        {
+          "id": 213,
+          "name": "Attract",
+          "constant": "MOVE_ATTRACT"
+        },
+        {
+          "id": 214,
+          "name": "Sleep Talk",
+          "constant": "MOVE_SLEEP_TALK"
+        },
+        {
+          "id": 220,
+          "name": "Pain Split",
+          "constant": "MOVE_PAIN_SPLIT"
+        },
+        {
+          "id": 222,
+          "name": "Magnitude",
+          "constant": "MOVE_MAGNITUDE"
+        },
+        {
+          "id": 227,
+          "name": "Encore",
+          "constant": "MOVE_ENCORE"
+        },
+        {
+          "id": 230,
+          "name": "Sweet Scent",
+          "constant": "MOVE_SWEET_SCENT"
+        },
+        {
+          "id": 239,
+          "name": "Twister",
+          "constant": "MOVE_TWISTER"
+        },
+        {
+          "id": 244,
+          "name": "Psych Up",
+          "constant": "MOVE_PSYCH_UP"
+        },
+        {
+          "id": 267,
+          "name": "Nature Power",
+          "constant": "MOVE_NATURE_POWER"
+        },
+        {
+          "id": 270,
+          "name": "Helping Hand",
+          "constant": "MOVE_HELPING_HAND"
+        },
+        {
+          "id": 274,
+          "name": "Assist",
+          "constant": "MOVE_ASSIST"
+        },
+        {
+          "id": 281,
+          "name": "Yawn",
+          "constant": "MOVE_YAWN"
+        },
+        {
+          "id": 297,
+          "name": "FeatherDance",
+          "constant": "MOVE_FEATHER_DANCE"
+        },
+        {
+          "id": 298,
+          "name": "Teeter Dance",
+          "constant": "MOVE_TEETER_DANCE"
+        },
+        {
+          "id": 300,
+          "name": "Mud Sport",
+          "constant": "MOVE_MUD_SPORT"
+        },
+        {
+          "id": 304,
+          "name": "Hyper Voice",
+          "constant": "MOVE_HYPER_VOICE"
+        },
+        {
+          "id": 314,
+          "name": "Air Cutter",
+          "constant": "MOVE_AIR_CUTTER"
+        },
+        {
+          "id": 316,
+          "name": "Odor Sleuth",
+          "constant": "MOVE_ODOR_SLEUTH"
+        },
+        {
+          "id": 319,
+          "name": "Metal Sound",
+          "constant": "MOVE_METAL_SOUND"
+        },
+        {
+          "id": 321,
+          "name": "Tickle",
+          "constant": "MOVE_TICKLE"
+        },
+        {
+          "id": 335,
+          "name": "Block",
+          "constant": "MOVE_BLOCK"
+        },
+        {
+          "id": 367,
+          "name": "Acupressure",
+          "constant": "MOVE_ACUPRESSURE"
+        },
+        {
+          "id": 380,
+          "name": "Gastro Acid",
+          "constant": "MOVE_GASTRO_ACID"
+        },
+        {
+          "id": 382,
+          "name": "Me First",
+          "constant": "MOVE_ME_FIRST"
+        },
+        {
+          "id": 383,
+          "name": "Copycat",
+          "constant": "MOVE_COPYCAT"
+        },
+        {
+          "id": 390,
+          "name": "Toxic Spikes",
+          "constant": "MOVE_TOXIC_SPIKES"
+        },
+        {
+          "id": 432,
+          "name": "Defog",
+          "constant": "MOVE_DEFOG"
+        },
+        {
+          "id": 445,
+          "name": "Captivate",
+          "constant": "MOVE_CAPTIVATE"
+        },
+        {
+          "id": 446,
+          "name": "Stealth Rock",
+          "constant": "MOVE_STEALTH_ROCK"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL"
+        },
+        {
+          "id": 43,
+          "name": "Leer",
+          "constant": "MOVE_LEER"
+        },
+        {
+          "id": 39,
+          "name": "Tail Whip",
+          "constant": "MOVE_TAIL_WHIP"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [
+        {
+          "id": 13,
+          "name": "Razor Wind",
+          "constant": "MOVE_RAZOR_WIND"
+        },
+        {
+          "id": 18,
+          "name": "Whirlwind",
+          "constant": "MOVE_WHIRLWIND"
+        },
+        {
+          "id": 28,
+          "name": "Sand-Attack",
+          "constant": "MOVE_SAND_ATTACK"
+        },
+        {
+          "id": 39,
+          "name": "Tail Whip",
+          "constant": "MOVE_TAIL_WHIP"
+        },
+        {
+          "id": 43,
+          "name": "Leer",
+          "constant": "MOVE_LEER"
+        },
+        {
+          "id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL"
+        },
+        {
+          "id": 46,
+          "name": "Roar",
+          "constant": "MOVE_ROAR"
+        },
+        {
+          "id": 47,
+          "name": "Sing",
+          "constant": "MOVE_SING"
+        },
+        {
+          "id": 48,
+          "name": "Supersonic",
+          "constant": "MOVE_SUPERSONIC"
+        },
+        {
+          "id": 50,
+          "name": "Disable",
+          "constant": "MOVE_DISABLE"
+        },
+        {
+          "id": 77,
+          "name": "PoisonPowder",
+          "constant": "MOVE_POISON_POWDER"
+        },
+        {
+          "id": 81,
+          "name": "String Shot",
+          "constant": "MOVE_STRING_SHOT"
+        },
+        {
+          "id": 89,
+          "name": "Earthquake",
+          "constant": "MOVE_EARTHQUAKE"
+        },
+        {
+          "id": 92,
+          "name": "Toxic",
+          "constant": "MOVE_TOXIC"
+        },
+        {
+          "id": 102,
+          "name": "Mimic",
+          "constant": "MOVE_MIMIC"
+        },
+        {
+          "id": 103,
+          "name": "Screech",
+          "constant": "MOVE_SCREECH"
+        },
+        {
+          "id": 118,
+          "name": "Metronome",
+          "constant": "MOVE_METRONOME"
+        },
+        {
+          "id": 119,
+          "name": "Mirror Move",
+          "constant": "MOVE_MIRROR_MOVE"
+        },
+        {
+          "id": 120,
+          "name": "Selfdestruct",
+          "constant": "MOVE_SELFDESTRUCT"
+        },
+        {
+          "id": 137,
+          "name": "Glare",
+          "constant": "MOVE_GLARE"
+        },
+        {
+          "id": 139,
+          "name": "Poison Gas",
+          "constant": "MOVE_POISON_GAS"
+        },
+        {
+          "id": 142,
+          "name": "Lovely Kiss",
+          "constant": "MOVE_LOVELY_KISS"
+        },
+        {
+          "id": 144,
+          "name": "Transform",
+          "constant": "MOVE_TRANSFORM"
+        },
+        {
+          "id": 148,
+          "name": "Flash",
+          "constant": "MOVE_FLASH"
+        },
+        {
+          "id": 153,
+          "name": "Explosion",
+          "constant": "MOVE_EXPLOSION"
+        },
+        {
+          "id": 166,
+          "name": "Sketch",
+          "constant": "MOVE_SKETCH"
+        },
+        {
+          "id": 169,
+          "name": "Spider Web",
+          "constant": "MOVE_SPIDER_WEB"
+        },
+        {
+          "id": 170,
+          "name": "Mind Reader",
+          "constant": "MOVE_MIND_READER"
+        },
+        {
+          "id": 174,
+          "name": "Curse",
+          "constant": "MOVE_CURSE"
+        },
+        {
+          "id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE"
+        },
+        {
+          "id": 186,
+          "name": "Sweet Kiss",
+          "constant": "MOVE_SWEET_KISS"
+        },
+        {
+          "id": 191,
+          "name": "Spikes",
+          "constant": "MOVE_SPIKES"
+        },
+        {
+          "id": 193,
+          "name": "Foresight",
+          "constant": "MOVE_FORESIGHT"
+        },
+        {
+          "id": 195,
+          "name": "Perish Song",
+          "constant": "MOVE_PERISH_SONG"
+        },
+        {
+          "id": 199,
+          "name": "Lock-On",
+          "constant": "MOVE_LOCK_ON"
+        },
+        {
+          "id": 201,
+          "name": "Sandstorm",
+          "constant": "MOVE_SANDSTORM"
+        },
+        {
+          "id": 204,
+          "name": "Charm",
+          "constant": "MOVE_CHARM"
+        },
+        {
+          "id": 207,
+          "name": "Swagger",
+          "constant": "MOVE_SWAGGER"
+        },
+        {
+          "id": 212,
+          "name": "Mean Look",
+          "constant": "MOVE_MEAN_LOOK"
+        },
+        {
+          "id": 213,
+          "name": "Attract",
+          "constant": "MOVE_ATTRACT"
+        },
+        {
+          "id": 214,
+          "name": "Sleep Talk",
+          "constant": "MOVE_SLEEP_TALK"
+        },
+        {
+          "id": 220,
+          "name": "Pain Split",
+          "constant": "MOVE_PAIN_SPLIT"
+        },
+        {
+          "id": 222,
+          "name": "Magnitude",
+          "constant": "MOVE_MAGNITUDE"
+        },
+        {
+          "id": 227,
+          "name": "Encore",
+          "constant": "MOVE_ENCORE"
+        },
+        {
+          "id": 230,
+          "name": "Sweet Scent",
+          "constant": "MOVE_SWEET_SCENT"
+        },
+        {
+          "id": 239,
+          "name": "Twister",
+          "constant": "MOVE_TWISTER"
+        },
+        {
+          "id": 244,
+          "name": "Psych Up",
+          "constant": "MOVE_PSYCH_UP"
+        },
+        {
+          "id": 267,
+          "name": "Nature Power",
+          "constant": "MOVE_NATURE_POWER"
+        },
+        {
+          "id": 270,
+          "name": "Helping Hand",
+          "constant": "MOVE_HELPING_HAND"
+        },
+        {
+          "id": 274,
+          "name": "Assist",
+          "constant": "MOVE_ASSIST"
+        },
+        {
+          "id": 281,
+          "name": "Yawn",
+          "constant": "MOVE_YAWN"
+        },
+        {
+          "id": 297,
+          "name": "FeatherDance",
+          "constant": "MOVE_FEATHER_DANCE"
+        },
+        {
+          "id": 298,
+          "name": "Teeter Dance",
+          "constant": "MOVE_TEETER_DANCE"
+        },
+        {
+          "id": 300,
+          "name": "Mud Sport",
+          "constant": "MOVE_MUD_SPORT"
+        },
+        {
+          "id": 304,
+          "name": "Hyper Voice",
+          "constant": "MOVE_HYPER_VOICE"
+        },
+        {
+          "id": 314,
+          "name": "Air Cutter",
+          "constant": "MOVE_AIR_CUTTER"
+        },
+        {
+          "id": 316,
+          "name": "Odor Sleuth",
+          "constant": "MOVE_ODOR_SLEUTH"
+        },
+        {
+          "id": 319,
+          "name": "Metal Sound",
+          "constant": "MOVE_METAL_SOUND"
+        },
+        {
+          "id": 321,
+          "name": "Tickle",
+          "constant": "MOVE_TICKLE"
+        },
+        {
+          "id": 335,
+          "name": "Block",
+          "constant": "MOVE_BLOCK"
+        },
+        {
+          "id": 367,
+          "name": "Acupressure",
+          "constant": "MOVE_ACUPRESSURE"
+        },
+        {
+          "id": 380,
+          "name": "Gastro Acid",
+          "constant": "MOVE_GASTRO_ACID"
+        },
+        {
+          "id": 382,
+          "name": "Me First",
+          "constant": "MOVE_ME_FIRST"
+        },
+        {
+          "id": 383,
+          "name": "Copycat",
+          "constant": "MOVE_COPYCAT"
+        },
+        {
+          "id": 390,
+          "name": "Toxic Spikes",
+          "constant": "MOVE_TOXIC_SPIKES"
+        },
+        {
+          "id": 432,
+          "name": "Defog",
+          "constant": "MOVE_DEFOG"
+        },
+        {
+          "id": 445,
+          "name": "Captivate",
+          "constant": "MOVE_CAPTIVATE"
+        },
+        {
+          "id": 446,
+          "name": "Stealth Rock",
+          "constant": "MOVE_STEALTH_ROCK"
+        }
+      ],
+      "event_usage": "COMBAT_CONTACT; COMBAT_BLOCK; default combat effects including COMBAT_RING; generic damage/contact and startup puffs. Contact: age<8 and tick=age*3. Default branch: age<8 and tick=age*3. Also generic non-beam cones by native type."
+    },
+    "MOTION_SELF": {
+      "primary_move_count": 71,
+      "moves": [
+        {
+          "id": 14,
+          "name": "Swords Dance",
+          "constant": "MOVE_SWORDS_DANCE"
+        },
+        {
+          "id": 54,
+          "name": "Mist",
+          "constant": "MOVE_MIST"
+        },
+        {
+          "id": 74,
+          "name": "Growth",
+          "constant": "MOVE_GROWTH"
+        },
+        {
+          "id": 96,
+          "name": "Meditate",
+          "constant": "MOVE_MEDITATE"
+        },
+        {
+          "id": 97,
+          "name": "Agility",
+          "constant": "MOVE_AGILITY"
+        },
+        {
+          "id": 100,
+          "name": "Teleport",
+          "constant": "MOVE_TELEPORT"
+        },
+        {
+          "id": 104,
+          "name": "Double Team",
+          "constant": "MOVE_DOUBLE_TEAM"
+        },
+        {
+          "id": 105,
+          "name": "Recover",
+          "constant": "MOVE_RECOVER"
+        },
+        {
+          "id": 106,
+          "name": "Harden",
+          "constant": "MOVE_HARDEN"
+        },
+        {
+          "id": 107,
+          "name": "Minimize",
+          "constant": "MOVE_MINIMIZE"
+        },
+        {
+          "id": 108,
+          "name": "SmokeScreen",
+          "constant": "MOVE_SMOKE_SCREEN"
+        },
+        {
+          "id": 110,
+          "name": "Withdraw",
+          "constant": "MOVE_WITHDRAW"
+        },
+        {
+          "id": 111,
+          "name": "Defense Curl",
+          "constant": "MOVE_DEFENSE_CURL"
+        },
+        {
+          "id": 112,
+          "name": "Barrier",
+          "constant": "MOVE_BARRIER"
+        },
+        {
+          "id": 113,
+          "name": "Light Screen",
+          "constant": "MOVE_LIGHT_SCREEN"
+        },
+        {
+          "id": 115,
+          "name": "Reflect",
+          "constant": "MOVE_REFLECT"
+        },
+        {
+          "id": 116,
+          "name": "Focus Energy",
+          "constant": "MOVE_FOCUS_ENERGY"
+        },
+        {
+          "id": 133,
+          "name": "Amnesia",
+          "constant": "MOVE_AMNESIA"
+        },
+        {
+          "id": 135,
+          "name": "Softboiled",
+          "constant": "MOVE_SOFTBOILED"
+        },
+        {
+          "id": 150,
+          "name": "Splash",
+          "constant": "MOVE_SPLASH"
+        },
+        {
+          "id": 151,
+          "name": "Acid Armor",
+          "constant": "MOVE_ACID_ARMOR"
+        },
+        {
+          "id": 156,
+          "name": "Rest",
+          "constant": "MOVE_REST"
+        },
+        {
+          "id": 159,
+          "name": "Sharpen",
+          "constant": "MOVE_SHARPEN"
+        },
+        {
+          "id": 160,
+          "name": "Conversion",
+          "constant": "MOVE_CONVERSION"
+        },
+        {
+          "id": 164,
+          "name": "Substitute",
+          "constant": "MOVE_SUBSTITUTE"
+        },
+        {
+          "id": 176,
+          "name": "Conversion 2",
+          "constant": "MOVE_CONVERSION_2"
+        },
+        {
+          "id": 182,
+          "name": "Protect",
+          "constant": "MOVE_PROTECT"
+        },
+        {
+          "id": 187,
+          "name": "Belly Drum",
+          "constant": "MOVE_BELLY_DRUM"
+        },
+        {
+          "id": 194,
+          "name": "Destiny Bond",
+          "constant": "MOVE_DESTINY_BOND"
+        },
+        {
+          "id": 197,
+          "name": "Detect",
+          "constant": "MOVE_DETECT"
+        },
+        {
+          "id": 203,
+          "name": "Endure",
+          "constant": "MOVE_ENDURE"
+        },
+        {
+          "id": 208,
+          "name": "Milk Drink",
+          "constant": "MOVE_MILK_DRINK"
+        },
+        {
+          "id": 215,
+          "name": "Heal Bell",
+          "constant": "MOVE_HEAL_BELL"
+        },
+        {
+          "id": 219,
+          "name": "Safeguard",
+          "constant": "MOVE_SAFEGUARD"
+        },
+        {
+          "id": 226,
+          "name": "Baton Pass",
+          "constant": "MOVE_BATON_PASS"
+        },
+        {
+          "id": 234,
+          "name": "Morning Sun",
+          "constant": "MOVE_MORNING_SUN"
+        },
+        {
+          "id": 235,
+          "name": "Synthesis",
+          "constant": "MOVE_SYNTHESIS"
+        },
+        {
+          "id": 236,
+          "name": "Moonlight",
+          "constant": "MOVE_MOONLIGHT"
+        },
+        {
+          "id": 240,
+          "name": "Rain Dance",
+          "constant": "MOVE_RAIN_DANCE"
+        },
+        {
+          "id": 254,
+          "name": "Stockpile",
+          "constant": "MOVE_STOCKPILE"
+        },
+        {
+          "id": 256,
+          "name": "Swallow",
+          "constant": "MOVE_SWALLOW"
+        },
+        {
+          "id": 266,
+          "name": "Follow Me",
+          "constant": "MOVE_FOLLOW_ME"
+        },
+        {
+          "id": 268,
+          "name": "Charge",
+          "constant": "MOVE_CHARGE"
+        },
+        {
+          "id": 273,
+          "name": "Wish",
+          "constant": "MOVE_WISH"
+        },
+        {
+          "id": 275,
+          "name": "Ingrain",
+          "constant": "MOVE_INGRAIN"
+        },
+        {
+          "id": 278,
+          "name": "Recycle",
+          "constant": "MOVE_RECYCLE"
+        },
+        {
+          "id": 286,
+          "name": "Imprison",
+          "constant": "MOVE_IMPRISON"
+        },
+        {
+          "id": 287,
+          "name": "Refresh",
+          "constant": "MOVE_REFRESH"
+        },
+        {
+          "id": 288,
+          "name": "Grudge",
+          "constant": "MOVE_GRUDGE"
+        },
+        {
+          "id": 293,
+          "name": "Camouflage",
+          "constant": "MOVE_CAMOUFLAGE"
+        },
+        {
+          "id": 294,
+          "name": "Tail Glow",
+          "constant": "MOVE_TAIL_GLOW"
+        },
+        {
+          "id": 303,
+          "name": "Slack Off",
+          "constant": "MOVE_SLACK_OFF"
+        },
+        {
+          "id": 312,
+          "name": "Aromatherapy",
+          "constant": "MOVE_AROMATHERAPY"
+        },
+        {
+          "id": 322,
+          "name": "Cosmic Power",
+          "constant": "MOVE_COSMIC_POWER"
+        },
+        {
+          "id": 334,
+          "name": "Iron Defense",
+          "constant": "MOVE_IRON_DEFENSE"
+        },
+        {
+          "id": 336,
+          "name": "Howl",
+          "constant": "MOVE_HOWL"
+        },
+        {
+          "id": 339,
+          "name": "Bulk Up",
+          "constant": "MOVE_BULK_UP"
+        },
+        {
+          "id": 347,
+          "name": "Calm Mind",
+          "constant": "MOVE_CALM_MIND"
+        },
+        {
+          "id": 349,
+          "name": "Dragon Dance",
+          "constant": "MOVE_DRAGON_DANCE"
+        },
+        {
+          "id": 355,
+          "name": "Roost",
+          "constant": "MOVE_ROOST"
+        },
+        {
+          "id": 361,
+          "name": "Healing Wish",
+          "constant": "MOVE_HEALING_WISH"
+        },
+        {
+          "id": 366,
+          "name": "Tailwind",
+          "constant": "MOVE_TAILWIND"
+        },
+        {
+          "id": 379,
+          "name": "Power Trick",
+          "constant": "MOVE_POWER_TRICK"
+        },
+        {
+          "id": 381,
+          "name": "Lucky Chant",
+          "constant": "MOVE_LUCKY_CHANT"
+        },
+        {
+          "id": 392,
+          "name": "Aqua Ring",
+          "constant": "MOVE_AQUA_RING"
+        },
+        {
+          "id": 393,
+          "name": "Magnet Rise",
+          "constant": "MOVE_MAGNET_RISE"
+        },
+        {
+          "id": 397,
+          "name": "Rock Polish",
+          "constant": "MOVE_ROCK_POLISH"
+        },
+        {
+          "id": 417,
+          "name": "Nasty Plot",
+          "constant": "MOVE_NASTY_PLOT"
+        },
+        {
+          "id": 455,
+          "name": "Defend Order",
+          "constant": "MOVE_DEFEND_ORDER"
+        },
+        {
+          "id": 456,
+          "name": "Heal Order",
+          "constant": "MOVE_HEAL_ORDER"
+        },
+        {
+          "id": 461,
+          "name": "Lunar Dance",
+          "constant": "MOVE_LUNAR_DANCE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 14,
+          "name": "Swords Dance",
+          "constant": "MOVE_SWORDS_DANCE"
+        },
+        {
+          "id": 54,
+          "name": "Mist",
+          "constant": "MOVE_MIST"
+        },
+        {
+          "id": 74,
+          "name": "Growth",
+          "constant": "MOVE_GROWTH"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "PRIMITIVE_ORB": {
+      "primary_move_count": 35,
+      "moves": [
+        {
+          "id": 16,
+          "name": "Gust",
+          "constant": "MOVE_GUST"
+        },
+        {
+          "id": 40,
+          "name": "Poison Sting",
+          "constant": "MOVE_POISON_STING"
+        },
+        {
+          "id": 41,
+          "name": "Twineedle",
+          "constant": "MOVE_TWINEEDLE"
+        },
+        {
+          "id": 42,
+          "name": "Pin Missile",
+          "constant": "MOVE_PIN_MISSILE"
+        },
+        {
+          "id": 51,
+          "name": "Acid",
+          "constant": "MOVE_ACID"
+        },
+        {
+          "id": 88,
+          "name": "Rock Throw",
+          "constant": "MOVE_ROCK_THROW"
+        },
+        {
+          "id": 90,
+          "name": "Fissure",
+          "constant": "MOVE_FISSURE"
+        },
+        {
+          "id": 123,
+          "name": "Smog",
+          "constant": "MOVE_SMOG"
+        },
+        {
+          "id": 124,
+          "name": "Sludge",
+          "constant": "MOVE_SLUDGE"
+        },
+        {
+          "id": 125,
+          "name": "Bone Club",
+          "constant": "MOVE_BONE_CLUB"
+        },
+        {
+          "id": 143,
+          "name": "Sky Attack",
+          "constant": "MOVE_SKY_ATTACK"
+        },
+        {
+          "id": 155,
+          "name": "Bonemerang",
+          "constant": "MOVE_BONEMERANG"
+        },
+        {
+          "id": 157,
+          "name": "Rock Slide",
+          "constant": "MOVE_ROCK_SLIDE"
+        },
+        {
+          "id": 188,
+          "name": "Sludge Bomb",
+          "constant": "MOVE_SLUDGE_BOMB"
+        },
+        {
+          "id": 189,
+          "name": "Mud-Slap",
+          "constant": "MOVE_MUD_SLAP"
+        },
+        {
+          "id": 198,
+          "name": "Bone Rush",
+          "constant": "MOVE_BONE_RUSH"
+        },
+        {
+          "id": 246,
+          "name": "AncientPower",
+          "constant": "MOVE_ANCIENT_POWER"
+        },
+        {
+          "id": 317,
+          "name": "Rock Tomb",
+          "constant": "MOVE_ROCK_TOMB"
+        },
+        {
+          "id": 318,
+          "name": "Silver Wind",
+          "constant": "MOVE_SILVER_WIND"
+        },
+        {
+          "id": 328,
+          "name": "Sand Tomb",
+          "constant": "MOVE_SAND_TOMB"
+        },
+        {
+          "id": 341,
+          "name": "Mud Shot",
+          "constant": "MOVE_MUD_SHOT"
+        },
+        {
+          "id": 350,
+          "name": "Rock Blast",
+          "constant": "MOVE_ROCK_BLAST"
+        },
+        {
+          "id": 396,
+          "name": "Aura Sphere",
+          "constant": "MOVE_AURA_SPHERE"
+        },
+        {
+          "id": 403,
+          "name": "Air Slash",
+          "constant": "MOVE_AIR_SLASH"
+        },
+        {
+          "id": 405,
+          "name": "Bug Buzz",
+          "constant": "MOVE_BUG_BUZZ"
+        },
+        {
+          "id": 408,
+          "name": "Power Gem",
+          "constant": "MOVE_POWER_GEM"
+        },
+        {
+          "id": 410,
+          "name": "Vacuum Wave",
+          "constant": "MOVE_VACUUM_WAVE"
+        },
+        {
+          "id": 411,
+          "name": "Focus Blast",
+          "constant": "MOVE_FOCUS_BLAST"
+        },
+        {
+          "id": 414,
+          "name": "Earth Power",
+          "constant": "MOVE_EARTH_POWER"
+        },
+        {
+          "id": 426,
+          "name": "Mud Bomb",
+          "constant": "MOVE_MUD_BOMB"
+        },
+        {
+          "id": 439,
+          "name": "Rock Wrecker",
+          "constant": "MOVE_ROCK_WRECKER"
+        },
+        {
+          "id": 441,
+          "name": "Gunk Shot",
+          "constant": "MOVE_GUNK_SHOT"
+        },
+        {
+          "id": 444,
+          "name": "Stone Edge",
+          "constant": "MOVE_STONE_EDGE"
+        },
+        {
+          "id": 448,
+          "name": "Chatter",
+          "constant": "MOVE_CHATTER"
+        },
+        {
+          "id": 454,
+          "name": "Attack Order",
+          "constant": "MOVE_ATTACK_ORDER"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 16,
+          "name": "Gust",
+          "constant": "MOVE_GUST"
+        },
+        {
+          "id": 51,
+          "name": "Acid",
+          "constant": "MOVE_ACID"
+        },
+        {
+          "id": 408,
+          "name": "Power Gem",
+          "constant": "MOVE_POWER_GEM"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "ATLAS_FIRE": {
+      "primary_move_count": 10,
+      "moves": [
+        {
+          "id": 52,
+          "name": "Ember",
+          "constant": "MOVE_EMBER"
+        },
+        {
+          "id": 83,
+          "name": "Fire Spin",
+          "constant": "MOVE_FIRE_SPIN"
+        },
+        {
+          "id": 241,
+          "name": "Sunny Day",
+          "constant": "MOVE_SUNNY_DAY"
+        },
+        {
+          "id": 257,
+          "name": "Heat Wave",
+          "constant": "MOVE_HEAT_WAVE"
+        },
+        {
+          "id": 261,
+          "name": "Will-O-Wisp",
+          "constant": "MOVE_WILL_O_WISP"
+        },
+        {
+          "id": 284,
+          "name": "Eruption",
+          "constant": "MOVE_ERUPTION"
+        },
+        {
+          "id": 307,
+          "name": "Blast Burn",
+          "constant": "MOVE_BLAST_BURN"
+        },
+        {
+          "id": 315,
+          "name": "Overheat",
+          "constant": "MOVE_OVERHEAT"
+        },
+        {
+          "id": 436,
+          "name": "Lava Plume",
+          "constant": "MOVE_LAVA_PLUME"
+        },
+        {
+          "id": 463,
+          "name": "Magma Storm",
+          "constant": "MOVE_MAGMA_STORM"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 52,
+          "name": "Ember",
+          "constant": "MOVE_EMBER"
+        },
+        {
+          "id": 83,
+          "name": "Fire Spin",
+          "constant": "MOVE_FIRE_SPIN"
+        },
+        {
+          "id": 307,
+          "name": "Blast Burn",
+          "constant": "MOVE_BLAST_BURN"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [
+        {
+          "id": 52,
+          "name": "Ember",
+          "constant": "MOVE_EMBER"
+        },
+        {
+          "id": 83,
+          "name": "Fire Spin",
+          "constant": "MOVE_FIRE_SPIN"
+        },
+        {
+          "id": 307,
+          "name": "Blast Burn",
+          "constant": "MOVE_BLAST_BURN"
+        },
+        {
+          "id": 315,
+          "name": "Overheat",
+          "constant": "MOVE_OVERHEAT"
+        },
+        {
+          "id": 463,
+          "name": "Magma Storm",
+          "constant": "MOVE_MAGMA_STORM"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 241,
+          "name": "Sunny Day",
+          "constant": "MOVE_SUNNY_DAY"
+        },
+        {
+          "id": 257,
+          "name": "Heat Wave",
+          "constant": "MOVE_HEAT_WAVE"
+        },
+        {
+          "id": 261,
+          "name": "Will-O-Wisp",
+          "constant": "MOVE_WILL_O_WISP"
+        },
+        {
+          "id": 284,
+          "name": "Eruption",
+          "constant": "MOVE_ERUPTION"
+        },
+        {
+          "id": 436,
+          "name": "Lava Plume",
+          "constant": "MOVE_LAVA_PLUME"
+        }
+      ],
+      "status_usage": "Burn: frame%72<12, tick=(frame%72)*2."
+    },
+    "BEAM_FIRE_THIN_MEDIUM": {
+      "primary_move_count": 3,
+      "moves": [
+        {
+          "id": 53,
+          "name": "Flamethrower",
+          "constant": "MOVE_FLAMETHROWER"
+        },
+        {
+          "id": 126,
+          "name": "Fire Blast",
+          "constant": "MOVE_FIRE_BLAST"
+        },
+        {
+          "id": 221,
+          "name": "Sacred Fire",
+          "constant": "MOVE_SACRED_FIRE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 53,
+          "name": "Flamethrower",
+          "constant": "MOVE_FLAMETHROWER"
+        },
+        {
+          "id": 126,
+          "name": "Fire Blast",
+          "constant": "MOVE_FIRE_BLAST"
+        },
+        {
+          "id": 221,
+          "name": "Sacred Fire",
+          "constant": "MOVE_SACRED_FIRE"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "ATLAS_WATER": {
+      "primary_move_count": 12,
+      "moves": [
+        {
+          "id": 55,
+          "name": "Water Gun",
+          "constant": "MOVE_WATER_GUN"
+        },
+        {
+          "id": 57,
+          "name": "Surf",
+          "constant": "MOVE_SURF"
+        },
+        {
+          "id": 61,
+          "name": "BubbleBeam",
+          "constant": "MOVE_BUBBLE_BEAM"
+        },
+        {
+          "id": 145,
+          "name": "Bubble",
+          "constant": "MOVE_BUBBLE"
+        },
+        {
+          "id": 190,
+          "name": "Octazooka",
+          "constant": "MOVE_OCTAZOOKA"
+        },
+        {
+          "id": 250,
+          "name": "Whirlpool",
+          "constant": "MOVE_WHIRLPOOL"
+        },
+        {
+          "id": 308,
+          "name": "Hydro Cannon",
+          "constant": "MOVE_HYDRO_CANNON"
+        },
+        {
+          "id": 323,
+          "name": "Water Spout",
+          "constant": "MOVE_WATER_SPOUT"
+        },
+        {
+          "id": 330,
+          "name": "Muddy Water",
+          "constant": "MOVE_MUDDY_WATER"
+        },
+        {
+          "id": 346,
+          "name": "Water Sport",
+          "constant": "MOVE_WATER_SPORT"
+        },
+        {
+          "id": 352,
+          "name": "Water Pulse",
+          "constant": "MOVE_WATER_PULSE"
+        },
+        {
+          "id": 362,
+          "name": "Brine",
+          "constant": "MOVE_BRINE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 55,
+          "name": "Water Gun",
+          "constant": "MOVE_WATER_GUN"
+        },
+        {
+          "id": 352,
+          "name": "Water Pulse",
+          "constant": "MOVE_WATER_PULSE"
+        },
+        {
+          "id": 57,
+          "name": "Surf",
+          "constant": "MOVE_SURF"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [
+        {
+          "id": 55,
+          "name": "Water Gun",
+          "constant": "MOVE_WATER_GUN"
+        },
+        {
+          "id": 57,
+          "name": "Surf",
+          "constant": "MOVE_SURF"
+        },
+        {
+          "id": 61,
+          "name": "BubbleBeam",
+          "constant": "MOVE_BUBBLE_BEAM"
+        },
+        {
+          "id": 145,
+          "name": "Bubble",
+          "constant": "MOVE_BUBBLE"
+        },
+        {
+          "id": 190,
+          "name": "Octazooka",
+          "constant": "MOVE_OCTAZOOKA"
+        },
+        {
+          "id": 250,
+          "name": "Whirlpool",
+          "constant": "MOVE_WHIRLPOOL"
+        },
+        {
+          "id": 308,
+          "name": "Hydro Cannon",
+          "constant": "MOVE_HYDRO_CANNON"
+        },
+        {
+          "id": 352,
+          "name": "Water Pulse",
+          "constant": "MOVE_WATER_PULSE"
+        },
+        {
+          "id": 362,
+          "name": "Brine",
+          "constant": "MOVE_BRINE"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 323,
+          "name": "Water Spout",
+          "constant": "MOVE_WATER_SPOUT"
+        },
+        {
+          "id": 330,
+          "name": "Muddy Water",
+          "constant": "MOVE_MUDDY_WATER"
+        },
+        {
+          "id": 346,
+          "name": "Water Sport",
+          "constant": "MOVE_WATER_SPORT"
+        }
+      ]
+    },
+    "BEAM_WATER": {
+      "primary_move_count": 1,
+      "moves": [
+        {
+          "id": 56,
+          "name": "Hydro Pump",
+          "constant": "MOVE_HYDRO_PUMP"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 56,
+          "name": "Hydro Pump",
+          "constant": "MOVE_HYDRO_PUMP"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "BEAM_ICE": {
+      "primary_move_count": 2,
+      "moves": [
+        {
+          "id": 58,
+          "name": "Ice Beam",
+          "constant": "MOVE_ICE_BEAM"
+        },
+        {
+          "id": 62,
+          "name": "Aurora Beam",
+          "constant": "MOVE_AURORA_BEAM"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 58,
+          "name": "Ice Beam",
+          "constant": "MOVE_ICE_BEAM"
+        },
+        {
+          "id": 62,
+          "name": "Aurora Beam",
+          "constant": "MOVE_AURORA_BEAM"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "ATLAS_ICE": {
+      "primary_move_count": 8,
+      "moves": [
+        {
+          "id": 59,
+          "name": "Blizzard",
+          "constant": "MOVE_BLIZZARD"
+        },
+        {
+          "id": 114,
+          "name": "Haze",
+          "constant": "MOVE_HAZE"
+        },
+        {
+          "id": 181,
+          "name": "Powder Snow",
+          "constant": "MOVE_POWDER_SNOW"
+        },
+        {
+          "id": 196,
+          "name": "Icy Wind",
+          "constant": "MOVE_ICY_WIND"
+        },
+        {
+          "id": 258,
+          "name": "Hail",
+          "constant": "MOVE_HAIL"
+        },
+        {
+          "id": 329,
+          "name": "Sheer Cold",
+          "constant": "MOVE_SHEER_COLD"
+        },
+        {
+          "id": 333,
+          "name": "Icicle Spear",
+          "constant": "MOVE_ICICLE_SPEAR"
+        },
+        {
+          "id": 420,
+          "name": "Ice Shard",
+          "constant": "MOVE_ICE_SHARD"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 59,
+          "name": "Blizzard",
+          "constant": "MOVE_BLIZZARD"
+        },
+        {
+          "id": 196,
+          "name": "Icy Wind",
+          "constant": "MOVE_ICY_WIND"
+        },
+        {
+          "id": 420,
+          "name": "Ice Shard",
+          "constant": "MOVE_ICE_SHARD"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [
+        {
+          "id": 59,
+          "name": "Blizzard",
+          "constant": "MOVE_BLIZZARD"
+        },
+        {
+          "id": 196,
+          "name": "Icy Wind",
+          "constant": "MOVE_ICY_WIND"
+        },
+        {
+          "id": 329,
+          "name": "Sheer Cold",
+          "constant": "MOVE_SHEER_COLD"
+        },
+        {
+          "id": 333,
+          "name": "Icicle Spear",
+          "constant": "MOVE_ICICLE_SPEAR"
+        },
+        {
+          "id": 420,
+          "name": "Ice Shard",
+          "constant": "MOVE_ICE_SHARD"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 114,
+          "name": "Haze",
+          "constant": "MOVE_HAZE"
+        },
+        {
+          "id": 181,
+          "name": "Powder Snow",
+          "constant": "MOVE_POWDER_SNOW"
+        },
+        {
+          "id": 258,
+          "name": "Hail",
+          "constant": "MOVE_HAIL"
+        }
+      ],
+      "status_usage": "Freeze: frame%72<12, tick=(frame%72)*2."
+    },
+    "BEAM_NEUTRAL_WATER": {
+      "primary_move_count": 9,
+      "moves": [
+        {
+          "id": 60,
+          "name": "Psybeam",
+          "constant": "MOVE_PSYBEAM"
+        },
+        {
+          "id": 63,
+          "name": "Hyper Beam",
+          "constant": "MOVE_HYPER_BEAM"
+        },
+        {
+          "id": 76,
+          "name": "SolarBeam",
+          "constant": "MOVE_SOLAR_BEAM"
+        },
+        {
+          "id": 177,
+          "name": "Aeroblast",
+          "constant": "MOVE_AEROBLAST"
+        },
+        {
+          "id": 247,
+          "name": "Shadow Ball",
+          "constant": "MOVE_SHADOW_BALL"
+        },
+        {
+          "id": 324,
+          "name": "Signal Beam",
+          "constant": "MOVE_SIGNAL_BEAM"
+        },
+        {
+          "id": 351,
+          "name": "Shock Wave",
+          "constant": "MOVE_SHOCK_WAVE"
+        },
+        {
+          "id": 430,
+          "name": "Flash Cannon",
+          "constant": "MOVE_FLASH_CANNON"
+        },
+        {
+          "id": 451,
+          "name": "Charge Beam",
+          "constant": "MOVE_CHARGE_BEAM"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 63,
+          "name": "Hyper Beam",
+          "constant": "MOVE_HYPER_BEAM"
+        },
+        {
+          "id": 76,
+          "name": "SolarBeam",
+          "constant": "MOVE_SOLAR_BEAM"
+        },
+        {
+          "id": 60,
+          "name": "Psybeam",
+          "constant": "MOVE_PSYBEAM"
+        }
+      ],
+      "supplemental_followthrough_moves": []
+    },
+    "ATLAS_LEAF": {
+      "primary_move_count": 20,
+      "moves": [
+        {
+          "id": 71,
+          "name": "Absorb",
+          "constant": "MOVE_ABSORB"
+        },
+        {
+          "id": 72,
+          "name": "Mega Drain",
+          "constant": "MOVE_MEGA_DRAIN"
+        },
+        {
+          "id": 73,
+          "name": "Leech Seed",
+          "constant": "MOVE_LEECH_SEED"
+        },
+        {
+          "id": 75,
+          "name": "Razor Leaf",
+          "constant": "MOVE_RAZOR_LEAF"
+        },
+        {
+          "id": 78,
+          "name": "Stun Spore",
+          "constant": "MOVE_STUN_SPORE"
+        },
+        {
+          "id": 79,
+          "name": "Sleep Powder",
+          "constant": "MOVE_SLEEP_POWDER"
+        },
+        {
+          "id": 80,
+          "name": "Petal Dance",
+          "constant": "MOVE_PETAL_DANCE"
+        },
+        {
+          "id": 147,
+          "name": "Spore",
+          "constant": "MOVE_SPORE"
+        },
+        {
+          "id": 178,
+          "name": "Cotton Spore",
+          "constant": "MOVE_COTTON_SPORE"
+        },
+        {
+          "id": 202,
+          "name": "Giga Drain",
+          "constant": "MOVE_GIGA_DRAIN"
+        },
+        {
+          "id": 320,
+          "name": "GrassWhistle",
+          "constant": "MOVE_GRASS_WHISTLE"
+        },
+        {
+          "id": 331,
+          "name": "Bullet Seed",
+          "constant": "MOVE_BULLET_SEED"
+        },
+        {
+          "id": 338,
+          "name": "Frenzy Plant",
+          "constant": "MOVE_FRENZY_PLANT"
+        },
+        {
+          "id": 345,
+          "name": "Magical Leaf",
+          "constant": "MOVE_MAGICAL_LEAF"
+        },
+        {
+          "id": 388,
+          "name": "Worry Seed",
+          "constant": "MOVE_WORRY_SEED"
+        },
+        {
+          "id": 402,
+          "name": "Seed Bomb",
+          "constant": "MOVE_SEED_BOMB"
+        },
+        {
+          "id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL"
+        },
+        {
+          "id": 437,
+          "name": "Leaf Storm",
+          "constant": "MOVE_LEAF_STORM"
+        },
+        {
+          "id": 447,
+          "name": "Grass Knot",
+          "constant": "MOVE_GRASS_KNOT"
+        },
+        {
+          "id": 465,
+          "name": "Seed Flare",
+          "constant": "MOVE_SEED_FLARE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 71,
+          "name": "Absorb",
+          "constant": "MOVE_ABSORB"
+        },
+        {
+          "id": 72,
+          "name": "Mega Drain",
+          "constant": "MOVE_MEGA_DRAIN"
+        },
+        {
+          "id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL"
+        }
+      ],
+      "supplemental_followthrough_moves": [
+        {
+          "id": 22,
+          "name": "Vine Whip",
+          "constant": "MOVE_VINE_WHIP"
+        },
+        {
+          "id": 41,
+          "name": "Twineedle",
+          "constant": "MOVE_TWINEEDLE"
+        },
+        {
+          "id": 42,
+          "name": "Pin Missile",
+          "constant": "MOVE_PIN_MISSILE"
+        },
+        {
+          "id": 75,
+          "name": "Razor Leaf",
+          "constant": "MOVE_RAZOR_LEAF"
+        },
+        {
+          "id": 80,
+          "name": "Petal Dance",
+          "constant": "MOVE_PETAL_DANCE"
+        },
+        {
+          "id": 210,
+          "name": "Fury Cutter",
+          "constant": "MOVE_FURY_CUTTER"
+        },
+        {
+          "id": 235,
+          "name": "Synthesis",
+          "constant": "MOVE_SYNTHESIS"
+        },
+        {
+          "id": 275,
+          "name": "Ingrain",
+          "constant": "MOVE_INGRAIN"
+        },
+        {
+          "id": 294,
+          "name": "Tail Glow",
+          "constant": "MOVE_TAIL_GLOW"
+        },
+        {
+          "id": 302,
+          "name": "Needle Arm",
+          "constant": "MOVE_NEEDLE_ARM"
+        },
+        {
+          "id": 312,
+          "name": "Aromatherapy",
+          "constant": "MOVE_AROMATHERAPY"
+        },
+        {
+          "id": 318,
+          "name": "Silver Wind",
+          "constant": "MOVE_SILVER_WIND"
+        },
+        {
+          "id": 324,
+          "name": "Signal Beam",
+          "constant": "MOVE_SIGNAL_BEAM"
+        },
+        {
+          "id": 331,
+          "name": "Bullet Seed",
+          "constant": "MOVE_BULLET_SEED"
+        },
+        {
+          "id": 338,
+          "name": "Frenzy Plant",
+          "constant": "MOVE_FRENZY_PLANT"
+        },
+        {
+          "id": 345,
+          "name": "Magical Leaf",
+          "constant": "MOVE_MAGICAL_LEAF"
+        },
+        {
+          "id": 348,
+          "name": "Leaf Blade",
+          "constant": "MOVE_LEAF_BLADE"
+        },
+        {
+          "id": 369,
+          "name": "U-turn",
+          "constant": "MOVE_U_TURN"
+        },
+        {
+          "id": 402,
+          "name": "Seed Bomb",
+          "constant": "MOVE_SEED_BOMB"
+        },
+        {
+          "id": 404,
+          "name": "X-Scissor",
+          "constant": "MOVE_X_SCISSOR"
+        },
+        {
+          "id": 405,
+          "name": "Bug Buzz",
+          "constant": "MOVE_BUG_BUZZ"
+        },
+        {
+          "id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL"
+        },
+        {
+          "id": 437,
+          "name": "Leaf Storm",
+          "constant": "MOVE_LEAF_STORM"
+        },
+        {
+          "id": 438,
+          "name": "Power Whip",
+          "constant": "MOVE_POWER_WHIP"
+        },
+        {
+          "id": 447,
+          "name": "Grass Knot",
+          "constant": "MOVE_GRASS_KNOT"
+        },
+        {
+          "id": 450,
+          "name": "Bug Bite",
+          "constant": "MOVE_BUG_BITE"
+        },
+        {
+          "id": 452,
+          "name": "Wood Hammer",
+          "constant": "MOVE_WOOD_HAMMER"
+        },
+        {
+          "id": 454,
+          "name": "Attack Order",
+          "constant": "MOVE_ATTACK_ORDER"
+        },
+        {
+          "id": 455,
+          "name": "Defend Order",
+          "constant": "MOVE_DEFEND_ORDER"
+        },
+        {
+          "id": 456,
+          "name": "Heal Order",
+          "constant": "MOVE_HEAL_ORDER"
+        },
+        {
+          "id": 465,
+          "name": "Seed Flare",
+          "constant": "MOVE_SEED_FLARE"
+        }
+      ],
+      "projectile_moves": [
+        {
+          "id": 71,
+          "name": "Absorb",
+          "constant": "MOVE_ABSORB"
+        },
+        {
+          "id": 72,
+          "name": "Mega Drain",
+          "constant": "MOVE_MEGA_DRAIN"
+        },
+        {
+          "id": 80,
+          "name": "Petal Dance",
+          "constant": "MOVE_PETAL_DANCE"
+        },
+        {
+          "id": 202,
+          "name": "Giga Drain",
+          "constant": "MOVE_GIGA_DRAIN"
+        },
+        {
+          "id": 331,
+          "name": "Bullet Seed",
+          "constant": "MOVE_BULLET_SEED"
+        },
+        {
+          "id": 338,
+          "name": "Frenzy Plant",
+          "constant": "MOVE_FRENZY_PLANT"
+        },
+        {
+          "id": 345,
+          "name": "Magical Leaf",
+          "constant": "MOVE_MAGICAL_LEAF"
+        },
+        {
+          "id": 402,
+          "name": "Seed Bomb",
+          "constant": "MOVE_SEED_BOMB"
+        },
+        {
+          "id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL"
+        },
+        {
+          "id": 437,
+          "name": "Leaf Storm",
+          "constant": "MOVE_LEAF_STORM"
+        },
+        {
+          "id": 447,
+          "name": "Grass Knot",
+          "constant": "MOVE_GRASS_KNOT"
+        },
+        {
+          "id": 465,
+          "name": "Seed Flare",
+          "constant": "MOVE_SEED_FLARE"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 73,
+          "name": "Leech Seed",
+          "constant": "MOVE_LEECH_SEED"
+        },
+        {
+          "id": 75,
+          "name": "Razor Leaf",
+          "constant": "MOVE_RAZOR_LEAF"
+        },
+        {
+          "id": 78,
+          "name": "Stun Spore",
+          "constant": "MOVE_STUN_SPORE"
+        },
+        {
+          "id": 79,
+          "name": "Sleep Powder",
+          "constant": "MOVE_SLEEP_POWDER"
+        },
+        {
+          "id": 147,
+          "name": "Spore",
+          "constant": "MOVE_SPORE"
+        },
+        {
+          "id": 178,
+          "name": "Cotton Spore",
+          "constant": "MOVE_COTTON_SPORE"
+        },
+        {
+          "id": 320,
+          "name": "GrassWhistle",
+          "constant": "MOVE_GRASS_WHISTLE"
+        },
+        {
+          "id": 388,
+          "name": "Worry Seed",
+          "constant": "MOVE_WORRY_SEED"
+        }
+      ]
+    },
+    "ATLAS_ELECTRIC": {
+      "primary_move_count": 2,
+      "moves": [
+        {
+          "id": 86,
+          "name": "Thunder Wave",
+          "constant": "MOVE_THUNDER_WAVE"
+        },
+        {
+          "id": 435,
+          "name": "Discharge",
+          "constant": "MOVE_DISCHARGE"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 86,
+          "name": "Thunder Wave",
+          "constant": "MOVE_THUNDER_WAVE"
+        },
+        {
+          "id": 435,
+          "name": "Discharge",
+          "constant": "MOVE_DISCHARGE"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [
+        {
+          "id": 86,
+          "name": "Thunder Wave",
+          "constant": "MOVE_THUNDER_WAVE"
+        },
+        {
+          "id": 435,
+          "name": "Discharge",
+          "constant": "MOVE_DISCHARGE"
+        }
+      ],
+      "status_usage": "Paralysis: frame%72<12, tick=(frame%72)*2. No current projectile draws ELECTRIC, because electric projectile profiles are STAR and return before type dispatch."
+    },
+    "ATLAS_PSYCHIC": {
+      "primary_move_count": 25,
+      "moves": [
+        {
+          "id": 93,
+          "name": "Confusion",
+          "constant": "MOVE_CONFUSION"
+        },
+        {
+          "id": 94,
+          "name": "Psychic",
+          "constant": "MOVE_PSYCHIC"
+        },
+        {
+          "id": 95,
+          "name": "Hypnosis",
+          "constant": "MOVE_HYPNOSIS"
+        },
+        {
+          "id": 134,
+          "name": "Kinesis",
+          "constant": "MOVE_KINESIS"
+        },
+        {
+          "id": 138,
+          "name": "Dream Eater",
+          "constant": "MOVE_DREAM_EATER"
+        },
+        {
+          "id": 149,
+          "name": "Psywave",
+          "constant": "MOVE_PSYWAVE"
+        },
+        {
+          "id": 243,
+          "name": "Mirror Coat",
+          "constant": "MOVE_MIRROR_COAT"
+        },
+        {
+          "id": 248,
+          "name": "Future Sight",
+          "constant": "MOVE_FUTURE_SIGHT"
+        },
+        {
+          "id": 271,
+          "name": "Trick",
+          "constant": "MOVE_TRICK"
+        },
+        {
+          "id": 272,
+          "name": "Role Play",
+          "constant": "MOVE_ROLE_PLAY"
+        },
+        {
+          "id": 277,
+          "name": "Magic Coat",
+          "constant": "MOVE_MAGIC_COAT"
+        },
+        {
+          "id": 285,
+          "name": "Skill Swap",
+          "constant": "MOVE_SKILL_SWAP"
+        },
+        {
+          "id": 295,
+          "name": "Luster Purge",
+          "constant": "MOVE_LUSTER_PURGE"
+        },
+        {
+          "id": 296,
+          "name": "Mist Ball",
+          "constant": "MOVE_MIST_BALL"
+        },
+        {
+          "id": 326,
+          "name": "Extrasensory",
+          "constant": "MOVE_EXTRASENSORY"
+        },
+        {
+          "id": 354,
+          "name": "Psycho Boost",
+          "constant": "MOVE_PSYCHO_BOOST"
+        },
+        {
+          "id": 356,
+          "name": "Gravity",
+          "constant": "MOVE_GRAVITY"
+        },
+        {
+          "id": 357,
+          "name": "Miracle Eye",
+          "constant": "MOVE_MIRACLE_EYE"
+        },
+        {
+          "id": 375,
+          "name": "Psycho Shift",
+          "constant": "MOVE_PSYCHO_SHIFT"
+        },
+        {
+          "id": 377,
+          "name": "Heal Block",
+          "constant": "MOVE_HEAL_BLOCK"
+        },
+        {
+          "id": 384,
+          "name": "Power Swap",
+          "constant": "MOVE_POWER_SWAP"
+        },
+        {
+          "id": 385,
+          "name": "Guard Swap",
+          "constant": "MOVE_GUARD_SWAP"
+        },
+        {
+          "id": 391,
+          "name": "Heart Swap",
+          "constant": "MOVE_HEART_SWAP"
+        },
+        {
+          "id": 427,
+          "name": "Psycho Cut",
+          "constant": "MOVE_PSYCHO_CUT"
+        },
+        {
+          "id": 433,
+          "name": "Trick Room",
+          "constant": "MOVE_TRICK_ROOM"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 93,
+          "name": "Confusion",
+          "constant": "MOVE_CONFUSION"
+        },
+        {
+          "id": 94,
+          "name": "Psychic",
+          "constant": "MOVE_PSYCHIC"
+        },
+        {
+          "id": 427,
+          "name": "Psycho Cut",
+          "constant": "MOVE_PSYCHO_CUT"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [
+        {
+          "id": 93,
+          "name": "Confusion",
+          "constant": "MOVE_CONFUSION"
+        },
+        {
+          "id": 94,
+          "name": "Psychic",
+          "constant": "MOVE_PSYCHIC"
+        },
+        {
+          "id": 138,
+          "name": "Dream Eater",
+          "constant": "MOVE_DREAM_EATER"
+        },
+        {
+          "id": 149,
+          "name": "Psywave",
+          "constant": "MOVE_PSYWAVE"
+        },
+        {
+          "id": 243,
+          "name": "Mirror Coat",
+          "constant": "MOVE_MIRROR_COAT"
+        },
+        {
+          "id": 248,
+          "name": "Future Sight",
+          "constant": "MOVE_FUTURE_SIGHT"
+        },
+        {
+          "id": 295,
+          "name": "Luster Purge",
+          "constant": "MOVE_LUSTER_PURGE"
+        },
+        {
+          "id": 296,
+          "name": "Mist Ball",
+          "constant": "MOVE_MIST_BALL"
+        },
+        {
+          "id": 326,
+          "name": "Extrasensory",
+          "constant": "MOVE_EXTRASENSORY"
+        },
+        {
+          "id": 354,
+          "name": "Psycho Boost",
+          "constant": "MOVE_PSYCHO_BOOST"
+        },
+        {
+          "id": 427,
+          "name": "Psycho Cut",
+          "constant": "MOVE_PSYCHO_CUT"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 95,
+          "name": "Hypnosis",
+          "constant": "MOVE_HYPNOSIS"
+        },
+        {
+          "id": 134,
+          "name": "Kinesis",
+          "constant": "MOVE_KINESIS"
+        },
+        {
+          "id": 271,
+          "name": "Trick",
+          "constant": "MOVE_TRICK"
+        },
+        {
+          "id": 272,
+          "name": "Role Play",
+          "constant": "MOVE_ROLE_PLAY"
+        },
+        {
+          "id": 277,
+          "name": "Magic Coat",
+          "constant": "MOVE_MAGIC_COAT"
+        },
+        {
+          "id": 285,
+          "name": "Skill Swap",
+          "constant": "MOVE_SKILL_SWAP"
+        },
+        {
+          "id": 356,
+          "name": "Gravity",
+          "constant": "MOVE_GRAVITY"
+        },
+        {
+          "id": 357,
+          "name": "Miracle Eye",
+          "constant": "MOVE_MIRACLE_EYE"
+        },
+        {
+          "id": 375,
+          "name": "Psycho Shift",
+          "constant": "MOVE_PSYCHO_SHIFT"
+        },
+        {
+          "id": 377,
+          "name": "Heal Block",
+          "constant": "MOVE_HEAL_BLOCK"
+        },
+        {
+          "id": 384,
+          "name": "Power Swap",
+          "constant": "MOVE_POWER_SWAP"
+        },
+        {
+          "id": 385,
+          "name": "Guard Swap",
+          "constant": "MOVE_GUARD_SWAP"
+        },
+        {
+          "id": 391,
+          "name": "Heart Swap",
+          "constant": "MOVE_HEART_SWAP"
+        },
+        {
+          "id": 433,
+          "name": "Trick Room",
+          "constant": "MOVE_TRICK_ROOM"
+        }
+      ]
+    },
+    "ATLAS_SHADOW": {
+      "primary_move_count": 17,
+      "moves": [
+        {
+          "id": 101,
+          "name": "Night Shade",
+          "constant": "MOVE_NIGHT_SHADE"
+        },
+        {
+          "id": 109,
+          "name": "Confuse Ray",
+          "constant": "MOVE_CONFUSE_RAY"
+        },
+        {
+          "id": 171,
+          "name": "Nightmare",
+          "constant": "MOVE_NIGHTMARE"
+        },
+        {
+          "id": 180,
+          "name": "Spite",
+          "constant": "MOVE_SPITE"
+        },
+        {
+          "id": 251,
+          "name": "Beat Up",
+          "constant": "MOVE_BEAT_UP"
+        },
+        {
+          "id": 259,
+          "name": "Torment",
+          "constant": "MOVE_TORMENT"
+        },
+        {
+          "id": 260,
+          "name": "Flatter",
+          "constant": "MOVE_FLATTER"
+        },
+        {
+          "id": 262,
+          "name": "Memento",
+          "constant": "MOVE_MEMENTO"
+        },
+        {
+          "id": 269,
+          "name": "Taunt",
+          "constant": "MOVE_TAUNT"
+        },
+        {
+          "id": 289,
+          "name": "Snatch",
+          "constant": "MOVE_SNATCH"
+        },
+        {
+          "id": 313,
+          "name": "Fake Tears",
+          "constant": "MOVE_FAKE_TEARS"
+        },
+        {
+          "id": 373,
+          "name": "Embargo",
+          "constant": "MOVE_EMBARGO"
+        },
+        {
+          "id": 374,
+          "name": "Fling",
+          "constant": "MOVE_FLING"
+        },
+        {
+          "id": 399,
+          "name": "Dark Pulse",
+          "constant": "MOVE_DARK_PULSE"
+        },
+        {
+          "id": 415,
+          "name": "Switcheroo",
+          "constant": "MOVE_SWITCHEROO"
+        },
+        {
+          "id": 464,
+          "name": "Dark Void",
+          "constant": "MOVE_DARK_VOID"
+        },
+        {
+          "id": 466,
+          "name": "Ominous Wind",
+          "constant": "MOVE_OMINOUS_WIND"
+        }
+      ],
+      "actual_examples": [
+        {
+          "id": 101,
+          "name": "Night Shade",
+          "constant": "MOVE_NIGHT_SHADE"
+        },
+        {
+          "id": 399,
+          "name": "Dark Pulse",
+          "constant": "MOVE_DARK_PULSE"
+        },
+        {
+          "id": 466,
+          "name": "Ominous Wind",
+          "constant": "MOVE_OMINOUS_WIND"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [
+        {
+          "id": 101,
+          "name": "Night Shade",
+          "constant": "MOVE_NIGHT_SHADE"
+        },
+        {
+          "id": 251,
+          "name": "Beat Up",
+          "constant": "MOVE_BEAT_UP"
+        },
+        {
+          "id": 374,
+          "name": "Fling",
+          "constant": "MOVE_FLING"
+        },
+        {
+          "id": 399,
+          "name": "Dark Pulse",
+          "constant": "MOVE_DARK_PULSE"
+        },
+        {
+          "id": 466,
+          "name": "Ominous Wind",
+          "constant": "MOVE_OMINOUS_WIND"
+        }
+      ],
+      "repeated_cone_moves": [
+        {
+          "id": 109,
+          "name": "Confuse Ray",
+          "constant": "MOVE_CONFUSE_RAY"
+        },
+        {
+          "id": 171,
+          "name": "Nightmare",
+          "constant": "MOVE_NIGHTMARE"
+        },
+        {
+          "id": 180,
+          "name": "Spite",
+          "constant": "MOVE_SPITE"
+        },
+        {
+          "id": 259,
+          "name": "Torment",
+          "constant": "MOVE_TORMENT"
+        },
+        {
+          "id": 260,
+          "name": "Flatter",
+          "constant": "MOVE_FLATTER"
+        },
+        {
+          "id": 262,
+          "name": "Memento",
+          "constant": "MOVE_MEMENTO"
+        },
+        {
+          "id": 269,
+          "name": "Taunt",
+          "constant": "MOVE_TAUNT"
+        },
+        {
+          "id": 289,
+          "name": "Snatch",
+          "constant": "MOVE_SNATCH"
+        },
+        {
+          "id": 313,
+          "name": "Fake Tears",
+          "constant": "MOVE_FAKE_TEARS"
+        },
+        {
+          "id": 373,
+          "name": "Embargo",
+          "constant": "MOVE_EMBARGO"
+        },
+        {
+          "id": 415,
+          "name": "Switcheroo",
+          "constant": "MOVE_SWITCHEROO"
+        },
+        {
+          "id": 464,
+          "name": "Dark Void",
+          "constant": "MOVE_DARK_VOID"
+        }
+      ],
+      "status_usage": "Any active status other than burn/paralysis/freeze, during frame%72<12. Includes poison/sleep where present."
+    },
+    "ATLAS_SLASH": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [
+        {
+          "id": 10,
+          "name": "Scratch",
+          "constant": "MOVE_SCRATCH"
+        },
+        {
+          "id": 15,
+          "name": "Cut",
+          "constant": "MOVE_CUT"
+        },
+        {
+          "id": 163,
+          "name": "Slash",
+          "constant": "MOVE_SLASH"
+        }
+      ],
+      "supplemental_followthrough_moves": [
+        {
+          "id": 10,
+          "name": "Scratch",
+          "constant": "MOVE_SCRATCH"
+        },
+        {
+          "id": 15,
+          "name": "Cut",
+          "constant": "MOVE_CUT"
+        },
+        {
+          "id": 163,
+          "name": "Slash",
+          "constant": "MOVE_SLASH"
+        },
+        {
+          "id": 224,
+          "name": "Megahorn",
+          "constant": "MOVE_MEGAHORN"
+        },
+        {
+          "id": 238,
+          "name": "Cross Chop",
+          "constant": "MOVE_CROSS_CHOP"
+        },
+        {
+          "id": 337,
+          "name": "Dragon Claw",
+          "constant": "MOVE_DRAGON_CLAW"
+        }
+      ],
+      "projectile_moves": [],
+      "repeated_cone_moves": []
+    },
+    "ATLAS_GUARD": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [
+        {
+          "id": 182,
+          "name": "Protect",
+          "constant": "MOVE_PROTECT"
+        },
+        {
+          "id": 197,
+          "name": "Detect",
+          "constant": "MOVE_DETECT"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [],
+      "event_usage": "Held guard/guardTimer, including Protect when it activates guard. Startup uses frames42 and43; held uses44. Renderer copies/pads to a64x64 live cell and scales to actor body bounds. Other manifest guard frames are not used by HeldShield().",
+      "conditional_move_triggers": [
+        {
+          "id": 182,
+          "name": "Protect",
+          "constant": "MOVE_PROTECT"
+        },
+        {
+          "id": 197,
+          "name": "Detect",
+          "constant": "MOVE_DETECT"
+        }
+      ],
+      "conditional_trigger_note": "Protect/Detect native special6 opens guard. Direct held guard input also uses this art."
+    },
+    "ATLAS_CLASH": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [],
+      "event_usage": "Beam clash pressure/resolution (scaled) and unpaired COMBAT_CLASH events; no specific launch move owns this sprite."
+    },
+    "ATLAS_BUFF": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [
+        {
+          "id": 14,
+          "name": "Swords Dance",
+          "constant": "MOVE_SWORDS_DANCE"
+        },
+        {
+          "id": 97,
+          "name": "Agility",
+          "constant": "MOVE_AGILITY"
+        },
+        {
+          "id": 347,
+          "name": "Calm Mind",
+          "constant": "MOVE_CALM_MIND"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [],
+      "event_usage": "Any observed stat-stage increase;24tick effect. No dedicated launch move dispatch.",
+      "conditional_move_triggers": [
+        {
+          "id": 14,
+          "name": "Swords Dance",
+          "constant": "MOVE_SWORDS_DANCE"
+        },
+        {
+          "id": 74,
+          "name": "Growth",
+          "constant": "MOVE_GROWTH"
+        },
+        {
+          "id": 96,
+          "name": "Meditate",
+          "constant": "MOVE_MEDITATE"
+        },
+        {
+          "id": 97,
+          "name": "Agility",
+          "constant": "MOVE_AGILITY"
+        },
+        {
+          "id": 104,
+          "name": "Double Team",
+          "constant": "MOVE_DOUBLE_TEAM"
+        },
+        {
+          "id": 106,
+          "name": "Harden",
+          "constant": "MOVE_HARDEN"
+        },
+        {
+          "id": 107,
+          "name": "Minimize",
+          "constant": "MOVE_MINIMIZE"
+        },
+        {
+          "id": 110,
+          "name": "Withdraw",
+          "constant": "MOVE_WITHDRAW"
+        },
+        {
+          "id": 111,
+          "name": "Defense Curl",
+          "constant": "MOVE_DEFENSE_CURL"
+        },
+        {
+          "id": 112,
+          "name": "Barrier",
+          "constant": "MOVE_BARRIER"
+        },
+        {
+          "id": 133,
+          "name": "Amnesia",
+          "constant": "MOVE_AMNESIA"
+        },
+        {
+          "id": 151,
+          "name": "Acid Armor",
+          "constant": "MOVE_ACID_ARMOR"
+        },
+        {
+          "id": 159,
+          "name": "Sharpen",
+          "constant": "MOVE_SHARPEN"
+        },
+        {
+          "id": 207,
+          "name": "Swagger",
+          "constant": "MOVE_SWAGGER"
+        },
+        {
+          "id": 211,
+          "name": "Steel Wing",
+          "constant": "MOVE_STEEL_WING"
+        },
+        {
+          "id": 232,
+          "name": "Metal Claw",
+          "constant": "MOVE_METAL_CLAW"
+        },
+        {
+          "id": 246,
+          "name": "AncientPower",
+          "constant": "MOVE_ANCIENT_POWER"
+        },
+        {
+          "id": 260,
+          "name": "Flatter",
+          "constant": "MOVE_FLATTER"
+        },
+        {
+          "id": 268,
+          "name": "Charge",
+          "constant": "MOVE_CHARGE"
+        },
+        {
+          "id": 294,
+          "name": "Tail Glow",
+          "constant": "MOVE_TAIL_GLOW"
+        },
+        {
+          "id": 309,
+          "name": "Meteor Mash",
+          "constant": "MOVE_METEOR_MASH"
+        },
+        {
+          "id": 318,
+          "name": "Silver Wind",
+          "constant": "MOVE_SILVER_WIND"
+        },
+        {
+          "id": 322,
+          "name": "Cosmic Power",
+          "constant": "MOVE_COSMIC_POWER"
+        },
+        {
+          "id": 334,
+          "name": "Iron Defense",
+          "constant": "MOVE_IRON_DEFENSE"
+        },
+        {
+          "id": 336,
+          "name": "Howl",
+          "constant": "MOVE_HOWL"
+        },
+        {
+          "id": 339,
+          "name": "Bulk Up",
+          "constant": "MOVE_BULK_UP"
+        },
+        {
+          "id": 347,
+          "name": "Calm Mind",
+          "constant": "MOVE_CALM_MIND"
+        },
+        {
+          "id": 349,
+          "name": "Dragon Dance",
+          "constant": "MOVE_DRAGON_DANCE"
+        },
+        {
+          "id": 397,
+          "name": "Rock Polish",
+          "constant": "MOVE_ROCK_POLISH"
+        },
+        {
+          "id": 417,
+          "name": "Nasty Plot",
+          "constant": "MOVE_NASTY_PLOT"
+        },
+        {
+          "id": 451,
+          "name": "Charge Beam",
+          "constant": "MOVE_CHARGE_BEAM"
+        },
+        {
+          "id": 455,
+          "name": "Defend Order",
+          "constant": "MOVE_DEFEND_ORDER"
+        },
+        {
+          "id": 466,
+          "name": "Ominous Wind",
+          "constant": "MOVE_OMINOUS_WIND"
+        }
+      ],
+      "conditional_trigger_note": "Direct native stage-effect candidates from combat_native_rules.inc. Effect requires application/success and an observed stage difference; chance and stage caps can suppress it. Haze resets and Psych Up copying can additionally raise or lower observed stages depending on combat state."
+    },
+    "ATLAS_DEBUFF": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [
+        {
+          "id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL"
+        },
+        {
+          "id": 39,
+          "name": "Tail Whip",
+          "constant": "MOVE_TAIL_WHIP"
+        },
+        {
+          "id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE"
+        }
+      ],
+      "supplemental_followthrough_moves": [],
+      "projectile_moves": [],
+      "repeated_cone_moves": [],
+      "event_usage": "Any observed stat-stage decrease;24tick effect. No dedicated launch move dispatch.",
+      "conditional_move_triggers": [
+        {
+          "id": 28,
+          "name": "Sand-Attack",
+          "constant": "MOVE_SAND_ATTACK"
+        },
+        {
+          "id": 39,
+          "name": "Tail Whip",
+          "constant": "MOVE_TAIL_WHIP"
+        },
+        {
+          "id": 43,
+          "name": "Leer",
+          "constant": "MOVE_LEER"
+        },
+        {
+          "id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL"
+        },
+        {
+          "id": 51,
+          "name": "Acid",
+          "constant": "MOVE_ACID"
+        },
+        {
+          "id": 61,
+          "name": "BubbleBeam",
+          "constant": "MOVE_BUBBLE_BEAM"
+        },
+        {
+          "id": 62,
+          "name": "Aurora Beam",
+          "constant": "MOVE_AURORA_BEAM"
+        },
+        {
+          "id": 81,
+          "name": "String Shot",
+          "constant": "MOVE_STRING_SHOT"
+        },
+        {
+          "id": 94,
+          "name": "Psychic",
+          "constant": "MOVE_PSYCHIC"
+        },
+        {
+          "id": 103,
+          "name": "Screech",
+          "constant": "MOVE_SCREECH"
+        },
+        {
+          "id": 108,
+          "name": "SmokeScreen",
+          "constant": "MOVE_SMOKE_SCREEN"
+        },
+        {
+          "id": 132,
+          "name": "Constrict",
+          "constant": "MOVE_CONSTRICT"
+        },
+        {
+          "id": 134,
+          "name": "Kinesis",
+          "constant": "MOVE_KINESIS"
+        },
+        {
+          "id": 145,
+          "name": "Bubble",
+          "constant": "MOVE_BUBBLE"
+        },
+        {
+          "id": 148,
+          "name": "Flash",
+          "constant": "MOVE_FLASH"
+        },
+        {
+          "id": 178,
+          "name": "Cotton Spore",
+          "constant": "MOVE_COTTON_SPORE"
+        },
+        {
+          "id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE"
+        },
+        {
+          "id": 189,
+          "name": "Mud-Slap",
+          "constant": "MOVE_MUD_SLAP"
+        },
+        {
+          "id": 190,
+          "name": "Octazooka",
+          "constant": "MOVE_OCTAZOOKA"
+        },
+        {
+          "id": 196,
+          "name": "Icy Wind",
+          "constant": "MOVE_ICY_WIND"
+        },
+        {
+          "id": 204,
+          "name": "Charm",
+          "constant": "MOVE_CHARM"
+        },
+        {
+          "id": 230,
+          "name": "Sweet Scent",
+          "constant": "MOVE_SWEET_SCENT"
+        },
+        {
+          "id": 231,
+          "name": "Iron Tail",
+          "constant": "MOVE_IRON_TAIL"
+        },
+        {
+          "id": 242,
+          "name": "Crunch",
+          "constant": "MOVE_CRUNCH"
+        },
+        {
+          "id": 247,
+          "name": "Shadow Ball",
+          "constant": "MOVE_SHADOW_BALL"
+        },
+        {
+          "id": 249,
+          "name": "Rock Smash",
+          "constant": "MOVE_ROCK_SMASH"
+        },
+        {
+          "id": 276,
+          "name": "Superpower",
+          "constant": "MOVE_SUPERPOWER"
+        },
+        {
+          "id": 295,
+          "name": "Luster Purge",
+          "constant": "MOVE_LUSTER_PURGE"
+        },
+        {
+          "id": 296,
+          "name": "Mist Ball",
+          "constant": "MOVE_MIST_BALL"
+        },
+        {
+          "id": 297,
+          "name": "FeatherDance",
+          "constant": "MOVE_FEATHER_DANCE"
+        },
+        {
+          "id": 306,
+          "name": "Crush Claw",
+          "constant": "MOVE_CRUSH_CLAW"
+        },
+        {
+          "id": 313,
+          "name": "Fake Tears",
+          "constant": "MOVE_FAKE_TEARS"
+        },
+        {
+          "id": 315,
+          "name": "Overheat",
+          "constant": "MOVE_OVERHEAT"
+        },
+        {
+          "id": 317,
+          "name": "Rock Tomb",
+          "constant": "MOVE_ROCK_TOMB"
+        },
+        {
+          "id": 319,
+          "name": "Metal Sound",
+          "constant": "MOVE_METAL_SOUND"
+        },
+        {
+          "id": 321,
+          "name": "Tickle",
+          "constant": "MOVE_TICKLE"
+        },
+        {
+          "id": 330,
+          "name": "Muddy Water",
+          "constant": "MOVE_MUDDY_WATER"
+        },
+        {
+          "id": 341,
+          "name": "Mud Shot",
+          "constant": "MOVE_MUD_SHOT"
+        },
+        {
+          "id": 354,
+          "name": "Psycho Boost",
+          "constant": "MOVE_PSYCHO_BOOST"
+        },
+        {
+          "id": 359,
+          "name": "Hammer Arm",
+          "constant": "MOVE_HAMMER_ARM"
+        },
+        {
+          "id": 370,
+          "name": "Close Combat",
+          "constant": "MOVE_CLOSE_COMBAT"
+        },
+        {
+          "id": 405,
+          "name": "Bug Buzz",
+          "constant": "MOVE_BUG_BUZZ"
+        },
+        {
+          "id": 411,
+          "name": "Focus Blast",
+          "constant": "MOVE_FOCUS_BLAST"
+        },
+        {
+          "id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL"
+        },
+        {
+          "id": 414,
+          "name": "Earth Power",
+          "constant": "MOVE_EARTH_POWER"
+        },
+        {
+          "id": 426,
+          "name": "Mud Bomb",
+          "constant": "MOVE_MUD_BOMB"
+        },
+        {
+          "id": 429,
+          "name": "Mirror Shot",
+          "constant": "MOVE_MIRROR_SHOT"
+        },
+        {
+          "id": 430,
+          "name": "Flash Cannon",
+          "constant": "MOVE_FLASH_CANNON"
+        },
+        {
+          "id": 434,
+          "name": "Draco Meteor",
+          "constant": "MOVE_DRACO_METEOR"
+        },
+        {
+          "id": 437,
+          "name": "Leaf Storm",
+          "constant": "MOVE_LEAF_STORM"
+        },
+        {
+          "id": 465,
+          "name": "Seed Flare",
+          "constant": "MOVE_SEED_FLARE"
+        }
+      ],
+      "conditional_trigger_note": "Direct native stage-effect candidates from combat_native_rules.inc. Effect requires application/success and an observed stage difference; chance and stage caps can suppress it. Haze resets and Psych Up copying can additionally raise or lower observed stages depending on combat state."
+    },
+    "DASH_WIND": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [],
+      "supplemental_followthrough_moves": []
+    },
+    "CONTACT_GLINT": {
+      "primary_move_count": 0,
+      "moves": [],
+      "actual_examples": [],
+      "supplemental_followthrough_moves": []
+    }
+  },
+  "shared_runtime_rules": {
+    "beam_frame": "floor(combat.frame/4)&3",
+    "atlas_projectile_tick": "combat.frame",
+    "atlas_cone_tick": "fighter.actionTick + step/6 for step14..profile.range in24px intervals",
+    "atlas_claw_leaf_followthrough_tick": "(actionTick-profile.windup)*2 while phase ACTIVE and actionTick<profile.windup+10",
+    "followthrough_dispatch": "Any active profile.visual CLAW -> SLASH or LEAF -> LEAF, independently of primary kind; includes projectile/cone/self profiles.",
+    "beam_geometry": "Four32x32 chunks form128x32 strip; affine transformed to actor source point/end reach; grow over6 ticks; clash endpoint shared.",
+    "beam_runtime_palette": "arena_beam_palette copied every draw, slot14=0x6318, slot15=0x7fff.",
+    "atlas_runtime_palette": "arena_v096_palette copied every draw, bank13.",
+    "old_extra_assets": "arena_extra_tiles and arena_extra_palette are not loaded by current renderer. ArenaExtra_ForType is still used for family IDs only."
+  }
+}

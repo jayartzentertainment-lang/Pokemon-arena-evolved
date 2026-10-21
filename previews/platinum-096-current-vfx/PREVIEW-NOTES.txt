@@ -1,0 +1,4 @@
+Existing 0.9.6 sprite data decoded directly from C tile arrays.
+No source/art/gameplay changes and no ROM build.
+Beam animation loops show fixed 128px native lengths; runtime rotates/scales/anchors them.
+Shared families are not unique art per listed move. Full runtime mapping is included separately.
