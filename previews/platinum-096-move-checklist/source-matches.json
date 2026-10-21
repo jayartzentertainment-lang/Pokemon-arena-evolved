@@ -1,0 +1,6087 @@
+{
+  "scope": "Read-only visual inventory of all95 supplied Diamond/Pearl PNG sheets, mapped to canonical Platinum move IDs1..467. Analysis artifact only; no asset changes, game-code changes, builds, tests or emulator runs.",
+  "canonical_source": "/workspace/platinum-port/pokeplatinum/src/arena/move_data.c",
+  "inventory_source": "/workspace/platinum-port/pokeplatinum/res/arena/v096-effects/source-inventory.json",
+  "source_root": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source",
+  "matching_policy": [
+    "Direct named matches mean filename/caption identity, not completed integration or a unique finished animation.",
+    "Normalized matching removes punctuation, spaces and case. Typographical aliases, presentation/direction suffixes and combined names are recorded explicitly.",
+    "Usable-looking means visible isolated sprite/particle/component art exists. It still requires frame extraction, alpha/palette/layout work and choreography/timing verification.",
+    "Background-only sheets count as named source components, not dedicated actor/projectile sprites.",
+    "Generic/component candidates are separate from direct matches, carry explicit confidence, and do not count as dedicated source coverage.",
+    "No timing metadata was supplied for the95 PNGs. Original move ownership and complete animation fidelity were not verified against native scripts.",
+    "A missing external exact match does not mean new art must be found: the complete native Platinum source/assets provide an additional extraction route.",
+    "Current runtime dispatch is a separate axis: every one of the467 canonical moves already has a runtime assignment in vfx-showcase/runtime-map.json, frequently using shared/fallback art."
+  ],
+  "counts": {
+    "canonical_move_ids": 467,
+    "supplied_dp_png_files": 95,
+    "normalized_name_match_files": 65,
+    "explicit_alias_or_combined_name_files": 15,
+    "direct_named_source_files": 80,
+    "canonical_moves_with_direct_named_source": 79,
+    "canonical_moves_without_direct_named_external_match": 388,
+    "file_source_status": {
+      "usable_looking_named_sheet": 71,
+      "generic_or_ambiguous_component": 15,
+      "named_background_only": 8,
+      "named_but_visual_identity_unconfirmed": 1
+    },
+    "move_source_status": {
+      "no_direct_named_external_match": 388,
+      "usable_looking_named_sheet": 70,
+      "named_background_only": 8,
+      "named_but_visual_identity_unconfirmed": 1
+    },
+    "generic_or_ambiguous_files": [
+      "Burn.png",
+      "Confuse.png",
+      "Cups.png",
+      "Fire.png",
+      "Healing.png",
+      "Kick.png",
+      "Leaves.png",
+      "Notes.png",
+      "Point-Finger.png",
+      "Rain.png",
+      "Scope.png",
+      "Speed-Attack-Back.png",
+      "Status.png",
+      "Telekineses.png",
+      "X.png"
+    ]
+  },
+  "source_files": [
+    {
+      "file": "Accupressure.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Accupressure.png",
+      "size": [
+        23,
+        32
+      ],
+      "sha256": "eadd6dd65babd4980c7ebc7e67899a774b73d72bbf2d7a4491a7932b0714d069",
+      "canonical_matches": [
+        {
+          "move_id": 367,
+          "name": "Acupressure",
+          "constant": "MOVE_ACUPRESSURE",
+          "match_basis": "corrected_filename_typo"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "White pointing-hand icon.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename Accupressure is an apparent misspelling of Acupressure."
+    },
+    {
+      "file": "Aerial-Ace.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Aerial-Ace.png",
+      "size": [
+        216,
+        122
+      ],
+      "sha256": "fef666adabdbe7f26a5a306566a9af0055973b5662af15d2c853b1c64c4355f6",
+      "canonical_matches": [
+        {
+          "move_id": 332,
+          "name": "Aerial Ace",
+          "constant": "MOVE_AERIAL_ACE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Long diagonal colored slash pieces and circular impact particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Aero-Blast.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Aero-Blast.png",
+      "size": [
+        602,
+        1024
+      ],
+      "sha256": "942116f6defb64bc7aa6764895a002bea1b19393fdf1213cf6ce11c55a4474fd",
+      "canonical_matches": [
+        {
+          "move_id": 177,
+          "name": "Aeroblast",
+          "constant": "MOVE_AEROBLAST",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue-white spiraling air/projectile pieces and an accompanying blue circular background.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Amnesia.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Amnesia.png",
+      "size": [
+        45,
+        61
+      ],
+      "sha256": "b604f65d57f8e465e862a9ca13acefddbbd8a3570cca401c0b4304ab647dc537",
+      "canonical_matches": [
+        {
+          "move_id": 133,
+          "name": "Amnesia",
+          "constant": "MOVE_AMNESIA",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Thought bubbles and question-mark cloud icon.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Ancient-Power.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Ancient-Power.png",
+      "size": [
+        240,
+        125
+      ],
+      "sha256": "c13c774e0609ff4313888450ef9bdd94614274d65d31b36eda63c3cd56e70527",
+      "canonical_matches": [
+        {
+          "move_id": 246,
+          "name": "AncientPower",
+          "constant": "MOVE_ANCIENT_POWER",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Outlined golden-brown rock/orb frames in multiple sizes.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Attack-and-Heal-Order.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Attack-and-Heal-Order.png",
+      "size": [
+        149,
+        478
+      ],
+      "sha256": "cf7e38920a5eae37b023502519e0fe32cd74651fefa288524de7685120dc9ffc",
+      "canonical_matches": [
+        {
+          "move_id": 454,
+          "name": "Attack Order",
+          "constant": "MOVE_ATTACK_ORDER",
+          "match_basis": "combined_filename"
+        },
+        {
+          "move_id": 456,
+          "name": "Heal Order",
+          "constant": "MOVE_HEAL_ORDER",
+          "match_basis": "combined_filename"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small insect/bee frames, colored blobs and sparkle pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename names Attack Order and Heal Order; this does not establish a Defend Order match."
+    },
+    {
+      "file": "Baton-Pass.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Baton-Pass.png",
+      "size": [
+        133,
+        31
+      ],
+      "sha256": "9e3097f18e20942464a89e8d6939d940685f5a80a0cc1e5be756dca554199ff4",
+      "canonical_matches": [
+        {
+          "move_id": 226,
+          "name": "Baton Pass",
+          "constant": "MOVE_BATON_PASS",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Ball, ring and gold particle components.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Blast-Burn.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Blast-Burn.png",
+      "size": [
+        256,
+        1400
+      ],
+      "sha256": "8b262f9fcf2e83b890726f3e37ebf23e721b61185e0df5c175db13efe54fcd12",
+      "canonical_matches": [
+        {
+          "move_id": 307,
+          "name": "Blast Burn",
+          "constant": "MOVE_BLAST_BURN",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Orange, red and pink flame formations in successive frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Bullet-Seed.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Bullet-Seed.png",
+      "size": [
+        75,
+        30
+      ],
+      "sha256": "3f6129773239e1f7b2f1f5397d00ac472ea8117f7534e1a1cdb7bded07957cce",
+      "canonical_matches": [
+        {
+          "move_id": 331,
+          "name": "Bullet Seed",
+          "constant": "MOVE_BULLET_SEED",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small brown seed pieces at several orientations.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Burn.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Burn.png",
+      "size": [
+        99,
+        37
+      ],
+      "sha256": "b022f2ba5800d22bc16dad0c85fe8850de924634089d3565b2139c65adb7b92d",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_status_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Small orange flame frames, appropriate as a generic burn/status component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Close-Combat.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Close-Combat.png",
+      "size": [
+        324,
+        252
+      ],
+      "sha256": "2740290f5e922cfa7f1a240ca58a4859c2b86da0e659844bcf1c045cd57ea7e3",
+      "canonical_matches": [
+        {
+          "move_id": 370,
+          "name": "Close Combat",
+          "constant": "MOVE_CLOSE_COMBAT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue speed-line background, orange impact rings and a red fist icon.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Confuse.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Confuse.png",
+      "size": [
+        114,
+        984
+      ],
+      "sha256": "423d73da87ac32cc2ac32152a5b43a7178d30bd20e6fcd313ae034b5c55a1db3",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_status_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Long sheet of small yellow duck frames, visibly a confusion-status component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Crunch.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Crunch.png",
+      "size": [
+        1000,
+        384
+      ],
+      "sha256": "6783fbd2257104005393bb66c318fded6b75f87815cb89b4ef16ef1e685c5657",
+      "canonical_matches": [
+        {
+          "move_id": 242,
+          "name": "Crunch",
+          "constant": "MOVE_CRUNCH",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Upper/lower teeth and bite/jaw frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Cups.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Cups.png",
+      "size": [
+        141,
+        60
+      ],
+      "sha256": "d9706c70d0fbe2825e72b502c062182c7566d4f2f02e0d3881fe15236a5ec474",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "ambiguous_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Four pale cup/shell-shaped pieces; canonical move identity is unresolved.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Cut.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Cut.png",
+      "size": [
+        105,
+        94
+      ],
+      "sha256": "9b36b79ea519732d97e92f607cc3ef54bf168b9accb4fc5bfb23f0432013dbe1",
+      "canonical_matches": [
+        {
+          "move_id": 15,
+          "name": "Cut",
+          "constant": "MOVE_CUT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Yellow slash streak and small yellow impact particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Dragon-Claw.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Dragon-Claw.png",
+      "size": [
+        138,
+        812
+      ],
+      "sha256": "c7c97a0672fa66bb5537226589eb8344584bbc9067b2fe5d19583b4fffed1d28",
+      "canonical_matches": [
+        {
+          "move_id": 337,
+          "name": "Dragon Claw",
+          "constant": "MOVE_DRAGON_CLAW",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Pink claw-mark pieces, dark slashes and blue particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Dynamic-Punch.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Dynamic-Punch.png",
+      "size": [
+        256,
+        288
+      ],
+      "sha256": "a5e2032fb99c90a81b0ac02eaee34f21c13794e8caf4daf18d4de45f98192e95",
+      "canonical_matches": [
+        {
+          "move_id": 223,
+          "name": "DynamicPunch",
+          "constant": "MOVE_DYNAMIC_PUNCH",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Red/orange full-screen radial burst background only; no separate fist/impact sprite was visible.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Energy-Ball.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Energy-Ball.png",
+      "size": [
+        248,
+        59
+      ],
+      "sha256": "eb45dff0368f3b03a5bf1f5e6f172cb65d7cebf2e14fcd7a92a738ac7eff3731",
+      "canonical_matches": [
+        {
+          "move_id": 412,
+          "name": "Energy Ball",
+          "constant": "MOVE_ENERGY_BALL",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green orb, ring and small green particle frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Eruption.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Eruption.png",
+      "size": [
+        180,
+        124
+      ],
+      "sha256": "dc2c1c247f7b3600f0041c4df3a9600fe2ec7e0d4e031386eefecb290306ad9b",
+      "canonical_matches": [
+        {
+          "move_id": 284,
+          "name": "Eruption",
+          "constant": "MOVE_ERUPTION",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown rock/ejecta pieces and pale cloud particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Fire-Blast.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fire-Blast.png",
+      "size": [
+        256,
+        1800
+      ],
+      "sha256": "43db2d6186c732460c395c1bf6063e073b6f7c63e70208b2b3d21ed2a56b8ff5",
+      "canonical_matches": [
+        {
+          "move_id": 126,
+          "name": "Fire Blast",
+          "constant": "MOVE_FIRE_BLAST",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Orange star/character-like fire formations, separate flame particles and bright impact piece.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Fire-Punch.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fire-Punch.png",
+      "size": [
+        188,
+        300
+      ],
+      "sha256": "d41f891a809bdda5cb9a14a6ea538143238b16728b12bf0892cea09757e2f656",
+      "canonical_matches": [
+        {
+          "move_id": 7,
+          "name": "Fire Punch",
+          "constant": "MOVE_FIRE_PUNCH",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Orange fireball/flame particles and red fist icon.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Fire-Spin.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fire-Spin.png",
+      "size": [
+        191,
+        61
+      ],
+      "sha256": "9ca3676ee6260cfa6f719539d1d16467c906ffcde5381069e7dbe0e4d91cefe7",
+      "canonical_matches": [
+        {
+          "move_id": 83,
+          "name": "Fire Spin",
+          "constant": "MOVE_FIRE_SPIN",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small orange and red flame particles in several sizes.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Fire.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fire.png",
+      "size": [
+        76,
+        27
+      ],
+      "sha256": "3530ceb45a60e07449f2e2be182fd42cac9126bd1cb98f32d9bc4e08e55c4fc0",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_particle_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Two soft-edged orange/yellow fire particles; generic component with no canonical move in its filename.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Fissure.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fissure.png",
+      "size": [
+        272,
+        384
+      ],
+      "sha256": "13a5f5280f33c3ec0c258dc7b8d370f68521d0c013cf6d6baf2f717ef97a4009",
+      "canonical_matches": [
+        {
+          "move_id": 90,
+          "name": "Fissure",
+          "constant": "MOVE_FISSURE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown backdrop plus black/brown ground crack pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Flare-Blitz.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Flare-Blitz.png",
+      "size": [
+        256,
+        287
+      ],
+      "sha256": "95670adc23113704d718d7d3f2b5dbf70d97a362aee1025d0772ed017886641e",
+      "canonical_matches": [
+        {
+          "move_id": 394,
+          "name": "Flare Blitz",
+          "constant": "MOVE_FLARE_BLITZ",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Blue/white radial burst background only; no isolated flame or actor/projectile sprite was visible.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Flash-Cannon.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Flash-Cannon.png",
+      "size": [
+        249,
+        218
+      ],
+      "sha256": "8d04c25c73bba55d69df32b78415812e538d358cb907bd984af14709681dd3ca",
+      "canonical_matches": [
+        {
+          "move_id": 430,
+          "name": "Flash Cannon",
+          "constant": "MOVE_FLASH_CANNON",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple/white orbs and white diamond sparkle pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Fly.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Fly.png",
+      "size": [
+        256,
+        384
+      ],
+      "sha256": "2c83e35eea99b76ef2ce82fafcaf7aac09a6ca6f9c265a6eea69b62b5f2a3c52",
+      "canonical_matches": [
+        {
+          "move_id": 19,
+          "name": "Fly",
+          "constant": "MOVE_FLY",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue capsule/air pieces, a pale orb, and a blue/white background.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Focus-Blast.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Focus-Blast.png",
+      "size": [
+        256,
+        1000
+      ],
+      "sha256": "6cdc5f5c9345429c2d5a681bea994f3ebf033fefc7e22eb0954e3e97e4bae943",
+      "canonical_matches": [
+        {
+          "move_id": 411,
+          "name": "Focus Blast",
+          "constant": "MOVE_FOCUS_BLAST",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Golden rings/orbs and a small accompanying background.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Frenzy-Plant.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Frenzy-Plant.png",
+      "size": [
+        1256,
+        430
+      ],
+      "sha256": "68f3a9564d7bd8926e68e567d6910a5b164a153a2da68bf078b16f584045e50c",
+      "canonical_matches": [
+        {
+          "move_id": 338,
+          "name": "Frenzy Plant",
+          "constant": "MOVE_FRENZY_PLANT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Successive branching/root formations and a green leaf/streak background.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Giga-Impact.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Giga-Impact.png",
+      "size": [
+        256,
+        288
+      ],
+      "sha256": "25301741db6b51c7199392b77f679ea5fc002b6c495be109c54118609c227cb8",
+      "canonical_matches": [
+        {
+          "move_id": 416,
+          "name": "Giga Impact",
+          "constant": "MOVE_GIGA_IMPACT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Pink/red full-screen radial burst background only; no separate impact sprite was visible.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Growl.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Growl.png",
+      "size": [
+        234,
+        142
+      ],
+      "sha256": "25060817e284518f176a2a23fb2b7cad7aa32a78af5f62d5707f262e53f14fd4",
+      "canonical_matches": [
+        {
+          "move_id": 45,
+          "name": "Growl",
+          "constant": "MOVE_GROWL",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Large orange ring pieces and small yellow lightning-like marks.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Grudge.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Grudge.png",
+      "size": [
+        145,
+        67
+      ],
+      "sha256": "cc3f90e39ea5e52674aafe7ee41d96f1dfeea1118db92c1e30c10db67c86c34b",
+      "canonical_matches": [
+        {
+          "move_id": 288,
+          "name": "Grudge",
+          "constant": "MOVE_GRUDGE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple ghostly flame/orb pieces with cyan tips.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Hammer-Arm.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hammer-Arm.png",
+      "size": [
+        179,
+        85
+      ],
+      "sha256": "e8bf41441df1296b040441eb52bb0111ca4118d3d2d7737ed86758cb3fd056ba",
+      "canonical_matches": [
+        {
+          "move_id": 359,
+          "name": "Hammer Arm",
+          "constant": "MOVE_HAMMER_ARM",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Gray arm/fist icons and pale impact/cloud pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Healing.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Healing.png",
+      "size": [
+        167,
+        185
+      ],
+      "sha256": "dc6c1a0c868ea943870a73de12d6678753f3f14d77f6ff5bc8a1a236ed2776e7",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_healing_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Green vertical light background and green sparkles; generic healing component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Heat-Wave.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Heat-Wave.png",
+      "size": [
+        1023,
+        201
+      ],
+      "sha256": "1b4efef3637d2d7d43f25f22e64480a20c6f6a53f440756b522859eed38efb88",
+      "canonical_matches": [
+        {
+          "move_id": 257,
+          "name": "Heat Wave",
+          "constant": "MOVE_HEAT_WAVE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Brown atmospheric heat/haze strip only; no flame/projectile sprites were visible.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Helping-Hand.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Helping-Hand.png",
+      "size": [
+        70,
+        140
+      ],
+      "sha256": "779d5607ea0176f219eeae131c48488cea7d7bec2d88b150a95ac0787e660023",
+      "canonical_matches": [
+        {
+          "move_id": 270,
+          "name": "Helping Hand",
+          "constant": "MOVE_HELPING_HAND",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "White hand/clapping frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Hydro-Cannon-Back.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hydro-Cannon-Back.png",
+      "size": [
+        256,
+        144
+      ],
+      "sha256": "cbbb2eecae35e08d51f9570802434ca06735df424afc626bfd2b3089c64ae6bf",
+      "canonical_matches": [
+        {
+          "move_id": 308,
+          "name": "Hydro Cannon",
+          "constant": "MOVE_HYDRO_CANNON",
+          "match_basis": "background_suffix"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Green speed-line battle backdrop only; no water stream or projectile sprite.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Back suffix identifies a background component; it is not a Hydro Cannon water-jet sheet."
+    },
+    {
+      "file": "Hydro-Pump.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hydro-Pump.png",
+      "size": [
+        832,
+        1008
+      ],
+      "sha256": "4aad56d7b38aef5ff6fdc7f3a4824f682672f52688a16a021d62d21a588d9a06",
+      "canonical_matches": [
+        {
+          "move_id": 56,
+          "name": "Hydro Pump",
+          "constant": "MOVE_HYDRO_PUMP",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Detailed blue-white water jets, startup/ending pieces and a blue accompanying background.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Hypnosis.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hypnosis.png",
+      "size": [
+        169,
+        104
+      ],
+      "sha256": "bcb7fa7b78c8fa0f513a91374dfa8cc9a0dece9999928623878842d138338a53",
+      "canonical_matches": [
+        {
+          "move_id": 95,
+          "name": "Hypnosis",
+          "constant": "MOVE_HYPNOSIS",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple Z/sleep marks and growing gold rings.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Ice-Shards.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Ice-Shards.png",
+      "size": [
+        241,
+        109
+      ],
+      "sha256": "3135eb22c2644ee8469c5c4344997e5b68881a853dfe6fd400d41449913cfac4",
+      "canonical_matches": [
+        {
+          "move_id": 420,
+          "name": "Ice Shard",
+          "constant": "MOVE_ICE_SHARD",
+          "match_basis": "plural_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small pale ice crystal/shard pieces at multiple orientations and scales.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Plural filename maps to canonical Ice Shard."
+    },
+    {
+      "file": "Iron-Head.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Iron-Head.png",
+      "size": [
+        188,
+        300
+      ],
+      "sha256": "d00a6277c974da72a639396b5edc85759ce214d7b08e4da33d3d4dcbb5354d25",
+      "canonical_matches": [
+        {
+          "move_id": 442,
+          "name": "Iron Head",
+          "constant": "MOVE_IRON_HEAD",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small gray particles, dark impact ring and pale impact pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Kick.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Kick.png",
+      "size": [
+        77,
+        26
+      ],
+      "sha256": "80cd82f73de763e1b1baf959bbacf5581add7c2ff26fded5c50d1744eea1f8ec",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_contact_symbol",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Dark paw and glove/fist-like icons; the generic filename does not identify a specific kick move.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Last-Resort.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Last-Resort.png",
+      "size": [
+        84,
+        92
+      ],
+      "sha256": "f3d3d9ac04e2aea2525aca0487a388ead29306d841d1e6242b7cfad410961615",
+      "canonical_matches": [
+        {
+          "move_id": 387,
+          "name": "Last Resort",
+          "constant": "MOVE_LAST_RESORT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small stars/sparkles and a gray impact ring.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Lava-Plume.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Lava-Plume.png",
+      "size": [
+        188,
+        300
+      ],
+      "sha256": "d9bed073115d6fecba4a7568f01215d68e1269995c4f90a8a3257955e79dd55a",
+      "canonical_matches": [
+        {
+          "move_id": 436,
+          "name": "Lava Plume",
+          "constant": "MOVE_LAVA_PLUME",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Orange fireball/flame particles at multiple sizes.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Leaf-Storm.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Leaf-Storm.png",
+      "size": [
+        256,
+        266
+      ],
+      "sha256": "8be9d48a2590727196b4f9adf7c089b5819e8c72221360932d899c70c8cb5c3f",
+      "canonical_matches": [
+        {
+          "move_id": 437,
+          "name": "Leaf Storm",
+          "constant": "MOVE_LEAF_STORM",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green leaf/streak background, separate green leaves and jagged green rings.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Leaves.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Leaves.png",
+      "size": [
+        42,
+        35
+      ],
+      "sha256": "a98e650c1f9f3ce0efefd83aae21a956879b874154f969339cb0b6a1d4faafeb",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_particle_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Four green leaf pieces; generic leaf component already selected in atlas inventory.",
+      "inventory_selected_runtime_crop": true,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Leech-Seed.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Leech-Seed.png",
+      "size": [
+        112,
+        83
+      ],
+      "sha256": "15c51d682694de2cdc4b0ab6ac7c1ec1091b083a6ea991eaebe202b577f54f27",
+      "canonical_matches": [
+        {
+          "move_id": 73,
+          "name": "Leech Seed",
+          "constant": "MOVE_LEECH_SEED",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown seeds, green shoot/growth pieces and sparkles/orbs.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Lock-On.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Lock-On.png",
+      "size": [
+        189,
+        29
+      ],
+      "sha256": "84f40ef694f6189542a608378e68cc6ecc0d22b1f412e05a6b343a2a8216732d",
+      "canonical_matches": [
+        {
+          "move_id": 199,
+          "name": "Lock-On",
+          "constant": "MOVE_LOCK_ON",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green and red reticle/crosshair pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Magical-Leaf.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Magical-Leaf.png",
+      "size": [
+        186,
+        197
+      ],
+      "sha256": "d070b9224518ad39119df9d9da35528a161fc87199e7d0dceaa2dd63816dc38d",
+      "canonical_matches": [
+        {
+          "move_id": 345,
+          "name": "Magical Leaf",
+          "constant": "MOVE_MAGICAL_LEAF",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Colored leaf pieces and matching starbursts.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Mean-Look.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Mean-Look.png",
+      "size": [
+        150,
+        74
+      ],
+      "sha256": "f7a27882a617bdbfeb46349503bdf4401baaac577f65ac7559c8cebdfae3558b",
+      "canonical_matches": [
+        {
+          "move_id": 212,
+          "name": "Mean Look",
+          "constant": "MOVE_MEAN_LOOK",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Black/yellow opening-eye frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Mud-Bomb.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Mud-Bomb.png",
+      "size": [
+        41,
+        41
+      ],
+      "sha256": "7e964b9d50fbb3ea8f7f192e2c576af2d44000911844576b5e5fd46beee829be",
+      "canonical_matches": [
+        {
+          "move_id": 426,
+          "name": "Mud Bomb",
+          "constant": "MOVE_MUD_BOMB",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Single green/brown mud-like orb.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Mud-Shot.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Mud-Shot.png",
+      "size": [
+        512,
+        1296
+      ],
+      "sha256": "e9893b76cd70ce9b9498783ed6ec627398ab136919995a411b6f3e86812fe857",
+      "canonical_matches": [
+        {
+          "move_id": 341,
+          "name": "Mud Shot",
+          "constant": "MOVE_MUD_SHOT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown mud streak/projectile startup and breakup frames.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Mud-Sport.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Mud-Sport.png",
+      "size": [
+        256,
+        599
+      ],
+      "sha256": "ec55d70c54f7128082c8f185ad6c65f558ef788dde1f6669757463e73e24482a",
+      "canonical_matches": [
+        {
+          "move_id": 300,
+          "name": "Mud Sport",
+          "constant": "MOVE_MUD_SPORT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small brown clod/splash particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Needle-Arn.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Needle-Arn.png",
+      "size": [
+        322,
+        273
+      ],
+      "sha256": "67e06e3ec47b5f571708a97e049daf3b6d34d576b0afe36548713ebd4e94c4ff",
+      "canonical_matches": [
+        {
+          "move_id": 302,
+          "name": "Needle Arm",
+          "constant": "MOVE_NEEDLE_ARM",
+          "match_basis": "corrected_filename_typo"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green spikes/leaves and green fist/arm pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename Needle-Arn is an apparent misspelling of Needle Arm."
+    },
+    {
+      "file": "Nightmare.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Nightmare.png",
+      "size": [
+        256,
+        144
+      ],
+      "sha256": "aa2200370286fad6ef3af3f33de0bf7a7697728ace986e88804cdf32453edddf",
+      "canonical_matches": [
+        {
+          "move_id": 171,
+          "name": "Nightmare",
+          "constant": "MOVE_NIGHTMARE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Dark purple eye-patterned full-screen background only.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Notes.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Notes.png",
+      "size": [
+        94,
+        28
+      ],
+      "sha256": "0ca5be29cbd132fe41e7120eef32209afbb242dec9a83685ccdb0f8f3a25b94f",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_musical_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Three black musical-note symbols; generic musical component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Point-Finger.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Point-Finger.png",
+      "size": [
+        205,
+        64
+      ],
+      "sha256": "e37a0ef1a200e5786be884b724c55c4839a4b922e5f8f98f75d0aa2d583aca77",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [
+        {
+          "move_id": 118,
+          "name": "Metronome",
+          "constant": "MOVE_METRONOME",
+          "confidence": "medium",
+          "reason": "Pointing-finger motion visually suggests Metronome; filename is generic and original move association is not recovered."
+        }
+      ],
+      "role": "generic_gesture_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "White pointing-finger motion frames, consistent with a Metronome-style component but not named for a canonical move.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Poison-Jab.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Poison-Jab.png",
+      "size": [
+        214,
+        138
+      ],
+      "sha256": "967d1018e5773890a0c0b8b56e151819b24519f2a0ec40ba4e45bea5cd906212",
+      "canonical_matches": [
+        {
+          "move_id": 398,
+          "name": "Poison Jab",
+          "constant": "MOVE_POISON_JAB",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple needle/streak pieces and purple impact stars.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Psychic.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Psychic.png",
+      "size": [
+        256,
+        172
+      ],
+      "sha256": "64c0c4984f9237d38d2a508866c20c0568713d73c92aad77ec51706b6fb375ad",
+      "canonical_matches": [
+        {
+          "move_id": 94,
+          "name": "Psychic",
+          "constant": "MOVE_PSYCHIC",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "Purple/pink wavy full-screen background only.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Psycho-Cut.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Psycho-Cut.png",
+      "size": [
+        217,
+        192
+      ],
+      "sha256": "899691e32d096b732bd580a664304d2a93171e0968195c249214b51e1c2baafb",
+      "canonical_matches": [
+        {
+          "move_id": 427,
+          "name": "Psycho Cut",
+          "constant": "MOVE_PSYCHO_CUT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple crescent slash pieces and a purple circular spiral.",
+      "inventory_selected_runtime_crop": true,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Rain.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Rain.png",
+      "size": [
+        20,
+        55
+      ],
+      "sha256": "72ab940f2050bd1e1e4fb4a7b23281e06598adc89277e40c5f9943133b0b7151",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [
+        {
+          "move_id": 240,
+          "name": "Rain Dance",
+          "constant": "MOVE_RAIN_DANCE",
+          "confidence": "medium",
+          "reason": "Rain particles are a usable Rain Dance weather component; generic filename does not establish dedicated move ownership."
+        }
+      ],
+      "role": "generic_weather_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Vertical gray rain-drop streak pieces; generic weather component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Rock-Smash.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Rock-Smash.png",
+      "size": [
+        158,
+        508
+      ],
+      "sha256": "c0de00c1282af17fa98d0da5c37f535dfd922479ed5922c55bfc05a7291476a5",
+      "canonical_matches": [
+        {
+          "move_id": 249,
+          "name": "Rock Smash",
+          "constant": "MOVE_ROCK_SMASH",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown rock fragments at multiple sizes.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Rock-Tomb.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Rock-Tomb.png",
+      "size": [
+        180,
+        73
+      ],
+      "sha256": "f5cbaa5bc50d4785fd56e88033a586f95be5116b2d3b5bfabfa7dea8b0e1fa20",
+      "canonical_matches": [
+        {
+          "move_id": 317,
+          "name": "Rock Tomb",
+          "constant": "MOVE_ROCK_TOMB",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown rocks at multiple orientations/sizes.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Sacred-Fire.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Sacred-Fire.png",
+      "size": [
+        446,
+        600
+      ],
+      "sha256": "c232e4d04ca8b7d3249dd5b7c814539966d7747afa8de8e0bf0f6a5e0d480210",
+      "canonical_matches": [
+        {
+          "move_id": 221,
+          "name": "Sacred Fire",
+          "constant": "MOVE_SACRED_FIRE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_visual_mismatch",
+      "source_status": "named_but_visual_identity_unconfirmed",
+      "visual_review": "Purple/blue ghost-like orbs/flames and a dark flame backdrop; visibly inconsistent with ordinary Sacred Fire flame art.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Scary-Face-Reg.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Scary-Face-Reg.png",
+      "size": [
+        188,
+        300
+      ],
+      "sha256": "ff857d6ad628066e620573d54c3e24fc1ce2c03ab64964d6de46d5c3f1ec4aea",
+      "canonical_matches": [
+        {
+          "move_id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE",
+          "match_basis": "presentation_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple sinister-face pieces in successive expressions/scales.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Regular Scary Face variant."
+    },
+    {
+      "file": "Scary-Face-Transparent.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Scary-Face-Transparent.png",
+      "size": [
+        188,
+        300
+      ],
+      "sha256": "a66ea3f926f7a5f27b3c0f60293662fc0951f77fb8cf73240fbeca6e4ef357bc",
+      "canonical_matches": [
+        {
+          "move_id": 184,
+          "name": "Scary Face",
+          "constant": "MOVE_SCARY_FACE",
+          "match_basis": "presentation_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Transparent/lighter variant of the purple sinister-face pieces.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Transparent Scary Face variant."
+    },
+    {
+      "file": "Scope.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Scope.png",
+      "size": [
+        31,
+        31
+      ],
+      "sha256": "c10258d652f027d0738b024c8a3826f12ed903a0fb58963e373560c4d218713b",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [
+        {
+          "move_id": 193,
+          "name": "Foresight",
+          "constant": "MOVE_FORESIGHT",
+          "confidence": "low",
+          "reason": "Magnifying-glass symbol plausibly supports Foresight; filename/source does not establish that association."
+        }
+      ],
+      "role": "ambiguous_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Magnifying-glass icon; plausible Foresight-style component, move identity not confirmed.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Scratch-Shadow-Claw.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Scratch-Shadow-Claw.png",
+      "size": [
+        233,
+        78
+      ],
+      "sha256": "973e975945e62d561643799379984e4f7ddb2a8478cb8d4dda58db7de7e54bdf",
+      "canonical_matches": [
+        {
+          "move_id": 10,
+          "name": "Scratch",
+          "constant": "MOVE_SCRATCH",
+          "match_basis": "combined_filename"
+        },
+        {
+          "move_id": 421,
+          "name": "Shadow Claw",
+          "constant": "MOVE_SHADOW_CLAW",
+          "match_basis": "combined_filename"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Black and yellow triple-slash pieces plus small circular particles.",
+      "inventory_selected_runtime_crop": true,
+      "matching_note": "Filename names Scratch and Shadow Claw; shared slash components do not constitute two separately authored animations."
+    },
+    {
+      "file": "Seed-Flare.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Seed-Flare.png",
+      "size": [
+        767,
+        576
+      ],
+      "sha256": "d77e3bfff5bcdd5a21d9a55c1a6979f740007842c4fa93614ded08bc2476d0e7",
+      "canonical_matches": [
+        {
+          "move_id": 465,
+          "name": "Seed Flare",
+          "constant": "MOVE_SEED_FLARE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Large aqua streak/slash formations and small debris across successive frames; named by sheet caption as Seed Flare.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Shadow-Ball.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Shadow-Ball.png",
+      "size": [
+        512,
+        1947
+      ],
+      "sha256": "b28ee5ab9c026bb701e231a3c82389c89c20408bb985a1c603b98056414bbdb0",
+      "canonical_matches": [
+        {
+          "move_id": 247,
+          "name": "Shadow Ball",
+          "constant": "MOVE_SHADOW_BALL",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple ball/projectile formation, travel and breakup particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Shadow-Force.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Shadow-Force.png",
+      "size": [
+        144,
+        103
+      ],
+      "sha256": "80d17a8157bef75de54aca1f2e804de0acb1edd9296606664694b20160420388",
+      "canonical_matches": [
+        {
+          "move_id": 467,
+          "name": "Shadow Force",
+          "constant": "MOVE_SHADOW_FORCE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Black/gray aura blobs and purple/dark orbs.",
+      "inventory_selected_runtime_crop": true,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Siesmic-Toss.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Siesmic-Toss.png",
+      "size": [
+        256,
+        568
+      ],
+      "sha256": "31571b4f48b559756e5d986ffd656feafeb1f3ebf68a333e732f92e849c54d51",
+      "canonical_matches": [
+        {
+          "move_id": 69,
+          "name": "Seismic Toss",
+          "constant": "MOVE_SEISMIC_TOSS",
+          "match_basis": "corrected_filename_typo"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small gold/orange oval particles plus blue/black backdrop component.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename Siesmic is an apparent misspelling of Seismic."
+    },
+    {
+      "file": "Spacial-Rend.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Spacial-Rend.png",
+      "size": [
+        256,
+        460
+      ],
+      "sha256": "77c17424874fae7db60aaddc8f81f2a2ecb480b564721e03cb7d749065213634",
+      "canonical_matches": [
+        {
+          "move_id": 460,
+          "name": "Spacial Rend",
+          "constant": "MOVE_SPACIAL_REND",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Pink radial background, pale crescent slash pieces and gray impact ring.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Speed-Attack-Back.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Speed-Attack-Back.png",
+      "size": [
+        256,
+        144
+      ],
+      "sha256": "1951cebb44ada9d22525cf232f3f8a7ff9960502061107ba8acb3f990797c36c",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_background_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Blue speed-line background only; Speed Attack is not a canonical move name.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Spikes.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Spikes.png",
+      "size": [
+        21,
+        21
+      ],
+      "sha256": "53167c3ab3ad9c2b0415d35ad9badbcf1740a9847580aaf5904bc4e1341950dd",
+      "canonical_matches": [
+        {
+          "move_id": 191,
+          "name": "Spikes",
+          "constant": "MOVE_SPIKES",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Single small caltrop/spike object.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Srone-Edge.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Srone-Edge.png",
+      "size": [
+        95,
+        111
+      ],
+      "sha256": "bfbcdaa25c5f937ef065612fa48fa6ae9cbf2c4f9c9fc0ee66f50e67fad98c1d",
+      "canonical_matches": [
+        {
+          "move_id": 444,
+          "name": "Stone Edge",
+          "constant": "MOVE_STONE_EDGE",
+          "match_basis": "corrected_filename_typo"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Long golden spike, several rock pieces and white/gold impact stars.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename Srone is an apparent misspelling of Stone."
+    },
+    {
+      "file": "Status.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Status.png",
+      "size": [
+        845,
+        374
+      ],
+      "sha256": "cfc3a275d4978e68310d6fcc855b26384b88778722d95e7f1968a5b6ab54fc9b",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "generic_stat_change_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Orange/yellow stat-increase and blue stat-decrease background textures with labels; shared stat-change component.",
+      "inventory_selected_runtime_crop": true,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Substitute-Back.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Substitute-Back.png",
+      "size": [
+        40,
+        45
+      ],
+      "sha256": "365fbdbb6054f9926efaa571a8e94dd7321c2ad98cf40cff55e43467ecbfab26",
+      "canonical_matches": [
+        {
+          "move_id": 164,
+          "name": "Substitute",
+          "constant": "MOVE_SUBSTITUTE",
+          "match_basis": "direction_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green Substitute doll back view.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Back-view Substitute doll."
+    },
+    {
+      "file": "Substitute-Front.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Substitute-Front.png",
+      "size": [
+        160,
+        80
+      ],
+      "sha256": "3929dbb09f6de350d8319ae49e9ca00abac1bb98ee57b2e0abc84243af18c686",
+      "canonical_matches": [
+        {
+          "move_id": 164,
+          "name": "Substitute",
+          "constant": "MOVE_SUBSTITUTE",
+          "match_basis": "direction_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Green Substitute doll front view.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Front-view Substitute doll."
+    },
+    {
+      "file": "Sucker-Punch.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Sucker-Punch.png",
+      "size": [
+        162,
+        17
+      ],
+      "sha256": "752c6b20e8a77f7240e8038ea1d365c00db77211cf4d0d0c563bc18dd8309308",
+      "canonical_matches": [
+        {
+          "move_id": 389,
+          "name": "Sucker Punch",
+          "constant": "MOVE_SUCKER_PUNCH",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Purple fast impact/streak pieces and purple circular particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Surf-Regular.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Surf-Regular.png",
+      "size": [
+        672,
+        553
+      ],
+      "sha256": "8d780262f4974b710b2e6e04d718310edb4b01d2d717928cfa5249c307b59e85",
+      "canonical_matches": [
+        {
+          "move_id": 57,
+          "name": "Surf",
+          "constant": "MOVE_SURF",
+          "match_basis": "presentation_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue wave formations and foamy water texture.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Regular Surf variant."
+    },
+    {
+      "file": "Surf-Transparent.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Surf-Transparent.png",
+      "size": [
+        672,
+        553
+      ],
+      "sha256": "d2c508df26d67b8992cf99ac300f118b870a366bbc5f225edb35ac3cb10bd792",
+      "canonical_matches": [
+        {
+          "move_id": 57,
+          "name": "Surf",
+          "constant": "MOVE_SURF",
+          "match_basis": "presentation_variant"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Transparent/lighter version of blue wave formations and foamy texture.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Transparent Surf variant."
+    },
+    {
+      "file": "Swagger.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Swagger.png",
+      "size": [
+        24,
+        25
+      ],
+      "sha256": "20dc0558f5bcb670b76af9e84b9838ec764d1bbe0a7113c0da461e4d7e1999e5",
+      "canonical_matches": [
+        {
+          "move_id": 207,
+          "name": "Swagger",
+          "constant": "MOVE_SWAGGER",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Red anger-cross icon.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Swift.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Swift.png",
+      "size": [
+        256,
+        700
+      ],
+      "sha256": "48e75ed5d0a2f3c3472d693f7da76a41e90e64768a5ce1b1500767e150b22fb1",
+      "canonical_matches": [
+        {
+          "move_id": 129,
+          "name": "Swift",
+          "constant": "MOVE_SWIFT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Successive pale/gold star particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Swords-Dance.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Swords-Dance.png",
+      "size": [
+        142,
+        53
+      ],
+      "sha256": "5333c287b74e5343539292ae9bb3b5cc9ba5aefda791e50ec728d5d2f8ecc851",
+      "canonical_matches": [
+        {
+          "move_id": 14,
+          "name": "Swords Dance",
+          "constant": "MOVE_SWORDS_DANCE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue/teal sword silhouettes and cyan sparkles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Telekineses.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Telekineses.png",
+      "size": [
+        111,
+        39
+      ],
+      "sha256": "f9e3c99c673e81a4f9ae5dfbc8b988063d442e3634817351da077f47e1c0d4fa",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [
+        {
+          "move_id": 134,
+          "name": "Kinesis",
+          "constant": "MOVE_KINESIS",
+          "confidence": "medium",
+          "reason": "Bending spoons visually suggest Kinesis; filename resembles Telekinesis (move477, outside Platinum IDs1..467). Neither association is proven by original move script metadata."
+        }
+      ],
+      "role": "ambiguous_named_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Four progressively bending spoon frames; visual subject is consistent with Kinesis, while the filename resembles the later-generation move Telekinesis.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    },
+    {
+      "file": "Trick-Room.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Trick-Room.png",
+      "size": [
+        256,
+        144
+      ],
+      "sha256": "7368a0100e04edca7fccb4176c5b9fd8d48a8152d11caa6820da0884bccce8de",
+      "canonical_matches": [
+        {
+          "move_id": 433,
+          "name": "Trick Room",
+          "constant": "MOVE_TRICK_ROOM",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_background_only",
+      "source_status": "named_background_only",
+      "visual_review": "White perspective room-grid background only.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Water-Pulse.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Water-Pulse.png",
+      "size": [
+        270,
+        390
+      ],
+      "sha256": "abcff0042f777c85515586906775db2d15b0420ab26b691271a9d5bc077b4c65",
+      "canonical_matches": [
+        {
+          "move_id": 352,
+          "name": "Water Pulse",
+          "constant": "MOVE_WATER_PULSE",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Separate blue rings and small orb particles, with blue water background components.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Water-Sport.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Water-Sport.png",
+      "size": [
+        234,
+        73
+      ],
+      "sha256": "e6a81a4947ba5298fa9af4a942216a8463771fd54006a6613c4473b86b52df9c",
+      "canonical_matches": [
+        {
+          "move_id": 346,
+          "name": "Water Sport",
+          "constant": "MOVE_WATER_SPORT",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Pale blue water splash/cloud particles and tiny droplets.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Waterfall.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Waterfall.png",
+      "size": [
+        256,
+        261
+      ],
+      "sha256": "9b7f4026b913961c5d0751ddf0f37534d10bfb12d07c9282a25efa7ae6195312",
+      "canonical_matches": [
+        {
+          "move_id": 127,
+          "name": "Waterfall",
+          "constant": "MOVE_WATERFALL",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Small blue/pale particles, impact rings and a large blue waterfall backdrop.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Whirlpool.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Whirlpool.png",
+      "size": [
+        270,
+        264
+      ],
+      "sha256": "3a761b0b45e2df519e0085a17ca40eab70add35fd4b342c81360954cc19cc1b4",
+      "canonical_matches": [
+        {
+          "move_id": 250,
+          "name": "Whirlpool",
+          "constant": "MOVE_WHIRLPOOL",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Blue orbs/particles and dark blue water background pieces; movement/orbit choreography is not supplied.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Wood-Hammer.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Wood-Hammer.png",
+      "size": [
+        195,
+        544
+      ],
+      "sha256": "a61d21196a3eafba8f57df38585ae6919803cce32f1a1697f7458f34941ead61",
+      "canonical_matches": [
+        {
+          "move_id": 452,
+          "name": "Wood Hammer",
+          "constant": "MOVE_WOOD_HAMMER",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Brown wood pieces, green arcs/rings, green leaves and impact particles.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "Worry-Seed.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Worry-Seed.png",
+      "size": [
+        52,
+        43
+      ],
+      "sha256": "b05bf055a5727099214a7328c4bf001bdb8d4d8515e7d804327cbbe328aaeca7",
+      "canonical_matches": [
+        {
+          "move_id": 388,
+          "name": "Worry Seed",
+          "constant": "MOVE_WORRY_SEED",
+          "match_basis": "normalized_name"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Pale cloud/bubble pieces and a brown seed.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename and canonical move name match after removing punctuation, spaces and case."
+    },
+    {
+      "file": "X-Scizzor.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/X-Scizzor.png",
+      "size": [
+        98,
+        94
+      ],
+      "sha256": "dc504c239b999cce6c90096b9b9a37854d794c2d6711c3b9a3e05f62d3acebc5",
+      "canonical_matches": [
+        {
+          "move_id": 404,
+          "name": "X-Scissor",
+          "constant": "MOVE_X_SCISSOR",
+          "match_basis": "corrected_filename_typo"
+        }
+      ],
+      "unconfirmed_canonical_candidates": [],
+      "role": "named_move_sprite_or_component_sheet",
+      "source_status": "usable_looking_named_sheet",
+      "visual_review": "Single red diagonal slash; the X formation would require placement/choreography.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "Filename X-Scizzor is an apparent misspelling of X-Scissor."
+    },
+    {
+      "file": "X.png",
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/X.png",
+      "size": [
+        46,
+        45
+      ],
+      "sha256": "5ce60eda7e7b5ed27746c5955fabff5a8d921d210724209aed2fe4418031b578",
+      "canonical_matches": [],
+      "unconfirmed_canonical_candidates": [],
+      "role": "ambiguous_component",
+      "source_status": "generic_or_ambiguous_component",
+      "visual_review": "Single red X icon; no canonical move identity confirmed.",
+      "inventory_selected_runtime_crop": false,
+      "matching_note": "No exact normalized or accepted alias match to canonical Platinum IDs1..467."
+    }
+  ],
+  "moves": [
+    {
+      "move_id": 1,
+      "name": "Pound",
+      "constant": "MOVE_POUND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 2,
+      "name": "Karate Chop",
+      "constant": "MOVE_KARATE_CHOP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 3,
+      "name": "DoubleSlap",
+      "constant": "MOVE_DOUBLE_SLAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 4,
+      "name": "Comet Punch",
+      "constant": "MOVE_COMET_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 5,
+      "name": "Mega Punch",
+      "constant": "MOVE_MEGA_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 6,
+      "name": "Pay Day",
+      "constant": "MOVE_PAY_DAY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 7,
+      "name": "Fire Punch",
+      "constant": "MOVE_FIRE_PUNCH",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Fire-Punch.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 8,
+      "name": "Ice Punch",
+      "constant": "MOVE_ICE_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 9,
+      "name": "ThunderPunch",
+      "constant": "MOVE_THUNDER_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 10,
+      "name": "Scratch",
+      "constant": "MOVE_SCRATCH",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Scratch-Shadow-Claw.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 11,
+      "name": "ViceGrip",
+      "constant": "MOVE_VICE_GRIP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 12,
+      "name": "Guillotine",
+      "constant": "MOVE_GUILLOTINE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 13,
+      "name": "Razor Wind",
+      "constant": "MOVE_RAZOR_WIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 14,
+      "name": "Swords Dance",
+      "constant": "MOVE_SWORDS_DANCE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Swords-Dance.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 15,
+      "name": "Cut",
+      "constant": "MOVE_CUT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Cut.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 16,
+      "name": "Gust",
+      "constant": "MOVE_GUST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 17,
+      "name": "Wing Attack",
+      "constant": "MOVE_WING_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 18,
+      "name": "Whirlwind",
+      "constant": "MOVE_WHIRLWIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 19,
+      "name": "Fly",
+      "constant": "MOVE_FLY",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Fly.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 20,
+      "name": "Bind",
+      "constant": "MOVE_BIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 21,
+      "name": "Slam",
+      "constant": "MOVE_SLAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 22,
+      "name": "Vine Whip",
+      "constant": "MOVE_VINE_WHIP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 23,
+      "name": "Stomp",
+      "constant": "MOVE_STOMP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 24,
+      "name": "Double Kick",
+      "constant": "MOVE_DOUBLE_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 25,
+      "name": "Mega Kick",
+      "constant": "MOVE_MEGA_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 26,
+      "name": "Jump Kick",
+      "constant": "MOVE_JUMP_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 27,
+      "name": "Rolling Kick",
+      "constant": "MOVE_ROLLING_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 28,
+      "name": "Sand-Attack",
+      "constant": "MOVE_SAND_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 29,
+      "name": "Headbutt",
+      "constant": "MOVE_HEADBUTT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 30,
+      "name": "Horn Attack",
+      "constant": "MOVE_HORN_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 31,
+      "name": "Fury Attack",
+      "constant": "MOVE_FURY_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 32,
+      "name": "Horn Drill",
+      "constant": "MOVE_HORN_DRILL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 33,
+      "name": "Tackle",
+      "constant": "MOVE_TACKLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 34,
+      "name": "Body Slam",
+      "constant": "MOVE_BODY_SLAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 35,
+      "name": "Wrap",
+      "constant": "MOVE_WRAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 36,
+      "name": "Take Down",
+      "constant": "MOVE_TAKE_DOWN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 37,
+      "name": "Thrash",
+      "constant": "MOVE_THRASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 38,
+      "name": "Double-Edge",
+      "constant": "MOVE_DOUBLE_EDGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 39,
+      "name": "Tail Whip",
+      "constant": "MOVE_TAIL_WHIP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 40,
+      "name": "Poison Sting",
+      "constant": "MOVE_POISON_STING",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 41,
+      "name": "Twineedle",
+      "constant": "MOVE_TWINEEDLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 42,
+      "name": "Pin Missile",
+      "constant": "MOVE_PIN_MISSILE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 43,
+      "name": "Leer",
+      "constant": "MOVE_LEER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 44,
+      "name": "Bite",
+      "constant": "MOVE_BITE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 45,
+      "name": "Growl",
+      "constant": "MOVE_GROWL",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Growl.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 46,
+      "name": "Roar",
+      "constant": "MOVE_ROAR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 47,
+      "name": "Sing",
+      "constant": "MOVE_SING",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 48,
+      "name": "Supersonic",
+      "constant": "MOVE_SUPERSONIC",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 49,
+      "name": "SonicBoom",
+      "constant": "MOVE_SONIC_BOOM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 50,
+      "name": "Disable",
+      "constant": "MOVE_DISABLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 51,
+      "name": "Acid",
+      "constant": "MOVE_ACID",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 52,
+      "name": "Ember",
+      "constant": "MOVE_EMBER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 53,
+      "name": "Flamethrower",
+      "constant": "MOVE_FLAMETHROWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 54,
+      "name": "Mist",
+      "constant": "MOVE_MIST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 55,
+      "name": "Water Gun",
+      "constant": "MOVE_WATER_GUN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 56,
+      "name": "Hydro Pump",
+      "constant": "MOVE_HYDRO_PUMP",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Hydro-Pump.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 57,
+      "name": "Surf",
+      "constant": "MOVE_SURF",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Surf-Regular.png",
+        "Surf-Transparent.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 58,
+      "name": "Ice Beam",
+      "constant": "MOVE_ICE_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 59,
+      "name": "Blizzard",
+      "constant": "MOVE_BLIZZARD",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 60,
+      "name": "Psybeam",
+      "constant": "MOVE_PSYBEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 61,
+      "name": "BubbleBeam",
+      "constant": "MOVE_BUBBLE_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 62,
+      "name": "Aurora Beam",
+      "constant": "MOVE_AURORA_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 63,
+      "name": "Hyper Beam",
+      "constant": "MOVE_HYPER_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 64,
+      "name": "Peck",
+      "constant": "MOVE_PECK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 65,
+      "name": "Drill Peck",
+      "constant": "MOVE_DRILL_PECK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 66,
+      "name": "Submission",
+      "constant": "MOVE_SUBMISSION",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 67,
+      "name": "Low Kick",
+      "constant": "MOVE_LOW_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 68,
+      "name": "Counter",
+      "constant": "MOVE_COUNTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 69,
+      "name": "Seismic Toss",
+      "constant": "MOVE_SEISMIC_TOSS",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Siesmic-Toss.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 70,
+      "name": "Strength",
+      "constant": "MOVE_STRENGTH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 71,
+      "name": "Absorb",
+      "constant": "MOVE_ABSORB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 72,
+      "name": "Mega Drain",
+      "constant": "MOVE_MEGA_DRAIN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 73,
+      "name": "Leech Seed",
+      "constant": "MOVE_LEECH_SEED",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Leech-Seed.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 74,
+      "name": "Growth",
+      "constant": "MOVE_GROWTH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 75,
+      "name": "Razor Leaf",
+      "constant": "MOVE_RAZOR_LEAF",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 76,
+      "name": "SolarBeam",
+      "constant": "MOVE_SOLAR_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 77,
+      "name": "PoisonPowder",
+      "constant": "MOVE_POISON_POWDER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 78,
+      "name": "Stun Spore",
+      "constant": "MOVE_STUN_SPORE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 79,
+      "name": "Sleep Powder",
+      "constant": "MOVE_SLEEP_POWDER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 80,
+      "name": "Petal Dance",
+      "constant": "MOVE_PETAL_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 81,
+      "name": "String Shot",
+      "constant": "MOVE_STRING_SHOT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 82,
+      "name": "Dragon Rage",
+      "constant": "MOVE_DRAGON_RAGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 83,
+      "name": "Fire Spin",
+      "constant": "MOVE_FIRE_SPIN",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Fire-Spin.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 84,
+      "name": "ThunderShock",
+      "constant": "MOVE_THUNDER_SHOCK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 85,
+      "name": "Thunderbolt",
+      "constant": "MOVE_THUNDERBOLT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 86,
+      "name": "Thunder Wave",
+      "constant": "MOVE_THUNDER_WAVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 87,
+      "name": "Thunder",
+      "constant": "MOVE_THUNDER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 88,
+      "name": "Rock Throw",
+      "constant": "MOVE_ROCK_THROW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 89,
+      "name": "Earthquake",
+      "constant": "MOVE_EARTHQUAKE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 90,
+      "name": "Fissure",
+      "constant": "MOVE_FISSURE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Fissure.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 91,
+      "name": "Dig",
+      "constant": "MOVE_DIG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 92,
+      "name": "Toxic",
+      "constant": "MOVE_TOXIC",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 93,
+      "name": "Confusion",
+      "constant": "MOVE_CONFUSION",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 94,
+      "name": "Psychic",
+      "constant": "MOVE_PSYCHIC",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Psychic.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 95,
+      "name": "Hypnosis",
+      "constant": "MOVE_HYPNOSIS",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Hypnosis.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 96,
+      "name": "Meditate",
+      "constant": "MOVE_MEDITATE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 97,
+      "name": "Agility",
+      "constant": "MOVE_AGILITY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 98,
+      "name": "Quick Attack",
+      "constant": "MOVE_QUICK_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 99,
+      "name": "Rage",
+      "constant": "MOVE_RAGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 100,
+      "name": "Teleport",
+      "constant": "MOVE_TELEPORT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 101,
+      "name": "Night Shade",
+      "constant": "MOVE_NIGHT_SHADE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 102,
+      "name": "Mimic",
+      "constant": "MOVE_MIMIC",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 103,
+      "name": "Screech",
+      "constant": "MOVE_SCREECH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 104,
+      "name": "Double Team",
+      "constant": "MOVE_DOUBLE_TEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 105,
+      "name": "Recover",
+      "constant": "MOVE_RECOVER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 106,
+      "name": "Harden",
+      "constant": "MOVE_HARDEN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 107,
+      "name": "Minimize",
+      "constant": "MOVE_MINIMIZE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 108,
+      "name": "SmokeScreen",
+      "constant": "MOVE_SMOKE_SCREEN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 109,
+      "name": "Confuse Ray",
+      "constant": "MOVE_CONFUSE_RAY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 110,
+      "name": "Withdraw",
+      "constant": "MOVE_WITHDRAW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 111,
+      "name": "Defense Curl",
+      "constant": "MOVE_DEFENSE_CURL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 112,
+      "name": "Barrier",
+      "constant": "MOVE_BARRIER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 113,
+      "name": "Light Screen",
+      "constant": "MOVE_LIGHT_SCREEN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 114,
+      "name": "Haze",
+      "constant": "MOVE_HAZE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 115,
+      "name": "Reflect",
+      "constant": "MOVE_REFLECT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 116,
+      "name": "Focus Energy",
+      "constant": "MOVE_FOCUS_ENERGY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 117,
+      "name": "Bide",
+      "constant": "MOVE_BIDE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 118,
+      "name": "Metronome",
+      "constant": "MOVE_METRONOME",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": [
+        "Point-Finger.png"
+      ]
+    },
+    {
+      "move_id": 119,
+      "name": "Mirror Move",
+      "constant": "MOVE_MIRROR_MOVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 120,
+      "name": "Selfdestruct",
+      "constant": "MOVE_SELFDESTRUCT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 121,
+      "name": "Egg Bomb",
+      "constant": "MOVE_EGG_BOMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 122,
+      "name": "Lick",
+      "constant": "MOVE_LICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 123,
+      "name": "Smog",
+      "constant": "MOVE_SMOG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 124,
+      "name": "Sludge",
+      "constant": "MOVE_SLUDGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 125,
+      "name": "Bone Club",
+      "constant": "MOVE_BONE_CLUB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 126,
+      "name": "Fire Blast",
+      "constant": "MOVE_FIRE_BLAST",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Fire-Blast.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 127,
+      "name": "Waterfall",
+      "constant": "MOVE_WATERFALL",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Waterfall.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 128,
+      "name": "Clamp",
+      "constant": "MOVE_CLAMP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 129,
+      "name": "Swift",
+      "constant": "MOVE_SWIFT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Swift.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 130,
+      "name": "Skull Bash",
+      "constant": "MOVE_SKULL_BASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 131,
+      "name": "Spike Cannon",
+      "constant": "MOVE_SPIKE_CANNON",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 132,
+      "name": "Constrict",
+      "constant": "MOVE_CONSTRICT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 133,
+      "name": "Amnesia",
+      "constant": "MOVE_AMNESIA",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Amnesia.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 134,
+      "name": "Kinesis",
+      "constant": "MOVE_KINESIS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": [
+        "Telekineses.png"
+      ]
+    },
+    {
+      "move_id": 135,
+      "name": "Softboiled",
+      "constant": "MOVE_SOFTBOILED",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 136,
+      "name": "Hi Jump Kick",
+      "constant": "MOVE_HI_JUMP_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 137,
+      "name": "Glare",
+      "constant": "MOVE_GLARE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 138,
+      "name": "Dream Eater",
+      "constant": "MOVE_DREAM_EATER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 139,
+      "name": "Poison Gas",
+      "constant": "MOVE_POISON_GAS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 140,
+      "name": "Barrage",
+      "constant": "MOVE_BARRAGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 141,
+      "name": "Leech Life",
+      "constant": "MOVE_LEECH_LIFE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 142,
+      "name": "Lovely Kiss",
+      "constant": "MOVE_LOVELY_KISS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 143,
+      "name": "Sky Attack",
+      "constant": "MOVE_SKY_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 144,
+      "name": "Transform",
+      "constant": "MOVE_TRANSFORM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 145,
+      "name": "Bubble",
+      "constant": "MOVE_BUBBLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 146,
+      "name": "Dizzy Punch",
+      "constant": "MOVE_DIZZY_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 147,
+      "name": "Spore",
+      "constant": "MOVE_SPORE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 148,
+      "name": "Flash",
+      "constant": "MOVE_FLASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 149,
+      "name": "Psywave",
+      "constant": "MOVE_PSYWAVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 150,
+      "name": "Splash",
+      "constant": "MOVE_SPLASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 151,
+      "name": "Acid Armor",
+      "constant": "MOVE_ACID_ARMOR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 152,
+      "name": "Crabhammer",
+      "constant": "MOVE_CRABHAMMER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 153,
+      "name": "Explosion",
+      "constant": "MOVE_EXPLOSION",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 154,
+      "name": "Fury Swipes",
+      "constant": "MOVE_FURY_SWIPES",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 155,
+      "name": "Bonemerang",
+      "constant": "MOVE_BONEMERANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 156,
+      "name": "Rest",
+      "constant": "MOVE_REST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 157,
+      "name": "Rock Slide",
+      "constant": "MOVE_ROCK_SLIDE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 158,
+      "name": "Hyper Fang",
+      "constant": "MOVE_HYPER_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 159,
+      "name": "Sharpen",
+      "constant": "MOVE_SHARPEN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 160,
+      "name": "Conversion",
+      "constant": "MOVE_CONVERSION",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 161,
+      "name": "Tri Attack",
+      "constant": "MOVE_TRI_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 162,
+      "name": "Super Fang",
+      "constant": "MOVE_SUPER_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 163,
+      "name": "Slash",
+      "constant": "MOVE_SLASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 164,
+      "name": "Substitute",
+      "constant": "MOVE_SUBSTITUTE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Substitute-Back.png",
+        "Substitute-Front.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 165,
+      "name": "Struggle",
+      "constant": "MOVE_STRUGGLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 166,
+      "name": "Sketch",
+      "constant": "MOVE_SKETCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 167,
+      "name": "Triple Kick",
+      "constant": "MOVE_TRIPLE_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 168,
+      "name": "Thief",
+      "constant": "MOVE_THIEF",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 169,
+      "name": "Spider Web",
+      "constant": "MOVE_SPIDER_WEB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 170,
+      "name": "Mind Reader",
+      "constant": "MOVE_MIND_READER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 171,
+      "name": "Nightmare",
+      "constant": "MOVE_NIGHTMARE",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Nightmare.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 172,
+      "name": "Flame Wheel",
+      "constant": "MOVE_FLAME_WHEEL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 173,
+      "name": "Snore",
+      "constant": "MOVE_SNORE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 174,
+      "name": "Curse",
+      "constant": "MOVE_CURSE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 175,
+      "name": "Flail",
+      "constant": "MOVE_FLAIL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 176,
+      "name": "Conversion 2",
+      "constant": "MOVE_CONVERSION_2",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 177,
+      "name": "Aeroblast",
+      "constant": "MOVE_AEROBLAST",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Aero-Blast.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 178,
+      "name": "Cotton Spore",
+      "constant": "MOVE_COTTON_SPORE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 179,
+      "name": "Reversal",
+      "constant": "MOVE_REVERSAL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 180,
+      "name": "Spite",
+      "constant": "MOVE_SPITE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 181,
+      "name": "Powder Snow",
+      "constant": "MOVE_POWDER_SNOW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 182,
+      "name": "Protect",
+      "constant": "MOVE_PROTECT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 183,
+      "name": "Mach Punch",
+      "constant": "MOVE_MACH_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 184,
+      "name": "Scary Face",
+      "constant": "MOVE_SCARY_FACE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Scary-Face-Reg.png",
+        "Scary-Face-Transparent.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 185,
+      "name": "Faint Attack",
+      "constant": "MOVE_FAINT_ATTACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 186,
+      "name": "Sweet Kiss",
+      "constant": "MOVE_SWEET_KISS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 187,
+      "name": "Belly Drum",
+      "constant": "MOVE_BELLY_DRUM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 188,
+      "name": "Sludge Bomb",
+      "constant": "MOVE_SLUDGE_BOMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 189,
+      "name": "Mud-Slap",
+      "constant": "MOVE_MUD_SLAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 190,
+      "name": "Octazooka",
+      "constant": "MOVE_OCTAZOOKA",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 191,
+      "name": "Spikes",
+      "constant": "MOVE_SPIKES",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Spikes.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 192,
+      "name": "Zap Cannon",
+      "constant": "MOVE_ZAP_CANNON",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 193,
+      "name": "Foresight",
+      "constant": "MOVE_FORESIGHT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": [
+        "Scope.png"
+      ]
+    },
+    {
+      "move_id": 194,
+      "name": "Destiny Bond",
+      "constant": "MOVE_DESTINY_BOND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 195,
+      "name": "Perish Song",
+      "constant": "MOVE_PERISH_SONG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 196,
+      "name": "Icy Wind",
+      "constant": "MOVE_ICY_WIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 197,
+      "name": "Detect",
+      "constant": "MOVE_DETECT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 198,
+      "name": "Bone Rush",
+      "constant": "MOVE_BONE_RUSH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 199,
+      "name": "Lock-On",
+      "constant": "MOVE_LOCK_ON",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Lock-On.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 200,
+      "name": "Outrage",
+      "constant": "MOVE_OUTRAGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 201,
+      "name": "Sandstorm",
+      "constant": "MOVE_SANDSTORM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 202,
+      "name": "Giga Drain",
+      "constant": "MOVE_GIGA_DRAIN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 203,
+      "name": "Endure",
+      "constant": "MOVE_ENDURE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 204,
+      "name": "Charm",
+      "constant": "MOVE_CHARM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 205,
+      "name": "Rollout",
+      "constant": "MOVE_ROLLOUT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 206,
+      "name": "False Swipe",
+      "constant": "MOVE_FALSE_SWIPE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 207,
+      "name": "Swagger",
+      "constant": "MOVE_SWAGGER",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Swagger.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 208,
+      "name": "Milk Drink",
+      "constant": "MOVE_MILK_DRINK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 209,
+      "name": "Spark",
+      "constant": "MOVE_SPARK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 210,
+      "name": "Fury Cutter",
+      "constant": "MOVE_FURY_CUTTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 211,
+      "name": "Steel Wing",
+      "constant": "MOVE_STEEL_WING",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 212,
+      "name": "Mean Look",
+      "constant": "MOVE_MEAN_LOOK",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Mean-Look.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 213,
+      "name": "Attract",
+      "constant": "MOVE_ATTRACT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 214,
+      "name": "Sleep Talk",
+      "constant": "MOVE_SLEEP_TALK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 215,
+      "name": "Heal Bell",
+      "constant": "MOVE_HEAL_BELL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 216,
+      "name": "Return",
+      "constant": "MOVE_RETURN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 217,
+      "name": "Present",
+      "constant": "MOVE_PRESENT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 218,
+      "name": "Frustration",
+      "constant": "MOVE_FRUSTRATION",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 219,
+      "name": "Safeguard",
+      "constant": "MOVE_SAFEGUARD",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 220,
+      "name": "Pain Split",
+      "constant": "MOVE_PAIN_SPLIT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 221,
+      "name": "Sacred Fire",
+      "constant": "MOVE_SACRED_FIRE",
+      "source_status": "named_but_visual_identity_unconfirmed",
+      "source_files": [
+        "Sacred-Fire.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 222,
+      "name": "Magnitude",
+      "constant": "MOVE_MAGNITUDE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 223,
+      "name": "DynamicPunch",
+      "constant": "MOVE_DYNAMIC_PUNCH",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Dynamic-Punch.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 224,
+      "name": "Megahorn",
+      "constant": "MOVE_MEGAHORN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 225,
+      "name": "DragonBreath",
+      "constant": "MOVE_DRAGON_BREATH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 226,
+      "name": "Baton Pass",
+      "constant": "MOVE_BATON_PASS",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Baton-Pass.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 227,
+      "name": "Encore",
+      "constant": "MOVE_ENCORE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 228,
+      "name": "Pursuit",
+      "constant": "MOVE_PURSUIT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 229,
+      "name": "Rapid Spin",
+      "constant": "MOVE_RAPID_SPIN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 230,
+      "name": "Sweet Scent",
+      "constant": "MOVE_SWEET_SCENT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 231,
+      "name": "Iron Tail",
+      "constant": "MOVE_IRON_TAIL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 232,
+      "name": "Metal Claw",
+      "constant": "MOVE_METAL_CLAW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 233,
+      "name": "Vital Throw",
+      "constant": "MOVE_VITAL_THROW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 234,
+      "name": "Morning Sun",
+      "constant": "MOVE_MORNING_SUN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 235,
+      "name": "Synthesis",
+      "constant": "MOVE_SYNTHESIS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 236,
+      "name": "Moonlight",
+      "constant": "MOVE_MOONLIGHT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 237,
+      "name": "Hidden Power",
+      "constant": "MOVE_HIDDEN_POWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 238,
+      "name": "Cross Chop",
+      "constant": "MOVE_CROSS_CHOP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 239,
+      "name": "Twister",
+      "constant": "MOVE_TWISTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 240,
+      "name": "Rain Dance",
+      "constant": "MOVE_RAIN_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": [
+        "Rain.png"
+      ]
+    },
+    {
+      "move_id": 241,
+      "name": "Sunny Day",
+      "constant": "MOVE_SUNNY_DAY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 242,
+      "name": "Crunch",
+      "constant": "MOVE_CRUNCH",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Crunch.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 243,
+      "name": "Mirror Coat",
+      "constant": "MOVE_MIRROR_COAT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 244,
+      "name": "Psych Up",
+      "constant": "MOVE_PSYCH_UP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 245,
+      "name": "ExtremeSpeed",
+      "constant": "MOVE_EXTREME_SPEED",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 246,
+      "name": "AncientPower",
+      "constant": "MOVE_ANCIENT_POWER",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Ancient-Power.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 247,
+      "name": "Shadow Ball",
+      "constant": "MOVE_SHADOW_BALL",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Shadow-Ball.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 248,
+      "name": "Future Sight",
+      "constant": "MOVE_FUTURE_SIGHT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 249,
+      "name": "Rock Smash",
+      "constant": "MOVE_ROCK_SMASH",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Rock-Smash.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 250,
+      "name": "Whirlpool",
+      "constant": "MOVE_WHIRLPOOL",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Whirlpool.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 251,
+      "name": "Beat Up",
+      "constant": "MOVE_BEAT_UP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 252,
+      "name": "Fake Out",
+      "constant": "MOVE_FAKE_OUT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 253,
+      "name": "Uproar",
+      "constant": "MOVE_UPROAR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 254,
+      "name": "Stockpile",
+      "constant": "MOVE_STOCKPILE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 255,
+      "name": "Spit Up",
+      "constant": "MOVE_SPIT_UP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 256,
+      "name": "Swallow",
+      "constant": "MOVE_SWALLOW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 257,
+      "name": "Heat Wave",
+      "constant": "MOVE_HEAT_WAVE",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Heat-Wave.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 258,
+      "name": "Hail",
+      "constant": "MOVE_HAIL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 259,
+      "name": "Torment",
+      "constant": "MOVE_TORMENT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 260,
+      "name": "Flatter",
+      "constant": "MOVE_FLATTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 261,
+      "name": "Will-O-Wisp",
+      "constant": "MOVE_WILL_O_WISP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 262,
+      "name": "Memento",
+      "constant": "MOVE_MEMENTO",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 263,
+      "name": "Facade",
+      "constant": "MOVE_FACADE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 264,
+      "name": "Focus Punch",
+      "constant": "MOVE_FOCUS_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 265,
+      "name": "SmellingSalt",
+      "constant": "MOVE_SMELLING_SALT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 266,
+      "name": "Follow Me",
+      "constant": "MOVE_FOLLOW_ME",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 267,
+      "name": "Nature Power",
+      "constant": "MOVE_NATURE_POWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 268,
+      "name": "Charge",
+      "constant": "MOVE_CHARGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 269,
+      "name": "Taunt",
+      "constant": "MOVE_TAUNT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 270,
+      "name": "Helping Hand",
+      "constant": "MOVE_HELPING_HAND",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Helping-Hand.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 271,
+      "name": "Trick",
+      "constant": "MOVE_TRICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 272,
+      "name": "Role Play",
+      "constant": "MOVE_ROLE_PLAY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 273,
+      "name": "Wish",
+      "constant": "MOVE_WISH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 274,
+      "name": "Assist",
+      "constant": "MOVE_ASSIST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 275,
+      "name": "Ingrain",
+      "constant": "MOVE_INGRAIN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 276,
+      "name": "Superpower",
+      "constant": "MOVE_SUPERPOWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 277,
+      "name": "Magic Coat",
+      "constant": "MOVE_MAGIC_COAT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 278,
+      "name": "Recycle",
+      "constant": "MOVE_RECYCLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 279,
+      "name": "Revenge",
+      "constant": "MOVE_REVENGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 280,
+      "name": "Brick Break",
+      "constant": "MOVE_BRICK_BREAK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 281,
+      "name": "Yawn",
+      "constant": "MOVE_YAWN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 282,
+      "name": "Knock Off",
+      "constant": "MOVE_KNOCK_OFF",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 283,
+      "name": "Endeavor",
+      "constant": "MOVE_ENDEAVOR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 284,
+      "name": "Eruption",
+      "constant": "MOVE_ERUPTION",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Eruption.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 285,
+      "name": "Skill Swap",
+      "constant": "MOVE_SKILL_SWAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 286,
+      "name": "Imprison",
+      "constant": "MOVE_IMPRISON",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 287,
+      "name": "Refresh",
+      "constant": "MOVE_REFRESH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 288,
+      "name": "Grudge",
+      "constant": "MOVE_GRUDGE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Grudge.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 289,
+      "name": "Snatch",
+      "constant": "MOVE_SNATCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 290,
+      "name": "Secret Power",
+      "constant": "MOVE_SECRET_POWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 291,
+      "name": "Dive",
+      "constant": "MOVE_DIVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 292,
+      "name": "Arm Thrust",
+      "constant": "MOVE_ARM_THRUST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 293,
+      "name": "Camouflage",
+      "constant": "MOVE_CAMOUFLAGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 294,
+      "name": "Tail Glow",
+      "constant": "MOVE_TAIL_GLOW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 295,
+      "name": "Luster Purge",
+      "constant": "MOVE_LUSTER_PURGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 296,
+      "name": "Mist Ball",
+      "constant": "MOVE_MIST_BALL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 297,
+      "name": "FeatherDance",
+      "constant": "MOVE_FEATHER_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 298,
+      "name": "Teeter Dance",
+      "constant": "MOVE_TEETER_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 299,
+      "name": "Blaze Kick",
+      "constant": "MOVE_BLAZE_KICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 300,
+      "name": "Mud Sport",
+      "constant": "MOVE_MUD_SPORT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Mud-Sport.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 301,
+      "name": "Ice Ball",
+      "constant": "MOVE_ICE_BALL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 302,
+      "name": "Needle Arm",
+      "constant": "MOVE_NEEDLE_ARM",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Needle-Arn.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 303,
+      "name": "Slack Off",
+      "constant": "MOVE_SLACK_OFF",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 304,
+      "name": "Hyper Voice",
+      "constant": "MOVE_HYPER_VOICE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 305,
+      "name": "Poison Fang",
+      "constant": "MOVE_POISON_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 306,
+      "name": "Crush Claw",
+      "constant": "MOVE_CRUSH_CLAW",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 307,
+      "name": "Blast Burn",
+      "constant": "MOVE_BLAST_BURN",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Blast-Burn.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 308,
+      "name": "Hydro Cannon",
+      "constant": "MOVE_HYDRO_CANNON",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Hydro-Cannon-Back.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 309,
+      "name": "Meteor Mash",
+      "constant": "MOVE_METEOR_MASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 310,
+      "name": "Astonish",
+      "constant": "MOVE_ASTONISH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 311,
+      "name": "Weather Ball",
+      "constant": "MOVE_WEATHER_BALL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 312,
+      "name": "Aromatherapy",
+      "constant": "MOVE_AROMATHERAPY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 313,
+      "name": "Fake Tears",
+      "constant": "MOVE_FAKE_TEARS",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 314,
+      "name": "Air Cutter",
+      "constant": "MOVE_AIR_CUTTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 315,
+      "name": "Overheat",
+      "constant": "MOVE_OVERHEAT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 316,
+      "name": "Odor Sleuth",
+      "constant": "MOVE_ODOR_SLEUTH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 317,
+      "name": "Rock Tomb",
+      "constant": "MOVE_ROCK_TOMB",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Rock-Tomb.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 318,
+      "name": "Silver Wind",
+      "constant": "MOVE_SILVER_WIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 319,
+      "name": "Metal Sound",
+      "constant": "MOVE_METAL_SOUND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 320,
+      "name": "GrassWhistle",
+      "constant": "MOVE_GRASS_WHISTLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 321,
+      "name": "Tickle",
+      "constant": "MOVE_TICKLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 322,
+      "name": "Cosmic Power",
+      "constant": "MOVE_COSMIC_POWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 323,
+      "name": "Water Spout",
+      "constant": "MOVE_WATER_SPOUT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 324,
+      "name": "Signal Beam",
+      "constant": "MOVE_SIGNAL_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 325,
+      "name": "Shadow Punch",
+      "constant": "MOVE_SHADOW_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 326,
+      "name": "Extrasensory",
+      "constant": "MOVE_EXTRASENSORY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 327,
+      "name": "Sky Uppercut",
+      "constant": "MOVE_SKY_UPPERCUT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 328,
+      "name": "Sand Tomb",
+      "constant": "MOVE_SAND_TOMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 329,
+      "name": "Sheer Cold",
+      "constant": "MOVE_SHEER_COLD",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 330,
+      "name": "Muddy Water",
+      "constant": "MOVE_MUDDY_WATER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 331,
+      "name": "Bullet Seed",
+      "constant": "MOVE_BULLET_SEED",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Bullet-Seed.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 332,
+      "name": "Aerial Ace",
+      "constant": "MOVE_AERIAL_ACE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Aerial-Ace.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 333,
+      "name": "Icicle Spear",
+      "constant": "MOVE_ICICLE_SPEAR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 334,
+      "name": "Iron Defense",
+      "constant": "MOVE_IRON_DEFENSE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 335,
+      "name": "Block",
+      "constant": "MOVE_BLOCK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 336,
+      "name": "Howl",
+      "constant": "MOVE_HOWL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 337,
+      "name": "Dragon Claw",
+      "constant": "MOVE_DRAGON_CLAW",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Dragon-Claw.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 338,
+      "name": "Frenzy Plant",
+      "constant": "MOVE_FRENZY_PLANT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Frenzy-Plant.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 339,
+      "name": "Bulk Up",
+      "constant": "MOVE_BULK_UP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 340,
+      "name": "Bounce",
+      "constant": "MOVE_BOUNCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 341,
+      "name": "Mud Shot",
+      "constant": "MOVE_MUD_SHOT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Mud-Shot.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 342,
+      "name": "Poison Tail",
+      "constant": "MOVE_POISON_TAIL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 343,
+      "name": "Covet",
+      "constant": "MOVE_COVET",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 344,
+      "name": "Volt Tackle",
+      "constant": "MOVE_VOLT_TACKLE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 345,
+      "name": "Magical Leaf",
+      "constant": "MOVE_MAGICAL_LEAF",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Magical-Leaf.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 346,
+      "name": "Water Sport",
+      "constant": "MOVE_WATER_SPORT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Water-Sport.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 347,
+      "name": "Calm Mind",
+      "constant": "MOVE_CALM_MIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 348,
+      "name": "Leaf Blade",
+      "constant": "MOVE_LEAF_BLADE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 349,
+      "name": "Dragon Dance",
+      "constant": "MOVE_DRAGON_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 350,
+      "name": "Rock Blast",
+      "constant": "MOVE_ROCK_BLAST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 351,
+      "name": "Shock Wave",
+      "constant": "MOVE_SHOCK_WAVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 352,
+      "name": "Water Pulse",
+      "constant": "MOVE_WATER_PULSE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Water-Pulse.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 353,
+      "name": "Doom Desire",
+      "constant": "MOVE_DOOM_DESIRE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 354,
+      "name": "Psycho Boost",
+      "constant": "MOVE_PSYCHO_BOOST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 355,
+      "name": "Roost",
+      "constant": "MOVE_ROOST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 356,
+      "name": "Gravity",
+      "constant": "MOVE_GRAVITY",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 357,
+      "name": "Miracle Eye",
+      "constant": "MOVE_MIRACLE_EYE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 358,
+      "name": "Wake-Up Slap",
+      "constant": "MOVE_WAKE_UP_SLAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 359,
+      "name": "Hammer Arm",
+      "constant": "MOVE_HAMMER_ARM",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Hammer-Arm.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 360,
+      "name": "Gyro Ball",
+      "constant": "MOVE_GYRO_BALL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 361,
+      "name": "Healing Wish",
+      "constant": "MOVE_HEALING_WISH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 362,
+      "name": "Brine",
+      "constant": "MOVE_BRINE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 363,
+      "name": "Natural Gift",
+      "constant": "MOVE_NATURAL_GIFT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 364,
+      "name": "Feint",
+      "constant": "MOVE_FEINT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 365,
+      "name": "Pluck",
+      "constant": "MOVE_PLUCK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 366,
+      "name": "Tailwind",
+      "constant": "MOVE_TAILWIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 367,
+      "name": "Acupressure",
+      "constant": "MOVE_ACUPRESSURE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Accupressure.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 368,
+      "name": "Metal Burst",
+      "constant": "MOVE_METAL_BURST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 369,
+      "name": "U-turn",
+      "constant": "MOVE_U_TURN",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 370,
+      "name": "Close Combat",
+      "constant": "MOVE_CLOSE_COMBAT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Close-Combat.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 371,
+      "name": "Payback",
+      "constant": "MOVE_PAYBACK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 372,
+      "name": "Assurance",
+      "constant": "MOVE_ASSURANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 373,
+      "name": "Embargo",
+      "constant": "MOVE_EMBARGO",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 374,
+      "name": "Fling",
+      "constant": "MOVE_FLING",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 375,
+      "name": "Psycho Shift",
+      "constant": "MOVE_PSYCHO_SHIFT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 376,
+      "name": "Trump Card",
+      "constant": "MOVE_TRUMP_CARD",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 377,
+      "name": "Heal Block",
+      "constant": "MOVE_HEAL_BLOCK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 378,
+      "name": "Wring Out",
+      "constant": "MOVE_WRING_OUT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 379,
+      "name": "Power Trick",
+      "constant": "MOVE_POWER_TRICK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 380,
+      "name": "Gastro Acid",
+      "constant": "MOVE_GASTRO_ACID",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 381,
+      "name": "Lucky Chant",
+      "constant": "MOVE_LUCKY_CHANT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 382,
+      "name": "Me First",
+      "constant": "MOVE_ME_FIRST",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 383,
+      "name": "Copycat",
+      "constant": "MOVE_COPYCAT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 384,
+      "name": "Power Swap",
+      "constant": "MOVE_POWER_SWAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 385,
+      "name": "Guard Swap",
+      "constant": "MOVE_GUARD_SWAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 386,
+      "name": "Punishment",
+      "constant": "MOVE_PUNISHMENT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 387,
+      "name": "Last Resort",
+      "constant": "MOVE_LAST_RESORT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Last-Resort.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 388,
+      "name": "Worry Seed",
+      "constant": "MOVE_WORRY_SEED",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Worry-Seed.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 389,
+      "name": "Sucker Punch",
+      "constant": "MOVE_SUCKER_PUNCH",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Sucker-Punch.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 390,
+      "name": "Toxic Spikes",
+      "constant": "MOVE_TOXIC_SPIKES",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 391,
+      "name": "Heart Swap",
+      "constant": "MOVE_HEART_SWAP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 392,
+      "name": "Aqua Ring",
+      "constant": "MOVE_AQUA_RING",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 393,
+      "name": "Magnet Rise",
+      "constant": "MOVE_MAGNET_RISE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 394,
+      "name": "Flare Blitz",
+      "constant": "MOVE_FLARE_BLITZ",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Flare-Blitz.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 395,
+      "name": "Force Palm",
+      "constant": "MOVE_FORCE_PALM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 396,
+      "name": "Aura Sphere",
+      "constant": "MOVE_AURA_SPHERE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 397,
+      "name": "Rock Polish",
+      "constant": "MOVE_ROCK_POLISH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 398,
+      "name": "Poison Jab",
+      "constant": "MOVE_POISON_JAB",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Poison-Jab.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 399,
+      "name": "Dark Pulse",
+      "constant": "MOVE_DARK_PULSE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 400,
+      "name": "Night Slash",
+      "constant": "MOVE_NIGHT_SLASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 401,
+      "name": "Aqua Tail",
+      "constant": "MOVE_AQUA_TAIL",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 402,
+      "name": "Seed Bomb",
+      "constant": "MOVE_SEED_BOMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 403,
+      "name": "Air Slash",
+      "constant": "MOVE_AIR_SLASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 404,
+      "name": "X-Scissor",
+      "constant": "MOVE_X_SCISSOR",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "X-Scizzor.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 405,
+      "name": "Bug Buzz",
+      "constant": "MOVE_BUG_BUZZ",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 406,
+      "name": "Dragon Pulse",
+      "constant": "MOVE_DRAGON_PULSE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 407,
+      "name": "Dragon Rush",
+      "constant": "MOVE_DRAGON_RUSH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 408,
+      "name": "Power Gem",
+      "constant": "MOVE_POWER_GEM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 409,
+      "name": "Drain Punch",
+      "constant": "MOVE_DRAIN_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 410,
+      "name": "Vacuum Wave",
+      "constant": "MOVE_VACUUM_WAVE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 411,
+      "name": "Focus Blast",
+      "constant": "MOVE_FOCUS_BLAST",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Focus-Blast.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 412,
+      "name": "Energy Ball",
+      "constant": "MOVE_ENERGY_BALL",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Energy-Ball.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 413,
+      "name": "Brave Bird",
+      "constant": "MOVE_BRAVE_BIRD",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 414,
+      "name": "Earth Power",
+      "constant": "MOVE_EARTH_POWER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 415,
+      "name": "Switcheroo",
+      "constant": "MOVE_SWITCHEROO",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 416,
+      "name": "Giga Impact",
+      "constant": "MOVE_GIGA_IMPACT",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Giga-Impact.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 417,
+      "name": "Nasty Plot",
+      "constant": "MOVE_NASTY_PLOT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 418,
+      "name": "Bullet Punch",
+      "constant": "MOVE_BULLET_PUNCH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 419,
+      "name": "Avalanche",
+      "constant": "MOVE_AVALANCHE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 420,
+      "name": "Ice Shard",
+      "constant": "MOVE_ICE_SHARD",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Ice-Shards.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 421,
+      "name": "Shadow Claw",
+      "constant": "MOVE_SHADOW_CLAW",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Scratch-Shadow-Claw.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 422,
+      "name": "Thunder Fang",
+      "constant": "MOVE_THUNDER_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 423,
+      "name": "Ice Fang",
+      "constant": "MOVE_ICE_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 424,
+      "name": "Fire Fang",
+      "constant": "MOVE_FIRE_FANG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 425,
+      "name": "Shadow Sneak",
+      "constant": "MOVE_SHADOW_SNEAK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 426,
+      "name": "Mud Bomb",
+      "constant": "MOVE_MUD_BOMB",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Mud-Bomb.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 427,
+      "name": "Psycho Cut",
+      "constant": "MOVE_PSYCHO_CUT",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Psycho-Cut.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 428,
+      "name": "Zen Headbutt",
+      "constant": "MOVE_ZEN_HEADBUTT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 429,
+      "name": "Mirror Shot",
+      "constant": "MOVE_MIRROR_SHOT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 430,
+      "name": "Flash Cannon",
+      "constant": "MOVE_FLASH_CANNON",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Flash-Cannon.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 431,
+      "name": "Rock Climb",
+      "constant": "MOVE_ROCK_CLIMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 432,
+      "name": "Defog",
+      "constant": "MOVE_DEFOG",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 433,
+      "name": "Trick Room",
+      "constant": "MOVE_TRICK_ROOM",
+      "source_status": "named_background_only",
+      "source_files": [
+        "Trick-Room.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 434,
+      "name": "Draco Meteor",
+      "constant": "MOVE_DRACO_METEOR",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 435,
+      "name": "Discharge",
+      "constant": "MOVE_DISCHARGE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 436,
+      "name": "Lava Plume",
+      "constant": "MOVE_LAVA_PLUME",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Lava-Plume.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 437,
+      "name": "Leaf Storm",
+      "constant": "MOVE_LEAF_STORM",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Leaf-Storm.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 438,
+      "name": "Power Whip",
+      "constant": "MOVE_POWER_WHIP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 439,
+      "name": "Rock Wrecker",
+      "constant": "MOVE_ROCK_WRECKER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 440,
+      "name": "Cross Poison",
+      "constant": "MOVE_CROSS_POISON",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 441,
+      "name": "Gunk Shot",
+      "constant": "MOVE_GUNK_SHOT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 442,
+      "name": "Iron Head",
+      "constant": "MOVE_IRON_HEAD",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Iron-Head.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 443,
+      "name": "Magnet Bomb",
+      "constant": "MOVE_MAGNET_BOMB",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 444,
+      "name": "Stone Edge",
+      "constant": "MOVE_STONE_EDGE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Srone-Edge.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 445,
+      "name": "Captivate",
+      "constant": "MOVE_CAPTIVATE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 446,
+      "name": "Stealth Rock",
+      "constant": "MOVE_STEALTH_ROCK",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 447,
+      "name": "Grass Knot",
+      "constant": "MOVE_GRASS_KNOT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 448,
+      "name": "Chatter",
+      "constant": "MOVE_CHATTER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 449,
+      "name": "Judgment",
+      "constant": "MOVE_JUDGMENT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 450,
+      "name": "Bug Bite",
+      "constant": "MOVE_BUG_BITE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 451,
+      "name": "Charge Beam",
+      "constant": "MOVE_CHARGE_BEAM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 452,
+      "name": "Wood Hammer",
+      "constant": "MOVE_WOOD_HAMMER",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Wood-Hammer.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 453,
+      "name": "Aqua Jet",
+      "constant": "MOVE_AQUA_JET",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 454,
+      "name": "Attack Order",
+      "constant": "MOVE_ATTACK_ORDER",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Attack-and-Heal-Order.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 455,
+      "name": "Defend Order",
+      "constant": "MOVE_DEFEND_ORDER",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 456,
+      "name": "Heal Order",
+      "constant": "MOVE_HEAL_ORDER",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Attack-and-Heal-Order.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 457,
+      "name": "Head Smash",
+      "constant": "MOVE_HEAD_SMASH",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 458,
+      "name": "Double Hit",
+      "constant": "MOVE_DOUBLE_HIT",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 459,
+      "name": "Roar of Time",
+      "constant": "MOVE_ROAR_OF_TIME",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 460,
+      "name": "Spacial Rend",
+      "constant": "MOVE_SPACIAL_REND",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Spacial-Rend.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 461,
+      "name": "Lunar Dance",
+      "constant": "MOVE_LUNAR_DANCE",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 462,
+      "name": "Crush Grip",
+      "constant": "MOVE_CRUSH_GRIP",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 463,
+      "name": "Magma Storm",
+      "constant": "MOVE_MAGMA_STORM",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 464,
+      "name": "Dark Void",
+      "constant": "MOVE_DARK_VOID",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 465,
+      "name": "Seed Flare",
+      "constant": "MOVE_SEED_FLARE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Seed-Flare.png"
+      ],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 466,
+      "name": "Ominous Wind",
+      "constant": "MOVE_OMINOUS_WIND",
+      "source_status": "no_direct_named_external_match",
+      "source_files": [],
+      "unconfirmed_candidate_files": []
+    },
+    {
+      "move_id": 467,
+      "name": "Shadow Force",
+      "constant": "MOVE_SHADOW_FORCE",
+      "source_status": "usable_looking_named_sheet",
+      "source_files": [
+        "Shadow-Force.png"
+      ],
+      "unconfirmed_candidate_files": []
+    }
+  ]
+}
