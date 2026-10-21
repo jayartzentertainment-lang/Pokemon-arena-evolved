@@ -1,0 +1,25 @@
+{
+  "name": "Platinum Arena 0.9.5 integration playtest build",
+  "rom": "Platinum-Arena-0.9.5-INTEGRATION.nds",
+  "rom_bytes": 268435456,
+  "rom_sha256": "adee9101fa8ff3d5170f5aa7411a521ba231c5b78b55a73bb9b48216d37170c9",
+  "status": "Compiler-built; gameplay testing assigned to the user",
+  "build_receipt_sha256": "68014ec9368c65d000d29fd41ac10abdeeca76ad38c65de1630ee6a139732da3",
+  "checks": {
+    "native_compile_link": "passed",
+    "native_story_live_battle": "pending_user_playtest",
+    "native_story_battle_return": "pending_user_playtest",
+    "native_save_reload": "pending_user_playtest",
+    "live_1v1": "pending_user_playtest",
+    "live_2v2": "pending_user_playtest",
+    "vfx_and_sound": "pending_user_playtest",
+    "real_ds_hardware": "pending_user_playtest"
+  },
+  "limitations": [
+    "This exact ROM has not been run in an emulator or on hardware by the assistant.",
+    "Platinum story hooks and native party/save interfaces are retained; full campaign coverage is unverified.",
+    "Complex abilities, weather, held-item interactions and native move scripts remain incomplete.",
+    "Dedicated hurt/charge/brace art import is a later animation pass; current fallback poses are documented.",
+    "Control remapping remains session-only and resets on a ROM restart."
+  ]
+}

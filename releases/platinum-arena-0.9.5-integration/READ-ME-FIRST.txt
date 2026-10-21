@@ -1,0 +1,38 @@
+PLATINUM ARENA 0.9.5 — INTEGRATION PLAYTEST BUILD
+
+This is the native Platinum-based game with live-action combat. It is not a
+standalone Emerald ROM or a 3DS executable. It has compiled and linked; this
+exact build is being delivered for YOUR gameplay testing, not marked as tested.
+
+PLAY
+1. Extract Platinum-Arena-0.9.5-INTEGRATION.zip.
+2. Open Platinum-Arena-0.9.5-INTEGRATION.nds in your Nintendo DS emulator.
+3. Keep a backup of your existing save before trying a new development build.
+4. Play the Platinum story normally, or open Battle Lab from the title screen
+   by holding L + R + SELECT. Battle Lab uses temporary teams and discards
+   practice HP/PP/rewards when you leave.
+
+DEFAULT LIVE-COMBAT CONTROLS
+D-pad: move; double-tap a direction: dash; Y: equipped move 1;
+A: equipped move 2; X: equipped move 3 or 4; L: toggle X between 3/4;
+B held while stationary: shield; B + direction: dodge; SELECT: aim lock;
+START: pause/party/bag/controls. L + R: catch in supported wild encounters.
+B is fixed to defence. R remains available outside the catch chord.
+
+SCOPE
+This pass updates equipped-move controls, double-tap dashing, interactive
+beam pressure, move-specific Swift artwork, contact-driven impact visuals
+and live-combat presentation. Expanded layered character creation and
+global Pokemon followers are not integrated in this build.
+Exact implementation details and remaining limits
+are in the accompanying changelog and RELEASE.json.
+
+The source changes are supplied as a separate download. New source files are
+enough for development; no further base ROM upload is required.
+
+TESTING
+Gameplay validation, including story entry/return/save, 1v1/2v2, controls,
+sound, collision feel and visual timing, remains pending your playtesting.
+Compiler success does not establish these behaviors.
+
+Artwork credits and source notices are retained in credits/.
