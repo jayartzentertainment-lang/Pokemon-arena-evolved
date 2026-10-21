@@ -1,0 +1,13 @@
+build/
+*.3dsx
+*.smdh
+*.elf
+*.map
+romfs/gfx/*.t3x
+gfx/private/
+assets/private/
+validation/
+__pycache__/
+*.pyc
+docs/USER-MASTER-DIRECTIVE.md
+docs/WORK-IN-PROGRESS.md

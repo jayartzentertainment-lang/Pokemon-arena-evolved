@@ -1,0 +1,213 @@
+{
+  "repo": "PMDCollab/SpriteCollab",
+  "commit": "d25607ff4746957df10bdb78db090887cd94f1f8",
+  "license": "CC BY-NC4.0; source credits retained; Nintendo/Chunsoft original rights remain",
+  "species": {
+    "dex": 448,
+    "species": "LUCARIO",
+    "palette": [
+      0,
+      0,
+      250,
+      9784,
+      13704,
+      17247,
+      18991,
+      22495,
+      22912,
+      24277,
+      28538,
+      29315,
+      32559,
+      32767,
+      28191,
+      0
+    ],
+    "animations": [
+      {
+        "name": "Idle",
+        "source_animation": "Idle",
+        "offset": 6247288,
+        "size": 19752,
+        "frames": 6,
+        "durations": [
+          40,
+          2,
+          2,
+          4,
+          2,
+          2
+        ],
+        "total_ticks": 52,
+        "hit_tick": 0,
+        "ground": [
+          7,
+          6,
+          8,
+          9,
+          9,
+          9,
+          8,
+          6
+        ],
+        "edge_registration_translations": [],
+        "sha256": "b464e7c993730c529333323af3cd32bf039d823c55963672ec2b34f432c6fa66"
+      },
+      {
+        "name": "Walk",
+        "source_animation": "Walk",
+        "offset": 6267040,
+        "size": 11912,
+        "frames": 4,
+        "durations": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "total_ticks": 24,
+        "hit_tick": 0,
+        "ground": [
+          9,
+          9,
+          10,
+          11,
+          10,
+          11,
+          10,
+          9
+        ],
+        "edge_registration_translations": [],
+        "sha256": "f91bd6e7786549529fdefea71d001313503559d6c0c1e3d432f85930d1cd6b77"
+      },
+      {
+        "name": "Shoot",
+        "source_animation": "Attack",
+        "offset": 6278952,
+        "size": 40648,
+        "frames": 15,
+        "durations": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "total_ticks": 30,
+        "hit_tick": 6,
+        "ground": [
+          17,
+          15,
+          11,
+          4,
+          4,
+          4,
+          11,
+          15
+        ],
+        "edge_registration_translations": [],
+        "sha256": "f260d925826f2272c3452960debde124736d14e484b28ec175da357563d1b5b1"
+      },
+      {
+        "name": "Attack",
+        "source_animation": "Attack",
+        "offset": 6278952,
+        "size": 40648,
+        "frames": 15,
+        "durations": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "total_ticks": 30,
+        "hit_tick": 6,
+        "ground": [
+          17,
+          15,
+          11,
+          4,
+          4,
+          4,
+          11,
+          15
+        ],
+        "edge_registration_translations": [],
+        "sha256": "f260d925826f2272c3452960debde124736d14e484b28ec175da357563d1b5b1"
+      },
+      {
+        "name": "SpAttack",
+        "source_animation": "RearUp",
+        "offset": 6319600,
+        "size": 31688,
+        "frames": 12,
+        "durations": [
+          4,
+          1,
+          2,
+          4,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "total_ticks": 27,
+        "hit_tick": 11,
+        "ground": [
+          9,
+          10,
+          11,
+          11,
+          9,
+          11,
+          11,
+          10
+        ],
+        "edge_registration_translations": [],
+        "sha256": "1ebb21a3896768f3df71f72b7280514fe0b959f11245720d7fcdb1e6d1c7623a"
+      }
+    ],
+    "cache_bytes": 104000,
+    "source_integer_reduction": 1,
+    "registration_offset": [
+      0,
+      4
+    ],
+    "registration_note": "Common integer nearest-neighbour reduction for every pose/direction; minimal recorded edge translations retain all body pixels within64px cells while real-time controller provides world displacement; source animations/timings retained",
+    "credits": "2020-10-07 17:58:44.723301\tCHUNSOFT\tCUR\tUnspecified\tWalk,Attack,QuickStrike,Strike,SpAttack,RearUp,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate\n2023-03-19 21:50:39.908380\t<@!356635814668664832>\tCUR\tPMDCollab_1\tEventSleep,Wake,Eat,Tumble,Pose,Pull,Pain,Float,DeepBreath,Nod,Sit,LookUp,Sink,Trip,Laying,LeapForth,Head,Cringe,LostBalance,TumbleBack,HitGround,Faint\n2024-09-07 21:23:27.049432\t<@!356635814668664832>\tCUR\tCC_BY-NC_4\tEventSleep,Wake,Float,Trip,Laying,HitGround\n",
+    "xml_sha256": "b3d34c30ee6e766d83ac932acce9f9977487e66f519fadc1e9e95d4e6140b420",
+    "source_files": {
+      "Walk-Anim.png": "62544fbc4a0d033a146413bd95f91b78d8c1b947559a4cebb9e8561810d8428a",
+      "Idle-Anim.png": "f0690ed348514471d79ef01b65344ba25568f0d836bd08c7d7f8d37606d9fdc2",
+      "Attack-Anim.png": "db648a3a825c29619c9690c5d4437c5592c701d3962784281898ec211711dca2",
+      "AnimData.xml": "b3d34c30ee6e766d83ac932acce9f9977487e66f519fadc1e9e95d4e6140b420",
+      "credits.txt": "505858e577152b35c5bf637fe1a63c2573cf2bcf9e0d27af662f1fb960c34c39",
+      "RearUp-Anim.png": "e51ea64f74794f09a33c46bd0733e1474edbdd8ab3b068f28f7b99b981d691cc"
+    }
+  }
+}

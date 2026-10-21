@@ -1,0 +1,18 @@
+Preserved verbatim from supplied 0.9.6 SPRITE-CREDITS.md
+
+## 0006 CHARIZARD
+
+2020-10-07 17:58:43.345381	CHUNSOFT	CUR	Unspecified	Attack,Charge,Double,Hop,Hurt,Idle,Rotate,Shoot,Sleep,Strike,Swing,Walk
+2021-10-01 08:17:01.621356	<@!237286997645983744>	CUR	PMDCollab_1	Charge,Double,Faint,Hop,Hurt,Rotate,Shoot,Sleep,Strike,Swing
+2023-03-19 18:54:53.170665	<@!237286997645983744>	CUR	PMDCollab_1	Faint
+
+
+## 0009 BLASTOISE
+
+2020-10-07 17:58:43.356353	CHUNSOFT	CUR	Unspecified	Walk,Attack,Ricochet,Shoot,Withdraw,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate
+
+
+## 0025 PIKACHU
+
+2020-10-07 17:58:43.416193	CHUNSOFT	CUR	Unspecified	Walk,Attack,QuickStrike,Shoot,Shock,Sleep,Hurt,Idle,Swing,Double,Hop,Charge,Rotate,EventSleep,Wake,Eat,Tumble,Pose,Pull,Pain,Float,DeepBreath,Nod,Sit,LookUp,Sink,Trip,Laying,LeapForth,Head,Cringe,LostBalance,TumbleBack,Faint,HitGround
+

@@ -1,0 +1,8 @@
+{
+  "src/arena/combat.c": "0a8cdb3ac5c35e1afb2f6a31f39ec28d1261082af61ae6df8d3cf9519621ec7b",
+  "include/arena/combat.h": "2fa223cd4df67cf8e69bc2f02368cd2abca0a071611f72576b734dbd85d55007",
+  "src/arena/render.c": "e62b0d1eedd9dd8b376e133f289428772e2fce7d424de5f35ea9ca888e7cf3f5",
+  "src/arena/avatar.c": "f4cd715f944dc0d9d8fbe3fcef7a0c891774804d6521cae1f99eb925bbdb0caa",
+  "src/arena/presentation.c": "635e8a49175e48d109ce47f7da570cc11ba4887608f385deaa393c3aa15b5686",
+  "res/arena/arena.pack": "a880d9fcd353d3bfd9779096531f292380a70483173e09046f2513db5a6c71ea"
+}

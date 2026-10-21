@@ -1,0 +1,47 @@
+{
+  "source": "res/prebuilt/battle/graphic/pl_batt_bg.narc",
+  "source_sha256": "6a6d0ce93ba75c6a6fd505eb036dad677de74b696015277f30e3baece55c57b0",
+  "native_members": [
+    28,
+    42,
+    43,
+    47,
+    49,
+    242
+  ],
+  "healthbox_sources": [
+    "player_doubles.png",
+    "enemy.png"
+  ],
+  "art_bytes": 6624,
+  "unique_tiles": 207,
+  "map_bytes": 2048,
+  "palette_bytes": 32,
+  "runtime_io": "none; immutable arrays loaded at renderer entry",
+  "move_hitboxes": [
+    [
+      8,
+      80,
+      124,
+      114
+    ],
+    [
+      132,
+      80,
+      248,
+      114
+    ],
+    [
+      8,
+      118,
+      124,
+      152
+    ],
+    [
+      132,
+      118,
+      248,
+      152
+    ]
+  ]
+}
