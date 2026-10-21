@@ -1,0 +1,53 @@
+{
+  "role": "Exact supplied Emerald Arena Flamethrower source, replacing Ranger107 in native0.2.0",
+  "sha256": "0ea7594483bda0047762feb449394cb55e5498f5bf922ccac2c1c19e69629f64",
+  "size": [
+    512,
+    64
+  ],
+  "frames": 8,
+  "source_frame_size": [
+    64,
+    64
+  ],
+  "ticks_per_cel": 4,
+  "original_renderer": "src/arena_move_fx.c:ArenaMoveFx_Flame",
+  "original_renderer_sha256": "895b285dc761b819424c108d91f2fff79acba329740f4835c57299c6a9daa7ea",
+  "held_charizard_shoot_frame": 2,
+  "charizard_mouth_offsets_from_registered_foot": [
+    [
+      0,
+      -10
+    ],
+    [
+      -6,
+      -9
+    ],
+    [
+      19,
+      -10
+    ],
+    [
+      12,
+      -18
+    ],
+    [
+      0,
+      -24
+    ],
+    [
+      -12,
+      -18
+    ],
+    [
+      -19,
+      -10
+    ],
+    [
+      6,
+      -9
+    ]
+  ],
+  "charizard_bob_compensation": true,
+  "coverage": "Held contact poses calibrated; exhaustive all-pose hardware review remains pending"
+}

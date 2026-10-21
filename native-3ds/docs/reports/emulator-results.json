@@ -1,35 +1,23 @@
 {
   "date_utc": "2026-10-21",
-  "binary_sha256": "504e1e4ac43dadd68de984c43a6d55658e289de900f016e5ea3fa271f9f0ad99",
-  "emulator": "Azahar2126.2",
-  "configuration": "Original 3DS; speedup disabled; stereo disabled",
-  "renderer": "Mesa25.0.7 llvmpipe software OpenGL",
+  "version": "0.2.0-combat-quality-M1",
+  "binary_sha256": "7156caccf6214a24b51439eb10f503128038b24c84d478b6396916ae50836c19",
+  "bytes": 461728,
   "actually_run_and_observed": true,
-  "physical_hardware_profiled": false,
-  "observed": [
-    "dual screens",
-    "eight Circle Pad directions",
-    "touchscreen move use with PP changes",
-    "four party species through switching",
-    "2v2 with AI partner",
-    "Swords Dance source blades",
-    "source-driven Flamethrower",
-    "Hydro Pump directional cannon jets",
-    "HP damage/hurt and faint replacement",
-    "whole-party defeat and result menu",
-    "pause overlay and opponent party icons"
-  ],
-  "native_emulated_metrics": {
+  "emulator": "Azahar2126.2",
+  "model": "original3DS; stereo/optionalCPU speedup disabled",
+  "renderer": "Mesa25.0.7 llvmpipe software OpenGL",
+  "native_metrics": {
     "fps": {
-      "minimum": 58.82,
+      "minimum": 57.83,
       "median": 59.82,
       "maximum": 59.88,
       "clock": "emulated, not physical hardware"
     },
     "cpu_ms": {
-      "minimum": 0.814,
-      "median": 0.95,
-      "maximum": 0.969,
+      "minimum": 0.865,
+      "median": 0.981,
+      "maximum": 1.069,
       "clock": "emulated, not physical hardware"
     },
     "gpu_ms": {
@@ -39,31 +27,71 @@
       "clock": "emulated, not physical hardware"
     }
   },
-  "host_fps_observation": "Screenshot status-bar samples roughly31\u201361FPS under software rendering/cloud contention; quieter1v1 samples57\u201361FPS. Not a sustained benchmark.",
-  "final_battle": {
-    "ticks": 3712,
-    "mode": "0",
-    "actor": 6,
-    "dir": "7",
-    "x": "436",
-    "y": "32",
-    "hp": 0,
-    "pp": "13,20,20,14",
-    "phase": "0",
-    "hits": 51,
-    "switches": 8,
-    "winner": 2,
-    "fps": "59.88",
-    "cpu_ms": "0.926",
-    "gpu_ms": "0.498"
-  },
-  "audio": "NDSP unavailable; SFX OFF; no listening verification",
-  "not_claimed": [
-    "physical original/New3DS performance",
-    "exhaustive move mechanics",
-    "visual clash playtest",
-    "complete creator/campaign/save",
-    "dedicated hurt/faint source poses"
+  "host_performance": "Software-rendered screenshots mostly mid50s to61FPS; a2v2capture around44FPS. Cloud contention matters; this is not physical-hardware profiling.",
+  "observed": [
+    "paused entry and high/low setting",
+    "body-registered lock marker and strafing",
+    "persistent touch free aim",
+    "manual projectile PP",
+    "re-lock",
+    "2v2 opponent cycling",
+    "status cast root input and interruption",
+    "exact Emerald plume and mouth emitter",
+    "Hydro Pump source textures/cannon streams",
+    "guard/dash inputs",
+    "whole-party defeat/result menu"
   ],
-  "telemetry_sha256": "784552c21f15b5fcfeb5d1ee39d8a94a0cb8d93be737c6eeef1c1b1230f93514"
+  "final_battle": {
+    "ticks": "4239",
+    "mode": "0",
+    "actor": "6",
+    "dir": "1",
+    "x": "12",
+    "y": "32",
+    "hp": "0",
+    "pp": "14,20,20,15",
+    "phase": "0",
+    "hits": "58",
+    "switches": "6",
+    "winner": "2",
+    "fps": "59.88",
+    "cpu_ms": "0.981",
+    "gpu_ms": "0.498",
+    "aim": "1",
+    "target": "1",
+    "aimx": "200",
+    "aimy": "160",
+    "root": "0",
+    "reach": "0"
+  },
+  "rooted_cast_samples": [
+    {
+      "ticks": "36",
+      "mode": "0",
+      "actor": "448",
+      "dir": "2",
+      "x": "162",
+      "y": "168",
+      "hp": "145",
+      "pp": "20,10,35,29",
+      "phase": "1",
+      "hits": "0",
+      "switches": "1",
+      "winner": "0",
+      "fps": "59.82",
+      "cpu_ms": "0.896",
+      "gpu_ms": "0.507",
+      "aim": "1",
+      "target": "1",
+      "aimx": "256",
+      "aimy": "9",
+      "root": "1",
+      "reach": "0"
+    }
+  ],
+  "audio": "NDSP unavailable/SFX OFF; not listening-tested",
+  "physical_hardware_profiled": false,
+  "new3ds_cstick_hardware_verified": false,
+  "complete_visual_clash_playtest": false,
+  "telemetry_sha256": "e615a4a92c8009fe27905ca4829a6a49bb2920297b96db078dd18d428d104324"
 }

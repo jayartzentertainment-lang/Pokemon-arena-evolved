@@ -68,6 +68,9 @@ typedef struct {
     uint16_t cooldown[4],statusTicks,statusClock,confusionTicks,statusLock;
     uint16_t lightScreenTicks;
     uint8_t status,toxicCounter,lightChoice,specialSlot;
+    int16_t attackAimX,attackAimY;
+    uint16_t beamReach;
+    uint8_t preciseAim,castRoot; /* Per-action state, cleared on interruption. */
 } CombatFighter;
 typedef struct {
     int32_t x,y,previousX,previousY;
@@ -103,6 +106,8 @@ typedef struct {
     uint8_t hitstop,winner,lockAim,aiEnabled,effectCursor,fighterCount,controlActor,clashPractice,tactic;
     uint16_t controlMagnitude; /* Q8 Circle Pad magnitude; digital fallback unchanged. */
     uint8_t analogInput;
+    int16_t aimX,aimY; /* Optional independent Q8 aim; movement stays independent. */
+    uint8_t aimOverride,lockTarget,growingBeams;
 } Combat;
 /* One live match owns the imported navigation/physics module globals. */
 void Combat_Init(Combat *combat,const CombatFighterConfig configs[2]);
@@ -129,6 +134,10 @@ unsigned Combat_AnimationTick(const CombatFighter *fighter,unsigned totalTicks,u
 unsigned Combat_PhaseTick(const CombatFighter *fighter);
 unsigned Combat_PhaseDuration(const CombatFighter *fighter);
 void Combat_SetAnalogMagnitude(Combat *combat,unsigned magnitude,int enabled);
+void Combat_SetAim(Combat *combat,int x,int y,int enabled);
+void Combat_AttackVector(const CombatFighter *fighter,int16_t *x,int16_t *y);
+int Combat_MoveTargetsSelf(uint16_t move);
+int Combat_IsCasting(const CombatFighter *fighter);
 /* During pressure, both source beams end at the same moving contact point.
  * Returns zero for an interrupted or finished pair. Coordinates may be NULL. */
 int Combat_BeamContact(const Combat *combat,unsigned side,int32_t *x,int32_t *y);

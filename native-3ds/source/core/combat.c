@@ -59,7 +59,7 @@ void Combat_SetNativeStatus(Combat *c,unsigned side,uint32_t value)
     f->statusLock=0;
     if(status==COMBAT_STATUS_SLEEP||status==COMBAT_STATUS_FREEZE) {
         f->phase=COMBAT_READY;f->actionTick=f->actionMove=0;
-        f->dashTimer=f->guardTimer=f->guardHeld=0;f->vx=f->vy=0;
+        f->dashTimer=f->guardTimer=f->guardHeld=0;f->vx=f->vy=0;f->castRoot=f->preciseAim=0;f->beamReach=0;
     }
 }
 uint32_t Combat_GetNativeStatus(const Combat *c,unsigned side)
@@ -90,6 +90,8 @@ unsigned Combat_TargetFighter(const Combat *c,unsigned side)
     unsigned target=COMBAT_FIGHTERS,i;
     int32_t best=0x7fffffff;
     if(!c||side>=c->fighterCount) return target;
+    if(side==c->controlActor&&c->lockAim&&c->lockTarget<c->fighterCount&&
+        Enemies(side,c->lockTarget)&&c->fighters[c->lockTarget].hp)return c->lockTarget;
     for(i=0;i<c->fighterCount;i++) if(Enemies(side,i)&&c->fighters[i].hp) {
         int32_t dx=(c->fighters[i].x-c->fighters[side].x)/Q;
         int32_t dy=(c->fighters[i].y-c->fighters[side].y)/Q;
@@ -185,6 +187,65 @@ static void Clash(Combat *c,int32_t x,int32_t y)
     Effect(c,x,y,RGB(24,29,31),COMBAT_CLASH,20);
     Impact(c,COMBAT_IMPACT_CLASH,255,x,y);
 }
+static unsigned Root(unsigned value)
+{
+    unsigned result=0,bit=1u<<30;
+    while(bit>value)bit>>=2;
+    while(bit){if(value>=result+bit){value-=result+bit;result=(result>>1)+bit;}else result>>=1;bit>>=2;}
+    return result;
+}
+static void Normalize(int x,int y,int16_t *ox,int16_t *oy)
+{
+    unsigned length;
+    x=(int)Clamp(x,-32767,32767);y=(int)Clamp(y,-32767,32767);
+    /* Retain fractional direction precision even for a nearby target. */
+    while((Abs(x)>1024||Abs(y)>1024)){x/=2;y/=2;}
+    x*=16;y*=16;length=Root((unsigned)(x*x+y*y));
+    if(!length){*ox=0;*oy=256;return;}
+    *ox=(int16_t)(x*256/(int)length);*oy=(int16_t)(y*256/(int)length);
+}
+void Combat_SetAim(Combat *c,int x,int y,int enabled)
+{
+    if(!c)return;
+    c->aimOverride=(uint8_t)(enabled&&(x||y));
+    if(c->aimOverride)Normalize(x,y,&c->aimX,&c->aimY);
+}
+void Combat_AttackVector(const CombatFighter *f,int16_t *x,int16_t *y)
+{
+    if(!f)return;
+    if(x)*x=f->preciseAim?f->attackAimX:sDirections[f->attackDirection&7][0];
+    if(y)*y=f->preciseAim?f->attackAimY:sDirections[f->attackDirection&7][1];
+}
+int Combat_MoveTargetsSelf(uint16_t move){return !!NativeRule(move)->selfTarget;}
+int Combat_IsCasting(const CombatFighter *f)
+{return f&&f->castRoot&&f->phase!=COMBAT_READY&&f->hp&&!f->hurtTimer;}
+static void SteerBeam(Combat *c,unsigned side)
+{
+    CombatFighter *f=&c->fighters[side];int cross,dot,sign,x,y;
+    if(side!=c->controlActor||!c->aimOverride||!f->preciseAim||
+       f->phase==COMBAT_READY||!ArenaMoves_Beam(f->actionMove)||Combat_BeamContact(c,side,0,0))return;
+    cross=f->attackAimX*c->aimY-f->attackAimY*c->aimX;
+    dot=f->attackAimX*c->aimX+f->attackAimY*c->aimY;
+    if(dot>0&&Abs(cross)<=13*256){f->attackAimX=c->aimX;f->attackAimY=c->aimY;}
+    else{
+        sign=cross<0?-1:1;
+        x=(f->attackAimX*256-f->attackAimY*13*sign)/256;
+        y=(f->attackAimY*256+f->attackAimX*13*sign)/256;
+        Normalize(x,y,&f->attackAimX,&f->attackAimY);
+    }
+    f->attackDirection=Facing(f->attackAimX,f->attackAimY);
+}
+static unsigned BeamRange(const Combat *c,const CombatFighter *f,const struct ArenaMoveProfile *p,unsigned growth)
+{
+    int16_t ax,ay;unsigned distance,maximum=p->range*(c->growingBeams?growth:6)/6;
+    int px=f->x/Q,py=f->y/Q;
+    Combat_AttackVector(f,&ax,&ay);
+    for(distance=1;distance<=maximum;distance++){
+        int x=px+ax*(int)distance/Q,y=py+ay*(int)distance/Q;
+        if(!ArenaNav_LineClear(px,py,x,y,1))break;
+    }
+    return distance-1;
+}
 static uint8_t Windup(const CombatFighter *f,const struct ArenaMoveProfile *p)
 {
     const CombatMoveInfo *m=Combat_GetMoveInfo(p->move);
@@ -251,7 +312,7 @@ unsigned Combat_AnimationTick(const CombatFighter *f,unsigned total,unsigned hit
     return (unsigned)Clamp((int)(hit+time*tail/(active+recovery?active+recovery:1)),0,(int)total-1);
 }
 static void EndAction(CombatFighter *f)
-{ f->phase=COMBAT_READY;f->actionTick=0;f->actionMove=0;f->basicAttack=0; }
+{ f->phase=COMBAT_READY;f->actionTick=0;f->actionMove=0;f->basicAttack=0;f->castRoot=0;f->preciseAim=0;f->beamReach=0; }
 static void ReleaseAction(CombatFighter *f)
 {
     if(f->releasedActionSerial==f->actionSerial)return;
@@ -402,11 +463,17 @@ static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
         f->hurtTimer=15;f->statusLock=60;
         Effect(c,f->x,f->y,RGB(24,12,28),COMBAT_CONTACT,8);return;
     }
-    if(c->lockAim||side!=c->controlActor) {
+    if(side==c->controlActor&&c->aimOverride&&!NativeRule(move)->selfTarget)
+        f->direction=Facing(c->aimX,c->aimY);
+    else if(c->lockAim||side!=c->controlActor) {
         CombatFighter *other=&c->fighters[target];
         f->direction=Facing(other->x-f->x,other->y-f->y);
     }
     f->attackDirection=f->direction;
+    f->preciseAim=(uint8_t)(side==c->controlActor&&c->aimOverride&&!NativeRule(move)->selfTarget);
+    f->attackAimX=c->aimX;f->attackAimY=c->aimY;f->beamReach=0;
+    f->castRoot=(uint8_t)(!basic&&m->category==2);
+    if(f->castRoot)f->vx=f->vy=0;
     f->actionMove=move;f->actionTick=0;f->actionDistance=0;f->phase=COMBAT_WINDUP;
     f->actionSerial++;
     f->actionSlot=basic?4:slot&3;
@@ -422,6 +489,7 @@ static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
 static uint8_t CanCancel(const CombatFighter *f)
 {
     const struct ArenaMoveProfile *p=ArenaMoves_Get(f->actionMove);
+    if(f->castRoot&&f->phase!=COMBAT_READY)return 0;
     return f->phase==COMBAT_READY||(p&&f->phase==COMBAT_RECOVERY&&
         f->actionTick>=Windup(f,p)+Active(f,p))||
         (p&&ArenaMoves_Beam(f->actionMove)&&f->phase==COMBAT_ACTIVE);
@@ -611,8 +679,7 @@ static void SpawnProjectile(Combat *c,unsigned side,const struct ArenaMoveProfil
     shot=&c->projectiles[i];
     shot->owner=side;shot->move=p->move;shot->type=m->type;
     shot->basic=f->basicAttack;
-    shot->vx=sDirections[f->attackDirection][0]*p->speed/Q;
-    shot->vy=sDirections[f->attackDirection][1]*p->speed/Q;
+    {int16_t x,y;Combat_AttackVector(f,&x,&y);shot->vx=x*p->speed/Q;shot->vy=y*p->speed/Q;}
     shot->x=f->x;shot->y=f->y;
     shot->previousX=shot->x;shot->previousY=shot->y;
     shot->life=(uint8_t)Clamp(p->range*Q/(p->speed?p->speed:Q),1,200);
@@ -625,18 +692,22 @@ static void ActionStep(Combat *c,unsigned side)
     CombatFighter *f=&c->fighters[side];
     const struct ArenaMoveProfile *p=ArenaMoves_Get(f->actionMove);
     const CombatMoveInfo *m=Combat_GetMoveInfo(f->actionMove);
-    unsigned w,a,i;
+    unsigned w,a,i,reach;
     int16_t ax,ay,px,py,tx,ty;
     if(!f->hp||!p||!m||f->status==COMBAT_STATUS_SLEEP||f->status==COMBAT_STATUS_FREEZE||
         f->phase==COMBAT_READY||Combat_BeamContact(c,side,0,0)) return;
     w=Windup(f,p);a=Active(f,p);
-    ax=sDirections[f->attackDirection][0];ay=sDirections[f->attackDirection][1];
+    Combat_AttackVector(f,&ax,&ay);reach=p->range;
     f->animation=p->move==MOVE_PROTECT?COMBAT_IDLE:p->animation;f->direction=f->attackDirection;
     if(f->actionTick<w) {
         f->phase=COMBAT_WINDUP;
         if(!(f->actionTick%6)) Effect(c,f->x,f->y,Combat_TypeColor(m->type),COMBAT_RING,3);
     } else if(f->actionTick<w+a) {
         f->phase=COMBAT_ACTIVE;
+        if(ArenaMoves_Beam(f->actionMove)){
+            unsigned growth=(unsigned)Clamp(f->actionTick-w+1,1,6);
+            reach=BeamRange(c,f,p,growth);f->beamReach=(uint16_t)reach;
+        }
         if(f->actionTick==w)ReleaseAction(f);
         if(f->actionTick==w&&p->kind==ARENA_MOVE_PROJECTILE) SpawnProjectile(c,side,p);
         if(f->actionTick==w&&NativeRule(p->move)->selfTarget&&m->category==2&&p->move!=MOVE_PROTECT)
@@ -658,7 +729,7 @@ static void ActionStep(Combat *c,unsigned side)
                 CombatFighter *v=&c->fighters[i];
                 int hit;
                 tx=v->x/Q;ty=v->y/Q;
-                hit=ArenaMoves_InCone(tx-px,ty-py,ax,ay,p->range?p->range:70,p->cone);
+                hit=ArenaMoves_InCone(tx-px,ty-py,ax,ay,reach?reach:1,p->cone);
                 if(p->kind==ARENA_MOVE_RUSH) hit=ArenaMoves_SegmentHit(f->previousX/Q,f->previousY/Q,px,py,tx,ty,18);
                 if(hit&&ArenaNav_LineClear(px,py,tx,ty,1)&&
                     Hit(c,side,i,f->actionMove,f->basicAttack,f->x,f->y,ax,ay)) {
@@ -672,7 +743,7 @@ static void ActionStep(Combat *c,unsigned side)
             }
         }
         if(p->kind!=ARENA_MOVE_SELF&&p->kind!=ARENA_MOVE_PROJECTILE) {
-            int16_t obstacle=ArenaNav_FirstObstacle(px,py,px+ax*p->range/Q,py+ay*p->range/Q,2);
+            int16_t obstacle=ArenaNav_FirstObstacle(px,py,px+ax*(int)reach/Q,py+ay*(int)reach/Q,2);
             if(obstacle>=0&&!(f->terrainMask&(1u<<obstacle))) {
                 f->terrainMask|=1u<<obstacle;
                 ArenaPhysics_Hit(obstacle,ax*3,ay*3,m->power>=80?2:1);
@@ -703,7 +774,9 @@ static unsigned ClashPower(const CombatFighter *a,const CombatFighter *b)
         b->stages[special?COMBAT_STAT_SP_DEFENSE:COMBAT_STAT_DEFENSE],0);
     unsigned power;
     int dx=(b->x-a->x)/Q,dy=(b->y-a->y)/Q;
-    int dot=dx*sDirections[a->attackDirection][0]+dy*sDirections[a->attackDirection][1];
+    int16_t aimX,aimY;
+    int dot;
+    Combat_AttackVector(a,&aimX,&aimY);dot=dx*aimX+dy*aimY;
     unsigned alignment=(unsigned)Clamp(dot/(Abs(dx)+Abs(dy)+1),0,256);
     if(!m||!p)return 0;
     power=(m->power*attack/(defense?defense:1)+1)*Combat_TypeMultiplier(m->type,b->types[0],b->types[1])/Q;
@@ -723,21 +796,22 @@ static void BeamClashes(Combat *c)
         for(j=i+1;j<c->fighterCount;j++) {
             CombatFighter *b=&c->fighters[j];
             const struct ArenaMoveProfile *pb=ArenaMoves_Get(b->actionMove);
-            int ax,ay,bx,by,step,best=0x7fffffff,cx=0,cy=0;
+            int ax,ay,bx,by,step,rangeA,rangeB,best=0x7fffffff,cx=0,cy=0;
             int aX=a->x/Q,aY=a->y/Q,bX=b->x/Q,bY=b->y/Q;
             CombatBeamClash *pair;
             if(!Enemies(i,j)||!ActiveBeam(b,pb)||Combat_BeamContact(c,j,0,0)) continue;
             for(slot=0;slot<COMBAT_BEAM_CLASHES;slot++)
                 if(c->beamClashes[slot].phase==COMBAT_CLASH_NONE)break;
             if(slot==COMBAT_BEAM_CLASHES)return;
-            ax=sDirections[a->attackDirection][0];ay=sDirections[a->attackDirection][1];
-            bx=sDirections[b->attackDirection][0];by=sDirections[b->attackDirection][1];
+            {int16_t x,y;Combat_AttackVector(a,&x,&y);ax=x;ay=y;Combat_AttackVector(b,&x,&y);bx=x;by=y;}
             if(ax*bx+ay*by>0) continue; /* Parallel friendly-direction fire. */
-            for(step=12;step<=pa->range;step+=4) {
+            rangeA=(int)BeamRange(c,a,pa,(unsigned)Clamp(a->actionTick-Windup(a,pa)+1,1,6));
+            rangeB=(int)BeamRange(c,b,pb,(unsigned)Clamp(b->actionTick-Windup(b,pb)+1,1,6));
+            for(step=12;step<=rangeA;step+=4) {
                 int x=aX+ax*step/Q,y=aY+ay*step/Q;
                 int distance=Abs(x*2-aX-bX)+Abs(y*2-aY-bY);
                 if(distance<best&&(x-bX)*bx+(y-bY)*by>=12*Q&&
-                    ArenaMoves_SegmentHit(bX,bY,bX+bx*pb->range/Q,bY+by*pb->range/Q,x,y,10)&&
+                    ArenaMoves_SegmentHit(bX,bY,bX+bx*rangeB/Q,bY+by*rangeB/Q,x,y,10)&&
                     ArenaNav_LineClear(aX,aY,x,y,1)&&ArenaNav_LineClear(bX,bY,x,y,1)) {
                     best=distance;cx=x;cy=y;
                 }
@@ -1056,6 +1130,7 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
         return;
     }
     QueueInput(f,input,side==c->controlActor);
+    SteerBeam(c,side);
     if(f->status==COMBAT_STATUS_SLEEP||f->status==COMBAT_STATUS_FREEZE) {
         f->bufferTimer=0;f->vx=f->vy=0;f->animation=COMBAT_IDLE;return;
     }
@@ -1075,6 +1150,10 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
         f->vx=f->vx*205/Q;f->vy=f->vy*205/Q;
         MoveBody(f,f->vx,f->vy);f->animation=COMBAT_IDLE;return;
     }
+    if(Combat_IsCasting(f)){
+        const struct ArenaMoveProfile *p=ArenaMoves_Get(f->actionMove);
+        f->vx=f->vy=0;f->direction=f->attackDirection;f->animation=p?p->animation:COMBAT_SPECIAL;return;
+    }
     if(f->dashTimer) {
         static const uint16_t dashSpeedByTimer[13]={0,384,512,640,768,896,1024,1152,1280,1344,1280,1024,720};
         int dashSpeed=dashSpeedByTimer[f->dashTimer<=12?f->dashTimer:12];
@@ -1093,12 +1172,15 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
         return;
     }
     if(f->guardTimer) {
-        if((c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS)
+        if(side==c->controlActor&&c->aimOverride)f->direction=Facing(c->aimX,c->aimY);
+        else if((c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS)
             f->direction=Facing(c->fighters[target].x-f->x,c->fighters[target].y-f->y);
         else if(dx||dy) f->direction=Facing(dx,dy);
         f->vx=f->vy=0;f->animation=COMBAT_IDLE;return;
     }
-    if((c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS) {
+    if(side==c->controlActor&&c->aimOverride){
+        if(f->phase==COMBAT_READY)f->direction=Facing(c->aimX,c->aimY);
+    }else if((c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS) {
         CombatFighter *v=&c->fighters[target];
         if(f->phase==COMBAT_READY) f->direction=Facing(v->x-f->x,v->y-f->y);
     } else if(dx||dy) {
@@ -1137,8 +1219,8 @@ static void SeparateBodies(Combat *c)
         if(a->hp&&b->hp&&dx*dx+dy*dy<16*16) {
             int sx=Sign(dx),sy=Sign(dy);
             if(!sx&&!sy) sx=1;
-            if(!Combat_BeamContact(c,i,0,0))MoveBody(a,-sx*Q/2,-sy*Q/2);
-            if(!Combat_BeamContact(c,j,0,0))MoveBody(b,sx*Q/2,sy*Q/2);
+            if(!Combat_BeamContact(c,i,0,0)&&!Combat_IsCasting(a))MoveBody(a,-sx*Q/2,-sy*Q/2);
+            if(!Combat_BeamContact(c,j,0,0)&&!Combat_IsCasting(b))MoveBody(b,sx*Q/2,sy*Q/2);
         }
     }
 }
@@ -1176,7 +1258,7 @@ static void InitMatch(Combat *c,const CombatFighterConfig *configs,unsigned coun
     unsigned i;
     memset(c,0,sizeof(*c));
     ArenaNav_Init();ArenaPhysics_Init();
-    c->lockAim=1;c->aiEnabled=1;c->random=0xD5A4E2u;c->fighterCount=count;
+    c->lockAim=1;c->lockTarget=255;c->aiEnabled=1;c->random=0xD5A4E2u;c->fighterCount=count;
     for(i=0;i<count;i++) {
         CombatFighter *f=&c->fighters[i];
         InitFighter(f,&configs[i]);

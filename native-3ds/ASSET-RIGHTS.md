@@ -17,7 +17,9 @@ before publishing an art-bearing executable or source-art pack.
 | Forest floor / destructible props | User-supplied Arena Plus workspace, recovered through verified 0.9.6 sources |
 | Move panels | Supplied Platinum battle UI conversion; source NARC provenance copied to `provenance/battle-ui-provenance.json` |
 | Hydro Pump / Water Pulse | Uploaded Diamond/Pearl Attack Graphics sheet; Hydro-Pump sheet credits KLNOTHINCOMIN |
-| Lightning / flame / defensive frames | Uploaded Pokémon Ranger Guardian Signs effects, numbered source files recorded in `assets/manifest.json` |
+| Lightning / defensive frames | Uploaded Pokémon Ranger Guardian Signs effects, numbered source files recorded in `assets/manifest.json` |
+| Flamethrower | Exact supplied Emerald Arena `graphics/arena/flame/sheet.png`; original rendering/source hashes in `provenance/emerald-flame.json` |
+| Swords Dance | Actual uploaded Diamond/Pearl `Swords-Dance.png` sword cels |
 | Impacts / wind | Uploaded King of Fighters XI effects; filenames and hashes recorded in manifest |
 | Aura / blades / embers | Uploaded PMD Explorers of Sky effect folders; exact source files recorded in manifest |
 | Bitmap font | Daniel Hepper's `font8x8_basic.h`, public domain; original header/readme retained under `provenance/` |

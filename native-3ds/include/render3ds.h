@@ -7,4 +7,5 @@ void View_Destroy(ArenaView *view);
 void View_Draw(ArenaView *view,const ArenaGame *game,float alpha,int paused,
                float fps,float cpuMs,float gpuMs,int audioReady);
 unsigned View_TextureLoads(const ArenaView *view);
+void View_SetQuality(ArenaView *view,unsigned high);
 #endif

@@ -4,6 +4,7 @@
 #include "render3ds.h"
 #include "audio3ds.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
 
@@ -29,9 +30,9 @@ static int Failure(const char *message)
 int main(int argc,char **argv)
 {
     ArenaView *view;
-    GameInput pending={0,0,0,0,-1,0};
+    GameInput pending={0};
     u64 previous,now,statsAt;
-    unsigned accumulator=0,frames=0,paused=0,steps;
+    unsigned accumulator=0,frames=0,paused=1,steps,touchCapture=0,quality=1;
     float fps=0,cpu=0,gpu=0;
     int audio;
     FILE *log=0;
@@ -46,13 +47,14 @@ int main(int argc,char **argv)
         C2D_Fini();C3D_Fini();romfsExit();gfxExit();return 1;}
     mkdir("sdmc:/3ds",0777);mkdir("sdmc:/3ds/platinum-arena",0777);
     log=fopen("sdmc:/3ds/platinum-arena/session.log","w");
-    audio=Audio_Init();Game_Start(&game,0);
-    if(log){fprintf(log,"Native3DS prototype0.1.0; baseline original3DS; audio=%d\n",audio);fflush(log);}
+    audio=Audio_Init();Game_Start(&game,0);pending.touchMove=-1;
+    if(log){fprintf(log,"Native3DS combat0.2.0; baseline original3DS; audio=%d\n",audio);fflush(log);}
     previous=statsAt=osGetTime();
     while(aptMainLoop()){
-        u32 down,held;circlePosition circle;
-        hidScanInput();down=hidKeysDown();held=hidKeysHeld();hidCircleRead(&circle);
+        u32 down,held;circlePosition circle,aim;
+        hidScanInput();down=hidKeysDown();held=hidKeysHeld();hidCircleRead(&circle);hidCstickRead(&aim);
         if((down&KEY_START)&&(held&KEY_SELECT))break;
+        if(paused&&(down&KEY_X)){quality=!quality;View_SetQuality(view,quality);}
         if(down&KEY_START){
             if(game.winner){Game_Start(&game,game.doubles);paused=0;}
             else paused=!paused;
@@ -60,14 +62,23 @@ int main(int argc,char **argv)
         }
         pending.held=Buttons(held);pending.pressed|=Buttons(down);
         pending.axisX=circle.dx;pending.axisY=-circle.dy;
+        pending.aimX=aim.dx;pending.aimY=-aim.dy;
+        pending.aimActive=abs(aim.dx)>18||abs(aim.dy)>18;
         if(down&KEY_TOUCH){
             touchPosition touch;int command;
-            hidTouchRead(&touch);pending.touchMove=(int8_t)Game_TouchMove(touch.px,touch.py);
+            hidTouchRead(&touch);touchCapture=Game_TouchAim(touch.px,touch.py)?1:2;
+            pending.touchMove=(int8_t)Game_TouchMove(touch.px,touch.py);
             command=Game_TouchCommand(touch.px,touch.py);
             if(command==0)pending.switchPressed=1;
             if(command==1){Game_Start(&game,!game.doubles);paused=0;accumulator=0;}
             if(command==2){paused=!paused;accumulator=0;}
+            if(command==3)Game_CycleTarget(&game);
         }
+        if((held&KEY_TOUCH)&&touchCapture==1){
+            touchPosition touch;hidTouchRead(&touch);
+            pending.aimX=(int)touch.px-248;pending.aimY=(int)touch.py-126;pending.aimActive=1;
+        }
+        if(!(held&KEY_TOUCH))touchCapture=0;
         now=osGetTime();
         if(!paused&&!game.winner){
             u64 delta=now-previous;if(delta>100)delta=100;
@@ -84,12 +95,13 @@ int main(int argc,char **argv)
             fps=frames*1000.0f/(now-statsAt);frames=0;statsAt=now;
             if(log){
                 const CombatFighter *f=&game.combat.fighters[game.combat.controlActor];
-                fprintf(log,"sample ticks=%lu mode=%u actor=%u dir=%u x=%ld y=%ld hp=%u pp=%u,%u,%u,%u phase=%u hits=%lu switches=%lu winner=%u fps=%.2f cpu_ms=%.3f gpu_ms=%.3f\n",
+                fprintf(log,"sample ticks=%lu mode=%u actor=%u dir=%u x=%ld y=%ld hp=%u pp=%u,%u,%u,%u phase=%u hits=%lu switches=%lu winner=%u fps=%.2f cpu_ms=%.3f gpu_ms=%.3f aim=%u target=%u aimx=%d aimy=%d root=%u reach=%u\n",
                     (unsigned long)game.ticks,game.doubles,f->species,f->direction,
                     (long)(f->x/256),(long)(f->y/256),f->hp,
                     f->pp[0],f->pp[1],f->pp[2],f->pp[3],f->phase,
                     (unsigned long)game.combat.hits,(unsigned long)game.switches,
-                    game.winner,fps,cpu,gpu);
+                    game.winner,fps,cpu,gpu,game.aim.mode,game.aim.target,
+                    game.combat.aimX,game.combat.aimY,f->castRoot,f->beamReach);
                 fflush(log);
             }
         }

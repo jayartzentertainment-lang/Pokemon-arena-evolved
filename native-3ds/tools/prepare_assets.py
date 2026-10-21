@@ -60,6 +60,8 @@ def main():
     parser.add_argument('--ds-source',type=Path,required=True)
     parser.add_argument('--extra-effects',type=Path,required=True)
     parser.add_argument('--dp-effects',type=Path,required=True)
+    parser.add_argument('--emerald-source',type=Path,required=True,
+                        help='Supplied Arena workspace with graphics/arena/flame/sheet.png')
     args=parser.parse_args()
     (ROOT/'validation').mkdir(parents=True,exist_ok=True)
     (ROOT/'romfs/gfx').mkdir(parents=True,exist_ok=True)
@@ -142,7 +144,9 @@ def main():
     fxdir=private/'effects';fxdir.mkdir(exist_ok=True)
     fximages=[];fxdefs=[]
     def load(path,crop=None,matte=False,rotate=0,registration=False):
-        raw=path.read_bytes();manifest['sources'][path.name]={'sha256':sha(raw),'bytes':len(raw),'source_path':str(path)}
+        # PMD families often share filenames such as 0.png. Keep every source
+        # record rather than letting one family's hash overwrite another.
+        raw=path.read_bytes();manifest['sources'][str(path)]={'sha256':sha(raw),'bytes':len(raw),'source_path':str(path)}
         im=Image.open(path).convert('RGBA')
         if crop:im=im.crop(crop)
         if registration:
@@ -150,7 +154,7 @@ def main():
         if matte:im=opaque_sheet_key(im)
         if rotate:im=im.rotate(rotate,Image.Resampling.NEAREST,expand=True)
         return im
-    def sequence(name,items,cap=(160,96)):
+    def sequence(name,items,cap=(160,96),ticks=3):
         w=max(i.width for i in items);h=max(i.height for i in items);aligned=[]
         for im in items:
             out=Image.new('RGBA',(w,h));out.alpha_composite(im,((w-im.width)//2,(h-im.height)//2));aligned.append(out)
@@ -163,17 +167,20 @@ def main():
             im=im.crop(bounds).resize(size,Image.Resampling.NEAREST)
             filename=f'e{len(fximages):03d}.png';im.save(fxdir/filename);fximages.append(filename)
         fxdefs.append('    FX_'+name+'='+str(first)+',')
-        manifest['effects'].append({'name':name,'first_image':first,'frames':len(items),'shared_bounds':bounds,'size':size,'ticks_per_cel':3})
+        manifest['effects'].append({'name':name,'first_image':first,'frames':len(items),'shared_bounds':bounds,'size':size,'ticks_per_cel':ticks})
     extra=args.extra_effects;dp=args.dp_effects
-    for name,filename in [('BOLT','111.png'),('FLAME','107.png'),('THIN_FLAME','106.png')]:
+    for name,filename in [('BOLT','111.png'),('THIN_FLAME','106.png')]:
         sequence(name,[load(extra/'0'/filename,(4,40*i+4,132,40*i+36),registration=True) for i in range(4)],(128,32))
+    flame=args.emerald_source/'graphics/arena/flame/sheet.png'
+    sequence('FLAME',[load(flame,(i*64,0,(i+1)*64,64)) for i in range(8)],(64,64),ticks=4)
     sequence('HYDRO',[load(dp/'Hydro-Pump.png',(0,row*144,256,(row+1)*144),matte=True,rotate=-45) for row in (2,3,4,5)],(176,60))
     sequence('IMPACT',[load(extra/'1/Effects'/f'Effects_{i}.png') for i in (0,1,3,6)],(64,64))
     sequence('WIND',[load(extra/'1/Effects'/f'Effects_{i}.png') for i in (164,165)],(64,16))
     sequence('GUARD',[load(extra/'0/24.png',box,registration=True) for box in [(0,7,120,17),(0,33,120,55),(0,74,120,110),(0,124,120,172),(0,187,120,236)]],(96,64))
-    for name,number in [('AURA',240),('SWORDS',130),('EMBER',5)]:
+    for name,number in [('AURA',240),('EMBER',5)]:
         paths=sorted((extra/'2/move_VFX'/f'{number:04d}'/'000').glob('*.png'))
         sequence(name,[load(paths[round((i+1)*(len(paths)-1)/5)]) for i in range(4)],(64,64))
+    sequence('SWORDS',[load(dp/'Swords-Dance.png',(i*21,0,i*21+21,53)) for i in range(4)],(21,53))
     sequence('PULSE',[load(dp/'Water-Pulse.png',box) for box in [(0,0,120,124),(125,0,260,124)]],(40,40))
     (ROOT/'gfx/effects.t3s').write_text('--atlas -f rgba5551 -z auto\n'+'\n'.join('private/effects/'+f for f in fximages)+'\n')
     (ROOT/'include/generated/effects.h').write_text('/* Generated source image IDs. */\n#ifndef ARENA_FX_IDS\n#define ARENA_FX_IDS\nenum {\n'+'\n'.join(fxdefs)+'\n    FX_IMAGE_COUNT='+str(len(fximages))+'\n};\n#endif\n')
@@ -235,7 +242,7 @@ def main():
             for sx0,sx1,dx0,dx1 in [(0,border,0,border),(border,w-border,border,width-border),(w-border,w,width-border,width)]:
                 target.paste(src.crop((sx0,sy0,sx1,sy1)).resize((dx1-dx0,dy1-dy0),Image.Resampling.NEAREST),(dx0,dy0))
         return target
-    panel(148,50).save(ui_dir/'move.png');panel(96,34).save(ui_dir/'footer.png')
+    panel(164,28).save(ui_dir/'move.png');panel(96,34).save(ui_dir/'footer.png')
     (ROOT/'gfx/ui.t3s').write_text('--atlas -f rgba5551 -z auto\nprivate/ui/move.png\nprivate/ui/footer.png\n')
 
     font_source=(ROOT/'provenance/font8x8_basic.h').read_text()

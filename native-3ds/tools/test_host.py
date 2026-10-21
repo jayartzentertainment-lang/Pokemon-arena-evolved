@@ -18,7 +18,7 @@ flags=['-std=c11','-O1','-g','-Wall','-Wextra','-Werror',
 cc=os.environ.get('CC','cc')
 core=['source/core/combat.c','source/core/move_data.c','source/vendor/arena_moves.c',
       'source/vendor/arena_navigation.c','source/vendor/arena_physics.c']
-extra=['source/game/game.c','source/game/species_data.c']
+extra=['source/game/game.c','source/game/aim.c','source/game/species_data.c']
 objects={}
 
 def run(name,command):
@@ -32,10 +32,10 @@ for source in core+extra:
     obj=OUT/(Path(source).stem+'.o');run('compile-'+obj.stem,[cc,*flags,'-c',source,'-o',str(obj)])
     objects[source]=str(obj)
 results=[]
-tests=sorted((ROOT/'vendor/platinum096/tests/arena').glob('test_*.c'))+[ROOT/'tests/test_game.c']
+tests=sorted((ROOT/'vendor/platinum096/tests/arena').glob('test_*.c'))+sorted((ROOT/'tests').glob('test_*.c'))
 for test in tests:
     target=OUT/test.stem
-    linked=core+(extra if test.name=='test_game.c' else [])
+    linked=core+(extra if test.parent==ROOT/'tests' else [])
     run('link-'+test.stem,[cc,*flags,str(test),*[objects[s] for s in linked],'-lm','-o',str(target)])
     output=run(test.stem,[str(target)])
     results.append({'test':test.stem,'passed':True,'output':output.strip()})

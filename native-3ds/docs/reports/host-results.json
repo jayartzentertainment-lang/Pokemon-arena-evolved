@@ -1,6 +1,6 @@
 {
-  "tests": 9,
-  "passed": 9,
+  "tests": 10,
+  "passed": 10,
   "sanitizers": [
     "address",
     "undefined"
@@ -51,6 +51,14 @@
       "test": "test_game",
       "passed": true,
       "output": "PASS native adapter: analog magnitude, D-pad, party preservation, no duplicate2v2 bindings, real buff/PP and battle result"
+    },
+    {
+      "test": "test_quality",
+      "passed": true,
+      "output": "PASS quality: strafing, target cycling/invalidation, persistent continuous aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates"
     }
-  ]
+  ],
+  "native_clash_geometry_and_cleanup": true,
+  "ai_and_player_status_casts_verified": true,
+  "soft_assist_cone_range_and_cover_verified": true
 }

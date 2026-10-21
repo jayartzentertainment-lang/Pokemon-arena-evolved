@@ -73,7 +73,11 @@ void Game_Start(ArenaGame *g,int doubles)
         g->binding[a]=(uint8_t)single[a];configs[a]=gSpecies[single[a]].config;
     }
     if(doubles)Combat_InitTeams(&g->combat,configs);else Combat_Init(&g->combat,configs);
-    g->combat.fighters[0].selected=0;g->combat.lockAim=0;
+    g->combat.fighters[0].selected=0;g->combat.lockAim=1;
+    g->combat.growingBeams=1;
+    g->aim.mode=GAME_AIM_LOCK;g->aim.target=255;g->aim.freeX=256;
+    g->aim.assistEnabled=1;
+    {GameInput none={0};none.touchMove=-1;Game_AimTick(g,none);}
     /* One arena's authored destructible cover and navigation are retained. */
 }
 static CombatInput Translate(ArenaGame *g,GameInput in)
@@ -102,8 +106,10 @@ static CombatInput Translate(ArenaGame *g,GameInput in)
         if(in.pressed&GAME_Y)out.pressed|=COMBAT_CYCLE_LIGHT;
         if(in.pressed&GAME_A)out.pressed|=COMBAT_CYCLE_HEAVY;
     }else{
-        if(in.held&GAME_Y)out.held|=COMBAT_L;
-        if(in.pressed&GAME_Y)out.pressed|=COMBAT_L;
+        if(!(in.held&GAME_R)){
+            if(in.held&GAME_Y)out.held|=COMBAT_L;
+            if(in.pressed&GAME_Y)out.pressed|=COMBAT_L;
+        }
         if(in.held&GAME_A)out.held|=COMBAT_A;
         if(in.pressed&GAME_A)out.pressed|=COMBAT_A;
     }
@@ -116,8 +122,6 @@ static CombatInput Translate(ArenaGame *g,GameInput in)
         if(in.held&GAME_X)out.held|=COMBAT_ALT;
         if(in.pressed&GAME_X)out.pressed|=COMBAT_ALT;
     }
-    if(in.held&GAME_SELECT)out.held|=COMBAT_Y;
-    if(in.pressed&GAME_SELECT)out.pressed|=COMBAT_Y;
     return out;
 }
 void Game_Tick(ArenaGame *g,GameInput in)
@@ -126,6 +130,9 @@ void Game_Tick(ArenaGame *g,GameInput in)
     CombatInput combat;
     if(!g||g->winner)return;
     if(in.switchPressed)Game_Switch(g,g->combat.controlActor);
+    if(in.touchMove>=0&&in.touchMove<4)
+        g->combat.fighters[g->combat.controlActor].selected=(uint8_t)in.touchMove;
+    Game_AimTick(g,in);
     combat=Translate(g,in);
     if(in.touchMove>=0&&in.touchMove<4)
         Combat_QueueMove(&g->combat,g->combat.controlActor,(unsigned)in.touchMove);
@@ -144,13 +151,20 @@ void Game_Tick(ArenaGame *g,GameInput in)
 }
 int Game_TouchMove(unsigned x,unsigned y)
 {
-    unsigned column,row;
-    if(x>=8&&x<156)column=0;else if(x>=164&&x<312)column=1;else return -1;
-    if(y>=76&&y<126)row=0;else if(y>=134&&y<184)row=1;else return -1;
-    return (int)(row*2+column);
+    unsigned slot;
+    for(slot=0;slot<4;slot++){
+        int left,top,width,height;Game_MoveRect(slot,&left,&top,&width,&height);
+        if(x>=(unsigned)left&&x<(unsigned)(left+width)&&y>=(unsigned)top&&y<(unsigned)(top+height))return (int)slot;
+    }
+    return -1;
 }
+void Game_MoveRect(unsigned slot,int *x,int *y,int *width,int *height)
+{*x=8;*y=64+(int)slot*32;*width=164;*height=28;}
+int Game_TouchAim(unsigned x,unsigned y)
+{return x>=184&&x<312&&y>=72&&y<180;}
 int Game_TouchCommand(unsigned x,unsigned y)
 {
+    if(x>=184&&x<312&&y>=184&&y<196)return 3;
     if(y<198||y>=232||x<8||x>=312)return -1;
     return x<108?0:x<212?1:2;
 }

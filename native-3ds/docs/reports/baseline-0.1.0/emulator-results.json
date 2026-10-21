@@ -1,0 +1,69 @@
+{
+  "date_utc": "2026-10-21",
+  "binary_sha256": "504e1e4ac43dadd68de984c43a6d55658e289de900f016e5ea3fa271f9f0ad99",
+  "emulator": "Azahar2126.2",
+  "configuration": "Original 3DS; speedup disabled; stereo disabled",
+  "renderer": "Mesa25.0.7 llvmpipe software OpenGL",
+  "actually_run_and_observed": true,
+  "physical_hardware_profiled": false,
+  "observed": [
+    "dual screens",
+    "eight Circle Pad directions",
+    "touchscreen move use with PP changes",
+    "four party species through switching",
+    "2v2 with AI partner",
+    "Swords Dance source blades",
+    "source-driven Flamethrower",
+    "Hydro Pump directional cannon jets",
+    "HP damage/hurt and faint replacement",
+    "whole-party defeat and result menu",
+    "pause overlay and opponent party icons"
+  ],
+  "native_emulated_metrics": {
+    "fps": {
+      "minimum": 58.82,
+      "median": 59.82,
+      "maximum": 59.88,
+      "clock": "emulated, not physical hardware"
+    },
+    "cpu_ms": {
+      "minimum": 0.814,
+      "median": 0.95,
+      "maximum": 0.969,
+      "clock": "emulated, not physical hardware"
+    },
+    "gpu_ms": {
+      "minimum": 0.498,
+      "median": 0.498,
+      "maximum": 0.518,
+      "clock": "emulated, not physical hardware"
+    }
+  },
+  "host_fps_observation": "Screenshot status-bar samples roughly31\u201361FPS under software rendering/cloud contention; quieter1v1 samples57\u201361FPS. Not a sustained benchmark.",
+  "final_battle": {
+    "ticks": 3712,
+    "mode": "0",
+    "actor": 6,
+    "dir": "7",
+    "x": "436",
+    "y": "32",
+    "hp": 0,
+    "pp": "13,20,20,14",
+    "phase": "0",
+    "hits": 51,
+    "switches": 8,
+    "winner": 2,
+    "fps": "59.88",
+    "cpu_ms": "0.926",
+    "gpu_ms": "0.498"
+  },
+  "audio": "NDSP unavailable; SFX OFF; no listening verification",
+  "not_claimed": [
+    "physical original/New3DS performance",
+    "exhaustive move mechanics",
+    "visual clash playtest",
+    "complete creator/campaign/save",
+    "dedicated hurt/faint source poses"
+  ],
+  "telemetry_sha256": "784552c21f15b5fcfeb5d1ee39d8a94a0cb8d93be737c6eeef1c1b1230f93514"
+}

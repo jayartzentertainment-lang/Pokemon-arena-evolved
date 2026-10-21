@@ -1,5 +1,33 @@
 # Port boundary
 
+## Native 0.2.0 additions
+
+`source/game/aim.c` owns lock/free/facing modes and target validity. The core
+accepts an optional normalized Q8 aim vector independently of movement. Eight
+directional body poses remain separate from continuous attack geometry.
+Projectiles keep their launch trajectory; sustained beams steer at a bounded
+rate and freeze their direction during a clash.
+
+`castRoot` is explicit per-action state for status casts on every actor.
+Walking and defensive cancellation are blocked through the cast animation;
+interruption/sleep/faint/replacement clears the action state. Stage/status
+lifetimes are separate. Release events still apply self effects exactly once.
+
+The native wrapper opts into growing, terrain-stopped beam reach. Legacy
+portable-core initialization retains its previous immediate-reach behavior;
+both paths have regression coverage. The renderer consumes the native reach
+and shared clash contact rather than inventing unrelated beam lengths.
+
+Touch commands share rectangle definitions with the renderer. A touch that
+starts in the aim pad stays captured there until release; dragging over move
+cards cannot cast one accidentally. The original single Circle Pad handles
+movement; touch aiming works on original models, C-stick aiming is optional.
+
+The previous 12.5% heavy-commitment rules are retained once. No second
+multiplier or global simulation slowdown was added. Native 0.2.0 starts paused.
+
+## Preserved foundation
+
 The exact 0.9.6 source archive was verified against all 2,260 recorded member
 checksums before recovery. `vendor/platinum096/` preserves the selected original
 portable code and regression sources. Native adaptations live outside it.

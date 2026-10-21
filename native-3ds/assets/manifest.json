@@ -10198,24 +10198,8 @@
       "ticks_per_cel": 3
     },
     {
-      "name": "FLAME",
-      "first_image": 4,
-      "frames": 4,
-      "shared_bounds": [
-        0,
-        0,
-        128,
-        32
-      ],
-      "size": [
-        128,
-        32
-      ],
-      "ticks_per_cel": 3
-    },
-    {
       "name": "THIN_FLAME",
-      "first_image": 8,
+      "first_image": 4,
       "frames": 4,
       "shared_bounds": [
         0,
@@ -10230,8 +10214,24 @@
       "ticks_per_cel": 3
     },
     {
+      "name": "FLAME",
+      "first_image": 8,
+      "frames": 8,
+      "shared_bounds": [
+        4,
+        4,
+        60,
+        60
+      ],
+      "size": [
+        56,
+        56
+      ],
+      "ticks_per_cel": 4
+    },
+    {
       "name": "HYDRO",
-      "first_image": 12,
+      "first_image": 16,
       "frames": 4,
       "shared_bounds": [
         61,
@@ -10247,7 +10247,7 @@
     },
     {
       "name": "IMPACT",
-      "first_image": 16,
+      "first_image": 20,
       "frames": 4,
       "shared_bounds": [
         0,
@@ -10263,7 +10263,7 @@
     },
     {
       "name": "WIND",
-      "first_image": 20,
+      "first_image": 24,
       "frames": 2,
       "shared_bounds": [
         0,
@@ -10279,7 +10279,7 @@
     },
     {
       "name": "GUARD",
-      "first_image": 22,
+      "first_image": 26,
       "frames": 5,
       "shared_bounds": [
         5,
@@ -10295,7 +10295,7 @@
     },
     {
       "name": "AURA",
-      "first_image": 27,
+      "first_image": 31,
       "frames": 4,
       "shared_bounds": [
         3,
@@ -10306,22 +10306,6 @@
       "size": [
         26,
         25
-      ],
-      "ticks_per_cel": 3
-    },
-    {
-      "name": "SWORDS",
-      "first_image": 31,
-      "frames": 4,
-      "shared_bounds": [
-        0,
-        1,
-        16,
-        64
-      ],
-      "size": [
-        16,
-        63
       ],
       "ticks_per_cel": 3
     },
@@ -10342,8 +10326,24 @@
       "ticks_per_cel": 3
     },
     {
-      "name": "PULSE",
+      "name": "SWORDS",
       "first_image": 39,
+      "frames": 4,
+      "shared_bounds": [
+        0,
+        0,
+        16,
+        53
+      ],
+      "size": [
+        16,
+        53
+      ],
+      "ticks_per_cel": 3
+    },
+    {
+      "name": "PULSE",
+      "first_image": 43,
       "frames": 2,
       "shared_bounds": [
         9,
@@ -10359,115 +10359,110 @@
     }
   ],
   "sources": {
-    "111.png": {
-      "sha256": "61fd2eaa2f6a94d30bc298d13958c01ef2149f9f9daf485c0106470c5e3e803b",
-      "bytes": 3393,
-      "source_path": "/workspace/platinum-port/extra-effects/0/111.png"
-    },
-    "107.png": {
-      "sha256": "6211ce364b149c42d0c8dd958ff6b755cc861694fa034305223bc954f3fe003e",
-      "bytes": 4623,
-      "source_path": "/workspace/platinum-port/extra-effects/0/107.png"
-    },
-    "106.png": {
-      "sha256": "0509f4cb71ba10f87478114c2a0b902b8c52fbfb095a6115960581c797be59c1",
-      "bytes": 1884,
-      "source_path": "/workspace/platinum-port/extra-effects/0/106.png"
-    },
-    "Hydro-Pump.png": {
+    "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hydro-Pump.png": {
       "sha256": "4aad56d7b38aef5ff6fdc7f3a4824f682672f52688a16a021d62d21a588d9a06",
       "bytes": 293174,
       "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Hydro-Pump.png"
     },
-    "Effects_0.png": {
-      "sha256": "4cd6a942e407ca3df46a49413057b8378790547f68147fbfec5040c74b481f00",
-      "bytes": 231,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_0.png"
+    "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Swords-Dance.png": {
+      "sha256": "5333c287b74e5343539292ae9bb3b5cc9ba5aefda791e50ec728d5d2f8ecc851",
+      "bytes": 2557,
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Swords-Dance.png"
     },
-    "Effects_1.png": {
-      "sha256": "554a54544d33373b60cae870a49ffd47733a84b5677901aa2bc069608ddcbf22",
-      "bytes": 385,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_1.png"
+    "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Water-Pulse.png": {
+      "sha256": "abcff0042f777c85515586906775db2d15b0420ab26b691271a9d5bc077b4c65",
+      "bytes": 24045,
+      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Water-Pulse.png"
     },
-    "Effects_3.png": {
-      "sha256": "d3532aa44bdcac92abc275bad905dfa5abb34a9dee2c9f151991f3eba4aa0425",
-      "bytes": 692,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_3.png"
+    "/workspace/platinum-port/extra-effects/0/106.png": {
+      "sha256": "0509f4cb71ba10f87478114c2a0b902b8c52fbfb095a6115960581c797be59c1",
+      "bytes": 1884,
+      "source_path": "/workspace/platinum-port/extra-effects/0/106.png"
     },
-    "Effects_6.png": {
-      "sha256": "979527424b61648d71aacd7fbefbb936e11a0962aee20b442ac84330b42244db",
-      "bytes": 326,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_6.png"
+    "/workspace/platinum-port/extra-effects/0/111.png": {
+      "sha256": "61fd2eaa2f6a94d30bc298d13958c01ef2149f9f9daf485c0106470c5e3e803b",
+      "bytes": 3393,
+      "source_path": "/workspace/platinum-port/extra-effects/0/111.png"
     },
-    "Effects_164.png": {
-      "sha256": "4aab23fdd8828ecf1e4aa9784206209391ec8bbcbe42c6702a83e1833bcad54d",
-      "bytes": 490,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_164.png"
-    },
-    "Effects_165.png": {
-      "sha256": "2c476e10a41db86324fc08acfefbe566290b950bdfaf78af7842ecf211402f86",
-      "bytes": 910,
-      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_165.png"
-    },
-    "24.png": {
+    "/workspace/platinum-port/extra-effects/0/24.png": {
       "sha256": "cb925c785f9306a7ba8fec2bdcaf8675904abba8a2c12d83140b9c4d8abba0ab",
       "bytes": 11921,
       "source_path": "/workspace/platinum-port/extra-effects/0/24.png"
     },
-    "009.png": {
-      "sha256": "daa498f4c17e32a188b01a6e3f38d5fd66636dc3c03d83c168c801da47612201",
-      "bytes": 625,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/009.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_0.png": {
+      "sha256": "4cd6a942e407ca3df46a49413057b8378790547f68147fbfec5040c74b481f00",
+      "bytes": 231,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_0.png"
     },
-    "018.png": {
-      "sha256": "00dc7ac15a2acdaabef5869755cbf55edbe8644445406bf3c452f614fe424e55",
-      "bytes": 863,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/018.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_1.png": {
+      "sha256": "554a54544d33373b60cae870a49ffd47733a84b5677901aa2bc069608ddcbf22",
+      "bytes": 385,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_1.png"
     },
-    "026.png": {
-      "sha256": "1a14ffe3c83c64f4d7f1e3689cc5a17268b73a2bfcc035124a79bc0b0081ac4f",
-      "bytes": 753,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/026.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_164.png": {
+      "sha256": "4aab23fdd8828ecf1e4aa9784206209391ec8bbcbe42c6702a83e1833bcad54d",
+      "bytes": 490,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_164.png"
     },
-    "035.png": {
-      "sha256": "cca1fdcf101267f3bceeb8c3525fa394c2d57b2bd5e3f0e5c90efaff1a264fac",
-      "bytes": 720,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/035.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_165.png": {
+      "sha256": "2c476e10a41db86324fc08acfefbe566290b950bdfaf78af7842ecf211402f86",
+      "bytes": 910,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_165.png"
     },
-    "012.png": {
-      "sha256": "2dd6da5d4fa95c901b778c10435a85bd9c2d6dfc15690d43d654261a87578b5b",
-      "bytes": 438,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0130/000/012.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_3.png": {
+      "sha256": "d3532aa44bdcac92abc275bad905dfa5abb34a9dee2c9f151991f3eba4aa0425",
+      "bytes": 692,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_3.png"
     },
-    "024.png": {
-      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
-      "bytes": 427,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0130/000/024.png"
+    "/workspace/platinum-port/extra-effects/1/Effects/Effects_6.png": {
+      "sha256": "979527424b61648d71aacd7fbefbb936e11a0962aee20b442ac84330b42244db",
+      "bytes": 326,
+      "source_path": "/workspace/platinum-port/extra-effects/1/Effects/Effects_6.png"
     },
-    "036.png": {
-      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
-      "bytes": 427,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0130/000/036.png"
-    },
-    "048.png": {
-      "sha256": "1859e232ab910b5501a928051daade3854814ec5b81df435c393355d54ddbcd3",
-      "bytes": 427,
-      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0130/000/048.png"
-    },
-    "004.png": {
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/004.png": {
       "sha256": "a37c569eeffcaf4ed9b6b4fa566f798c0b68c7b2d691458fc82e81f40e39a24c",
       "bytes": 495,
       "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/004.png"
     },
-    "013.png": {
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/009.png": {
+      "sha256": "daa498f4c17e32a188b01a6e3f38d5fd66636dc3c03d83c168c801da47612201",
+      "bytes": 625,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/009.png"
+    },
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/013.png": {
       "sha256": "e1360d3b58b73da32151a3010309b1a12e1e95cf0643d10e9522a61adb3dcfe1",
       "bytes": 1093,
       "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/013.png"
     },
-    "Water-Pulse.png": {
-      "sha256": "abcff0042f777c85515586906775db2d15b0420ab26b691271a9d5bc077b4c65",
-      "bytes": 24045,
-      "source_path": "/workspace/asset-review/arsenal-2026-10-21/diamond-pearl-attack-graphics/source/Water-Pulse.png"
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/018.png": {
+      "sha256": "00dc7ac15a2acdaabef5869755cbf55edbe8644445406bf3c452f614fe424e55",
+      "bytes": 863,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0005/000/018.png"
+    },
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/009.png": {
+      "sha256": "1a14ffe3c83c64f4d7f1e3689cc5a17268b73a2bfcc035124a79bc0b0081ac4f",
+      "bytes": 753,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/009.png"
+    },
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/018.png": {
+      "sha256": "f31573306be77ea984851bcb78f2f2cb70182caaf7bfa318031a02330dd877e5",
+      "bytes": 834,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/018.png"
+    },
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/026.png": {
+      "sha256": "1a14ffe3c83c64f4d7f1e3689cc5a17268b73a2bfcc035124a79bc0b0081ac4f",
+      "bytes": 753,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/026.png"
+    },
+    "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/035.png": {
+      "sha256": "cca1fdcf101267f3bceeb8c3525fa394c2d57b2bd5e3f0e5c90efaff1a264fac",
+      "bytes": 720,
+      "source_path": "/workspace/platinum-port/extra-effects/2/move_VFX/0240/000/035.png"
+    },
+    "/workspace/source-import/source/workspace/graphics/arena/flame/sheet.png": {
+      "sha256": "0ea7594483bda0047762feb449394cb55e5498f5bf922ccac2c1c19e69629f64",
+      "bytes": 10889,
+      "source_path": "/workspace/source-import/source/workspace/graphics/arena/flame/sheet.png"
     }
   },
   "font": "Public-domain font8x8_basic; see provenance/font8x8-LICENSE.txt",

@@ -1,6 +1,12 @@
-# Starting the native project in the retained cloud workspace
+# Starting native 3DS combat quality0.2.0 in the retained cloud workspace
 
-Work in `/workspace/platinum-arena-3ds` (or the `native-3ds/` directory in the
+Active development: `/workspace/platinum-arena-3ds-next`, branch
+`codex/native-3ds-quality-7156caccf621`. The user-approved0.1.0 source remains
+under `/workspace/platinum-arena-3ds`; keep that baseline/release intact.
+The latest source/build scope is in README.md and docs/VALIDATION.md.
+
+
+Work in `/workspace/platinum-arena-3ds-next` (or the `native-3ds/` directory in the
 published native development branch). Reuse the existing checkout; do not
 create a Git worktree unless the user asks. The DS release is a separate project
 under `/workspace/platinum-port/pokeplatinum`; do not clean/reset it or rebuild
@@ -8,7 +14,7 @@ it for a native-only task. Read `README.md`, `docs/PORTING.md`,
 `docs/VALIDATION.md` and `ASSET-RIGHTS.md` before claiming coverage.
 
 ```sh
-cd /workspace/platinum-arena-3ds
+cd /workspace/platinum-arena-3ds-next
 bash setup/bootstrap_native.sh
 source /workspace/native-3ds-setup/venv/bin/activate
 python tools/test_host.py --ds-source /workspace/platinum-port/pokeplatinum

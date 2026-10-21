@@ -1,0 +1,32 @@
+[
+  {
+    "name": "emerald-arena-17s.mp4",
+    "sha256": "45d81fca963066195a14018ace9e94687154f231ae9f7286f868f761cf0cbfd4",
+    "duration_seconds": 17.0,
+    "inspection": "8 timestamped representative frames; cover-smoke also16 frames across15.0\u201316.875s"
+  },
+  {
+    "name": "emerald-arena-combat-update.mp4",
+    "sha256": "88f80afe6b6d7daa09363bc01c9b03ba0437db234067b1ceffb80018e3dc542b",
+    "duration_seconds": 15.737999,
+    "inspection": "8 timestamped representative frames; cover-smoke also16 frames across15.0\u201316.875s"
+  },
+  {
+    "name": "emerald-arena-cover-smoke.mp4",
+    "sha256": "15c281ff2d4fa169dedd65543e0666a65d2a1706365560393fa3a549d3bd48bb",
+    "duration_seconds": 23.05,
+    "inspection": "8 timestamped representative frames; cover-smoke also16 frames across15.0\u201316.875s"
+  },
+  {
+    "name": "emerald-arena-protect-playtest.mp4",
+    "sha256": "7ea9fd2cdf4f014c3416607fa4b1203d0d8444768a2abca510e22e5b57d7fb6e",
+    "duration_seconds": 49.793,
+    "inspection": "8 timestamped representative frames; cover-smoke also16 frames across15.0\u201316.875s"
+  },
+  {
+    "name": "videoplayback.mp4",
+    "sha256": "b9e6e56934ff212e57b4d1bf0a6f86e54f0bd18c8458dd7a026686d2b060a470",
+    "duration_seconds": 122.183401,
+    "inspection": "8 timestamped representative frames; cover-smoke also16 frames across15.0\u201316.875s"
+  }
+]

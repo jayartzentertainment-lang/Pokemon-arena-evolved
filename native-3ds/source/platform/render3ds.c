@@ -20,10 +20,12 @@ struct ArenaView {
     C3D_RenderTarget *top,*bottom;
     C2D_SpriteSheet pokemon[4],effects,arena,font,props,ui;
     float cameraX,cameraY,zoom,textDepth;
-    unsigned loads;
+    unsigned loads,quality;
 };
 static float Limit(float x,float a,float b){return x<a?a:x>b?b:x;}
 static u32 RGB(unsigned r,unsigned g,unsigned b){return C2D_Color32(r,g,b,255);}
+static void Line(float x0,float y0,float x1,float y1,float thickness,float depth,u32 color)
+{ C2D_DrawLine(x0,y0,color,x1,y1,color,thickness,depth); }
 static float X(const ArenaView *v,float x){return (x-v->cameraX)*v->zoom;}
 static float Y(const ArenaView *v,float y){return 30+(y-v->cameraY)*v->zoom;}
 static float ActorX(const CombatFighter *f,float a){return (f->previousX+(f->x-f->previousX)*a)/256.0f;}
@@ -126,47 +128,72 @@ static void Camera(ArenaView *v,const ArenaGame *g)
 static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
 {
     const CombatFighter *f=&g->combat.fighters[actor];
-    const ArenaSpecies *s=Game_ActorSpecies(g,actor);
-    const struct ArenaMoveProfile *p=ArenaMoves_Get(f->actionMove);
-    float dx=direction[f->attackDirection&7][0],dy=direction[f->attackDirection&7][1];
-    float wx=ActorX(f,alpha),wy=ActorY(f,alpha),endX,endY,growth;
-    int32_t contactX,contactY;unsigned age=Combat_PhaseTick(f),image,emitters=1,k;
-    unsigned cell=(g->combat.frame/3)&3;
+    const ArenaSpecies *species=Game_ActorSpecies(g,actor);
+    int16_t vx,vy;float dx,dy,wx,wy,endX,endY,reach,opacity=1;
+    unsigned age=Combat_PhaseTick(f),image,k,emitters=1;
+    int32_t contactX,contactY;
     int clash=Combat_BeamContact(&g->combat,actor,&contactX,&contactY);
-    if(!p||!s)return;
-    growth=clash?1:Limit((age+1)/6.0f,0,1);
-    endX=wx+dx*p->range;endY=wy+dy*p->range-12;
-    if(clash){endX=contactX/256.0f;endY=contactY/256.0f-12;}
-    if(f->actionMove==MOVE_HYDRO_PUMP){image=FX_HYDRO+cell;emitters=2;}
-    else image=(age<5?FX_THIN_FLAME:FX_FLAME)+cell;
-    for(k=0;k<emitters;k++){
-        float startX=wx+dx*9*s->scale;
-        float startY=wy-15*s->scale+dy*6*s->scale;
-        if(f->actionMove==MOVE_HYDRO_PUMP){
-            /* Pixel coordinates measured on the actual 64x64 Shoot cels.
-             * Side views expose one cannon; do not draw through the head. */
-            static const uint8_t muzzle[8][2][2]={
-                {{21,30},{43,30}},{{28,31},{42,25}},
-                {{38,29},{38,29}},{{40,22},{28,17}},
-                {{22,14},{42,14}},{{24,22},{36,17}},
-                {{26,29},{26,29}},{{22,25},{36,31}}};
-            unsigned dir=f->attackDirection&7;
-            if(k&&((dir==2)||(dir==6)))continue;
-            startX=wx+((int)muzzle[dir][k][0]-32)*s->scale;
-            /* Source Shoot ground markers, preserved by the converter. */
-            static const uint8_t ground[8]={5,8,8,7,9,7,8,8};
-            startY=wy+((int)muzzle[dir][k][1]-32-ground[dir])*s->scale;
-        }
-        float ex=startX+(endX-startX)*growth,ey=startY+(endY-startY)*growth;
-        float vx=X(v,ex)-X(v,startX),vy=Y(v,ey)-Y(v,startY);
-        float length=sqrtf(vx*vx+vy*vy),angle=atan2f(vy,vx);
-        C2D_Image item=C2D_SpriteSheetGetImage(v->effects,image);
-        float width=(emitters==2?15:20)*v->zoom;
-        Sprite(v->effects,image,X(v,startX),Y(v,startY),length/item.subtex->width,
-               width/item.subtex->height,angle,0,.5f,1,0);
+    if(!species||!f->hp||f->hurtTimer||f->phase==COMBAT_READY)return;
+    Combat_AttackVector(f,&vx,&vy);dx=vx/256.0f;dy=vy/256.0f;
+    wx=ActorX(f,alpha);wy=ActorY(f,alpha);reach=f->beamReach;
+    if(f->phase==COMBAT_WINDUP){
+        unsigned duration=Combat_PhaseDuration(f);
+        if(f->actionMove!=MOVE_FLAMETHROWER||age+6<duration)return;
+        reach=10+(age+6-duration)*2;opacity=.55f;
+    }else if(f->phase==COMBAT_RECOVERY){
+        if(age>=6)return;
+        opacity=1-age/6.0f;
+    }else if(f->phase!=COMBAT_ACTIVE)return;
+    if(!reach&&!clash)return;
+    endX=wx+dx*reach;endY=wy+dy*reach-12;
+    if(clash){
+        endX=contactX/256.0f;endY=contactY/256.0f-12;
+        reach=sqrtf((endX-wx)*(endX-wx)+(endY+12-wy)*(endY+12-wy));
     }
-    if(f->actionMove==MOVE_FLAMETHROWER&&!(g->combat.frame&1))
-        Effect(v,FX_EMBER+cell,X(v,endX),Y(v,endY),16*v->zoom,16*v->zoom,0,.7f);
+    image=FX_FLAME+(g->combat.frame/4)%8;
+    if(f->actionMove==MOVE_HYDRO_PUMP){image=FX_HYDRO+(g->combat.frame/3)%4;emitters=2;}
+    for(k=0;k<emitters;k++){
+        unsigned dir=f->attackDirection&7;
+        float startX=wx+dx*9*species->scale,startY=wy-15*species->scale+dy*6*species->scale;
+        if(f->actionMove==MOVE_HYDRO_PUMP){
+            static const uint8_t muzzle[8][2][2]={
+                {{21,30},{43,30}},{{28,31},{42,25}},{{38,29},{38,29}},{{40,22},{28,17}},
+                {{22,14},{42,14}},{{24,22},{36,17}},{{26,29},{26,29}},{{22,25},{36,31}}};
+            static const uint8_t ground[8]={5,8,8,7,9,7,8,8};
+            if(k&&(dir==2||dir==6))continue;
+            startX=wx+((int)muzzle[dir][k][0]-32)*species->scale;
+            startY=wy+((int)muzzle[dir][k][1]-32-ground[dir])*species->scale;
+        }else if(f->species==6){
+            /* Mouth coordinates on the supplied Charizard Shoot contact cels. */
+            static const int8_t mouth[8][2]={{0,-10},{-6,-9},{19,-10},{12,-18},
+                {0,-24},{-12,-18},{-19,-10},{6,-9}};
+            startX=wx+mouth[dir][0]*species->scale;
+            startY=wy+mouth[dir][1]*species->scale-3-sinf(g->combat.frame*.10f);
+        }
+        {
+            float x=X(v,startX),y=Y(v,startY),ex=X(v,endX),ey=Y(v,endY);
+            float sx=ex-x,sy=ey-y,length=sqrtf(sx*sx+sy*sy),theta=atan2f(sy,sx);
+            float width=(emitters==2?30:Limit(reach*2/3.0f,12,80))*v->zoom;
+            C2D_Image item=C2D_SpriteSheetGetImage(v->effects,image);
+            if(length<1)continue;
+            /* Original animated Emerald plume / supplied water texture: no
+             * solid beam rectangles or generic projectile stand-ins. */
+            Sprite(v->effects,image,x,y,length/item.subtex->width,width/item.subtex->height,theta,0,.5f,opacity,0);
+            if(v->quality)Sprite(v->effects,image,x,y,length/item.subtex->width,width*.40f/item.subtex->height,theta,0,.5f,opacity*.38f,.35f);
+            if(f->actionMove==MOVE_FLAMETHROWER&&f->phase==COMBAT_ACTIVE){
+                unsigned n;
+                for(n=0;n<(v->quality?3u:1u);n++){
+                    float t=((g->combat.frame*3+n*31)%96)/96.0f;
+                    Effect(v,FX_EMBER+(g->combat.frame/3+n)%4,x+sx*t-sinf(t*17)*3*v->zoom,
+                           y+sy*t+cosf(t*13)*3*v->zoom,8*v->zoom,8*v->zoom,theta,opacity*(1-t)*.65f);
+                }
+            }else if(v->quality&&f->actionMove==MOVE_HYDRO_PUMP&&f->phase==COMBAT_ACTIVE){
+                float shift=((g->combat.frame*7+k*9)%18-9.0f)*v->zoom;
+                Effect(v,FX_HYDRO+(g->combat.frame/3)%4,ex-sinf(theta)*shift,ey+cosf(theta)*shift,
+                       22*v->zoom,24*v->zoom,theta+1.2f,opacity*.55f);
+            }
+        }
+    }
 }
 static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
 {
@@ -191,7 +218,7 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
                    y-p->originY*scale-dy*i*7*v->zoom-lift,scale,scale,0,0,0,.11f*(3-i),0);
         }
     }
-    if(f->hp&&f->phase==COMBAT_ACTIVE){
+    if(f->hp&&f->phase!=COMBAT_READY){
         const struct ArenaMoveProfile *profile=ArenaMoves_Get(f->actionMove);
         if(profile&&profile->kind==ARENA_MOVE_CONE&&ArenaMoves_Beam(f->actionMove))Beam(v,g,actor,alpha);
     }
@@ -256,8 +283,15 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
         if(e->kind==COMBAT_DASH_TRAIL){
             float theta=atan2f(direction[e->direction&7][1],direction[e->direction&7][0]);
             Effect(v,FX_WIND+(age/3)%2,x,y+8,46*v->zoom,10*v->zoom,theta,e->life/(float)e->maxLife*.6f);
-        }else if((e->kind==COMBAT_CONTACT||e->kind==COMBAT_BLOCK)&&age<10)
+        }else if((e->kind==COMBAT_CONTACT||e->kind==COMBAT_BLOCK)&&age<10){
             Effect(v,FX_IMPACT+(age/3)%4,x,y,27*v->zoom,27*v->zoom,0,1-age/12.0f);
+            if(e->move==MOVE_FLAMETHROWER)
+                Effect(v,FX_EMBER+(age/3)%4,x,y-4,24*v->zoom,30*v->zoom,0,1-age/12.0f);
+            else if(e->move==MOVE_HYDRO_PUMP)
+                Effect(v,FX_HYDRO+(age/3)%4,x,y,32*v->zoom,28*v->zoom,-.8f,1-age/12.0f);
+            else if(e->move==MOVE_THUNDERBOLT)
+                Effect(v,FX_BOLT+(age/3)%4,x,y,36*v->zoom,12*v->zoom,(age&1)?-.8f:.8f,1-age/12.0f);
+        }
         else if(e->kind==COMBAT_CLASH&&age<12)
             Effect(v,FX_IMPACT+(age/3)%4,x,y,38*v->zoom,38*v->zoom,0,1);
         /* Windup/release bookkeeping never pretends to be a hit. */
@@ -266,6 +300,39 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
         const CombatBeamClash *pair=&c->beamClashes[i];
         float size=pair->phase==COMBAT_CLASH_PRESSURE?28:40;
         Effect(v,FX_IMPACT+(c->frame/3)%4,X(v,pair->x/256.0f),Y(v,pair->y/256.0f-12),size,size,0,1);
+    }
+}
+static void Reticle(ArenaView *v,const ArenaGame *g,float alpha)
+{
+    const GameAim *a=&g->aim;const CombatFighter *f=&g->combat.fighters[g->combat.controlActor];
+    float x,y,radius=12;unsigned k;u32 color;
+    if(!f->hp||g->winner||(Combat_IsCasting(f)&&Combat_MoveTargetsSelf(f->actionMove)))return;
+    x=X(v,(float)a->x);y=Y(v,(float)a->y-12);
+    if(a->mode==GAME_AIM_LOCK&&a->target<g->combat.fighterCount){
+        const CombatFighter *target=&g->combat.fighters[a->target];
+        const ArenaSpecies *species=Game_ActorSpecies(g,a->target);
+        if(!target->hp)return;
+        x=X(v,ActorX(target,alpha));y=Y(v,ActorY(target,alpha)-12);
+        radius=15*v->zoom;
+        if(species){
+            const ArenaSpriteFrame *pose=Pose(target,species);float scale=species->scale*v->zoom;
+            x=X(v,ActorX(target,alpha))+(pose->width*.5f-pose->originX)*scale;
+            y=Y(v,ActorY(target,alpha))+(pose->height*.5f-pose->originY)*scale;
+            if(species->style==2)y-=(3+sinf(g->combat.frame*.1f))*v->zoom;
+            radius=Limit(fmaxf(pose->width,pose->height)*scale*.55f,12,29);
+        }
+    }
+    color=a->blocked?RGB(249,101,85):a->valid?RGB(168,243,139):RGB(255,198,87);
+    for(k=0;k<4;k++){
+        float sx=k&1?1:-1,sy=k&2?1:-1;
+        Line(x+sx*radius,y+sy*radius,x+sx*(radius-6),y+sy*radius,4,.66f,RGB(30,44,45));
+        Line(x+sx*radius,y+sy*radius,x+sx*radius,y+sy*(radius-6),4,.66f,RGB(30,44,45));
+        Line(x+sx*radius,y+sy*radius,x+sx*(radius-6),y+sy*radius,2,.67f,color);
+        Line(x+sx*radius,y+sy*radius,x+sx*radius,y+sy*(radius-6),2,.67f,color);
+    }
+    if(a->mode!=GAME_AIM_LOCK){
+        Line(x-3,y,x+3,y,1,.67f,color);
+        Line(x,y-3,x,y+3,1,.67f,color);
     }
 }
 static void Bar(float x,float y,float width,unsigned value,unsigned maximum,u32 color)
@@ -312,30 +379,47 @@ static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
     Text(v,9,31,ink,"%s  LV50  %s",s?s->name:"PLAYER",Status(f));
     Text(v,9,44,ink,"STAMINA");Bar(64,46,93,f->stamina,100,RGB(72,160,201));
     Text(v,175,43,ink,"PARTY %u/4",Game_Remaining(g,0));
-    Text(v,9,61,ink,"Y STRIKE  B GUARD/DODGE  L+A CYCLE");
+    Text(v,9,54,ink,Combat_IsCasting(f)?"CASTING: MOVEMENT LOCKED":"Y STRIKE  B DEFEND  L+A CYCLE");
     for(i=0;i<4;i++){
-        unsigned x=8+(i&1)*156,y=76+(i/2)*58;
-        const CombatMoveInfo *move=Combat_GetMoveInfo(f->moves[i]);
+        int x,y,width,height;const CombatMoveInfo *move=Combat_GetMoveInfo(f->moves[i]);
+        Game_MoveRect(i,&x,&y,&width,&height);
         C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ui,0),x,y,.2f,0,1,1);
-        if(i==f->selected)C2D_DrawRectSolid(x+8,y+5,.25f,132,2,RGB(201,113,44));
-        Text(v,x+11,y+10,ink,"%s",move?move->name:"EMPTY");
-        Text(v,x+11,y+27,ink,"PP%u/%u",f->pp[i],move?move->pp:0);
-        if(f->cooldown[i])Text(v,x+87,y+27,ink,"CD%u",(f->cooldown[i]+59)/60);
-        else if(i==f->selected)Text(v,x+111,y+27,ink,"A");
-        else if(i==f->specialSlot)Text(v,x+111,y+27,ink,"X");
+        if(i==f->selected)C2D_DrawRectSolid(x+7,y+3,.25f,width-14,1,RGB(207,115,36));
+        Text(v,x+9,y+5,ink,"%s",move?move->name:"EMPTY");
+        Text(v,x+9,y+16,ink,"PP%u/%u",f->pp[i],move?move->pp:0);
+        if(f->cooldown[i])Text(v,x+91,y+16,ink,"CD%u",(f->cooldown[i]+59)/60);
+        else if(i==f->selected)Text(v,x+138,y+16,ink,"A");
+        else if(i==f->specialSlot)Text(v,x+138,y+16,ink,"X");
+    }
+    {
+        const GameAim *aim=&g->aim;float dx,dy;int16_t ax,ay;
+        u32 marker=aim->blocked?RGB(221,95,72):aim->valid?RGB(66,143,111):RGB(207,139,57);
+        C2D_DrawRectSolid(182,65,.2f,132,116,RGB(60,83,77));
+        C2D_DrawRectSolid(185,68,.21f,126,110,RGB(181,201,177));
+        Text(v,193,72,ink,"TOUCH AIM");
+        Line(198,126,298,126,1,.23f,RGB(130,156,132));
+        Line(248,91,248,161,1,.23f,RGB(130,156,132));
+        if(g->combat.aimOverride){ax=g->combat.aimX;ay=g->combat.aimY;}
+        else {ax=(int16_t)(direction[f->direction&7][0]*256);ay=(int16_t)(direction[f->direction&7][1]*256);}
+        dx=ax/256.0f;dy=ay/256.0f;
+        Line(248,126,248+dx*36,126+dy*36,2,.3f,marker);
+        C2D_DrawRectSolid(245+dx*36,123+dy*36,.31f,6,6,marker);
+        Text(v,197,164,ink,"%s",aim->mode==GAME_AIM_LOCK?"LOCK":aim->mode==GAME_AIM_FREE?"FREE":"FACING");
+        Text(v,185,185,ink,"TARGET >");
     }
     for(i=0;i<3;i++)C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ui,1),8+i*104,198,.2f,0,1,1);
     Text(v,17,211,ink,"R SWITCH");Text(v,122,211,ink,"NEW %s",g->doubles?"1V1":"2V2");Text(v,233,211,ink,"PAUSE");
-    Text(v,9,187,ink,"SELECT: AIM %s  START: PAUSE",g->combat.lockAim?"ON":"OFF");
+
     if(!audio)Text(v,240,32,ink,"SFX OFF");
     if(paused||g->winner){
-        C2D_DrawRectSolid(12,72,.97f,296,116,RGB(52,66,62));
-        C2D_DrawRectSolid(16,76,.98f,288,108,RGB(239,237,201));
+        C2D_DrawRectSolid(12,62,.97f,296,136,RGB(52,66,62));
+        C2D_DrawRectSolid(16,66,.98f,288,128,RGB(239,237,201));
         v->textDepth=.99f;
         Text(v,86,94,ink,"%s",g->winner?(g->winner==1?"VICTORY":"DEFEAT"):"PAUSED");
         Text(v,36,116,ink,"START: %s",g->winner?"NEW BATTLE":"RESUME");
-        Text(v,36,137,ink,"L+A: CYCLE LEARNED MOVE");
+        Text(v,36,137,ink,"SELECT: LOCK  R+Y: TARGET");
         Text(v,36,158,ink,"START+SELECT: EXIT");
+        Text(v,36,174,ink,"X: VFX %s",v->quality?"HIGH":"LOW");
         v->textDepth=.95f;
     }
 }
@@ -346,7 +430,7 @@ ArenaView *View_Create(void)
     v->effects=Load(v,"romfs:/gfx/effects.t3x");v->arena=Load(v,"romfs:/gfx/arena.t3x");
     v->font=Load(v,"romfs:/gfx/font.t3x");v->props=Load(v,"romfs:/gfx/props.t3x");v->ui=Load(v,"romfs:/gfx/ui.t3x");
     if(!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui){View_Destroy(v);return 0;}
-    v->zoom=1;v->textDepth=.95f;return v;
+    v->zoom=1;v->textDepth=.95f;v->quality=1;return v;
 }
 void View_Destroy(ArenaView *v)
 {
@@ -367,8 +451,9 @@ void View_Draw(ArenaView *v,const ArenaGame *g,float alpha,int paused,float fps,
     Camera(v,g);
     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
     C2D_TargetClear(v->top,RGB(58,83,62));C2D_SceneBegin(v->top);
-    Battle(v,g,alpha);TopHud(v,g,fps,cpu,gpu);
+    Battle(v,g,alpha);Reticle(v,g,alpha);TopHud(v,g,fps,cpu,gpu);
     C2D_TargetClear(v->bottom,RGB(205,213,187));C2D_SceneBegin(v->bottom);Bottom(v,g,paused,audio);
     C3D_FrameEnd(0);
 }
 unsigned View_TextureLoads(const ArenaView *v){return v?v->loads:0;}
+void View_SetQuality(ArenaView *v,unsigned high){if(v)v->quality=!!high;}

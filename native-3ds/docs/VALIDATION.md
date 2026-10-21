@@ -1,69 +1,72 @@
-# Native prototype validation — 2026-10-21
+# Native 3DS 0.2.0 — milestone 1 validation
 
-Scope: native combat milestone 0.1.0, not the complete game.
+Date:2026-10-21. This report covers the combat quality update, not the full game.
 
-## Build and source preservation
+## Build
 
-Genuine devkitARM/Citro2D build, native ARM11 ELF and `.3dsx` magic verified.
-Executable size: **448,884 bytes**.
-SHA-256: `504e1e4ac43dadd68de984c43a6d55658e289de900f016e5ea3fa271f9f0ad99`.
-The exact immutable hash-named candidate was launched in Azahar; no file was
-rebuilt under that candidate path.
+Genuine native ARM11 .3dsx built with pinned official devkitPro GCC16.1.0,
+libctru/Citro2D and tex3ds2.3.0. Binary: **461,728 bytes**.
+SHA256: `7156caccf6214a24b51439eb10f503128038b24c84d478b6396916ae50836c19`.
 
-ELF link sections: text 270,580 bytes; data 7,608; BSS 33,144. These are linker
-figures, not total runtime RAM. Nine compressed texture sheets total 151,777
-bytes; compressed file sizes do not equal GPU texture allocation.
-
-The 0.9.6 source archive's 2,260 checksummed entries were verified. Recorded DS
-combat/header/renderer/avatar/presentation/packed-asset hashes still match;
-no DS release was rebuilt or overwritten for this native milestone.
+The exact immutable hash-named candidate was launched and observed in
+Azahar2126.2 with original3DS configuration, stereo/optionalCPU speedup disabled.
+No executable was rebuilt underneath that candidate path.
 
 ## Host checks
 
-**9/9 passed**, with AddressSanitizer and UndefinedBehaviorSanitizer:
+**10/10 pass with AddressSanitizer and UndefinedBehaviorSanitizer.**
+The retained eight combat/geometry/navigation/physics/2v2 suites and native
+party adapter pass. Added quality checks cover:
 
-- Movement, PP, timing, aim, damage/types, guard/dodge, swept hits and AI.
-- Guard exhaustion/chip, projectile/beam clashes, critical events and bounds.
-- Seven stat stages, statuses, cooldowns and stat-based 2v2 clashes.
-- 19,602 move cone/segment cases.
-- 13,068 navigation routes and all 128 destruction masks.
-- Destructible material/physics behavior and bounded pools.
-- Platinum metadata, category and stamina adaptations.
-- Simultaneous 2v2, friendly-fire prevention and deterministic results.
-- New native adapter: analog magnitude/D-pad, HP/PP/cooldown preservation,
-  healthy unique party bindings, real Swords Dance +2 attack/PP, visible-faint
-  replacement delay and whole-party victory logic.
+- Movement while locked to a target; enemy cycling/invalidation without switching.
+- Independent persistent free aim and continuous projectile launch vectors.
+- Rooted Swords Dance, Agility, Calm Mind and Iron Defense with real stat changes.
+- AI status casting uses the same movement lock.
+- Interrupted casts do not grant unapplied buffs; Growl debuffs its target
+  without applying a casting lock to that target.
+- Beam reach grows with the effect, steering is bounded, simultaneous growing
+  beams form a clash and switching clears its ownership/contact.
+- Every one of the 76,800 touch-screen coordinates respects aim/move separation.
 
-These checks test actual reused/adapted C. Metadata/geometry coverage is not
-proof that all 467 move-specific mechanics are complete.
+Legacy regressions retain the portable core's existing immediate beam reach;
+the native wrapper explicitly enables synchronized growth. The added quality
+suite tests that actual native path. Passing metadata/geometry coverage does
+not imply all 467 move mechanics are implemented.
 
 ## Observed emulator checks
 
-Azahar **2126.2**, original-3DS configuration, Mesa llvmpipe software OpenGL.
-Observed the native game itself, including dual-screen rendering, corrected
-floor conversion and HUD/pause overlays, eight directional inputs, live 2v2,
-touch commands, party switching and PP changes. Captured source-driven
-Flamethrower, paired Hydro Pump cannon jets and Lucario's Swords Dance blades.
-The final binary's 1v1 battle reached whole-party defeat after 3,712 simulation
-ticks, with 51 registered hits and eight automatic/manual party switches.
-Exit telemetry recorded nine cached texture-sheet loads. Victory logic also
-passed the host adapter check; an emulator player-victory run is not claimed.
+Observed the actual delivery binary's paused entry/high-low settings, reticle
+tracking, movement while locked, touch free aim after finger release, manual
+projectile PP, re-lock, guard/wind dash, 2v2 target cycling, status cast input,
+new Emerald flame stream and Hydro Pump. Captures and native telemetry are
+retained privately. `docs/reports/emulator-results.json` records final facts.
 
-Session screenshots and telemetry are retained privately under `validation/`.
-The factual final telemetry/report is copied under `docs/reports/`.
+The casting telemetry records `root=1` at a fixed world position. Normal enemy
+attacks can interrupt the cast: this is the designed interruption path, not
+permission to slide while a cast remains committed. Host tests also verify
+complete uninterrupted casts and the returned movement control.
 
-Native HUD FPS and Citro3D processing/drawing times use emulated time. They
-cannot be used as physical 3DS measurements. Azahar host speed varied with
-software rendering/cloud contention: observed roughly 31–61 host FPS across
-captures, including paused captures and concurrent build work. Quieter 1v1
-captures showed approximately 57–61 host FPS. This is a limited smoke test,
-not a sustained original-hardware 60 FPS guarantee.
+The fire preview is captured from the running emulator, not a mocked renderer.
+Core growing-clash geometry/ownership has automated evidence; a complete
+visual emulator clash playtest is not claimed unless explicitly recorded.
 
-## Pending
+## Performance and limits
 
-Real original and New 3DS hardware profiling; sustained worst-case 2v2 frame
-pacing; audio listening; exhaustive cannon/impact alignment across every pose;
-long play sessions and balance; native campaign, creator and persistent saves.
-Clash mechanics have host regression evidence; this session does not claim a
-complete visual emulator clash playtest. Dedicated hurt/faint source poses
-remain future artwork work.
+Native HUD FPS/CPU/GPU times are measured in **emulated time**, not on a real
+3DS. Software OpenGL/host contention affects wall-clock emulator speed. The
+final metrics are in the JSON report; no sustained original-hardware60FPS
+claim is made. Actual original/New3DS profiling and C-stick hardware testing
+remain pending. NDSP was unavailable (SFX OFF); audio was not listening-tested.
+
+Only four species and their equipped moves are in this native build. Complete
+trainer creation, native saves, all493/all467mechanics and Sinnoh progression
+remain future milestones. Held emitter cels were calibrated; exhaustive
+all-pose/new-species alignment still requires review.
+
+## Preservation
+
+The approved0.1.0 source/binary and the separate Platinum0.9.6 DS release are
+preserved. `provenance/approved-native-baseline.json` records original source
+hashes; final preservation checks are included under `docs/reports/`.
+
+Final exact-binary result: whole-party defeat after 4239 simulation ticks, 58 hits, 6 automatic/manual switches and nine texture-sheet loads. Native HUD median59.82FPS, processing0.981ms and drawing0.498ms are emulated-clock values only.
