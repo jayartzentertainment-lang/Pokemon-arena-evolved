@@ -1,0 +1,16 @@
+{
+  "version": "0.9.6",
+  "status": "Compiled current build for immediate user playtesting",
+  "rom": "Platinum-Arena-0.9.6-INTEGRATION.nds",
+  "rom_bytes": 268435456,
+  "rom_sha256": "91f7ad91818c4de5beb54de7be70530acd266328bc684c9e1a51fbd137197a34",
+  "native_compile_link": "passed",
+  "sources_stable_during_build": true,
+  "host_core_sanitizers": "passed",
+  "avatar_records_and_assets": "passed",
+  "party_bridge_rewards": "passed",
+  "capture_recovery": "known_failure_documented",
+  "emulator": "not_completed_before_user_requested_immediate_delivery",
+  "hardware": "not_tested",
+  "full_campaign": "not_tested"
+}

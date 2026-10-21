@@ -1,0 +1,40 @@
+PLATINUM ARENA 0.9.6 — NATIVE DS DEVELOPMENT BUILD
+
+Extract the game ZIP and open its .nds file in a Nintendo DS emulator.
+The game preserves Platinum's native story; this is a DS game, not a 3DS/GBA build.
+
+CREATOR
+Choose Custom for the supplied layered bodies, hair, hats, tops and legwear.
+Identity/Appearance/Clothes tabs: L/R. Rows: Up/Down. Values: Left/Right.
+Touch controls also work. X randomizes; Y resets; Select turns; Start toggles
+walking preview. A confirms and enters native naming. B returns to body choice.
+The large portrait and directional preview show your actual selected layers.
+
+DEFAULT LIVE COMBAT
+D-pad: eight-direction movement; double-tap a direction: dash.
+Y: PP-free natural attack. L+Y: cycle natural choices.
+A: selected learned attack. L+A: cycle learned attacks.
+X: special/status move. All four learned moves are also on the touchscreen.
+B: guard while standing; B+direction: dodge. Defence uses stamina.
+Short R tap/release: switch. Hold R+X: Assist/Defend/Focus command.
+Select: aim lock. Start: pause. Bottom links: party, bag and controls.
+Y/A/X/Select actions are remappable; B/L/R stay reserved. Chords follow bindings.
+Learned moves use actual PP and cooldowns. Switching does not erase cooldowns.
+L+R catching keeps priority in supported wild encounters.
+
+BATTLE LAB
+Hold L+R+Select at the title screen for temporary1v1/2v2 and clash encounters.
+Select species, mode, arena and level; Start launches. Lab state is not saved.
+Beam contests now use stats/move/type/angle/timing. Mashing adds no strength.
+
+SCOPE
+This build integrates the actual supplied trainer/VFX art and native Platinum
+menu tiles. Detailed features, coverage, tests and unfinished work are in the
+accompanying CHANGES.md, FINAL-REPORT.md and RELEASE.json.
+Elemental hazard pools, global followers, full authored poses/forms and complex
+retail move/ability/weather/item semantics remain later work. Full campaign and
+real DS hardware coverage are not established by a focused emulator smoke.
+
+CURRENT DELIVERY STATUS
+Compiled new build; emulator checks unfinished. A short post-capture recovery
+input regression is documented in FINAL-REPORT.md. Keep a copy of your save.
