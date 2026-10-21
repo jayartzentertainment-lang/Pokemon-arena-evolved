@@ -22,11 +22,11 @@ static void Store(ArenaGame *g,unsigned actor)
 }
 static int Load(ArenaGame *g,unsigned actor,unsigned slot)
 {
-    if(slot>=4)return 0;
+    if(slot>=g->partyCount[Team(actor)])return 0;
     GamePartySlot *p=&g->party[Team(actor)][slot];
     unsigned elapsed=g->combat.frame-p->storedAt,i;
-    if(slot>=4||!p->hp||Bound(g,Team(actor),slot,actor))return 0;
-    if(!Combat_ReplaceFighter(&g->combat,actor,&gSpecies[slot].config))return 0;
+    if(!p->hp||Bound(g,Team(actor),slot,actor))return 0;
+    if(!Combat_ReplaceFighter(&g->combat,actor,&g->configs[Team(actor)][slot]))return 0;
     g->binding[actor]=(uint8_t)slot;
     g->faintTicks[actor]=0;g->deployTicks[actor]=12;
     g->combat.fighters[actor].hp=p->hp;
@@ -45,7 +45,7 @@ const ArenaSpecies *Game_ActorSpecies(const ArenaGame *g,unsigned actor)
 unsigned Game_Remaining(const ArenaGame *g,unsigned team)
 {
     unsigned i,n=0;if(!g||team>1)return 0;
-    for(i=0;i<4;i++)if(g->party[team][i].hp)n++;
+    for(i=0;i<g->partyCount[team];i++)if(g->party[team][i].hp)n++;
     return n;
 }
 int Game_Switch(ArenaGame *g,unsigned actor)
@@ -53,8 +53,8 @@ int Game_Switch(ArenaGame *g,unsigned actor)
     unsigned i,start;
     if(!g||g->winner||actor>=g->combat.fighterCount)return 0;
     Store(g,actor);start=g->binding[actor];
-    for(i=1;i<=4;i++){
-        unsigned slot=(start+i)&3;
+    for(i=1;i<=g->partyCount[Team(actor)];i++){
+        unsigned slot=(start+i)%g->partyCount[Team(actor)];
         if(slot!=start&&Load(g,actor,slot))return 1;
     }
     return 0;
@@ -64,7 +64,9 @@ void Game_Start(ArenaGame *g,int doubles)
     CombatFighterConfig configs[4];unsigned team,slot,m,a;
     static const unsigned single[4]={0,3,1,2};
     memset(g,0,sizeof(*g));g->doubles=(uint8_t)!!doubles;
+    g->partyCount[0]=g->partyCount[1]=4;
     for(team=0;team<2;team++)for(slot=0;slot<4;slot++){
+        g->configs[team][slot]=gSpecies[slot].config;g->levels[team][slot]=50;
         GamePartySlot *p=&g->party[team][slot];
         p->hp=gSpecies[slot].config.hp;p->stamina=100;
         for(m=0;m<4;m++)p->pp[m]=Combat_GetMoveInfo(gSpecies[slot].config.moves[m])->pp;
@@ -167,4 +169,32 @@ int Game_TouchCommand(unsigned x,unsigned y)
     if(x>=184&&x<312&&y>=184&&y<196)return 3;
     if(y<198||y>=232||x<8||x>=312)return -1;
     return x<108?0:x<212?1:2;
+}
+
+void Game_StartParty(ArenaGame *g,const CombatFighterConfig configs[2][6],const uint8_t counts[2],const GamePartySlot state[2][6],int doubles)
+{
+    CombatFighterConfig active[4];unsigned a,t,s,used[2]={0,0};
+    memset(g,0,sizeof(*g));
+    for(t=0;t<2;t++){
+        g->partyCount[t]=counts[t]>6?6:counts[t];
+        for(s=0;s<g->partyCount[t];s++){
+            g->configs[t][s]=configs[t][s];g->party[t][s]=state[t][s];
+        }
+    }
+    g->doubles=(uint8_t)(doubles&&counts[0]>=2&&counts[1]>=2);
+    for(a=0;a<(g->doubles?4u:2u);a++){
+        t=Team(a);
+        for(s=used[t];s<g->partyCount[t]&&!g->party[t][s].hp;s++);
+        if(s==g->partyCount[t])s=0;
+        used[t]=s+1;g->binding[a]=(uint8_t)s;active[a]=configs[t][s];
+    }
+    if(g->doubles)Combat_InitTeams(&g->combat,active);else Combat_Init(&g->combat,active);
+    for(a=0;a<g->combat.fighterCount;a++){
+        GamePartySlot *p=&g->party[Team(a)][g->binding[a]];
+        g->combat.fighters[a].hp=p->hp;g->combat.fighters[a].stamina=p->stamina;
+        Combat_SetMovePP(&g->combat,a,p->pp);Combat_SetNativeStatus(&g->combat,a,p->status);
+    }
+    g->combat.lockAim=1;g->combat.growingBeams=1;g->aim.mode=GAME_AIM_LOCK;
+    g->aim.target=255;g->aim.freeX=256;g->aim.assistEnabled=1;
+    {GameInput none={0};none.touchMove=-1;Game_AimTick(g,none);}
 }

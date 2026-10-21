@@ -1,0 +1,9 @@
+{
+  "window": "Platinum standard_system, actual8px corner/edge pieces; paper-colored center",
+  "font": "Platinum font_system, original glyph pixels, ASCII arrows mapped to actual arrow glyphs",
+  "sources": {
+    "/workspace/platinum-port/pokeplatinum/res/graphics/windows/standard_system.png": "0f746e96f81495930042e86550ed3f0bcb25e3ce45d1a15d00232dafeffb3052",
+    "/workspace/platinum-port/pokeplatinum/res/fonts/font_system.png": "c29e346f51e9f9aae126173a062be3919dc75d011cef0ba5ce6c1230738cf81c",
+    "/workspace/platinum-port/pokeplatinum/tools/msgenc/charmap.txt": "07b54e9a3a828aca088111ad80e811a0cc697f2eee7962bfe773052da65ad495"
+  }
+}

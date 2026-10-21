@@ -28,3 +28,10 @@ before publishing an art-bearing executable or source-art pack.
 `assets/manifest.json` records every selected effects source hash, original
 timings, directions, image bounds and per-frame foot origins. It reports this
 four-species slice explicitly and makes no claim of complete animation coverage.
+
+
+## Native adventure0.3.0
+
+The extended493 base-species directional roster retains the supplied Platinum integration metadata and per-species credits in provenance/SPRITE-CREDITS-493.md. Original Nintendo/Chunsoft artwork rights are not reassigned by a community repository license. New adventure map layouts/dialogue are re-authored; their tiles are from the supplied Emerald/Arena world pack. Authentic Platinum field NPCs and system font are converted from the supplied decomp sources. Layered trainer artwork is from the supplied character-creator pack; provenance/TRAINER-LAYER-REFERENCES.md preserves the known source information. New manifest files record hashes and selections. Original source archives are unchanged.
+
+Private converted PNGs, atlases, screenshots and executable are included only in the protected private download. Public plaintext source has code/manifests, not these graphical assets.

@@ -1,0 +1,2826 @@
+{
+  "schema": 1,
+  "source_files": {
+    "/workspace/platinum-port/customization-tools/catalog.json": {
+      "sha256": "9324a7a42cdb3d4c926d0c744cf088d121ef5d80f20d3d36f910e079397f3478",
+      "bytes": 35143
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/0A.png": {
+      "sha256": "600e2c446326d15a79349dab9c7f2618add631ef8c61aea2d4f2c3a3df1e2fd6",
+      "bytes": 17518
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/0B.png": {
+      "sha256": "9847ad5b01c37c943b9fefe711786ffac4b7740455007b98f49dbd27d0686c98",
+      "bytes": 15434
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/1A.png": {
+      "sha256": "cc293ded584b19fb291fd44681fa05a9032bd1a5fe6513116d6ce20c0f3c5106",
+      "bytes": 18381
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/1B.png": {
+      "sha256": "1094410db2b17abd4f89be5bc4b3d02dbd713cdddc36ebad3017a8d4f8670ef0",
+      "bytes": 15366
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/2A.png": {
+      "sha256": "aaa13afd57900a4682d8b028855ed31ccbc2aa21da266050c09f36231a6a15d5",
+      "bytes": 17053
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/2B.png": {
+      "sha256": "be6636a47ae0efb028a81677837f82e160c2b34a715b8a157193076e5d2305d3",
+      "bytes": 14433
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/3A.png": {
+      "sha256": "993854ee9e9cce768e198cdb92afb9cc7481ad5c3c75d6fe736d47e1aed67712",
+      "bytes": 16688
+    },
+    "/workspace/platinum-port/customization-tools/sources/base graphics/overworld walk/3B.png": {
+      "sha256": "38ec11b73dbce8a8d672722e269dbb702d21449787cfeb99a81d41ccd696e544",
+      "bytes": 12032
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/0A.png": {
+      "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a",
+      "bytes": 10069
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/0B.png": {
+      "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a",
+      "bytes": 175
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/0A.png": {
+      "sha256": "c1ab55e9b873540f5e059a8e3c676a4666dfc34e29464b0e2632eb8a44473b8b",
+      "bytes": 4850
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/0B.png": {
+      "sha256": "2ab5c861838a95fd4468d81e8fb66f917b117cb82c9235247335a9c7a31ef27c",
+      "bytes": 14816
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/1A.png": {
+      "sha256": "4852c4b3ae08396ad5ec9b8156becf29956b5930099cd9bd7dd35a1d21cf8549",
+      "bytes": 4990
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/1B.png": {
+      "sha256": "dcfada2f3649885ab29f37e28daf82735b71a55fa22b607475cc6366249a2629",
+      "bytes": 14908
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/2A.png": {
+      "sha256": "ab31440498ca8ae7ccc5f740e5af2aabed7987cce1497ff44965823f7c355872",
+      "bytes": 5177
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/2B.png": {
+      "sha256": "4f03f880bc4ed38ba2da8eeb15cf67e2758d24df275438a432a00ae88c268d42",
+      "bytes": 15088
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/3A.png": {
+      "sha256": "036880fa1f1fb5acf4f262a639c5c036bcb2e37aea9a48a6f224c6be2d92e51e",
+      "bytes": 4832
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/3B.png": {
+      "sha256": "28dd38f252ed8ff53c5c792b964ed37334e85193c98b96f3aca4a60ad1acce68",
+      "bytes": 14727
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/4A.png": {
+      "sha256": "108240f38e483d9b9906de2a2f61391927e17057fa0863ef69280f0015692c6b",
+      "bytes": 4775
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/4B.png": {
+      "sha256": "47fab338ee1d39660b661346bfa3cf4d88111d8dc6e511381ee4aa503f194080",
+      "bytes": 14637
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/5A.png": {
+      "sha256": "ab1cb4751d2f91fb6747096f41898d8337e68e146d553d3d69ecbb5ce1f8f2bb",
+      "bytes": 4506
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/1/5B.png": {
+      "sha256": "07a3b7a12eb99b24e62b95014eed3ff7cfee01c2f2bcb8a607e93fc31c9449f8",
+      "bytes": 14569
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/2A.png": {
+      "sha256": "786957e131c6eb8fa21529af483a387b10936d75d0efe61fa41c795279d92a7c",
+      "bytes": 14557
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/2B.png": {
+      "sha256": "735f0bb11b7894ab2911b8a42f1f9dd45a8a5fcf1e4c10dd321b6213b23ce574",
+      "bytes": 6224
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/3A.png": {
+      "sha256": "f9f4758151c159e9f367260fac00c9687cc0f7510b6edba9f7d3ba344be041a6",
+      "bytes": 12290
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/3B.png": {
+      "sha256": "5e965e090b79185ec3d70c66b6e6b692b4dd7fc65544249dfac5573b5bcab22d",
+      "bytes": 14176
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/0A.png": {
+      "sha256": "e1c0b80d77a88ed94016a8a9143fb5ba22bc437d8a84f1270ed78338d3b4dc80",
+      "bytes": 15144
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/0B.png": {
+      "sha256": "57564d159cd56b0119964e244f1b07d15b7c3439cb3cde20a3b7713fdf1b04f6",
+      "bytes": 15721
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/1A.png": {
+      "sha256": "0b489118bade3aefa7c4832867fb481af83a82ac8a6d63520a30d46fe9dba6c6",
+      "bytes": 4146
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/1B.png": {
+      "sha256": "87ab451efc59b9a787d77d80de66589019618d8050241af60c307f7407279449",
+      "bytes": 4786
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/2A.png": {
+      "sha256": "0085c5b0909b671150886205cbab3f10d264b0c68dcf1c580ea8af10818be05a",
+      "bytes": 4036
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/2B.png": {
+      "sha256": "56b7cd00ec8b89b23bda349b5a3557600d440edd48c0c3fbc0f0cd62f617fdbd",
+      "bytes": 4819
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/3A.png": {
+      "sha256": "da06375894f3d99958f6a18c56dd6f08430927ad41e6cd73bc4c19e055b55392",
+      "bytes": 4195
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/bottoms/4/3B.png": {
+      "sha256": "fca23ee1e33193bf8723e162656439efc5eef908bf2d4c1dd3ded3e91c695bbb",
+      "bytes": 5434
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/0A.png": {
+      "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a",
+      "bytes": 10069
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/0B.png": {
+      "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a",
+      "bytes": 175
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/0A.png": {
+      "sha256": "23ac21e970b8279031752da83c77a00c2d2141e034710c261ea91908dc4b4b26",
+      "bytes": 6751
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/0B.png": {
+      "sha256": "bec71df97325ff35df0363a67842d36b1f4c33de2dccd660d99e464ad5cd9e99",
+      "bytes": 5276
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/1A.png": {
+      "sha256": "5599caed8e867f6e3db354e2690bd7537e5f294e1cdaa1a8176f61a3d06a0ef0",
+      "bytes": 7018
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/1B.png": {
+      "sha256": "5d9a6d7572cc2cff8084c7295730bf099770706e7ac2f3e6c4ace002aace7ec2",
+      "bytes": 5473
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/2A.png": {
+      "sha256": "4f38e0c939be9a15d4a42e19953d0cd6689e98f05427a5b0d25f5cf059a68895",
+      "bytes": 7433
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/2B.png": {
+      "sha256": "994617a97adb76ad58672303869db3dbaed0c0307d2cc775ffe13c9cc1b4ca00",
+      "bytes": 5711
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/3A.png": {
+      "sha256": "ad4646f00414c2ab127e4623380e86e05b4854ed4231bf4d7ac333b8e056dad2",
+      "bytes": 14849
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/3B.png": {
+      "sha256": "a839ab2b62ed44344bc68b304d9a465d88097e3092886a0599abdb48cc4f934a",
+      "bytes": 5121
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/4A.png": {
+      "sha256": "ad051ff03fe3bb84657694f7b1b69a831f91a71164ff4c696b44b9b48105d765",
+      "bytes": 6188
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/4B.png": {
+      "sha256": "7eaa66cc3e864de0dcdd8958bde05af21530cf87d8a6a5fcdf6827299a9a724e",
+      "bytes": 4994
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/5A.png": {
+      "sha256": "9bf0cb406521c66217432d156f139a9654ee96de722b648eb4a547ece6adba83",
+      "bytes": 6059
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/1/5B.png": {
+      "sha256": "878d34e147ffd7b8b09f09f8e1c556034cedf9061335f021f3b4fbfad1116456",
+      "bytes": 4902
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/2A.png": {
+      "sha256": "9eeef49731dbd670d54b4ffe0e1517a5316a33c2ae46c2d52811756606b3e5a0",
+      "bytes": 14482
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/2B.png": {
+      "sha256": "b46b2ae72fee858e78fbb65c4fb4467d5dc19b8178962110ec36e90d4500f211",
+      "bytes": 6440
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/0A.png": {
+      "sha256": "de3a3fea317d3077386f9df658ba77d060c82f08b40fac124489f58af406a0ea",
+      "bytes": 5394
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/0B.png": {
+      "sha256": "c85fe327afb288c4cebc1be3f28a6b2be307a67f5acdca187372d4d59b5f5905",
+      "bytes": 5763
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/1A.png": {
+      "sha256": "9a1067ef04df20b188d19429479f5de68909508cff989aaa618687a44570bd44",
+      "bytes": 5544
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/1B.png": {
+      "sha256": "6acf3dad0fbb4abecc925b4f4b0d76b4b2106ad2f434f04380b9d1e29fa85daa",
+      "bytes": 6434
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/2A.png": {
+      "sha256": "03e7073a290f87d7abd6ac85d27b68cc88853d455d3bf47fb0af07c12ac8fce9",
+      "bytes": 5568
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/3/2B.png": {
+      "sha256": "3d4c04cd32d96e0d348f9a9378c19357b365bf323e2dd59f117d21f6923f512a",
+      "bytes": 6385
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/0A.png": {
+      "sha256": "8425ea9f3f9aaec09134118bd3ec4db76eb37dd11aebfb2b46222371ca220e32",
+      "bytes": 15231
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/0B.png": {
+      "sha256": "92e59099ef99bf9124e8f5d65b26c39f1e4dee3c564815ce2c159fe967d2a330",
+      "bytes": 4731
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/1A.png": {
+      "sha256": "8d02d0dc3d2b8d6933b2678fe7947bb2d9c74203a8fbcacd1d776b8914aad710",
+      "bytes": 6487
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/1B.png": {
+      "sha256": "04e2403f724a3542c682d8ab621cfd1ed858fde8b623704872a23d92265e8df0",
+      "bytes": 6122
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/2A.png": {
+      "sha256": "2bce8433d973cae1175e8e469cb3a43cb82f1af3e7cbec5dd6bb90b79202ce51",
+      "bytes": 5738
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/2B.png": {
+      "sha256": "d5d8b1eac1b8de182fb8f4f7dd8ad8d735356b805b88781a6ad8346868903388",
+      "bytes": 17353
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/3A.png": {
+      "sha256": "717066bc2b1f5d72206a8007024d75028433e6eff8d041f6d8e2eb1e04cc3f08",
+      "bytes": 6382
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/tops/4/3B.png": {
+      "sha256": "f897951ec2ac1c99b68284d953cdec99a1d49053698cb9d4c47fec5d1e84a22e",
+      "bytes": 6139
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/0A.png": {
+      "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a",
+      "bytes": 10069
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/0B.png": {
+      "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a",
+      "bytes": 175
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/0A.png": {
+      "sha256": "b072631422839b2154d6805414bf1d25c9593e5a82d8ba88c7495df97c4a6003",
+      "bytes": 11194
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/0B.png": {
+      "sha256": "71638e619a77a29080cbd62261ebb25c82168f6103a656f3ff25948ad68a45d4",
+      "bytes": 11597
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/1A.png": {
+      "sha256": "be0ef7ba314b5c811545a3694952a307e2eb5b39314ffd5cd9c3d37b14cf004c",
+      "bytes": 19144
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/1B.png": {
+      "sha256": "759f2fffc6e921e96c63794288b83b8afb163c25de5a30f3ecde6193cb63d702",
+      "bytes": 10017
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/2A.png": {
+      "sha256": "65708d119c9830302beebbc28b44f7f2df543b764ce3f6c5da34295a5a52a575",
+      "bytes": 9814
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/2B.png": {
+      "sha256": "a9b8a85b0bb090717dd5d4b246c58a1552e5bd0f2b3669ee8904fdf6f37a958d",
+      "bytes": 10463
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/3A.png": {
+      "sha256": "b6e6be1839be782d5b619e6a5780b331310bef0cafb93b582fb50ce1a46acefb",
+      "bytes": 7793
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/3B.png": {
+      "sha256": "7ba65afd1cc0cc8b5c205c6c97330ed05d0936688b720ff2414560359b5029f4",
+      "bytes": 8423
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/4A.png": {
+      "sha256": "c69262f9cd28bb1dff153bb4473688e46c1470c9ab34870cd098efabaaf4dc9b",
+      "bytes": 9305
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/4B.png": {
+      "sha256": "0d2dc512e93b59367aee80ca821fe11969bab743e9bbfe8213b6f8a42bbd451a",
+      "bytes": 9470
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/5A.png": {
+      "sha256": "a98444c6d79107625bda8a57bc68c9cd31f4e3acfefe295650c22690ece0ecb7",
+      "bytes": 10061
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/5B.png": {
+      "sha256": "d904fcce5958522660d0a8295f57eab48dbce7bea758a3f8120c6f0c01524f38",
+      "bytes": 10512
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/6A.png": {
+      "sha256": "90346a9415d117ed0d04699d1a1e6fd92747c9248c8d2c439b9ed447e39c8a32",
+      "bytes": 9244
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/1/6B.png": {
+      "sha256": "675129a45b5951f7b88aa1df3ff7d4c30bd45bbe7552c1715384a5ff8ec247a8",
+      "bytes": 9710
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/0A.png": {
+      "sha256": "4b54e7cfe80c5e6e9b5b0cc8a91c585ae8faddcde0a42d243f187e49bb0e280f",
+      "bytes": 16784
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/0B.png": {
+      "sha256": "c01255f9bf5f9c9498ec6bc9f8a9a25c83f845db74fbc2938f5401cbe0fe52ea",
+      "bytes": 12063
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/1A.png": {
+      "sha256": "eff5b4c8eb0411709adfdb77186c934eff55b3b397a5ec40f1fcafe8abf6a292",
+      "bytes": 7966
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/1B.png": {
+      "sha256": "60054bf0f8653c55f119fe85e3aaef63d7037f4d9f0e02fc07f3c964b58355d2",
+      "bytes": 10085
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/2A.png": {
+      "sha256": "24aa6aead293f211840ef4ef44ac6f91e880c244753d8a686551b677e6f62c8b",
+      "bytes": 7071
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/2B.png": {
+      "sha256": "21d6ea08cf14dae7965da3c2c0524f1e7d5408162d467ba2d94513fa8067416f",
+      "bytes": 10292
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/3A.png": {
+      "sha256": "bb0c8c6dba458972c416e44c789ec3bfcb1bbc5c4c0638e9442cae8dd2a7a79a",
+      "bytes": 7272
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/3B.png": {
+      "sha256": "f09cd9b1e4c3c3f9ebbe613fd29b8a82226786b6af0e84d19b841faf48928fe4",
+      "bytes": 8210
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/4A.png": {
+      "sha256": "a89d8726e93fdf345e6f641041aa3a2ae62b64c8fef52ac7cf57ce78f880a22e",
+      "bytes": 6880
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/4B.png": {
+      "sha256": "0d2741544c3efbaeae0c4653058b42dc52ac31044a647a30b8c0c09f68bf70ab",
+      "bytes": 9790
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/5A.png": {
+      "sha256": "447d58d417685b48693854fc57241d08592be1251b23f000651127eebdb43251",
+      "bytes": 8044
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/5B.png": {
+      "sha256": "b8098167af33e5b4c95f5999f95a1198a138329bacc0f76f927a13369647a07c",
+      "bytes": 10463
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/6A.png": {
+      "sha256": "529298a235def0f994e501869824557d1bcf63c908b02bbe6ba897df870d8f96",
+      "bytes": 6486
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/2/6B.png": {
+      "sha256": "538136136fceec8983f5c7fbff9ea062455d61272392cec6e5d0357d663234a4",
+      "bytes": 9637
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/0A.png": {
+      "sha256": "87cd9f61c724e631b1a1c2e7b22fbc78777d2b5a7b68df0b41212aabce773b93",
+      "bytes": 9676
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/0B.png": {
+      "sha256": "ea5e4c20642240a2b5993ddd6fe2bf20239926da5a0012013152dbeb1953626b",
+      "bytes": 16674
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/1A.png": {
+      "sha256": "bde2b3423cf6b80a910fed75c1b997871b31f83dcbb51b5c32715fe41eedcdf8",
+      "bytes": 8783
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/1B.png": {
+      "sha256": "119c740a15ba8bf044ccbfdd8e41c63770ada8d214b203461e1451c652736c55",
+      "bytes": 15680
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/2A.png": {
+      "sha256": "4ebd5be498e5d0dfdfebeb0a9de5aad7263cc95795a938649e61d01d38fd3269",
+      "bytes": 8279
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/2B.png": {
+      "sha256": "2ca625975cfc68df60c8ca23a09acc77e758972c24abf21b45493cf36357cc2b",
+      "bytes": 16137
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/3A.png": {
+      "sha256": "93b6abf66ab8a5ed0e809a9db92f00710c0bc5f7072cd6e13c3347894976f153",
+      "bytes": 7625
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/3B.png": {
+      "sha256": "bdc9c054d4e6b894fef6dc05aeef36ab84c8a389e5653af8a055fb0178201b66",
+      "bytes": 14884
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/4A.png": {
+      "sha256": "40cd8e02112f69e7727d530ddd6235d808607765ede35c208cd7c3c0bae67f29",
+      "bytes": 8471
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/4B.png": {
+      "sha256": "5a845c6255d258011f2f95e0dcf58b031a30f3c1087625031e9cec3ddbfd0b3e",
+      "bytes": 15153
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/5A.png": {
+      "sha256": "8d4fb857dc9d73988085f5dcd696c48bdeeb63183bcdf0953eb8fd146fee54e8",
+      "bytes": 8463
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/5B.png": {
+      "sha256": "d985b7ea4e5c7d4843be96207564746d515a473a5103442c85a88fb95f26b432",
+      "bytes": 15921
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/6A.png": {
+      "sha256": "f48d636c88fdda51e22dbfc43cf947ff714bef6b8c62ef70273d189157142a8e",
+      "bytes": 14703
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/3/6B.png": {
+      "sha256": "d54046124adc8398e2c2b008be2ebc0536c3d7383fe9f0ec157f67ff79506862",
+      "bytes": 15534
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/0A.png": {
+      "sha256": "c1d9459ba2fe1e923a5969bc78a1921a06319d7035c511ffe5979dd053df9ae3",
+      "bytes": 9226
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/0B.png": {
+      "sha256": "b963d03307c96d2d3fda1ea974da04f317427e45410cdbd7b53070126db651aa",
+      "bytes": 16135
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/1A.png": {
+      "sha256": "b368ade56c487313ba58c7e3128cb1bf99fe20f9f9f8985d550669af56a57706",
+      "bytes": 8305
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/1B.png": {
+      "sha256": "152699756d046e4af9c5d0cda76c44e9dc3b830cdb580c8ac23c77940381012b",
+      "bytes": 15010
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/2A.png": {
+      "sha256": "5e5c74fb0f0e322154d5a1905c0f5154a1c31d6546c5f4c9ce1fe09f9970cfc2",
+      "bytes": 7504
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/2B.png": {
+      "sha256": "708602e2962c0724893406008551d434f247758e96f2ff1eaa2c692f1bcb8a49",
+      "bytes": 15376
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/3A.png": {
+      "sha256": "cd6fc2983a475e4a509b3851407b98da9c8043b81ac8f518f8f816a61fb175b4",
+      "bytes": 7076
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/3B.png": {
+      "sha256": "fdc39749627cff582cf0c2737d765a1a11aac2fc4c58e887fc382ac52a755041",
+      "bytes": 14309
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/4A.png": {
+      "sha256": "e1a56344298738411d6c935d3b7df636ab796c8e65c3d3aedd6438610f1115f4",
+      "bytes": 14709
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/4B.png": {
+      "sha256": "c9a32ff545bf276ef074974baa58e40d80ef8048e582b5a54337e8682efd9d23",
+      "bytes": 14758
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/5A.png": {
+      "sha256": "8907930bad32613f38f8fdbb16dfbee66a44fde5c0f1f080bdc73123dfeba9f2",
+      "bytes": 7656
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/5B.png": {
+      "sha256": "11d043063cebdf43b3f38314e0eb9ffe4e6a3f03211641eeb61b203bb0c099c7",
+      "bytes": 15209
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/6A.png": {
+      "sha256": "588435c5a5f71a68514778f44efb338ed600cb64c99b3d3925758b0bd3168264",
+      "bytes": 8255
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/hair/4/6B.png": {
+      "sha256": "686fed89bb98d35c892f689873f49e934f7b4f8b9d771e36fc00a4934063a619",
+      "bytes": 14974
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/0A.png": {
+      "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a",
+      "bytes": 10069
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/0B.png": {
+      "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a",
+      "bytes": 175
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/0A.png": {
+      "sha256": "cec244ebfacbbd353ecb7ea1283c31b8056bfd9f0211359d8c7071d0b61a3fe0",
+      "bytes": 3164
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/0B.png": {
+      "sha256": "cec244ebfacbbd353ecb7ea1283c31b8056bfd9f0211359d8c7071d0b61a3fe0",
+      "bytes": 3164
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/1A.png": {
+      "sha256": "8aa4c540372aea115a0854849b3e10ecd97f168a3c21e8d32e6a893b34254036",
+      "bytes": 4145
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/1B.png": {
+      "sha256": "8aa4c540372aea115a0854849b3e10ecd97f168a3c21e8d32e6a893b34254036",
+      "bytes": 4145
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/2A.png": {
+      "sha256": "4ba5b68616070b153cd1848ce96755d4ac9433db49683578a1eadb02b3808814",
+      "bytes": 3880
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/1/2B.png": {
+      "sha256": "4ba5b68616070b153cd1848ce96755d4ac9433db49683578a1eadb02b3808814",
+      "bytes": 3880
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/0A.png": {
+      "sha256": "b19bc8d3bfb9c691a39b3060399f14b90de2409826f3668781fd4c7876a131b0",
+      "bytes": 9151
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/0B.png": {
+      "sha256": "ab05ec4c2d2bf5b9dfed1c785119cf906b1c91604c7ef23ee465f5d69e8f43ea",
+      "bytes": 16430
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/1A.png": {
+      "sha256": "281d8e059440370603ef88d6e04a26b6b20264931e74357622db8013df201dc9",
+      "bytes": 7013
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/1B.png": {
+      "sha256": "1241d4c65754b07636f87f7a125c6c2375e4703e789f9bb854a2700d16f4bd1a",
+      "bytes": 12104
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/2A.png": {
+      "sha256": "ab4aebf2d9de2768fb4027fbc3367c9adf3caaac09af0322c841d410c267c53a",
+      "bytes": 17151
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/2B.png": {
+      "sha256": "62337106be97ca8ef86c05957000f1be35b009ac5800c8ccff4e75142286d13e",
+      "bytes": 16901
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/3A.png": {
+      "sha256": "9d8b68350181da38d82a847e658af0c3f7e93fdc194a3d1472179e8d939ada2c",
+      "bytes": 10852
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/2/3B.png": {
+      "sha256": "7aca04f272a43addb084ba35163a9584dc650d6ad48c3ad31c33b34d0dd5dfeb",
+      "bytes": 11531
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/3A.png": {
+      "sha256": "7ca2735be5d0f7dafcfe53baef0d403098a6d3018e20932dcceae86f9990a05b",
+      "bytes": 16808
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/3B.png": {
+      "sha256": "7ca2735be5d0f7dafcfe53baef0d403098a6d3018e20932dcceae86f9990a05b",
+      "bytes": 16808
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/4A.png": {
+      "sha256": "1ea89d20e4c0eabbc3f7314483e650805ad7b89bfd00026d53ab9d46dc480110",
+      "bytes": 16030
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/headgear/4B.png": {
+      "sha256": "1ea89d20e4c0eabbc3f7314483e650805ad7b89bfd00026d53ab9d46dc480110",
+      "bytes": 16030
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/0A.png": {
+      "sha256": "05eb26e527f01ac59f628701d1ade73cf42bfb363f983e7e46f7bb02f353892a",
+      "bytes": 10069
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/0B.png": {
+      "sha256": "8f86ccf2cf49c8a36294f15416de3456247aa2130bb6032ff07dbbeab8fe136a",
+      "bytes": 175
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/1A.png": {
+      "sha256": "99ea02d175c43af9dd59a43e620684c18668471d12c1f6ce4599610bba4d07d1",
+      "bytes": 16179
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/1B.png": {
+      "sha256": "99ea02d175c43af9dd59a43e620684c18668471d12c1f6ce4599610bba4d07d1",
+      "bytes": 16179
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/2A.png": {
+      "sha256": "a0c4c92584a0780e57b2c0dfaf6314e95dd79ca857117630eb12c6ba2150d848",
+      "bytes": 15488
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/2B.png": {
+      "sha256": "ccd8c0dca810e1dae5b724db6c2c27713a7d01be136fa43f5ff9af89e9946f3c",
+      "bytes": 4583
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/3A.png": {
+      "sha256": "1e6cdf809eca77a6d9269bd8d49ce91dd3ac75cacf1327eaa5289c1a7db9d2f4",
+      "bytes": 16565
+    },
+    "/workspace/platinum-port/customization-tools/sources/overworld walk/accessories/3B.png": {
+      "sha256": "a147138963a2875ebebea42bf8809560c7a9adcd3deef8496eb48b6a913d01a4",
+      "bytes": 16564
+    },
+    "/workspace/platinum-arena-3ds-story/content/campaign.json": {
+      "sha256": "6bdfcf1d1d1a5129831a05a570469e2254d06f6c6b7667ab542b96791d04213f",
+      "bytes": 19773
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/aaron.png": {
+      "sha256": "2ec3166d4431f37e3a9e2cbe04079102e9512c72e96da8ae25f848e57f5900e4",
+      "bytes": 1106
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/barry.png": {
+      "sha256": "1c5f4820959afb5b9afee37bdef90ef569c2f0b163b40036d4ae2525a8a14be9",
+      "bytes": 1227
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/bertha.png": {
+      "sha256": "8698403b05572a0eadbc1131ea0cb16735add5854fab6e70d6bc0e0b19b6a412",
+      "bytes": 1018
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/byron.png": {
+      "sha256": "838d7adf0a292c7241c050093c181daa3e1a068d37579b886a4d2ecd8d16d41b",
+      "bytes": 1487
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/candice.png": {
+      "sha256": "0c4e9a22610f2b8181689f15ec0ce3b02112c207d9a07ccbbc2938be098766a5",
+      "bytes": 1189
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/cheryl.png": {
+      "sha256": "2aa8f2d091a681fd90035a00f931e0543f538a7018644965f215ca64b72911be",
+      "bytes": 1094
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/cashier_m.png": {
+      "sha256": "e397be2655ea0744d0735ae218c662b018d55f101e780c00bb9bde12b4614420",
+      "bytes": 1187
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/crasher_wake.png": {
+      "sha256": "6fa093115284f3cd2045f4cd7f615b531fe48235df515710a0b84fcf56c569e0",
+      "bytes": 1324
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/cynthia.png": {
+      "sha256": "47a8476fed0abdb7a368179453f2020cb7dc836e1dce41d5dada50b0270ff3c5",
+      "bytes": 1247
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/cyrus.png": {
+      "sha256": "9e46e09aa2ce7e215c9e4efeeba8f2c6e4e2f01d9cfc0d5b714598751006dc7d",
+      "bytes": 1259
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/player/player_f.png": {
+      "sha256": "4644b142049fa41c6a1b17289ebad35d713b0d96b3345ada17046145261436e1",
+      "bytes": 2801
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/fantina.png": {
+      "sha256": "0d31fd920466d54313b6819d009b83116fce5597cf6618ef8efe9455660b3841",
+      "bytes": 1227
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/flint.png": {
+      "sha256": "349960fa3c54fa36dc74b780c25e717d024a0dafdf918b8d1c7ae0b51cdc9d47",
+      "bytes": 1032
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/grunt_m.png": {
+      "sha256": "8370fc401865567d90736273d53daace6285e464c633e83cebb8cc02e54052dc",
+      "bytes": 1116
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/gardenia.png": {
+      "sha256": "36e6b328aeb1b7f7f2e5c2374ce88b5cb9d95b726f7f25fff9184c54e2984076",
+      "bytes": 999
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/jupiter.png": {
+      "sha256": "24ac58c6b76a0f33b230f896f82484f491dad880158ff9acbc454ca75e3ee35c",
+      "bytes": 1234
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/looker.png": {
+      "sha256": "f49d47fc786b017d9e20a0ad282d18b3a3e6ae65b8e00b66b3b768cfe9c8d8de",
+      "bytes": 1190
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/lucian.png": {
+      "sha256": "1e8856578264a2698a25bd2b01bd734c98574323322a647f033147164ac474df",
+      "bytes": 1023
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/mars.png": {
+      "sha256": "18b8a30c3ac17a3ece750ae514f92089134e377354d55addb5f213b0a9928030",
+      "bytes": 1208
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/maylene.png": {
+      "sha256": "83e4acd56e2c9b4690932efc56afc1e2c72d57455cb75feb453d8a4f3e35709b",
+      "bytes": 1097
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/mom.png": {
+      "sha256": "27ba03eb4e4c1f8b1a9bf3bf8061d0e9fd42f5936182db4fffe0620637eb17ff",
+      "bytes": 1235
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/pokecenter_nurse.png": {
+      "sha256": "7e33fd3340df2dac27575f4bc160ff6ec21461d431bd2637f232748007eb9d73",
+      "bytes": 1089
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/prof_rowan.png": {
+      "sha256": "e779d55346c4bf98f63e199e0baa84e3096fe99d27eea135bb6d7b44da1c778e",
+      "bytes": 957
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/roark.png": {
+      "sha256": "34202a5c9e25ec37a00934ae603b373c14e0447b37fee140f973974a3cfb5bb5",
+      "bytes": 1164
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/saturn.png": {
+      "sha256": "1907bad544f989a69a0b3efbae6b77e47a43080c3726f090a82c216d4cb030e5",
+      "bytes": 1164
+    },
+    "/workspace/platinum-port/pokeplatinum/res/graphics/field_sprites/npc/volkner.png": {
+      "sha256": "f8402780232c0c9b09e0b4d5868eefd8ef1385ee068ff7598919223c013aebbc",
+      "bytes": 1126
+    },
+    "/workspace/Pokemon-arena-evolved/ds/assets/world.pack": {
+      "sha256": "44070d1276ed2125ab5a76c734a366b326d53c6733a496b0111d96234d25b40a",
+      "bytes": 10400768
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bulbasaur/data.json": {
+      "sha256": "84b23cf229103bc5b50a72d0fb93c1e64e62a1754f00ab4748702c68ea9bb1c7",
+      "bytes": 5343
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ivysaur/data.json": {
+      "sha256": "c5b6874d9e231f922f1f9c1a20069cac26f7fb1035da8910b14afe77bd4a2918",
+      "bytes": 5103
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/venusaur/data.json": {
+      "sha256": "217056c7e723b53f72d285a3a0307666378e626ed91b29ad758e63e9e36080db",
+      "bytes": 5225
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/charmander/data.json": {
+      "sha256": "bc0bcca3b422223359a3e349bf4cd23af07a9e9aafeb8ca6de14dd1937c3a9d3",
+      "bytes": 5413
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/charmeleon/data.json": {
+      "sha256": "8af7d8c855464dd797c79cc1d5e4e06e5dbb9f299712e257fed24d4060d63016",
+      "bytes": 5039
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/charizard/data.json": {
+      "sha256": "acf4c9d06ced8a373e617629611566d81781f1fe82c79b2a87aa143a8bd4cb44",
+      "bytes": 5516
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/squirtle/data.json": {
+      "sha256": "3afb6865bf5328d32371a4e49a04c90fa647edfab807c6f0756def63b5230662",
+      "bytes": 5594
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wartortle/data.json": {
+      "sha256": "f8e7f2210b604026a6fb8462c8f4230e8b31537f0aff4facfe96f852c2b2da22",
+      "bytes": 5241
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/blastoise/data.json": {
+      "sha256": "1bdd16687f75111a7aea1b8db08defe5628958e866afddd2bd723d616db636cf",
+      "bytes": 5501
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/caterpie/data.json": {
+      "sha256": "30203c1567f98826c1f81ca0ca2436678bbd8d8e540c56173879dafcf24d752a",
+      "bytes": 3840
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/metapod/data.json": {
+      "sha256": "472a5f336ca0f97c8aabedb63a31309fcf40feee0dbffad3a04b8fa811063747",
+      "bytes": 3851
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/butterfree/data.json": {
+      "sha256": "afd4e735844dde006294b2939939bd911f125cf387edb1ccda175d0f9275c263",
+      "bytes": 5109
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/weedle/data.json": {
+      "sha256": "19c19dcf6c86f799f2b49c40057ba0c7832b54530880d08126688fc4762098aa",
+      "bytes": 3859
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kakuna/data.json": {
+      "sha256": "e0898fb8e629119b0f2397331807f94d3a75a23ad5b4752830eb8f9889c73e94",
+      "bytes": 3782
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/beedrill/data.json": {
+      "sha256": "93429b8eb60bd893afd7b26b395444077d200a977e1b00a926720e24b81a6bd4",
+      "bytes": 5069
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pidgey/data.json": {
+      "sha256": "96e328ad8721b19a2d673b19ff0ce1acb88647a6348bccd34eaea398812b1b3f",
+      "bytes": 5186
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pidgeotto/data.json": {
+      "sha256": "0b3ed1db65e2e5678d191f81d9b04098819f761336b2b2f0991c4b8806e3a07d",
+      "bytes": 5064
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pidgeot/data.json": {
+      "sha256": "abf6278bbb9650c29dbacaae42a03b47988eae8c2d99cc902cf7231c857716ae",
+      "bytes": 5043
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rattata/data.json": {
+      "sha256": "da6e2980bbce7832d6b73560f239eaddc30ae2d6e0745c0e2bd6db3a68ff6bfe",
+      "bytes": 5458
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/raticate/data.json": {
+      "sha256": "29028f3b79c494969743257ce14b1c801de8d594ae9df3af77166ca9b1f651fc",
+      "bytes": 5351
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spearow/data.json": {
+      "sha256": "c078911652f5cefc3b741ea82197a6a7083ca9550dae90e87a400f2fbb1af408",
+      "bytes": 5162
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/fearow/data.json": {
+      "sha256": "653c3964f5c86da30df181a3cb817fb1ca4a175c5af021d2f984ad8ac7996e38",
+      "bytes": 4917
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ekans/data.json": {
+      "sha256": "40914562002bb1427d2b6da6091e5717850a146a440d3d5a0b64627533f7ef06",
+      "bytes": 5301
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/arbok/data.json": {
+      "sha256": "e555cfa62ca4f6a07552f11dd511a89c237e0d013037c4fa803e87005d5d48ab",
+      "bytes": 5229
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pikachu/data.json": {
+      "sha256": "c1bc9cb27ba233644b720360568c252923bcce9db50c9f295893fde9e9e2192b",
+      "bytes": 5137
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/raichu/data.json": {
+      "sha256": "d6e4a6279261cdbd362e3f702f2c746162a1f7eb0d9393b320f759282b611f28",
+      "bytes": 4781
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sandshrew/data.json": {
+      "sha256": "98a07de1dde4d93d07c426b497903ab6f034f85efadc71ccedcdc01a9b4f4282",
+      "bytes": 5517
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sandslash/data.json": {
+      "sha256": "b3fd67795b9b05c60e2981d112368158ab77b8e7b59c543a62c7f90e76eda200",
+      "bytes": 5297
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidoran_f/data.json": {
+      "sha256": "71759c0fa019989265078521e873a59458cc713ae0a025633855fa0858f4cac5",
+      "bytes": 5319
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidorina/data.json": {
+      "sha256": "f08a22082aad63d9a683dfe636218ebebb00fd5b0f76364dbbdc0e029f9b473e",
+      "bytes": 5077
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidoqueen/data.json": {
+      "sha256": "dfa01e859c5bd2a18db95505be6e76874b5b89b8a041819dd2fbce1ebffe7e51",
+      "bytes": 5449
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidoran_m/data.json": {
+      "sha256": "8edffbdd20f62ed097c6264a181a3c315b23658f8d5480cfb1ddbc5494b79593",
+      "bytes": 5357
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidorino/data.json": {
+      "sha256": "cb3a98a5cddcdc7607dbdf6d7aa1635133d7e5571ade888f0a739a5883f767c2",
+      "bytes": 5046
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nidoking/data.json": {
+      "sha256": "30a216e2b818d750bff85afc0bbc8a918b4b7504b7de4d2abbfaa72d2f7ed75f",
+      "bytes": 5426
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/clefairy/data.json": {
+      "sha256": "80bbc0d2106b82c85970c9b0721c00359e30aec2f9b990a15afea5b07b4aab4e",
+      "bytes": 5876
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/clefable/data.json": {
+      "sha256": "d3844e2ca07d01c4ddfdb31edafcd2f063465cbca67bf67fbf5a7bbe77fdb4b2",
+      "bytes": 5327
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vulpix/data.json": {
+      "sha256": "8bfac2b102a3971e7cdc24fbfeec482b1df3cc1917560dbfec0f2134c2a3d7f2",
+      "bytes": 5376
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ninetales/data.json": {
+      "sha256": "68a1e852a72857e8455e01627cc017ec012f337d25894343901056451aa244db",
+      "bytes": 4641
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/jigglypuff/data.json": {
+      "sha256": "5b0078a103885ebce6cd46354c22295d99ae8c1933fe1b5840def3f2f6b87bda",
+      "bytes": 5549
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wigglytuff/data.json": {
+      "sha256": "ef6ed2e1f7179de1bf735ae563d4eb9f4ab3f2c1764ce7d8192b06e2cbb4288e",
+      "bytes": 5125
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/zubat/data.json": {
+      "sha256": "7889ec0b1ad9f4a0d43f6ccd8550930abe79071aeedb6a02bdbb21f7c14bba68",
+      "bytes": 5368
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/golbat/data.json": {
+      "sha256": "d8f4582d26acecb6c8c449e0e389b8a9d4c48ee74c5420e92e1b6c8344e97952",
+      "bytes": 5185
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/oddish/data.json": {
+      "sha256": "095d5625d7b399cf2a9b05cdda1d9a93141a867fb2dbab02a8d2ede3ee58904e",
+      "bytes": 5095
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gloom/data.json": {
+      "sha256": "61ee05eacf7010ea54bb1ff421a2ae00d39ed5db0892a8acee808628661c1543",
+      "bytes": 5081
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vileplume/data.json": {
+      "sha256": "bb25ed6ad88eaf6c2a9755a14058018fba79b43bbf08a8a3024e0e08ab76ca9d",
+      "bytes": 4637
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/paras/data.json": {
+      "sha256": "d63993c2c6133f61f6ca9a16421e47c5c2c436c5d122830125a7e45a3d688fa3",
+      "bytes": 5236
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/parasect/data.json": {
+      "sha256": "8eafa4020b674d5516fe45bc72f064f6ef6cdd126c405cc50844f6ffcae64a29",
+      "bytes": 5031
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/venonat/data.json": {
+      "sha256": "5203a65e9d54b7aee5dcaf10375568af6f7bba0dd15b1e0797fbe014db57f842",
+      "bytes": 5168
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/venomoth/data.json": {
+      "sha256": "46f8daf290e90a56c5e2b17b2905e4b8537f506d5ae76fb2efce1aa7247b4fae",
+      "bytes": 5191
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/diglett/data.json": {
+      "sha256": "f18e61a087184b8aa1216429f118661733f5dad82c452fa3085d856db6281931",
+      "bytes": 5183
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dugtrio/data.json": {
+      "sha256": "4f25127807c9c4efb90e2c8f09b70a79b588218967903df8cdf50c93ee04d95b",
+      "bytes": 5056
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/meowth/data.json": {
+      "sha256": "68aa32dff34e8d0d84ce89f546a6eb2e527d9c14586696ba6b13518ba5e3e67c",
+      "bytes": 5549
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/persian/data.json": {
+      "sha256": "249dc0f1e7bebfcafe6f4a9c75ffbdb8f2edd4de7e0ad55b7118a686cf02a751",
+      "bytes": 5471
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/psyduck/data.json": {
+      "sha256": "86d431c3bf1d4fc39ba04a0761e113ca308e122222b37a309e50db66933e149e",
+      "bytes": 5592
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/golduck/data.json": {
+      "sha256": "1b70457344550d278921dc4912d881c310eeda5f3ddcad60a56304978831e6b5",
+      "bytes": 5298
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mankey/data.json": {
+      "sha256": "bdfd8f28b3b6841c470319b7e998a498f5e412be2472543cb31ca9abcd2fcc76",
+      "bytes": 5847
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/primeape/data.json": {
+      "sha256": "ed6f0b3a9567aec74db7ad0301e53072e496d8f0c55d1e5d9af9181f6a76e338",
+      "bytes": 5535
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/growlithe/data.json": {
+      "sha256": "bb934ee1d16c8c483403637fd75cb3000c31155206210760a4cb7d7985fca534",
+      "bytes": 5302
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/arcanine/data.json": {
+      "sha256": "2c5d7265ccf6d240a56616b73c903076383e8826cc57546ae4b4df995c38fc7e",
+      "bytes": 4652
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/poliwag/data.json": {
+      "sha256": "7be7ad9a01bd7b26f802dc87b586eb7a37f7ba152782524671c42c139b306f19",
+      "bytes": 5197
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/poliwhirl/data.json": {
+      "sha256": "ea24d6277690a5f1874fee096a8aa64e41eecb96c860263255a65fcca8d59bdd",
+      "bytes": 5282
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/poliwrath/data.json": {
+      "sha256": "38aa0a3994b2323834842f63015a777e1f5f29d2956172e80a9753c20746f15a",
+      "bytes": 4909
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/abra/data.json": {
+      "sha256": "f09fa95d4b682b1efb6d50a24785d9df4b58568b8148df4ce444ca179e6231e1",
+      "bytes": 5152
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kadabra/data.json": {
+      "sha256": "941bc76039b0b8bcc270d3f245a438caa29bb3c547974078f3f0281dd0e5cfb7",
+      "bytes": 5396
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/alakazam/data.json": {
+      "sha256": "3e040b0a4a14b040a11f91bca5b07b3ab336235bc392e7c763c8b724895ad87c",
+      "bytes": 5383
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/machop/data.json": {
+      "sha256": "a6ae3dad7e409d0939a0db48671e2e25b70f8308adaee16d6445735cb3aad9bf",
+      "bytes": 5640
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/machoke/data.json": {
+      "sha256": "7a1ab61cc781b08fb3520779dc07d00cabdc1c5a0ab3ac2cc577364bd2556e8c",
+      "bytes": 5243
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/machamp/data.json": {
+      "sha256": "3ddad45add4b138addcb1adb88e0910e47ea839770fb998d86156ba3cfca6c7e",
+      "bytes": 5220
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bellsprout/data.json": {
+      "sha256": "538845df6fae864c3eb56ca4e5024386786a4eef62b88522f49f8aa0c7f959e4",
+      "bytes": 5260
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/weepinbell/data.json": {
+      "sha256": "b1b4bb04db6a9a88dded2b49bf2f1f7094c1d04179948823e27c0e9200f60460",
+      "bytes": 5097
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/victreebel/data.json": {
+      "sha256": "7df0bf6c15a2484b33ed0b5a9dac6de253f25c06d15068d4736aac8fd8da338b",
+      "bytes": 4806
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tentacool/data.json": {
+      "sha256": "a978448a6cdd583577638e2801b5657dcf7380f6e530a497bf60db1acb76136e",
+      "bytes": 5288
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tentacruel/data.json": {
+      "sha256": "2aef528f3f6fc13fad429768845d800c1b8b9ad9aca11e91a6bd95de15b5d38b",
+      "bytes": 5015
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/geodude/data.json": {
+      "sha256": "12811962adde6a32e9650e8854f1f10306ec63d93dc37f5a0bfac03cba10a04c",
+      "bytes": 5420
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/graveler/data.json": {
+      "sha256": "3346206983d00af1a0efcf621223fe1f0d0380698e14fcafad4336680617a2cb",
+      "bytes": 5219
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/golem/data.json": {
+      "sha256": "9d8b4c13f0de9e208abb63d0e3b61f98f57aa62b1f649b09aef8b615ba552e32",
+      "bytes": 5349
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ponyta/data.json": {
+      "sha256": "ef4ef5d36c7eeffd2cbd089bf4eebad0254e790d513f0f9b29216fae864747ca",
+      "bytes": 5010
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rapidash/data.json": {
+      "sha256": "3aac8d43a35b0e6be2c1dcea7f87fd0fc3a159dc6883ff5b1df2be91dd8de70c",
+      "bytes": 4908
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slowpoke/data.json": {
+      "sha256": "c3dd7ab259a02c6c3edd446d9b6b02c1d2dc6fc0f8833e0bc87ed55e4ddf09dd",
+      "bytes": 5895
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slowbro/data.json": {
+      "sha256": "9640d7f14663918e69a5ecf0fbe15a8786564d6056a3ba6acc5f4f9e1d0a9bd9",
+      "bytes": 5678
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magnemite/data.json": {
+      "sha256": "a60b569c603289126fe2628de320408786c4142b1ef98c73300aec16c17d03a2",
+      "bytes": 5126
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magneton/data.json": {
+      "sha256": "2045ccada1f5c10d631cdb48327e22af4b48bf7065641fa929c2c5eee35752c6",
+      "bytes": 5220
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/farfetchd/data.json": {
+      "sha256": "18e642317dd2e0240fa9c0cfe3553a614f7c532ce7a398f6c2ec2a4ed91c41dd",
+      "bytes": 5586
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/doduo/data.json": {
+      "sha256": "ef7b63662ae28a5a9f68e595407c259e3acd24394cfb55fa069a07dc3fe081d0",
+      "bytes": 5041
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dodrio/data.json": {
+      "sha256": "4f3e002354ca264b8038e3b4554c87223bd7dd3d715e32f0ef1e9542b2b63631",
+      "bytes": 5013
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/seel/data.json": {
+      "sha256": "ff513f38b38759dcc44194fed98ff94897c87f4d3cb5a8bc2a5ea706a50d2374",
+      "bytes": 5290
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dewgong/data.json": {
+      "sha256": "7aa80f1be68a94f4478865fd432371c87ffb2d556b742db703feb2a7cc719b65",
+      "bytes": 5090
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/grimer/data.json": {
+      "sha256": "2e4350eab94cd13c23d795a0b7933973d04279ddb82b78282e46b201cd92282a",
+      "bytes": 5538
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/muk/data.json": {
+      "sha256": "c8b2b9126eef7df57e443fc6bbf64b7946d994ef50ae850a7bff8bd00d3ca9e5",
+      "bytes": 5280
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shellder/data.json": {
+      "sha256": "453b8c639f41a83b19e9b2cf25bce55ee0858a2c066fbd4ec030e3b7ea242529",
+      "bytes": 5156
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cloyster/data.json": {
+      "sha256": "867f154535c5ca6231734908741ee8b69c731c7b9b26f4a2029853919794a30b",
+      "bytes": 4670
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gastly/data.json": {
+      "sha256": "09ab406d19010246219502c7a5aea77fad95cb2cde8c5dc06228ce98c071ccb4",
+      "bytes": 5647
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/haunter/data.json": {
+      "sha256": "7d51293b62127fe4a41c32788a372b0e6828baf54fc945e8cebc1bc69f081c9b",
+      "bytes": 5402
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gengar/data.json": {
+      "sha256": "b744d05fa4bbadf8a5b2b52afaaae0ed962b69f0971bdd5afd7aa1a16d271dbe",
+      "bytes": 5575
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/onix/data.json": {
+      "sha256": "03a323849a338947998582bb54c6749d91d2ae7fc587e36d935d503eee1703dd",
+      "bytes": 5565
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/drowzee/data.json": {
+      "sha256": "95ae5fcea2f118306d3baaf75a0bab94cc58b0beda4166fb62bd2d10f75f7357",
+      "bytes": 5592
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hypno/data.json": {
+      "sha256": "2b534ba1ae8b08a3efe640df9afe00a2c5fc02fe2639aeffcf077edea6b06801",
+      "bytes": 5437
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/krabby/data.json": {
+      "sha256": "c459ab2f6bfc8b803d8f67a44bfbc5c76bec935864ec8820104f48445fef7278",
+      "bytes": 5529
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kingler/data.json": {
+      "sha256": "a5dcae3df891c49a92204c7a5b5fbf160867dedb94ed555fbc5d4591ebdc0bf1",
+      "bytes": 5257
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/voltorb/data.json": {
+      "sha256": "d68f1cced073ab267906b82d417b69347f26e6b8ba7fb6d7c64ec560cd6e1d53",
+      "bytes": 4970
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/electrode/data.json": {
+      "sha256": "cbc6a7f1721b95279b56c0687af60b7511343b03ffb6481942cce19005f65a74",
+      "bytes": 4927
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/exeggcute/data.json": {
+      "sha256": "41e98f9cd1eef4e4a99e11deee6a059686047bf3a80ad9d21c62908cdb64c630",
+      "bytes": 5469
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/exeggutor/data.json": {
+      "sha256": "23187c31c68148c029746ccc1f0d755412c6f0d10e06fb6ea7ccefb551579092",
+      "bytes": 4953
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cubone/data.json": {
+      "sha256": "cbdeb46a50c55b268488314ccd92e9a691f99c62d0acb404049813097ed20ffc",
+      "bytes": 5705
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/marowak/data.json": {
+      "sha256": "2530cfdbe7e9cb25f90ce6da53c949b0ad15501741c62994730e940d0d3df2dd",
+      "bytes": 5506
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hitmonlee/data.json": {
+      "sha256": "1fcd8e3f3375ca7a07637c500ce2f05fe75d4291142af35d0c4cabb33eaee2d9",
+      "bytes": 5188
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hitmonchan/data.json": {
+      "sha256": "e9d31e0ae5ff86969a8abe7b356f11e2a1a04506551810c201b3088686a6a2d0",
+      "bytes": 5220
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lickitung/data.json": {
+      "sha256": "fce5a538c0d9eb2e19c37e41fb0d9ef0fc92553a3de1855b3210a433d1ca086c",
+      "bytes": 5958
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/koffing/data.json": {
+      "sha256": "37b14a768933c88183e20315905f792591ecf7af9e680cbdd3fc048638d08a02",
+      "bytes": 5352
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/weezing/data.json": {
+      "sha256": "b72e94b4390fe462e256fbdb6145b6b14193bf0953b4a6a2969f048aa530ddea",
+      "bytes": 5091
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rhyhorn/data.json": {
+      "sha256": "92ff06a4db26e393dbc85076ce6ec2fb35c507955af6ddfee2a484fc76b063a3",
+      "bytes": 5746
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rhydon/data.json": {
+      "sha256": "34dea3dcb3e55dbe3349d63606962a0abdff5a37c6e83c0ca7604f3b42c3105a",
+      "bytes": 5888
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chansey/data.json": {
+      "sha256": "f78642243918fabf60cff3d10f847732fd2d8aff5716923f02d4120771716902",
+      "bytes": 5942
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tangela/data.json": {
+      "sha256": "363d54cea362992f118d32fe94851cf587465bff854a5ca2e804591cd2b0c5e8",
+      "bytes": 5509
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kangaskhan/data.json": {
+      "sha256": "7f6b9e7506fd4b469973243406be2d22748687d1c79d11c35cbd53cf92eea2d0",
+      "bytes": 6049
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/horsea/data.json": {
+      "sha256": "3b901d5e103ab887bf06d9212a130e49a35ef716ce8155e51da1d57e72698185",
+      "bytes": 5204
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/seadra/data.json": {
+      "sha256": "05664b288efdaf9d49ec5d80bbec417c6989207a6dc6a49d3fa1e91e52fe5dfa",
+      "bytes": 5134
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/goldeen/data.json": {
+      "sha256": "2e1ca9b2b10ac56dda4b081f80a7f4a672bb223815b9d399a5bb01f4e44d252f",
+      "bytes": 5215
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/seaking/data.json": {
+      "sha256": "0e2ed150ac1d81050bc4a007238e0e0a5dc955618a9fc3a370f2cba30befb5fb",
+      "bytes": 5036
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/staryu/data.json": {
+      "sha256": "996332cb5a528638816f50407842d24bf145e7a9f7f2bd29cb9ef751f44f0448",
+      "bytes": 5186
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/starmie/data.json": {
+      "sha256": "9254fb367605edfc23e9fe4cb692c307b184fe12ed014cc82cf71c92e769d536",
+      "bytes": 4890
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mr_mime/data.json": {
+      "sha256": "4d703cbdabc0e7c1e33a19c37802b61fd46e08deefa047fdb039165798a5d60b",
+      "bytes": 6029
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/scyther/data.json": {
+      "sha256": "85b36515bfee6df95ffd5b5ca32a965c899c663393bb0044d6152ad1af4d35e4",
+      "bytes": 5573
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/jynx/data.json": {
+      "sha256": "9eb2f12d115dd605af18a1bbc18e4e0953e6662887f1e55eba140642f5165724",
+      "bytes": 5455
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/electabuzz/data.json": {
+      "sha256": "c458f1c7d1d9353dc953f527504f7461d67fe1ff867efa103f80c9096dfaf486",
+      "bytes": 5335
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magmar/data.json": {
+      "sha256": "b973864653366d25bd64081c2217e3bd0891754872e6ed8ca7fac44f2ed369b3",
+      "bytes": 5117
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pinsir/data.json": {
+      "sha256": "ac2384cd2c8dfd79effa4eef8db853626cb32c0fac9846f09df811e1b0e2a219",
+      "bytes": 5424
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tauros/data.json": {
+      "sha256": "6c88dbb925360e1b15aa39c2d23b7d011c0ea3c50361b725d5c137393e2edc85",
+      "bytes": 5183
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magikarp/data.json": {
+      "sha256": "df3d95cd266a5a3597f6f88b50e65d47919798d5ca08b354f701832eedfd1e02",
+      "bytes": 3827
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gyarados/data.json": {
+      "sha256": "653b166ed96a2aa5cdeeb6bdc551109b2fbe91857a49659fb3521d304254d694",
+      "bytes": 5174
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lapras/data.json": {
+      "sha256": "654611189381abb938434c757cd72e8d45d5196f15e760c1f7f133a956f6798b",
+      "bytes": 5595
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ditto/data.json": {
+      "sha256": "9e1a84b17d6b7ad6f61333fe77397f0179f5c5642a2d17647a6423ebc2ed69ac",
+      "bytes": 3680
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/eevee/data.json": {
+      "sha256": "6b0d12041168c33fee37716260dbf831f02e4fe98ecb7c9ba73e5921ebd2367a",
+      "bytes": 5497
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vaporeon/data.json": {
+      "sha256": "8874f476b1695103e8b7b9a046c8d8c9e93610a0c76775c3e45eadd839979ceb",
+      "bytes": 5125
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/jolteon/data.json": {
+      "sha256": "8067d9ab6711fa532581218db55eaeb2fac23b55377b40151e05acb81db15961",
+      "bytes": 5077
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/flareon/data.json": {
+      "sha256": "c94a1fcca978383b062c889afb7934bda48c8f4a3792d073a7e190596d157d3c",
+      "bytes": 4982
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/porygon/data.json": {
+      "sha256": "fcc9c4aeb579d085727bd880ddf2764bef9a81cee03df130a94d0d579b6b2013",
+      "bytes": 5230
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/omanyte/data.json": {
+      "sha256": "655cb64b3bfd5ebcb3689ffb25a47002580e8fc53d4167e666d76d46689fce26",
+      "bytes": 5451
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/omastar/data.json": {
+      "sha256": "f24e772b9f21174566da42ca066b62f191d4717e64d210d9c1f6c88e3d8c6b57",
+      "bytes": 5154
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kabuto/data.json": {
+      "sha256": "029883603549f166f50096d21edbca08fb130e651e515062b3e1485fe9d7ce1b",
+      "bytes": 5419
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kabutops/data.json": {
+      "sha256": "d831a03926bbf1896e17d02de9e36b27dd47ca971fc9b471af6930803f82dd4d",
+      "bytes": 5491
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/aerodactyl/data.json": {
+      "sha256": "3d09698c7884ba1e9116d992bd649f396b2b59b429e5cffa8cf5530b6074a088",
+      "bytes": 5646
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/snorlax/data.json": {
+      "sha256": "ed31f521c43fda88f394a355bb13329bc8147d55f80ce7305188a17fa19fa66f",
+      "bytes": 5742
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/articuno/data.json": {
+      "sha256": "60b8da8e8db952aae184ec2becea05274546bfeaf9dd42a47b925228624a8c7b",
+      "bytes": 5093
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/zapdos/data.json": {
+      "sha256": "da60d9abc19c10ca776cb9132453dc9a71a024f1ebecb30f8ce3a6d6b46a073c",
+      "bytes": 5158
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/moltres/data.json": {
+      "sha256": "e4e6b2f9170ea25086aa0723e65347691c1ea291c2b170689a21015c1d4fa304",
+      "bytes": 5097
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dratini/data.json": {
+      "sha256": "c3b174e359e542246289d055ed723eb48e858b1c2b022db83c5d847a7c8ecbb1",
+      "bytes": 5346
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dragonair/data.json": {
+      "sha256": "3ed97d806fd27e2391c8954f816b5f89d43ae2a2e95c14c3485855b95eda51cc",
+      "bytes": 5195
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dragonite/data.json": {
+      "sha256": "83016f854a5e5ea6dae0bd066f25d859502abc57f30b13f45870028fbbf0f323",
+      "bytes": 5950
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mewtwo/data.json": {
+      "sha256": "4a61c543f204c45fc0c1f47ba0a60534bd4fb4ad369cb9e3d304ca6a2e61335f",
+      "bytes": 6012
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mew/data.json": {
+      "sha256": "a140060eb1e0a3df6848747f93df9f4aec8e98b05053bb068501a8d1c3e32369",
+      "bytes": 7280
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chikorita/data.json": {
+      "sha256": "bb2473940c58dba40d8a3515931041ef1205231e288d0193fa2acdbfa0babef6",
+      "bytes": 5406
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bayleef/data.json": {
+      "sha256": "7d97e9695ac2a813df4c1733aacc697182e16566db1c47491556f8693399220d",
+      "bytes": 5044
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/meganium/data.json": {
+      "sha256": "1c254e24147293879a38318461e8e173490bc716c765174a4d56c0d43a873c1c",
+      "bytes": 5149
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cyndaquil/data.json": {
+      "sha256": "19ec6b00b84f1523479a7ae7976ef4c111c177455a7bb1a3194ed1152ca3eeeb",
+      "bytes": 5191
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/quilava/data.json": {
+      "sha256": "d6c3e9d9b72e70689129a4f9d7d931fb48de7b75d2535657a253790fc017ae93",
+      "bytes": 5036
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/typhlosion/data.json": {
+      "sha256": "66019541cee3cbc1b78b953b78e20ffa4e6459437f63b57dea499a5ecf5c549b",
+      "bytes": 5273
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/totodile/data.json": {
+      "sha256": "e03c161668138c5aef04004eb4b79d87912b362e600ad15eff47f6abd184819e",
+      "bytes": 5643
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/croconaw/data.json": {
+      "sha256": "3d83d21e5fb5791a26d93b8e24f37746b137783349dbfd37c166d94c5b11bfe9",
+      "bytes": 5388
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/feraligatr/data.json": {
+      "sha256": "2bba8c4e675c2abc497d68f9cb19c3f10df80ff72952b05e15ea27a33eafd9e9",
+      "bytes": 5546
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sentret/data.json": {
+      "sha256": "0e9dc75fd1f1fc7c73167c01023ebd756a1593b74433998f1b1da58eb247e817",
+      "bytes": 5748
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/furret/data.json": {
+      "sha256": "e713d3a7105125fa80223dfbc567dac992f89f2984ead105b7089e388cdc3379",
+      "bytes": 5590
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hoothoot/data.json": {
+      "sha256": "8d8622afd82cce7bb77714bf03eabc821237cf77226302b0d977c28a280f557a",
+      "bytes": 5481
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/noctowl/data.json": {
+      "sha256": "c4c7ae9f9068885a76aabef5c4ef189632f63af4d76e95fdfa84eeff4b982470",
+      "bytes": 5143
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ledyba/data.json": {
+      "sha256": "ae119d1592cf51c9845eae5f09aefd3432276b7ac2857c560e911d10b933719c",
+      "bytes": 5440
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ledian/data.json": {
+      "sha256": "2d94d595f3ac571927479a87e8a47d7d3c75910adc1f43d715676fabdf3016a6",
+      "bytes": 5315
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spinarak/data.json": {
+      "sha256": "e4b183fbd15bdc99f11047f934643de63290db0d67e8cf60c7e35605cc32687d",
+      "bytes": 5159
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ariados/data.json": {
+      "sha256": "0d460eeb747fa9d66d6cd54b7039e358722f729d784c0951d95dafc29a0c0c05",
+      "bytes": 4988
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/crobat/data.json": {
+      "sha256": "04d4dc2ff987b1b6b5e13affe56745d669b939bf130318a14caf5355cb7b91ba",
+      "bytes": 5219
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chinchou/data.json": {
+      "sha256": "cdfe6aea9cb625f2e73a196f419c5fe3f67139aa5b035304def2b0f7b589d227",
+      "bytes": 5265
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lanturn/data.json": {
+      "sha256": "c3d870eec3e5868361b89bcdc86c2ccc66398b09bb499a8505315eceadeb6735",
+      "bytes": 5166
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pichu/data.json": {
+      "sha256": "df608bd660e0e8cbcb3403af244265707f5b33ec542b29255dd57c9a67448ff8",
+      "bytes": 5008
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cleffa/data.json": {
+      "sha256": "c7a0d66224f5d8738b077bbc4338d5959b1bed4b1dc0f9c180fb6cf6d0ddb532",
+      "bytes": 5345
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/igglybuff/data.json": {
+      "sha256": "392b5a41caeca692b21c59dba7bf1354302978c06881e2c13759fc53681c6ec7",
+      "bytes": 5162
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/togepi/data.json": {
+      "sha256": "6c52f4ddcdc151f18d031cbb35835119590445dd6b09d221c4e62c5c6a9bf2f9",
+      "bytes": 5548
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/togetic/data.json": {
+      "sha256": "baecb3a09a0993aaa7ba0c493a3a238ad887398e9b9581d7a1bf884326867c20",
+      "bytes": 5714
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/natu/data.json": {
+      "sha256": "87f9adc1e59be63b438cd2db696ca25a0af7e54828806278d194603ab70fc0cc",
+      "bytes": 5670
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/xatu/data.json": {
+      "sha256": "4fbe20535fe3d7440bb95627dc7eefd2b33fa98d0a5cba4c5ea5340ff9b51e76",
+      "bytes": 5386
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mareep/data.json": {
+      "sha256": "4da36fbbedc69781ceddb91d42811f077d8dd22ffc1ac3d73703c672d345f2b0",
+      "bytes": 5039
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/flaaffy/data.json": {
+      "sha256": "a5c9ddd9dd0b0c54b36ceff323ab4c498c5d11d140283ed80a1c00b07e3c0922",
+      "bytes": 5047
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ampharos/data.json": {
+      "sha256": "65bce12a3c96a741d67ba8df60a66e8cd1f5d5564d28499eb8353b66602dd300",
+      "bytes": 5154
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bellossom/data.json": {
+      "sha256": "b0f41dbe1920f687d7802668772050ae267c5c34466539a63b8843a34a2166e4",
+      "bytes": 4657
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/marill/data.json": {
+      "sha256": "2082d33627b4876478b92cff51a8f3fb885f412005d9681e511d527eb591057a",
+      "bytes": 5469
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/azumarill/data.json": {
+      "sha256": "b6ae5a7bcb594f634680eef31dbf2233f74c30a5bc409afd1d7d65676d1bdf0d",
+      "bytes": 5181
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sudowoodo/data.json": {
+      "sha256": "1676f16b53e448d785990e5723aee04177201c3cea6591e3f787952a8f729167",
+      "bytes": 5539
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/politoed/data.json": {
+      "sha256": "f314c6aa5089f01333de9eaa044794fcb41ae9dc139bc82969a0cf91abb8df95",
+      "bytes": 4734
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hoppip/data.json": {
+      "sha256": "9c7fffa42809d92306494a7737b4962ba894a56a7c7e56ddac9cc78e243f4d64",
+      "bytes": 5390
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/skiploom/data.json": {
+      "sha256": "a5b4f522e7a8fd0cd00e965cfb32d8732793857ab29b32effb03ff81887e7072",
+      "bytes": 5173
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/jumpluff/data.json": {
+      "sha256": "76189443b6f1c0fe6039dd4af09688ca9aa109680ae21728c2600e1a03de037a",
+      "bytes": 5092
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/aipom/data.json": {
+      "sha256": "0e68440b91eed61459bfb013829a6f509d6b22ddeaf102aaf8d3373a7fd17a97",
+      "bytes": 5887
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sunkern/data.json": {
+      "sha256": "6924b7fe3079fdbeab846434d142fb24d4ae9c55dae381c69266a83d128a0f49",
+      "bytes": 5289
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sunflora/data.json": {
+      "sha256": "dbbe2294059e9e42fd5848d59e5519f2375deb820829859e5e5e56c0ca8bb429",
+      "bytes": 4937
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/yanma/data.json": {
+      "sha256": "58498731d40395e6103b3328f49261ee1fc00aca462c3de466a91c648efc8e89",
+      "bytes": 5511
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wooper/data.json": {
+      "sha256": "a26dd4ee53e7af51ac4c387f812087d6c96ee2a0794dbd86d1d90f8477135f12",
+      "bytes": 5379
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/quagsire/data.json": {
+      "sha256": "2510cb28214912a14627b64422343863f12017d8f6d65cba7a5f0b35ba0f93d8",
+      "bytes": 5245
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/espeon/data.json": {
+      "sha256": "2a7e390b4153269768e432f6ff4a6b66b355b4814ed8d7d1b7a88b5d8989164e",
+      "bytes": 5102
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/umbreon/data.json": {
+      "sha256": "fbf74c3d3eaf52ef35ccc1dc727a7b006427236935bb4240209b510b764b4c9f",
+      "bytes": 5068
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/murkrow/data.json": {
+      "sha256": "a815e73a8bc164a9731c868c23a41852dc341731d91fc82d0ec15a9a57971f33",
+      "bytes": 5461
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slowking/data.json": {
+      "sha256": "52a5eed8ce52ef1f23f5b2bac66ac5751020d1b5cb0eb0e8d5c52dfafd7d010f",
+      "bytes": 5702
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/misdreavus/data.json": {
+      "sha256": "1290c3137000f3e6fb4c808062838d1ad91e296e191522ca6d93a1f126dd5016",
+      "bytes": 5587
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/unown/data.json": {
+      "sha256": "266a651e5465e51026514f8db91f0431f29df183779738b51d8ab80718546380",
+      "bytes": 4277
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wobbuffet/data.json": {
+      "sha256": "927a81cf09d79f73350426cc1c8aa517da0031242268ec6480e94bc323493f18",
+      "bytes": 3791
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/girafarig/data.json": {
+      "sha256": "1ed47ccd133ebd6401121526fbd2ef56d9b9525a5e2933dd97d7126ce34aad5d",
+      "bytes": 5672
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pineco/data.json": {
+      "sha256": "b78ee83b5267775c60f6a39aeb0b3e3118fff5a9ff763f9619f057a2409c1ccd",
+      "bytes": 5296
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/forretress/data.json": {
+      "sha256": "5ae67eced71a014b8a9c4626af826ad860bb9cfb1d8de65639d3bffcd5051a1d",
+      "bytes": 5324
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dunsparce/data.json": {
+      "sha256": "98ab57b85eae4c7f1b7048f1871ac7431897553de6dd342dfc7ec17cbf1accfd",
+      "bytes": 5651
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gligar/data.json": {
+      "sha256": "6fb49d0914b074d1bbd97f050e949ed9804b77f038b66cf57c8f51941e6b32c5",
+      "bytes": 5785
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/steelix/data.json": {
+      "sha256": "65a848c058b60d5ccb6dc69b77b6f98df0e217764266953f07c223991e39e2d8",
+      "bytes": 5519
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/snubbull/data.json": {
+      "sha256": "9e44d9a1d5ec7aa3a309d0fbf85d823c95f6ea46079f45b5c8f9d6a4b943dc28",
+      "bytes": 5703
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/granbull/data.json": {
+      "sha256": "12ceb7e42a0d4c87c94004f87fa68470471a05baf3aba235aaf217b9dc428963",
+      "bytes": 5404
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/qwilfish/data.json": {
+      "sha256": "df049667b50f8fd71bfb57bc101304cc0d3847d913a5d6bdd01d7e039205f8e2",
+      "bytes": 5453
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/scizor/data.json": {
+      "sha256": "ddc88bec6f768cf1a15640a2f832181f135f003aad5a65f243ed7d8567871043",
+      "bytes": 5305
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shuckle/data.json": {
+      "sha256": "6afd3b5335da15585005740dccefa7efeb20ffff1b7993383cd550b2570b0538",
+      "bytes": 5028
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/heracross/data.json": {
+      "sha256": "884c44bf50212b3d99756b1b91d0ee7409d7cb211736de7ec05b2d0f4492008c",
+      "bytes": 5386
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sneasel/data.json": {
+      "sha256": "776ad108744916659a76d75b70cf44f23397f1a665f5b85697b7323ce603bc15",
+      "bytes": 5889
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/teddiursa/data.json": {
+      "sha256": "152bad358002949302665888fbd06545fd4f4eda7a09e9a452535054320202da",
+      "bytes": 5745
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ursaring/data.json": {
+      "sha256": "46aedd33fa9b019bd034957ad4bb02829559b2ea5918554aeede4bd1d22bd2d8",
+      "bytes": 5370
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slugma/data.json": {
+      "sha256": "a6768fdea087f6f2073d3eefe8b5d41c926695759252aeb6ee09adcabeebb63e",
+      "bytes": 5188
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magcargo/data.json": {
+      "sha256": "3d8e8e1f3493bd6494c861d9e980abaf3ed4a2a612682d750652d31633183665",
+      "bytes": 5161
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/swinub/data.json": {
+      "sha256": "16ab8ab40ea4c16b047942b58e9b4b48fcce77847e89365d6ad40a7ed5b8c568",
+      "bytes": 5425
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/piloswine/data.json": {
+      "sha256": "f92e4cb9ea5249157c548f17ba30c601016910077c4d167a472a0503fd8e7320",
+      "bytes": 5338
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/corsola/data.json": {
+      "sha256": "353e1a11648d8d99a86b0108911d85d345b54b75788d9092c9940f53dca95390",
+      "bytes": 5561
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/remoraid/data.json": {
+      "sha256": "719fa90be1440a77cf0cb59bf392bba3b69179a98a4c1de14524dd49e68b3926",
+      "bytes": 5151
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/octillery/data.json": {
+      "sha256": "2a29884c6e3fc2c81b14757682863414ad0331451271bd3afb22e9789d5640fc",
+      "bytes": 5312
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/delibird/data.json": {
+      "sha256": "265d4c3d07625f5932054ec0c6b37d11f6a21fe545813d37df4d85b0f1a01e03",
+      "bytes": 4837
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mantine/data.json": {
+      "sha256": "c2a2e14064ff40e63f0733286c59718cb59015fa1b0c395b4d2b214dabb953d4",
+      "bytes": 5656
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/skarmory/data.json": {
+      "sha256": "cb46fe32b8b5b2e3baac89b754883f59b6332f391b14dd673de08e5f8ae400e9",
+      "bytes": 5450
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/houndour/data.json": {
+      "sha256": "c53c60f1603f854131bdd3fc4d99cafa518780fcfb5a7e20f03d29d41488ecde",
+      "bytes": 5520
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/houndoom/data.json": {
+      "sha256": "89badc3da4ad6433f5fdca3088c9990915b38c6cdeda95721c6381a195ae2b1c",
+      "bytes": 5165
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kingdra/data.json": {
+      "sha256": "67f328b3600b6c8874516ff24a597ee4829108c3297c71d7dbc2c694e483478f",
+      "bytes": 5012
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/phanpy/data.json": {
+      "sha256": "a798e283b6f6e9ee3a48e3629ae69df4408d3279c9d83b929008a0b5f6e95d20",
+      "bytes": 5333
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/donphan/data.json": {
+      "sha256": "5abef1b068ff00b81aa9ec57f694ad40f2ad4d795ce08dca66bc417d639a9e23",
+      "bytes": 5262
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/porygon2/data.json": {
+      "sha256": "904cd9e8b132075eed23c535d41f547e14c76a5dee71a63b0e27e877096dbeba",
+      "bytes": 5335
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/stantler/data.json": {
+      "sha256": "b92de79870835fb843357bd5fd1423c84c821a262632abb6a27c84ffaa05cc32",
+      "bytes": 5541
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/smeargle/data.json": {
+      "sha256": "9854666bebc5482903c7178898ba832d35984d108836a90bf6e3ba43d7ab9831",
+      "bytes": 4008
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tyrogue/data.json": {
+      "sha256": "10b98512fe993c0118f9e3d7a6d515f5623b76921d9259d831d125708e961120",
+      "bytes": 5091
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hitmontop/data.json": {
+      "sha256": "d8d310acf5fa2c639d3b10dc58a732f8d49e0d2204a358ca4292a03b72e3ebff",
+      "bytes": 5094
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/smoochum/data.json": {
+      "sha256": "78119760d055c1238e5e7a3786d4754acc70f8e62f33b25fb5965b4a7231fd58",
+      "bytes": 5501
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/elekid/data.json": {
+      "sha256": "4dfeb71140de3dc44e91756694dd3e72344dda3e1a3871de7f9106daa351ce6b",
+      "bytes": 5424
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magby/data.json": {
+      "sha256": "eace6e959c94e1a46177ad32301168b75f20c3aef8aad329043e4ac8f6f1b4a4",
+      "bytes": 5271
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/miltank/data.json": {
+      "sha256": "bcda9f7f6a438c6284db4d7199209a3669c443a8de4e3ffd079ff7f03e6444c5",
+      "bytes": 5724
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/blissey/data.json": {
+      "sha256": "663947b255b0dec60b1684003b2b5ccce4c0476472e6cea63e5ced99e63081e5",
+      "bytes": 5703
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/raikou/data.json": {
+      "sha256": "d9eefbaa7737d171d79cbebb2d7c37838fdb1d58a6558f6466896d3d8b8f9bc4",
+      "bytes": 5107
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/entei/data.json": {
+      "sha256": "96e06258387e128d43c2af0b153ae8f5be72678f19db234f7c12fb1cd120f2f2",
+      "bytes": 4862
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/suicune/data.json": {
+      "sha256": "93366b7f56bd280f1f387fee2e4ea449acd85145fec898d1988d10860403f751",
+      "bytes": 5112
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/larvitar/data.json": {
+      "sha256": "5d08c7298fc1fc099971f7fe8bbc6f48de37ac6e9836641281fec322dd70c75b",
+      "bytes": 5447
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pupitar/data.json": {
+      "sha256": "ed7d09016eeb1115ed6ed15817b101f5386d151956334131c45c8cec9dbd1ad1",
+      "bytes": 5262
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tyranitar/data.json": {
+      "sha256": "28b4c95b4540ddab504b039110971b67b5c87a25cbfc88cf982281282548a47f",
+      "bytes": 5874
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lugia/data.json": {
+      "sha256": "e949940f95ac0f06ea96ed229ebdb3e140be6f0b54c0e829597615e0a58a22b9",
+      "bytes": 5744
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ho_oh/data.json": {
+      "sha256": "ad71f84f16ea202a8ddb0ff0db839cbb5027ea0312cdb9d6250ca081ba378f90",
+      "bytes": 5556
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/celebi/data.json": {
+      "sha256": "ba10357b3f3bbc2169488287375f756b8e624c79785e215adc0ee2d68ee46b4e",
+      "bytes": 5520
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/treecko/data.json": {
+      "sha256": "cbee6b9bcf1c7e16f256ce6ffe42f340bb273c4d67beffc751334f021e158afc",
+      "bytes": 5585
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/grovyle/data.json": {
+      "sha256": "6d5328262c9f178ddabf339f9ce8da36f23a1167fe5c12d2da3f933a8a4f7339",
+      "bytes": 5203
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sceptile/data.json": {
+      "sha256": "45e4e9331d866d833ee0d55aada1398ceb73af0108692ad2197c0a3af6551bd0",
+      "bytes": 5485
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/torchic/data.json": {
+      "sha256": "10bed2f269449839c2ce65220b24721c2b725549b8250927de1c846900a9fcbe",
+      "bytes": 5328
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/combusken/data.json": {
+      "sha256": "d2249c2341d37a4ca5a4b1dda38a2c234df773866c85860e08f71dd26dcc2769",
+      "bytes": 5396
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/blaziken/data.json": {
+      "sha256": "d228d25d98df93da8c8e5d0a812b41b4bf9001e24df5d41dd1d7eee9dfb758d7",
+      "bytes": 5496
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mudkip/data.json": {
+      "sha256": "fa28577654192b983eabbdf80bad5bbe61b5441087e7175b10e26ed694bf8ab6",
+      "bytes": 5468
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/marshtomp/data.json": {
+      "sha256": "8a4df41604862844831969b336f03ae26c96f54eb934573a473b38867b849f1c",
+      "bytes": 5305
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/swampert/data.json": {
+      "sha256": "2f6e0c5656202688eb5239d41b011ca3a36284e3ee94b9a1b5a5cf14881f4e1b",
+      "bytes": 5452
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/poochyena/data.json": {
+      "sha256": "e865de2f98126f0b74727d925b9af61d32b32d0f015d1da16f3b344112eb998d",
+      "bytes": 5264
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mightyena/data.json": {
+      "sha256": "2aa0928adaf587434635caf42d25db0b483c65cc8d113da2c24d9083d07da783",
+      "bytes": 5018
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/zigzagoon/data.json": {
+      "sha256": "9c30800a4760b9da22f63bd31ad8003922ca6a284d7ef10821ebe335752dd5e6",
+      "bytes": 5420
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/linoone/data.json": {
+      "sha256": "859ecd861adb9a05cc51c4085491a888a9f677a0c7e8c29d5d7cbfb0cb919447",
+      "bytes": 5392
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wurmple/data.json": {
+      "sha256": "7d81f87517d65c5e359b997ea1cd542848fdc646671e2cf8bc13b40d9388910c",
+      "bytes": 3959
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/silcoon/data.json": {
+      "sha256": "3b2bf530cdc3ef76721e5934a3c4303ffc71d7d82b71611e9b24c48472312946",
+      "bytes": 3814
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/beautifly/data.json": {
+      "sha256": "93825d094e084504ea3b1bacf842254f581f0037b946fce158275d36b756553b",
+      "bytes": 4898
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cascoon/data.json": {
+      "sha256": "f65d2f82bcff1a566c8e0eb905c9c7dfe1c0374b466ae4142d41a23805894873",
+      "bytes": 3819
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dustox/data.json": {
+      "sha256": "964ba8072e41c1d8fd10c081aeb597cfa35290b05bb00c208d5022626e86932a",
+      "bytes": 4929
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lotad/data.json": {
+      "sha256": "1f3efc6b41e16a3246274860330c6f15eeb70e119b56cf29d1b70e3eb008e1e3",
+      "bytes": 5166
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lombre/data.json": {
+      "sha256": "3c9234b416f3aca7451e310d1d2711afa3df43a677212df4d42678ca8670391b",
+      "bytes": 5230
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ludicolo/data.json": {
+      "sha256": "3f53267dcea29799615973222416c8ea21bdef1918a60b0a82fa3f382f725d2e",
+      "bytes": 5002
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/seedot/data.json": {
+      "sha256": "b9c60ea908a8e7ff172249855cbd34c443778dac6e68ea879122a1bb00db52fe",
+      "bytes": 4956
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nuzleaf/data.json": {
+      "sha256": "4a58ab16daf028101926395593588851a64ed19c2d60fe0f6d9e7a9488c833ab",
+      "bytes": 5202
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shiftry/data.json": {
+      "sha256": "56d3d97758805c1cf186b0cc2a491a935b3b0b94a51aba5178038ad8a6d9c476",
+      "bytes": 5239
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/taillow/data.json": {
+      "sha256": "e7d8f88b2bb26e6a13a6603c0b81cbab240c01cbd1d48d59cc7017609bba36b3",
+      "bytes": 5181
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/swellow/data.json": {
+      "sha256": "e2c5fdd180bbdffb122601543d22d2d32e2226bec3214adca3b882136d5bc670",
+      "bytes": 4930
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wingull/data.json": {
+      "sha256": "7bfb8fe708706d33a284ae8555e15903ba118ecd7febbd0997ff34e691f75685",
+      "bytes": 5314
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pelipper/data.json": {
+      "sha256": "757e223e9ff1aae7a1f4c12788955de5625e816f97b35d014511e4caa6d6e28e",
+      "bytes": 5264
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ralts/data.json": {
+      "sha256": "6a0c5e82ab48150959c56cad6726eade69be5835f1427e4ef755646f01f30cb9",
+      "bytes": 5648
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kirlia/data.json": {
+      "sha256": "8a71b91abb2e75e61d14fd5d962f67da96a5e90a74ad574a562cd0676e25932a",
+      "bytes": 5564
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gardevoir/data.json": {
+      "sha256": "70a75586d14f78f34bee40ef65d2a10296cb422a97ddb508a36f42a3ff6498ef",
+      "bytes": 5512
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/surskit/data.json": {
+      "sha256": "f24c53f036dda6eab8878797e329f3a1434af42f5f5b92daf4425ec102ae8be9",
+      "bytes": 5001
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/masquerain/data.json": {
+      "sha256": "5ba4b8a726934557c327e8910ce79cbe9ac755d82323facd15e474e1131e0aad",
+      "bytes": 5223
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shroomish/data.json": {
+      "sha256": "5d5730eab6dd50137eb4a99069dc412c12ef7d08735531857807d5e416c45001",
+      "bytes": 5136
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/breloom/data.json": {
+      "sha256": "6ee7178a8a8f8027d232be985ba817d87c5db9f26c985ada8da77dd380d1ce60",
+      "bytes": 5417
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slakoth/data.json": {
+      "sha256": "675604a277cd5fa8fa106fb2e95c73f7fbb1806dd647f24eb3ec2c54bbca0d2e",
+      "bytes": 5360
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vigoroth/data.json": {
+      "sha256": "1c9f7976f3805e14110ef1f32dce2048f8a14326a78cfa113ba291ab71a14381",
+      "bytes": 5324
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/slaking/data.json": {
+      "sha256": "b524e8fa2a3c6591cd2990acd2a42656ebe69323a5676c5e2df4ccc66fb07b04",
+      "bytes": 5408
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nincada/data.json": {
+      "sha256": "d3257a937888f7e54964c5f4362af89524c3c62e13e924b7955af3a0ac632c52",
+      "bytes": 5076
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ninjask/data.json": {
+      "sha256": "a9950bf67d0ee2a004a32dc6ede650adf1cda29900bdb053683c7487a653b4a5",
+      "bytes": 5224
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shedinja/data.json": {
+      "sha256": "2bcde52eda4de6525367b5c5d7e51102c90d35591786ee4846bee4ec36e42670",
+      "bytes": 4957
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/whismur/data.json": {
+      "sha256": "cf5289f4d132b9d38b8c65e18bcb366ae87c736388f6d1cea845c47b7f5319df",
+      "bytes": 5259
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/loudred/data.json": {
+      "sha256": "964ae7a100546b7ec925053d733ad576081a62585d601bba1a8932d0fcd5d43d",
+      "bytes": 5265
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/exploud/data.json": {
+      "sha256": "80ec278ced3998c363cd1d30768970cdd3463883e45221671f470947ba579b52",
+      "bytes": 5548
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/makuhita/data.json": {
+      "sha256": "f0a0f9379e09184a8f290a0543bf88d13fb3e10af482ad520325683aa5594d9f",
+      "bytes": 5678
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hariyama/data.json": {
+      "sha256": "d7c083937f4f6c6b1075ca5c6f31870c87b446d6198cb38e21ff38e49fb5b3cc",
+      "bytes": 5505
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/azurill/data.json": {
+      "sha256": "1269df66f2d3a93e68e93e4e0de7e9aa53ac55764ce897ac35edcf3ea05e69af",
+      "bytes": 4850
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/nosepass/data.json": {
+      "sha256": "472b96b294d5da452d5cbf8f151b23218f100412b9f87538dea3d75cccc7246e",
+      "bytes": 5271
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/skitty/data.json": {
+      "sha256": "9fe5953730846ede89399c433e6f5502ce199010ac3faf53a47ef98d683b735b",
+      "bytes": 5793
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/delcatty/data.json": {
+      "sha256": "5c09689a730d65660126915c9c2f1306bc7aa81c513b3bab634b0591a9df1f80",
+      "bytes": 4832
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sableye/data.json": {
+      "sha256": "dec0cb475a93554b1c3c4e6847259cf6165472b37311a228f840992ac2cf9d14",
+      "bytes": 5810
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mawile/data.json": {
+      "sha256": "269810dd9d758993c4a74c993331936df47da4d6b813934406673a5866327235",
+      "bytes": 5788
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/aron/data.json": {
+      "sha256": "d62228426cf5ee37368d190e258d924a4c9bcdf3e881fabb51d118bac2c84734",
+      "bytes": 5641
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lairon/data.json": {
+      "sha256": "d7b5caa236af45d131f8862395370d261e154bd55b5e9471fd49f8bb542fce10",
+      "bytes": 5494
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/aggron/data.json": {
+      "sha256": "84a181fed4531ee3a0bc73b88c041867e46739b44fd462a526d1092471e20258",
+      "bytes": 6048
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/meditite/data.json": {
+      "sha256": "1961106f1f33f72d06d9650086182a4b1aac99de87d0846ab42410a417b4d544",
+      "bytes": 5769
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/medicham/data.json": {
+      "sha256": "361f8a2596eceff5e4ae42714d65f43d74b94709baaa387f306b90325b9aa0d4",
+      "bytes": 5554
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/electrike/data.json": {
+      "sha256": "23c871a78f8586f200b990bc753855df88fa562c45b663ba288c37952a941770",
+      "bytes": 5236
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/manectric/data.json": {
+      "sha256": "4b84b0028db77bebe5498de383de6a5489d43ba041906a825bc0b81aa978dcd8",
+      "bytes": 5079
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/plusle/data.json": {
+      "sha256": "2163803902f209587d2cefe14927e0de85606474adc613979eb23bb82dca9863",
+      "bytes": 5225
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/minun/data.json": {
+      "sha256": "a5f4d4f23c00ece210ee48de879533f33a32ef6c1f89e9598a0788778ebd3fcc",
+      "bytes": 5213
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/volbeat/data.json": {
+      "sha256": "4954b8b0cc6a93b4d1dea2b266915a915babe7836f0d4f50ab85935e794cec44",
+      "bytes": 5398
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/illumise/data.json": {
+      "sha256": "dd9e0562fff8edf559d64e380b81480fe1e14e970da5753ae467fb0786d7be3a",
+      "bytes": 5266
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/roselia/data.json": {
+      "sha256": "603577a9b39d3967c2e3b847a87d819f9ed9ea39afd839c439274d26a62aed4e",
+      "bytes": 5428
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gulpin/data.json": {
+      "sha256": "33c23f1957cd35e35b82c3e804657c6d41b89bc04a8d5f197e997ec8bfe1df13",
+      "bytes": 5405
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/swalot/data.json": {
+      "sha256": "d58b7ccc33a3ff15c0ad8fb09b39f9c0a8f9ccb049b0b66953e5e89db45e2560",
+      "bytes": 5298
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/carvanha/data.json": {
+      "sha256": "4c5fe668fcf326a0775875ac2004d790d2dd10fe84180b95c51a6111eab235d0",
+      "bytes": 5280
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sharpedo/data.json": {
+      "sha256": "12d9ceb32992b4bfdc8f78ef7e8ae34a56be8c35cd412d02415a09473e83e34d",
+      "bytes": 5452
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wailmer/data.json": {
+      "sha256": "7b22885f008731f04664943eae30e445b5345fbee332e75c68b55b660e6a5377",
+      "bytes": 5351
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wailord/data.json": {
+      "sha256": "7fd3d832f34046fd253e2fcf027c5928c9a8b7263a3eff42ae76be535fa8fffd",
+      "bytes": 5120
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/numel/data.json": {
+      "sha256": "3805a562738892299c2924e6a240fca7949f8d975ec7f01d12b10a2258a80288",
+      "bytes": 5254
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/camerupt/data.json": {
+      "sha256": "853ecdc40f1af9402cb7b0afa25f8bd2e8121e85e735a28812a537215be6b43f",
+      "bytes": 5157
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/torkoal/data.json": {
+      "sha256": "4dd866c824d1b32cb3d32d4c8362fd514488903363f9f90a4e9aedd5cd4b727b",
+      "bytes": 5292
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spoink/data.json": {
+      "sha256": "5a1456a848dc1e6ea71445bba8eefdab485b1199c5a3251ebb27fa5fa8a04051",
+      "bytes": 5509
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/grumpig/data.json": {
+      "sha256": "ff035b583cacb9db8a2c38a9c9dd3b00960b8363a2595b0135cba962448b8e8b",
+      "bytes": 5583
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spinda/data.json": {
+      "sha256": "419c80a71af714518097e51ba73f88b61a6a05d5e8fd9beddb8f831339430380",
+      "bytes": 5730
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/trapinch/data.json": {
+      "sha256": "22fafb7fba347f0ada271c06d8147834cd5cb7b053e32246313f896606877807",
+      "bytes": 5053
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vibrava/data.json": {
+      "sha256": "247bcdf45d1457ac91e1d68911c957bd79115f41395161ef5f7a0c60281df910",
+      "bytes": 5197
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/flygon/data.json": {
+      "sha256": "f35d69cc0bab6c79cce5ec897092f50f35685b7ffe356db91b8df1ef9720c00c",
+      "bytes": 5332
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cacnea/data.json": {
+      "sha256": "a9b1125dc606f5ea65c632b7810ace0033edf2b9a499edf09647659fc575b66a",
+      "bytes": 5562
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cacturne/data.json": {
+      "sha256": "33480e665d654974fb751ccdf72713b389d20f4306a52f3286532f53a5a3e454",
+      "bytes": 5411
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/swablu/data.json": {
+      "sha256": "6af09d495b04cb6b4abdc67a65daa28caa62d25388167e05048352e460b142f2",
+      "bytes": 5304
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/altaria/data.json": {
+      "sha256": "73108ed825e0c31d94e6f782055c00cf7003d1a25d0a59180d6d35a96e0dba21",
+      "bytes": 5280
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/zangoose/data.json": {
+      "sha256": "1a9364fedf5a063c78a31c83be6a269e35f8085bf40b941e2716ebfc08fa70d4",
+      "bytes": 5883
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/seviper/data.json": {
+      "sha256": "8f11bc060b10cb570a211d5da6c58e9e9f47b2a8df2a8e2460ff343e5b5c4729",
+      "bytes": 5239
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lunatone/data.json": {
+      "sha256": "b7deaae6a9e504b15b7a82501f43dcc5c68fff38b40d62c272e8c8e5880d85f2",
+      "bytes": 5323
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/solrock/data.json": {
+      "sha256": "e64b7bdc4e17a2e0809d7d43ac76a3ec2ba041cb8ae866baa42b2137bb3c37e2",
+      "bytes": 5352
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/barboach/data.json": {
+      "sha256": "17cc17fad32f0bcb69deb00483d837bdd9b39a9b23202a2f059efbfdf28b05ab",
+      "bytes": 5217
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/whiscash/data.json": {
+      "sha256": "d3604d0573799886322708d83cf58cc61451f005fd4094054c031fcb806b2db2",
+      "bytes": 5239
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/corphish/data.json": {
+      "sha256": "5ebc6096e42aec89588be516fe3b5d5b75ec8fc9933d3440b11ee18794fecb3a",
+      "bytes": 5573
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/crawdaunt/data.json": {
+      "sha256": "4dcbef6037d7ec488446e83bd5ae8d5b65fdbac1fbd07695bc46f2e9897bb98e",
+      "bytes": 5471
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/baltoy/data.json": {
+      "sha256": "cd8afba5111c6e5377971ba0d3113a39f58cd18b8fac3e26e65cd406654cd6cc",
+      "bytes": 5328
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/claydol/data.json": {
+      "sha256": "42c41f1e3ca36c4821dc57fb17b068c5b15a7cd9e6a6291b09c55e6cdc8fddb8",
+      "bytes": 5486
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lileep/data.json": {
+      "sha256": "8a96f985b6a2292b90fea92ba437850e85eaa238f38cd34b96ac6b5c55a74fa8",
+      "bytes": 5247
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cradily/data.json": {
+      "sha256": "6977e60ccb9295719a7ba3078569bbe1dd316bfa5c1569e101f291db654d0f75",
+      "bytes": 5134
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/anorith/data.json": {
+      "sha256": "5b49766543496fc9e005959e68b11a509ee8f0086f8b34ff68ffacf0069ac9ce",
+      "bytes": 5310
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/armaldo/data.json": {
+      "sha256": "40b0487faaf4b6c19df3d62233a980a47307b195382824328677a7f413b0c734",
+      "bytes": 5183
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/feebas/data.json": {
+      "sha256": "3534c7dfc55c997696e253d7880f632a64884f1f21dd01d4024a1c2c2dbd0c1c",
+      "bytes": 4686
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/milotic/data.json": {
+      "sha256": "6858d878fe2d7fbd9dc7b527f17749e8fd5edcbf8386cd82c32a8f8ed4f0a8da",
+      "bytes": 5010
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/castform/data.json": {
+      "sha256": "fa95756119598a3608254829fd0833eba108cff9186aa01204b7c11401f0c9db",
+      "bytes": 5077
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kecleon/data.json": {
+      "sha256": "12ae2b9587a0362457f1b709b804712560694817a9855aa61bcf79e1d4acde01",
+      "bytes": 6038
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shuppet/data.json": {
+      "sha256": "a4aef4c4ea30ba54c6839814c77e92571a5aead1c53484a2126446f00a52b824",
+      "bytes": 5564
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/banette/data.json": {
+      "sha256": "803fd79a773a6ccd296b0f3a032f56cfc47df5e32e6a6d3f0030d4d2e2e07214",
+      "bytes": 5415
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/duskull/data.json": {
+      "sha256": "af499c058a7cb653a061a764c61289110be316febf82e677c7efa017db8df5b3",
+      "bytes": 5419
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dusclops/data.json": {
+      "sha256": "8150b6378bd4f835f60a3c6b66cccff219fa424044d2a29679f7ffbbf1e3e1b4",
+      "bytes": 5787
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tropius/data.json": {
+      "sha256": "667cc3019702148ad80354dd58a458f14bf92e34b6c1a1dcfa4c33f18f69c243",
+      "bytes": 5440
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chimecho/data.json": {
+      "sha256": "85212333b294fb37653f10c6b86cb909ad229df3742db62257ff1329d31cd695",
+      "bytes": 5400
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/absol/data.json": {
+      "sha256": "7a9001d6df9aa227929e6f46e6cb80585f2c169d90dd5748d4b8ee91db252364",
+      "bytes": 6158
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wynaut/data.json": {
+      "sha256": "3fe5e9dfeecc100e860a6aaa60c8bcbb8bd37ca1bc2a3fa08ce9e3bf2e91331b",
+      "bytes": 3961
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/snorunt/data.json": {
+      "sha256": "6627f09592aa378ffd235c3bb32eb52c0e85ee8bfd58ac4fbf683f833a1b93f7",
+      "bytes": 5119
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/glalie/data.json": {
+      "sha256": "f7c1ba77fc19b572aecd22530d8d633aeede4b889db500e4e1456193e0800736",
+      "bytes": 5036
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spheal/data.json": {
+      "sha256": "7c05e102137f25ca1720b665f6b9669f08f311dad3643ea2702f5a6afff7f100",
+      "bytes": 5317
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/sealeo/data.json": {
+      "sha256": "1b91d8df31c09b991e46c26d3a0ae1e14cb3b2c968cf36d42462129a755eb352",
+      "bytes": 5019
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/walrein/data.json": {
+      "sha256": "203d90e4c178f034bad63e3bc4c50f362fb7a4c63af1e2b4a6ad6c1776b05e2f",
+      "bytes": 5219
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/clamperl/data.json": {
+      "sha256": "750d3ed20147c061c4529a4f576ee275031a954223c0acf15312d13cb161733c",
+      "bytes": 4871
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/huntail/data.json": {
+      "sha256": "6cfc2746b893f205e26c4c0eb9b63a9f652edb9dfeeaf732267e95e2d5d4fd30",
+      "bytes": 4887
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gorebyss/data.json": {
+      "sha256": "af7be88a08d5352dbce9ad052009c9561d1e3f92a7fd71559ebfd177970b1088",
+      "bytes": 4961
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/relicanth/data.json": {
+      "sha256": "b8bfa47cdae45378d3857d4f4586b389d3f97607e782c73078d76d4629b5a1c0",
+      "bytes": 5489
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/luvdisc/data.json": {
+      "sha256": "620847dc56379f7c1a01eed272afeff4bf238c7066ebdffbd1d1ae99649d74e5",
+      "bytes": 5048
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bagon/data.json": {
+      "sha256": "7c7188646c1b72e172fea7cf531e4c441514a9dcb5f4ca46f21b3bcdca6a1f39",
+      "bytes": 5236
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shelgon/data.json": {
+      "sha256": "c18c83c6657e6448caabd81a2947a4feee25e59f9ebccd3ddc6db9dfe7c82395",
+      "bytes": 5218
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/salamence/data.json": {
+      "sha256": "3c16a4ae2eff9d4ca0eb8bb10f4b865a39b1a9578a5f29955bebf6a151cc4e98",
+      "bytes": 5513
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/beldum/data.json": {
+      "sha256": "846359da89f90a2b51524a44f567b6fc543fde836ad430527cca400236237e15",
+      "bytes": 3892
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/metang/data.json": {
+      "sha256": "d57df6372150eb86e376e1e495a119c06b2683750b85c7a19ccda8103bc0e107",
+      "bytes": 5578
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/metagross/data.json": {
+      "sha256": "40a0a42d7f8fcc1b36f210861bed0d848379a87dd7b2a593e72b5953ddce7a36",
+      "bytes": 5541
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/regirock/data.json": {
+      "sha256": "7b8257554009adc7f59c0c5c20005d69e6b677dca01c0adc7b7fd7b41fdcfca2",
+      "bytes": 5315
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/regice/data.json": {
+      "sha256": "356c97b8106858c1eca1a5932a2ae0ec25c962bf32609c28201f6d3d3499218f",
+      "bytes": 5286
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/registeel/data.json": {
+      "sha256": "990e204b31ddbdf87341d25aec972fa1d237d755c9c77845a358df3745328b43",
+      "bytes": 5398
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/latias/data.json": {
+      "sha256": "acf084114cf6400addf93f59307485cbc8ead5864273ba3fe3da3ba0f425d86a",
+      "bytes": 5630
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/latios/data.json": {
+      "sha256": "5946271bba3ecd78083619198ac6ffe88c2a44dbecbb9421468577e40c2a948d",
+      "bytes": 5624
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kyogre/data.json": {
+      "sha256": "606b5ee78c9c221380516a524397cc393df0ad1190a3a0fc7a65193bb8aa10dc",
+      "bytes": 5220
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/groudon/data.json": {
+      "sha256": "590ca5e47b72657f92a8dce88479cfab3bbc002e22e37c9f35e27c5b2d9cda56",
+      "bytes": 5403
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rayquaza/data.json": {
+      "sha256": "88e18c89cdcc17f2612a83fc40f4b9c049d9601136705e7a9ad12f326841393a",
+      "bytes": 5529
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/jirachi/data.json": {
+      "sha256": "cbfaef1031774a6f16fbae62b13b590940beb39920cb9d13d1cf62e2b03540b7",
+      "bytes": 5641
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/deoxys/data.json": {
+      "sha256": "de717878e5fa1c60c80809841aea2be14651011f34676585f6c1c285b2b57230",
+      "bytes": 5652
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/turtwig/data.json": {
+      "sha256": "83f4ab8e3de79f2f5211927b86d25dd033971d39f91b556bce63f873347f2ec9",
+      "bytes": 5388
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/grotle/data.json": {
+      "sha256": "df3fcd274d93063116de112415892023220f23a8f0d854861d05788bf0152672",
+      "bytes": 5069
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/torterra/data.json": {
+      "sha256": "4f6f4a5b8f3d5436ed88db213598e3fec114380d4ff73b0c8bc5733ee668cb95",
+      "bytes": 5310
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chimchar/data.json": {
+      "sha256": "c16fbd0009ef377486af60a93cd518e33eef288f4371d36f7e1e7342f89a829c",
+      "bytes": 5692
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/monferno/data.json": {
+      "sha256": "f7ba78553ba93243dc35723a9dcac366320e1b305f2696f1227a8cd7dcdd66dc",
+      "bytes": 5465
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/infernape/data.json": {
+      "sha256": "f1ec65b29f9326e8a429b3b45924f55714e7aff17d53c859faa74d0fb35a7593",
+      "bytes": 5543
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/piplup/data.json": {
+      "sha256": "fce66d7ac845e28d2e22ce71a8fda20b47b1da09c9b85bfa17139ecaffc20fcf",
+      "bytes": 5391
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/prinplup/data.json": {
+      "sha256": "49bc98815790c7413083f9d3e54e295827baf8dfa0c8246ee287d3a701923b63",
+      "bytes": 5185
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/empoleon/data.json": {
+      "sha256": "94f3725c88a870ac03655cc4da7e7bbf4e58aa22f673772561107de25af5c20d",
+      "bytes": 5489
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/starly/data.json": {
+      "sha256": "5b3339c522eedf7ed89b0f68274fc09835994fda30e2ee856981e6c7ce729fd4",
+      "bytes": 5135
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/staravia/data.json": {
+      "sha256": "41608ee61e2ca0f26f86cd02bb98cde4e4c775aa438580a2c539539ade9d50f5",
+      "bytes": 4947
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/staraptor/data.json": {
+      "sha256": "748543a1c87a754610310317d56cda9f06ba24663f57b0435738335df6114442",
+      "bytes": 4941
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bidoof/data.json": {
+      "sha256": "01efb0491e4518717c82eb71b2d4bf0b6c3ed395186cfdcf5565807a4e228def",
+      "bytes": 5425
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bibarel/data.json": {
+      "sha256": "faeea2fe97094f89dec6b59d7496b5c5b13817faf8770e934902dd7a89740475",
+      "bytes": 5346
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kricketot/data.json": {
+      "sha256": "a92245e8716449da23cbc2f23331b6e033e073d037f8113b194b11eccfb44c3c",
+      "bytes": 3960
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/kricketune/data.json": {
+      "sha256": "e0c9728f85431c4341f34e75dcc44cae4036a5882ad1b1e30b2bce08566923b3",
+      "bytes": 4868
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shinx/data.json": {
+      "sha256": "4d16618a902b11086886a52df03546d0ab6ccf43784afe17c9cc1cfe95d18dcd",
+      "bytes": 5101
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/luxio/data.json": {
+      "sha256": "3a196fdf3df6f708238d05752aa0ed2f6d9e3afb3c2724d11ce63df123745fdd",
+      "bytes": 4895
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/luxray/data.json": {
+      "sha256": "0ea7a7f1975ffd4ad2539898e771d51289b69574fa10a88ab152690a223e2b7e",
+      "bytes": 4916
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/budew/data.json": {
+      "sha256": "c1c4b18475f00b1fe8469bde9a950f63ec7ca191b8610275b9ee87a552104d0b",
+      "bytes": 5046
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/roserade/data.json": {
+      "sha256": "996bd55b1d34c64cb7031c806b87030512bf489d204e34389e977ff9d2856966",
+      "bytes": 4704
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cranidos/data.json": {
+      "sha256": "02d4af8fb9c0870cb290b0b4b48917ca7a2c5aac70ee47434fb5703fa1638116",
+      "bytes": 5648
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rampardos/data.json": {
+      "sha256": "287b744abf52335bac3ec1e2e5c6fe1bb55c537372e18900e66d94a78cbfcad3",
+      "bytes": 5347
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shieldon/data.json": {
+      "sha256": "5fe69ed794d8f41ab160666cd398e57f9624ac9a6112dfa0ebc51cf628505f3f",
+      "bytes": 5481
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bastiodon/data.json": {
+      "sha256": "80fc802494f07f36d41ad86bf049f7e17227605a199caf9b0b06aa45cc6f53ed",
+      "bytes": 5274
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/burmy/data.json": {
+      "sha256": "031af6340a7b9852047368dd91c5965672618f1527e0e29a834121e895a0b449",
+      "bytes": 4071
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/wormadam/data.json": {
+      "sha256": "080c72fcdd64a8149127e09756560cb20d549469657d68049eee002cdf177325",
+      "bytes": 5017
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mothim/data.json": {
+      "sha256": "fb5ab108096c30f3a63f36b69ac5ce05644971ee55b4b4798abac32a33ce8290",
+      "bytes": 4952
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/combee/data.json": {
+      "sha256": "6dfe18aefab3708f7886d085e1d7405bb2fc5c1211f01bb6845b1081b7cfa08f",
+      "bytes": 4006
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/vespiquen/data.json": {
+      "sha256": "1cf7a03b0f78f8d713b613cd8b3138c316ef10ef0d4c298464a36269d9fddcc4",
+      "bytes": 5117
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/pachirisu/data.json": {
+      "sha256": "3ff78c87189c8f83dc6b2c851ab05aea0ce46cb60cc3d59015aa526edfc03820",
+      "bytes": 5281
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/buizel/data.json": {
+      "sha256": "75816ee1f057fd2fe33a6e9327a058716ce85871b895a72348ad18801fd5e029",
+      "bytes": 5288
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/floatzel/data.json": {
+      "sha256": "f2b87a5411c15ffdde7639eb950ec025908d2c09e9d9abf19542f4c5aaaea43b",
+      "bytes": 5161
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cherubi/data.json": {
+      "sha256": "181b234a8fe027d331b628555c1f17f9fd35b24d6d0395c616793880490945b0",
+      "bytes": 5010
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cherrim/data.json": {
+      "sha256": "fa4243eb925debd2147d1162a1230ae0be94ed56b0eb8a3eee0aa2f5bf48bd8d",
+      "bytes": 4814
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shellos/data.json": {
+      "sha256": "f15278728263aa36f81b2e08538819b46a4775f6084978b6e4d3c6c3a7104249",
+      "bytes": 5145
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gastrodon/data.json": {
+      "sha256": "4a4c42704458d8409ee76d852a29959318926af7a131738d97a5915df8fdc415",
+      "bytes": 5145
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/ambipom/data.json": {
+      "sha256": "c3a4e3ec9937db39f692d632fc832a0fc86d84ac62c41a11779582528d569d23",
+      "bytes": 5552
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/drifloon/data.json": {
+      "sha256": "5c007cc88ac8fd991351d90c5c9297f8e5c8a91ac47edbbf5fc70fccdc77fe17",
+      "bytes": 5549
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/drifblim/data.json": {
+      "sha256": "c585ad438e2fd9aa1e85388969de46f11178366d8c23b5547ce6c757d53a057c",
+      "bytes": 5407
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/buneary/data.json": {
+      "sha256": "6f5a279cff6d40ead1a879d253496881e52bb3fc9d660436013a7a337bfde711",
+      "bytes": 5530
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lopunny/data.json": {
+      "sha256": "7f0c3354d35439bfef12f50f62c0ff8e2bae7e7454a4bdef1e7a99a80b330a7d",
+      "bytes": 5424
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mismagius/data.json": {
+      "sha256": "df60c4d67557ea08df6e317542eeb108d3b75dcce8b8bde9d51121218c8a8b14",
+      "bytes": 4965
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/honchkrow/data.json": {
+      "sha256": "a18df3e801d4cb641f6d89295a0ad1b3622c4b3512dd440d1d714ae06e06ba14",
+      "bytes": 4971
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/glameow/data.json": {
+      "sha256": "def4a4d93f23e936032fbfa2088f5dabed9eebefdb07c4d18c1f046b2f91f50c",
+      "bytes": 5367
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/purugly/data.json": {
+      "sha256": "6938498734f24a7cba7430dc90fc3b7f3e94dd3b4f96f726a0deba65ca1e970f",
+      "bytes": 5249
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chingling/data.json": {
+      "sha256": "1c6620fef1467b99750c8f66e13e1860a4f1b8001b7e25e6f33daedb36415a50",
+      "bytes": 5228
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/stunky/data.json": {
+      "sha256": "989d1c03b6d9ffaacdce66255940b8414a0d360b4708b43e713364f5fa8ecf61",
+      "bytes": 5308
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/skuntank/data.json": {
+      "sha256": "f3876e3df5402307854d2ab0641fa78f83a52b00909ffb0dff1270665d87e1ab",
+      "bytes": 5167
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bronzor/data.json": {
+      "sha256": "30f4e27a4de3180a171cafebcdfa6de3c535d2ae0f243d92f5cf6d0d53789dc2",
+      "bytes": 5194
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bronzong/data.json": {
+      "sha256": "cf19e5b2f64ecdf5dbc7f66d2967893fc80df3ef567e5429084e22473a8de65e",
+      "bytes": 5514
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/bonsly/data.json": {
+      "sha256": "0cdd2bb353f54e14da91cdcc0603c52daf5b7e1e7ffdef3546f07e3d7d11c3a8",
+      "bytes": 5218
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mime_jr/data.json": {
+      "sha256": "3fd40f9d11961d87ac61948c77cf5fb944affa0c3349baf29aedffc6e7b0beee",
+      "bytes": 5847
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/happiny/data.json": {
+      "sha256": "113bb98552f27031a3046ae7f52f1e2ddf18fb5c48948ea0f77fcb676a3dd140",
+      "bytes": 5308
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/chatot/data.json": {
+      "sha256": "b2f687ff5da3a05b8270830d3f665b59d771dbb48978f9b24b9af11597cf2181",
+      "bytes": 5063
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/spiritomb/data.json": {
+      "sha256": "4df632c36ddaa5089fccbd8037254519df11539663db350603b0f8e6366506c9",
+      "bytes": 5322
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gible/data.json": {
+      "sha256": "6b3d5b3d6708cf821f9b362de1f86fffaaadafca5b40c2d4e9facec81aa6b426",
+      "bytes": 5441
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gabite/data.json": {
+      "sha256": "5a3a853b7d7b48ea647146c2fcebdfb0dfe9b097a2e74d4e866a698e18196a88",
+      "bytes": 5100
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/garchomp/data.json": {
+      "sha256": "e08a548e8d3e7d7165e25ce5c162aa3311ed025e5dbab6d5e1aa29a3018e1feb",
+      "bytes": 5376
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/munchlax/data.json": {
+      "sha256": "541d1f386b065aec5a5edfcc376f028e40aac2bb232ec4d4f5cb409dbe98eabd",
+      "bytes": 5765
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/riolu/data.json": {
+      "sha256": "acb5671fde4840e9874caaa637fb226b9ce12c86290b1aee8e42b64e4ac3474e",
+      "bytes": 5527
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lucario/data.json": {
+      "sha256": "7ac6e5d6a2cba06e2967e8be392047487bfda6caf2a712b8c88a751c78d118c9",
+      "bytes": 5424
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hippopotas/data.json": {
+      "sha256": "f183257425ec3a1befb4ea0c55fbae9da3d9cf0c53272145f1912335f27f02bc",
+      "bytes": 4948
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/hippowdon/data.json": {
+      "sha256": "60a2fa54c98ead19c8d9a71207a0a1c9e2ebfc6a4850ad187959d76b4c3992c0",
+      "bytes": 4970
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/skorupi/data.json": {
+      "sha256": "173f174ad4ca3c70402ef5c4082eb159deac5b1081e73a06407afa5a9a695798",
+      "bytes": 5480
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/drapion/data.json": {
+      "sha256": "872eb2d1f95d3f0f25fc440645d64ae4dbe0405c0458c5568339abdca9047342",
+      "bytes": 5318
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/croagunk/data.json": {
+      "sha256": "6bcb5342005b42f7895b8092598a76fec304d1bd90d43e660182ca4201ef3a49",
+      "bytes": 5918
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/toxicroak/data.json": {
+      "sha256": "c9769d360ab61de064b016233e5b368bb145861310c96cd6dbce104c359b91ad",
+      "bytes": 5618
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/carnivine/data.json": {
+      "sha256": "849e5dad0903415b0a2b00d1c465c5c745c58e6b387f4dc778594d5f73ea18ef",
+      "bytes": 5301
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/finneon/data.json": {
+      "sha256": "cf91699a224ee4914593aa64a079b949c087f6c63a6d2b19c93620c72a92d563",
+      "bytes": 5351
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lumineon/data.json": {
+      "sha256": "9a871a8d6b408879af77a4584bc1f3540c3fa1a06603965912ddcfbad6f182e3",
+      "bytes": 5121
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mantyke/data.json": {
+      "sha256": "27c0a3be996be8010ddb734e7ea04a0432b576f75737ac9bb1f9b7a6a9970b55",
+      "bytes": 5311
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/snover/data.json": {
+      "sha256": "62c4e6e39aa6c593900f763306f793c004ea261bdf341abafa31bdac4e1449cd",
+      "bytes": 5282
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/abomasnow/data.json": {
+      "sha256": "92aedcf2db9934e6b4c6a7610db43e209c0752d2492dec10c23b1ef99ae90fc3",
+      "bytes": 5331
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/weavile/data.json": {
+      "sha256": "005b849713783169f4229844d5cc85afb035a40e85f31406fc4ebd28a7f17508",
+      "bytes": 5561
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magnezone/data.json": {
+      "sha256": "e2086202aed182799fc9b057146d9b2f12680c590a970c989b0925bca133c813",
+      "bytes": 5257
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/lickilicky/data.json": {
+      "sha256": "49d8df7203b9d29e171646a099df764da35bf1a8c2a2bb4d396e4ef56bf85cee",
+      "bytes": 5580
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rhyperior/data.json": {
+      "sha256": "0cd780754496fed0b2c8e881ed15475f76b91ac5251f350a175f000b88f0c77c",
+      "bytes": 5885
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/tangrowth/data.json": {
+      "sha256": "16377c71060d4a56de57641170c0cc2fb440fc0ede80f343b89b5bbcea88cbac",
+      "bytes": 5386
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/electivire/data.json": {
+      "sha256": "a91c34fabc5b10900ed1694d395efb7d94ccf8eecd9a0367aa6fdced9eeec0a9",
+      "bytes": 5445
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/magmortar/data.json": {
+      "sha256": "ffd54124d6bef35c894bf6a03ac3d1319f4c3fb3126aca270f89eaf7dccea076",
+      "bytes": 5247
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/togekiss/data.json": {
+      "sha256": "ddc0f7d0fcf6fc14d418c39b24f9b3a895fc45b542b64951aa1f483d618af3f5",
+      "bytes": 5139
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/yanmega/data.json": {
+      "sha256": "5b1e2d58a485fc303e3d20f80ade730078900899ee9dde6fb0d8c3b81e96abec",
+      "bytes": 5315
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/leafeon/data.json": {
+      "sha256": "266e798bb2edbd85eed52b92261bb410471aff1218755c895f8927d23ba8ba7b",
+      "bytes": 5201
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/glaceon/data.json": {
+      "sha256": "4c2c8ce66127682138cb105df58b58ffb2651c046891c11f6961a91dbed0ffae",
+      "bytes": 5054
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gliscor/data.json": {
+      "sha256": "6db4cfdfd845f20ed673f75e62cbb5fa528bfa83b4abac3d1c7a101a67c3992e",
+      "bytes": 5603
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mamoswine/data.json": {
+      "sha256": "f9be5bbd88b42f52d4c6a493b026d9f775a1b6a88be1300390ec6614129f1db6",
+      "bytes": 5396
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/porygon_z/data.json": {
+      "sha256": "2b93cff97b7110e9a1d1408751d4eba0d7fef21f1b648373ce33dad8c5894cd4",
+      "bytes": 5340
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/gallade/data.json": {
+      "sha256": "7e36808f7f7811ffa6026f1c9d1ff02bb0008086da8b5682e12f1e7795472a3e",
+      "bytes": 5898
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/probopass/data.json": {
+      "sha256": "d82e84409ebbef08aafa1b9926c3ef9deb995ec1d9e0e3d29086f6d76dc198ab",
+      "bytes": 5412
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dusknoir/data.json": {
+      "sha256": "c5ebfb6d91c6c246f8beec77620f301c2d5e67ce1c53b6c96072052bb8878a43",
+      "bytes": 5660
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/froslass/data.json": {
+      "sha256": "cd4102b62fccc7fa754d1e5f879a405fece056bff94c5d491f39d88e013f8c3a",
+      "bytes": 5373
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/rotom/data.json": {
+      "sha256": "7f354b90efd01778cb34ba8fce25aacf2036761658fb244c2346c9662facd3b7",
+      "bytes": 4998
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/uxie/data.json": {
+      "sha256": "fbe95b987d020fd698d09f9602299dc887f9bbc8fe23253c19fc5fc50f96bce1",
+      "bytes": 5328
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/mesprit/data.json": {
+      "sha256": "4a0eaa993d24582309c8f543dde84f6972398ced3c9dc51ff046b99c1ebbf6c3",
+      "bytes": 5394
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/azelf/data.json": {
+      "sha256": "707f96f9f32fab1ceb68b2dffbfa5889783dd575de8aba70fe146432ca31a73a",
+      "bytes": 5495
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/dialga/data.json": {
+      "sha256": "f7045a91c52e95114f41cc84e803d068100f4d96dc4d46ca2059e8a68367659f",
+      "bytes": 5406
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/palkia/data.json": {
+      "sha256": "9f12780daf0b3c4f285bcfdab024465b89ec5807f845175bb037ed62601fe1bd",
+      "bytes": 5432
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/heatran/data.json": {
+      "sha256": "9998b4f61bc63dbcffbbed636ccb0679696da5381f9e749b2bb3c1da78165506",
+      "bytes": 5244
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/regigigas/data.json": {
+      "sha256": "a180643fe5e82b3107ef8ff0ac3fa5305918139ef755711594729633ddfd0d49",
+      "bytes": 5142
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/giratina/data.json": {
+      "sha256": "289ce9a5464755393c56c0e11a2d271c28302955c54d4e4b15a9c0531e080173",
+      "bytes": 5932
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/cresselia/data.json": {
+      "sha256": "2a306e6ac65afc623396f27b0b60a0acf068e048b2ad63353d31a0997e8fa475",
+      "bytes": 5172
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/phione/data.json": {
+      "sha256": "11b9094b6a375528d569d0946c4b7a70ecd5a3304116f1952ce1ac26a2ad7e89",
+      "bytes": 4968
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/manaphy/data.json": {
+      "sha256": "61a0b91934330b24eac1b1636a456ba17313a93087e9f0c9d7e4fa4346c6e180",
+      "bytes": 5243
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/darkrai/data.json": {
+      "sha256": "aaed6c86f56340a73df80b7f68b5ec49dad80608f2c4333765646fec7e446e28",
+      "bytes": 5553
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/shaymin/data.json": {
+      "sha256": "c52a7777199667b5236bd06fafdb25426712dfe9c0432e92f798936d513c815e",
+      "bytes": 4979
+    },
+    "/workspace/platinum-port/pokeplatinum/res/pokemon/arceus/data.json": {
+      "sha256": "85fb7db91524ec92172f40927f2812191c617fb1365b956c3bf3aa8dee74ffab",
+      "bytes": 6328
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_roark.json": {
+      "sha256": "a3b8f851d5ce8b6de9e493dee210084b3cdb0ed538e7f11b58bf14afb5a20d60",
+      "bytes": 1837
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/commander_mars_valley_windworks.json": {
+      "sha256": "14cd7348e8471ef934fcd3049bdb31d7989f60f8b57fb5a564f441d6efdbfb9a",
+      "bytes": 1311
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_gardenia.json": {
+      "sha256": "be8feb65e4eee5bbff1b25e070ad08c367d2b11031907a75a7d8e363648cdadd",
+      "bytes": 1963
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/commander_jupiter_team_galactic_eterna_building.json": {
+      "sha256": "2e7021aa5a67b1621aee8e0f45c6ff09f7e6fdc9f646cec866dcb5b6d74d83fa",
+      "bytes": 1365
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_fantina.json": {
+      "sha256": "ba7c741b2977ed63e58df858ab57f4b5cb5f8d826c84023a98c81a4d3d942579",
+      "bytes": 1993
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_maylene.json": {
+      "sha256": "5d3090de0e3802cb1ff236cae86d83fd3cf9121fb2b231ca9a352de16ed04fda",
+      "bytes": 1895
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_wake.json": {
+      "sha256": "0bf5e6e4663bfdc6cd66c23ba6c7c5318fa923503d53da7c36a69d08ba477292",
+      "bytes": 2011
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/galactic_boss_cyrus_celestic_town_ruins.json": {
+      "sha256": "19545a06599e9d7a19f606b323421012602e0b5098bf788dbdf0f27aafb6ec72",
+      "bytes": 1718
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_byron.json": {
+      "sha256": "584db5ac73ca1b5eec942f9390f61b045dcf49c199b0dbf98dc39f19a0ea5f23",
+      "bytes": 2038
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/commander_saturn_valor_cavern.json": {
+      "sha256": "84ba4c74acc7c4aae5cc5ea990d162a83fa910272c90c8bd3623aff8a855907c",
+      "bytes": 1591
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/commander_mars_lake_verity.json": {
+      "sha256": "d519ce9c7232abcef771266a39e265bfac11acc47cdbe29cdce4116398f6a817",
+      "bytes": 1546
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_candice.json": {
+      "sha256": "f9afcba10569f77723a44a9784d14c0e99447f9ae9c0da3659864c00578a1b19",
+      "bytes": 2474
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/galactic_boss_cyrus_galactic_hq.json": {
+      "sha256": "d1d2ce46fb6fb79a5d3a99ab7e84b4a2ccbbb33dd7ddaafe1127d67af859aeb9",
+      "bytes": 1922
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/commander_saturn_galactic_hq.json": {
+      "sha256": "03dca1bce5be2210373eb4c015a4275997efb34ee583dcda24a351ca5dcd4690",
+      "bytes": 1600
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/galactic_boss_cyrus_distortion_world.json": {
+      "sha256": "04a4890e48e8ec21d9419004ae1e6a90d1ba86f25662dd43a8dae9a4db79cf47",
+      "bytes": 3069
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/leader_volkner.json": {
+      "sha256": "b0d87fccfe900957ac062650bc89ba0133f4bbb80be171d783e9f2d8a2e5d714",
+      "bytes": 2739
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/elite_four_aaron.json": {
+      "sha256": "59d96b550ec08ee1e292106db36d94fdca0e3f70cacc1f1af22227a9ee1bdfd0",
+      "bytes": 2874
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/elite_four_bertha.json": {
+      "sha256": "28c841e844f62129656c767fe5985b9e582325e87e0a5e54a62c85b3cef34e70",
+      "bytes": 2833
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/elite_four_flint.json": {
+      "sha256": "71b7fe52d53b51b604494316f113bf17cd7ad0cc038b85382224c40d832dab11",
+      "bytes": 3082
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/elite_four_lucian.json": {
+      "sha256": "e2f27e7bb822828ed5db969258309f8ae5542026291f558ec83a8755cc622fbf",
+      "bytes": 2658
+    },
+    "/workspace/platinum-port/pokeplatinum/res/trainers/data/champion_cynthia.json": {
+      "sha256": "4d3766aa91e2a1a2fb62fc8f747677113d47e5d7a18d73eaa22033d77be6704e",
+      "bytes": 3460
+    },
+    "/workspace/platinum-port/pokeplatinum/res/fonts/font_system.png": {
+      "sha256": "c29e346f51e9f9aae126173a062be3919dc75d011cef0ba5ce6c1230738cf81c",
+      "bytes": 7839
+    },
+    "/workspace/platinum-port/pokeplatinum/tools/msgenc/charmap.txt": {
+      "sha256": "07b54e9a3a828aca088111ad80e811a0cc697f2eee7962bfe773052da65ad495",
+      "bytes": 26212
+    }
+  },
+  "maps": 34,
+  "story_events": 41,
+  "appearance_options": [
+    4,
+    13,
+    15,
+    29,
+    10,
+    4
+  ],
+  "authentic_NPCs": [
+    "aaron",
+    "barry",
+    "bertha",
+    "byron",
+    "candice",
+    "cheryl",
+    "clerk",
+    "crasher_wake",
+    "cynthia",
+    "cyrus",
+    "dawn",
+    "fantina",
+    "flint",
+    "galactic_grunt_m",
+    "gardenia",
+    "jupiter",
+    "looker",
+    "lucian",
+    "mars",
+    "maylene",
+    "mom",
+    "nurse",
+    "prof_rowan",
+    "roark",
+    "saturn",
+    "volkner"
+  ],
+  "party_data": "Original Platinum teams, levels and learned moves; AI/item behaviour remains Arena-specific",
+  "map_art": "User supplied Emerald16px tiles; new native2D layouts, not original Platinum layouts",
+  "scope": "Condensed native Sinnoh campaign: authored2D layouts and rewritten short dialogue, authentic Platinum trainer parties. Not a bytecode or exact-map port."
+}

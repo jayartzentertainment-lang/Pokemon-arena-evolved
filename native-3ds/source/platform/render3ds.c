@@ -18,9 +18,11 @@ static const float direction[8][2]={{0,1},{.7071f,.7071f},{1,0},{.7071f,-.7071f}
     {0,-1},{-.7071f,-.7071f},{-1,0},{-.7071f,.7071f}};
 struct ArenaView {
     C3D_RenderTarget *top,*bottom;
-    C2D_SpriteSheet pokemon[4],effects,arena,font,props,ui;
+    C2D_SpriteSheet pokemon[8],effects,arena,font,props,ui,catalog,window;
     float cameraX,cameraY,zoom,textDepth;
-    unsigned loads,quality;
+    unsigned loads,quality,pokemonDex[8],pokemonAge[8],age;
+    C2D_SpriteSheet trainer[6],hair[2],npcs,mapSheet;int mapId;
+    const Adventure *app;
 };
 static float Limit(float x,float a,float b){return x<a?a:x>b?b:x;}
 static u32 RGB(unsigned r,unsigned g,unsigned b){return C2D_Color32(r,g,b,255);}
@@ -74,6 +76,19 @@ static void Effect(ArenaView *v,unsigned image,float x,float y,float width,float
     Sprite(v->effects,image,x,y,width/item.subtex->width,height/item.subtex->height,
            angle,.5f,.5f,alpha,0);
 }
+static unsigned Family(unsigned move,unsigned cel)
+{
+    const CombatMoveInfo *m=Combat_GetMoveInfo(move);
+    static const unsigned starts[18]={32,32,4,28,32,32,12,28,4,32,0,8,12,16,20,24,28,28};
+    if(move==MOVE_SWIFT)return 56+(cel&1);
+    if(m&&m->category==2)return (Combat_MoveTargetsSelf(move)?36:52)+(cel&3);
+    return starts[m&&m->type<18?m->type:0]+(cel&3);
+}
+static void FamilyEffect(ArenaView *v,unsigned move,unsigned cel,float x,float y,float width,float height,float angle,float alpha)
+{
+    unsigned image=Family(move,cel);C2D_Image item=C2D_SpriteSheetGetImage(v->catalog,image);
+    Sprite(v->catalog,image,x,y,width/item.subtex->width,height/item.subtex->height,angle,.5f,.5f,alpha,0);
+}
 static unsigned AnimFrame(const ArenaSpriteAnimation *a,unsigned tick)
 {
     unsigned frame=0;if(!a->count||!a->totalTicks)return 0;tick%=a->totalTicks;
@@ -94,12 +109,13 @@ static const ArenaSpriteFrame *Pose(const CombatFighter *f,const ArenaSpecies *s
 }
 static C2D_SpriteSheet Pokemon(ArenaView *v,unsigned dex)
 {
-    unsigned i;
-    for(i=0;i<4;i++)if(gSpecies[i].dex==dex){
-        if(!v->pokemon[i])v->pokemon[i]=Load(v,gSpecies[i].texturePath);
-        return v->pokemon[i];
-    }
-    return 0;
+    unsigned i,slot=0,oldest=~0u;const ArenaSpecies *s=ArenaSpecies_Find(dex);
+    if(!s)return 0;
+    for(i=0;i<8;i++)if(v->pokemon[i]&&v->pokemonDex[i]==dex){v->pokemonAge[i]=++v->age;return v->pokemon[i];}
+    for(i=0;i<8;i++)if(v->pokemonAge[i]<oldest){slot=i;oldest=v->pokemonAge[i];}
+    if(v->pokemon[slot]){C3D_FrameSync();C2D_SpriteSheetFree(v->pokemon[slot]);}
+    v->pokemon[slot]=Load(v,s->texturePath);v->pokemonDex[slot]=dex;v->pokemonAge[slot]=++v->age;
+    return v->pokemon[slot];
 }
 
 static void Camera(ArenaView *v,const ArenaGame *g)
@@ -131,6 +147,7 @@ static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
     const ArenaSpecies *species=Game_ActorSpecies(g,actor);
     int16_t vx,vy;float dx,dy,wx,wy,endX,endY,reach,opacity=1;
     unsigned age=Combat_PhaseTick(f),image,k,emitters=1;
+    const CombatMoveInfo *move=Combat_GetMoveInfo(f->actionMove);C2D_SpriteSheet beamSheet=v->effects;
     int32_t contactX,contactY;
     int clash=Combat_BeamContact(&g->combat,actor,&contactX,&contactY);
     if(!species||!f->hp||f->hurtTimer||f->phase==COMBAT_READY)return;
@@ -151,7 +168,9 @@ static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
         reach=sqrtf((endX-wx)*(endX-wx)+(endY+12-wy)*(endY+12-wy));
     }
     image=FX_FLAME+(g->combat.frame/4)%8;
-    if(f->actionMove==MOVE_HYDRO_PUMP){image=FX_HYDRO+(g->combat.frame/3)%4;emitters=2;}
+    if(move&&move->type==11){image=FX_HYDRO+(g->combat.frame/3)%4;emitters=f->species==9&&f->actionMove==MOVE_HYDRO_PUMP?2:1;}
+    else if(move&&move->type==13)image=FX_BOLT+(g->combat.frame/3)%4;
+    else if(move&&move->type!=10){image=Family(f->actionMove,(g->combat.frame/3)%4);beamSheet=v->catalog;}
     for(k=0;k<emitters;k++){
         unsigned dir=f->attackDirection&7;
         float startX=wx+dx*9*species->scale,startY=wy-15*species->scale+dy*6*species->scale;
@@ -174,12 +193,12 @@ static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
             float x=X(v,startX),y=Y(v,startY),ex=X(v,endX),ey=Y(v,endY);
             float sx=ex-x,sy=ey-y,length=sqrtf(sx*sx+sy*sy),theta=atan2f(sy,sx);
             float width=(emitters==2?30:Limit(reach*2/3.0f,12,80))*v->zoom;
-            C2D_Image item=C2D_SpriteSheetGetImage(v->effects,image);
+            C2D_Image item=C2D_SpriteSheetGetImage(beamSheet,image);
             if(length<1)continue;
             /* Original animated Emerald plume / supplied water texture: no
              * solid beam rectangles or generic projectile stand-ins. */
-            Sprite(v->effects,image,x,y,length/item.subtex->width,width/item.subtex->height,theta,0,.5f,opacity,0);
-            if(v->quality)Sprite(v->effects,image,x,y,length/item.subtex->width,width*.40f/item.subtex->height,theta,0,.5f,opacity*.38f,.35f);
+            Sprite(beamSheet,image,x,y,length/item.subtex->width,width/item.subtex->height,theta,0,.5f,opacity,0);
+            if(v->quality)Sprite(beamSheet,image,x,y,length/item.subtex->width,width*.40f/item.subtex->height,theta,0,.5f,opacity*.38f,.35f);
             if(f->actionMove==MOVE_FLAMETHROWER&&f->phase==COMBAT_ACTIVE){
                 unsigned n;
                 for(n=0;n<(v->quality?3u:1u);n++){
@@ -239,6 +258,7 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
                        9*v->zoom,36*v->zoom,0,1);
             }
         }
+        if(f->actionMove!=MOVE_SWORDS_DANCE&&Combat_IsCasting(f))FamilyEffect(v,f->actionMove,(tick/3)%4,x,y-18*v->zoom,32*v->zoom,38*v->zoom,0,.85f);
         if(f->actionMove==MOVE_THUNDER_WAVE)
             Effect(v,FX_BOLT+(tick/3)%4,x+direction[f->attackDirection&7][0]*40*v->zoom,
                    y-14+direction[f->attackDirection&7][1]*40*v->zoom,65*v->zoom,12*v->zoom,
@@ -275,7 +295,8 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
         float width=25,height=25,angle=0;
         if(p->move==MOVE_THUNDERBOLT){image=FX_BOLT+cel;width=48;height=13;angle=atan2f(p->vy,p->vx);}
         else if(p->move==MOVE_WATER_PULSE){image=FX_PULSE+(cel&1);width=height=28;}
-        Effect(v,image,x,y,width*v->zoom,height*v->zoom,angle,1);
+        if(p->move==MOVE_AURA_SPHERE||p->move==MOVE_WATER_PULSE||p->move==MOVE_THUNDERBOLT)Effect(v,image,x,y,width*v->zoom,height*v->zoom,angle,1);
+        else FamilyEffect(v,p->move,cel,x,y,(p->move==MOVE_SWIFT?18:28)*v->zoom,(p->move==MOVE_SWIFT?18:28)*v->zoom,atan2f(p->vy,p->vx),1);
     }
     for(i=0;i<COMBAT_EFFECTS;i++)if(c->effects[i].life){
         const CombatEffect *e=&c->effects[i];unsigned age=e->maxLife-e->life;
@@ -285,6 +306,7 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
             Effect(v,FX_WIND+(age/3)%2,x,y+8,46*v->zoom,10*v->zoom,theta,e->life/(float)e->maxLife*.6f);
         }else if((e->kind==COMBAT_CONTACT||e->kind==COMBAT_BLOCK)&&age<10){
             Effect(v,FX_IMPACT+(age/3)%4,x,y,27*v->zoom,27*v->zoom,0,1-age/12.0f);
+            if(e->move&&Combat_GetMoveInfo(e->move)&&Combat_GetMoveInfo(e->move)->type!=0)FamilyEffect(v,e->move,(age/3)%4,x,y,32*v->zoom,32*v->zoom,0,1-age/12.0f);
             if(e->move==MOVE_FLAMETHROWER)
                 Effect(v,FX_EMBER+(age/3)%4,x,y-4,24*v->zoom,30*v->zoom,0,1-age/12.0f);
             else if(e->move==MOVE_HYDRO_PUMP)
@@ -358,7 +380,7 @@ static void TopHud(ArenaView *v,const ArenaGame *g,float fps,float cpu,float gpu
         Text(v,224,4,RGB(245,246,227),"%s",op?op->name:"OPPONENT");
         Bar(224,19,112,enemy->hp,enemy->maxHp,RGB(229,167,76));
         for(i=0;i<Game_Remaining(g,1);i++)
-            C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->props,15),340+i*12,13,.9f,0,1,1);
+            C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->props,15),338+i*10,13,.9f,0,1,1);
     }
     C2D_DrawRectSolid(0,228,.8f,400,12,RGB(42,51,58));
     Text(v,5,230,RGB(232,235,221),"%s  %.0fFPS CPU%.1f GPU%.1f",g->doubles?"2V2":"1V1",fps,cpu,gpu);
@@ -375,10 +397,10 @@ static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
     u32 ink=RGB(38,48,43);
     C2D_DrawRectSolid(0,0,0,320,240,RGB(205,213,187));
     C2D_DrawRectSolid(0,0,.1f,320,23,RGB(58,73,68));
-    Text(v,9,7,RGB(246,245,223),"PLATINUM ARENA / NATIVE 3DS");
-    Text(v,9,31,ink,"%s  LV50  %s",s?s->name:"PLAYER",Status(f));
+    if(v->app&&v->app->messageTicks)Text(v,9,7,RGB(246,245,223),"%.37s",v->app->message);else Text(v,9,7,RGB(246,245,223),"PLATINUM ARENA / NATIVE 3DS");
+    Text(v,9,31,ink,"%.14s LV%u %s",s?s->name:"PLAYER",g->levels[0][g->binding[g->combat.controlActor]],Status(f));
     Text(v,9,44,ink,"STAMINA");Bar(64,46,93,f->stamina,100,RGB(72,160,201));
-    Text(v,175,43,ink,"PARTY %u/4",Game_Remaining(g,0));
+    Text(v,175,43,ink,"PARTY %u/%u",Game_Remaining(g,0),g->partyCount[0]);
     Text(v,9,54,ink,Combat_IsCasting(f)?"CASTING: MOVEMENT LOCKED":"Y STRIKE  B DEFEND  L+A CYCLE");
     for(i=0;i<4;i++){
         int x,y,width,height;const CombatMoveInfo *move=Combat_GetMoveInfo(f->moves[i]);
@@ -408,7 +430,7 @@ static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
         Text(v,185,185,ink,"TARGET >");
     }
     for(i=0;i<3;i++)C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ui,1),8+i*104,198,.2f,0,1,1);
-    Text(v,17,211,ink,"R SWITCH");Text(v,122,211,ink,"NEW %s",g->doubles?"1V1":"2V2");Text(v,233,211,ink,"PAUSE");
+    Text(v,17,211,ink,"R SWITCH");if(v->app&&v->app->battleKind!=ADV_LAB_BATTLE)Text(v,122,211,ink,"BALL %u",v->app->save.balls);else Text(v,122,211,ink,"NEW %s",g->doubles?"1V1":"2V2");Text(v,233,211,ink,"PAUSE");
 
     if(!audio)Text(v,240,32,ink,"SFX OFF");
     if(paused||g->winner){
@@ -416,8 +438,8 @@ static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
         C2D_DrawRectSolid(16,66,.98f,288,128,RGB(239,237,201));
         v->textDepth=.99f;
         Text(v,86,94,ink,"%s",g->winner?(g->winner==1?"VICTORY":"DEFEAT"):"PAUSED");
-        Text(v,36,116,ink,"START: %s",g->winner?"NEW BATTLE":"RESUME");
-        Text(v,36,137,ink,"SELECT: LOCK  R+Y: TARGET");
+        Text(v,36,116,ink,"START: %s",g->winner?"CONTINUE":"RESUME");
+        Text(v,36,137,ink,"B: RETURN / RETREAT");
         Text(v,36,158,ink,"START+SELECT: EXIT");
         Text(v,36,174,ink,"X: VFX %s",v->quality?"HIGH":"LOW");
         v->textDepth=.95f;
@@ -428,19 +450,35 @@ ArenaView *View_Create(void)
     ArenaView *v=calloc(1,sizeof(*v));if(!v)return 0;
     v->top=C2D_CreateScreenTarget(GFX_TOP,GFX_LEFT);v->bottom=C2D_CreateScreenTarget(GFX_BOTTOM,GFX_LEFT);
     v->effects=Load(v,"romfs:/gfx/effects.t3x");v->arena=Load(v,"romfs:/gfx/arena.t3x");
+    v->window=Load(v,"romfs:/gfx/window_frame.t3x");
+    v->catalog=Load(v,"romfs:/gfx/move_catalog.t3x");
     v->font=Load(v,"romfs:/gfx/font.t3x");v->props=Load(v,"romfs:/gfx/props.t3x");v->ui=Load(v,"romfs:/gfx/ui.t3x");
-    if(!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui){View_Destroy(v);return 0;}
+    if(!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui||!v->catalog||!v->window){View_Destroy(v);return 0;}
+    {
+        static const char *groups[]={"body","bottoms","tops","hair","headgear","accessories"};
+        unsigned i;for(i=0;i<6;i++){char path[80];if(i==3)continue;snprintf(path,sizeof(path),"romfs:/gfx/trainer_%s.t3x",groups[i]);v->trainer[i]=Load(v,path);if(!v->trainer[i]){View_Destroy(v);return 0;}}
+        v->hair[0]=Load(v,"romfs:/gfx/trainer_hair_A.t3x");v->hair[1]=Load(v,"romfs:/gfx/trainer_hair_B.t3x");
+        v->npcs=Load(v,"romfs:/gfx/story_npcs.t3x");v->mapSheet=Load(v,"romfs:/gfx/map_00.t3x");
+        if(!v->hair[0]||!v->hair[1]||!v->npcs||!v->mapSheet){View_Destroy(v);return 0;}
+    }
     v->zoom=1;v->textDepth=.95f;v->quality=1;return v;
 }
 void View_Destroy(ArenaView *v)
 {
     unsigned i;if(!v)return;
-    for(i=0;i<4;i++)if(v->pokemon[i])C2D_SpriteSheetFree(v->pokemon[i]);
+    for(i=0;i<8;i++)if(v->pokemon[i])C2D_SpriteSheetFree(v->pokemon[i]);
     if(v->effects)C2D_SpriteSheetFree(v->effects);
     if(v->arena)C2D_SpriteSheetFree(v->arena);
     if(v->font)C2D_SpriteSheetFree(v->font);
     if(v->props)C2D_SpriteSheetFree(v->props);
     if(v->ui)C2D_SpriteSheetFree(v->ui);
+    if(v->catalog)C2D_SpriteSheetFree(v->catalog);
+    if(v->window)C2D_SpriteSheetFree(v->window);
+    for(i=0;i<6;i++)if(v->trainer[i])C2D_SpriteSheetFree(v->trainer[i]);
+    if(v->hair[0])C2D_SpriteSheetFree(v->hair[0]);
+    if(v->hair[1])C2D_SpriteSheetFree(v->hair[1]);
+    if(v->npcs)C2D_SpriteSheetFree(v->npcs);
+    if(v->mapSheet)C2D_SpriteSheetFree(v->mapSheet);
     free(v);
 }
 void View_Draw(ArenaView *v,const ArenaGame *g,float alpha,int paused,float fps,float cpu,float gpu,int audio)
@@ -457,3 +495,5 @@ void View_Draw(ArenaView *v,const ArenaGame *g,float alpha,int paused,float fps,
 }
 unsigned View_TextureLoads(const ArenaView *v){return v?v->loads:0;}
 void View_SetQuality(ArenaView *v,unsigned high){if(v)v->quality=!!high;}
+
+#include "adventure_view.inc"

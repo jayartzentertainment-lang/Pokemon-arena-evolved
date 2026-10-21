@@ -30,7 +30,9 @@ typedef struct {
 } GamePartySlot;
 typedef struct {
     Combat combat;
-    GamePartySlot party[2][4];
+    GamePartySlot party[2][6];
+    CombatFighterConfig configs[2][6];
+    uint8_t partyCount[2],levels[2][6];
     uint8_t binding[4],doubles,winner,rAge,rUsed;
     uint8_t faintTicks[4],deployTicks[4];
     uint32_t ticks,switches;
@@ -38,6 +40,7 @@ typedef struct {
 } ArenaGame;
 
 void Game_Start(ArenaGame *game,int doubles);
+void Game_StartParty(ArenaGame *game,const CombatFighterConfig configs[2][6],const uint8_t counts[2],const GamePartySlot state[2][6],int doubles);
 void Game_Tick(ArenaGame *game,GameInput input);
 int Game_Switch(ArenaGame *game,unsigned actor);
 unsigned Game_Remaining(const ArenaGame *game,unsigned team);

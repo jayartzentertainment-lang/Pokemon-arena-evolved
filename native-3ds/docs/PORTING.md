@@ -1,3 +1,7 @@
+# Current0.3.0 note
+
+The native project now includes a condensed34-map/41-event Sinnoh adventure, layered editable trainer, saving and493 base-species art. Read README.md and ADVENTURE-STATUS.md for current scope. The foundation notes below describe the earlier four-species0.1/0.2 combat milestones and their porting decisions; they are historical, not the current feature inventory. The original DS script engine has still not been ported.
+
 # Port boundary
 
 ## Native 0.2.0 additions

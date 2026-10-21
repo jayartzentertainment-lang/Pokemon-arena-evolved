@@ -2,13 +2,16 @@
 #include "arena/assets.h"
 #include <stdio.h>
 
-int main(void)
+int main(int argc,char **argv)
 {
     const unsigned dex[]={25,448,6,9};
-    unsigned n,a,i;
+    unsigned n,a,i,limit=argc>1?asset_species_count:4;(void)argv;
     puts("[");
-    for(n=0;n<4;n++){
-        const AssetSpecies *s=ArenaAssets_FindSpecies(dex[n],0);
+    for(n=0;n<limit;n++){
+        const AssetSpecies *s;
+        unsigned d=n<4?dex[n]:0;
+        if(n>=4){unsigned j,k,index=4;for(j=1;j<=493;j++){int skip=0;for(k=0;k<4;k++)if(dex[k]==j)skip=1;if(!skip){if(index++==n){d=j;break;}}}}
+        s=ArenaAssets_FindSpecies(d,0);
         if(!s)return 1;
         printf("{\"dex\":%u,\"name\":\"%s\",\"palette\":[",s->dex,s->name);
         for(i=0;i<16;i++)printf("%s%u",i?",":"",s->palette[i]);
@@ -22,7 +25,7 @@ int main(void)
             for(i=0;i<8;i++)printf("%s%d",i?",":"",p->ground[i]);
             printf("]}");
         }
-        printf("]}%s\n",n==3?"":",");
+        printf("]}%s\n",n==limit-1?"":",");
     }
     puts("]");
     return 0;

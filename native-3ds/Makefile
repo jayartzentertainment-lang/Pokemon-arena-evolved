@@ -7,7 +7,7 @@ $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>dev
 endif
 
 APP_TITLE := Platinum Arena 3DS
-APP_DESCRIPTION := Native top-down combat prototype
+APP_DESCRIPTION := Sinnoh adventure and action battles
 APP_AUTHOR := Arena Project
 TOPDIR ?= $(CURDIR)
 include $(DEVKITARM)/3ds_rules

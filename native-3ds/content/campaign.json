@@ -1,0 +1,969 @@
+{
+  "schema": 1,
+  "scope": "Condensed native Sinnoh campaign: authored2D layouts and rewritten short dialogue, authentic Platinum trainer parties. Not a bytecode or exact-map port.",
+  "maps": [
+    {
+      "id": 0,
+      "name": "Twinleaf Town",
+      "theme": "town",
+      "requires": 0,
+      "links": [
+        1,
+        2
+      ],
+      "wild": [
+        396,
+        399,
+        403
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Route 201",
+      "theme": "route",
+      "requires": 2,
+      "links": [
+        0,
+        3
+      ],
+      "wild": [
+        396,
+        399
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Lake Verity",
+      "theme": "lake",
+      "requires": 4,
+      "links": [
+        0
+      ],
+      "wild": [
+        396,
+        399
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sandgem Town",
+      "theme": "town",
+      "requires": 5,
+      "links": [
+        1,
+        4
+      ],
+      "wild": [
+        396,
+        399
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Route 202",
+      "theme": "route",
+      "requires": 6,
+      "links": [
+        3,
+        5
+      ],
+      "wild": [
+        396,
+        399,
+        403
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jubilife City",
+      "theme": "city",
+      "requires": 7,
+      "links": [
+        4,
+        6,
+        9,
+        22
+      ],
+      "wild": [
+        396,
+        403,
+        406
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Route 203",
+      "theme": "route",
+      "requires": 8,
+      "links": [
+        5,
+        7
+      ],
+      "wild": [
+        396,
+        63,
+        403
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Oreburgh City",
+      "theme": "city",
+      "requires": 9,
+      "links": [
+        6,
+        8
+      ],
+      "wild": [
+        74,
+        66,
+        41
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Oreburgh Mine",
+      "theme": "cave",
+      "requires": 9,
+      "links": [
+        7
+      ],
+      "wild": [
+        74,
+        95,
+        41
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Route 204",
+      "theme": "route",
+      "requires": 11,
+      "links": [
+        5,
+        10
+      ],
+      "wild": [
+        406,
+        401,
+        403
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Floaroma Town",
+      "theme": "town",
+      "requires": 12,
+      "links": [
+        9,
+        11,
+        12
+      ],
+      "wild": [
+        406,
+        418,
+        422
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Valley Windworks",
+      "theme": "factory",
+      "requires": 12,
+      "links": [
+        10
+      ],
+      "wild": [
+        418,
+        422,
+        417
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Eterna Forest",
+      "theme": "forest",
+      "requires": 13,
+      "links": [
+        10,
+        13
+      ],
+      "wild": [
+        406,
+        427,
+        198,
+        92
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Eterna City",
+      "theme": "city",
+      "requires": 14,
+      "links": [
+        12,
+        14
+      ],
+      "wild": [
+        406,
+        307,
+        433
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Route 206",
+      "theme": "route",
+      "requires": 16,
+      "links": [
+        13,
+        15
+      ],
+      "wild": [
+        74,
+        77,
+        207
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Hearthome City",
+      "theme": "city",
+      "requires": 16,
+      "links": [
+        14,
+        16
+      ],
+      "wild": [
+        427,
+        280,
+        315
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Solaceon Town",
+      "theme": "town",
+      "requires": 17,
+      "links": [
+        15,
+        17,
+        20
+      ],
+      "wild": [
+        77,
+        113,
+        183
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Veilstone City",
+      "theme": "city",
+      "requires": 17,
+      "links": [
+        16,
+        18,
+        27
+      ],
+      "wild": [
+        74,
+        203,
+        434
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Route 214",
+      "theme": "route",
+      "requires": 19,
+      "links": [
+        17,
+        19,
+        23
+      ],
+      "wild": [
+        228,
+        207,
+        315
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Pastoria City",
+      "theme": "marsh",
+      "requires": 19,
+      "links": [
+        18,
+        20,
+        31
+      ],
+      "wild": [
+        194,
+        193,
+        453
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Route 210",
+      "theme": "route",
+      "requires": 20,
+      "links": [
+        19,
+        16,
+        21
+      ],
+      "wild": [
+        307,
+        400,
+        333
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Celestic Town",
+      "theme": "town",
+      "requires": 21,
+      "links": [
+        20,
+        24
+      ],
+      "wild": [
+        307,
+        433,
+        67
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Canalave City",
+      "theme": "city",
+      "requires": 22,
+      "links": [
+        5
+      ],
+      "wild": [
+        81,
+        436,
+        72
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Lake Valor",
+      "theme": "lake",
+      "requires": 23,
+      "links": [
+        18
+      ],
+      "wild": [
+        418,
+        400,
+        203
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Route 216",
+      "theme": "snow",
+      "requires": 25,
+      "links": [
+        21,
+        25
+      ],
+      "wild": [
+        215,
+        459,
+        220
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Snowpoint City",
+      "theme": "snow",
+      "requires": 25,
+      "links": [
+        24,
+        26
+      ],
+      "wild": [
+        459,
+        215,
+        308
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Lake Acuity",
+      "theme": "snow",
+      "requires": 26,
+      "links": [
+        25
+      ],
+      "wild": [
+        215,
+        459,
+        433
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Galactic HQ",
+      "theme": "factory",
+      "requires": 27,
+      "links": [
+        17,
+        28
+      ],
+      "wild": [
+        434,
+        436,
+        42
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Mt. Coronet",
+      "theme": "cave",
+      "requires": 29,
+      "links": [
+        27,
+        29
+      ],
+      "wild": [
+        67,
+        437,
+        299,
+        35
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Spear Pillar",
+      "theme": "ruins",
+      "requires": 29,
+      "links": [
+        28,
+        30
+      ],
+      "wild": [
+        437,
+        358,
+        42
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Distortion World",
+      "theme": "distortion",
+      "requires": 30,
+      "links": [
+        29,
+        21
+      ],
+      "wild": [
+        93,
+        355,
+        487
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Sunyshore City",
+      "theme": "city",
+      "requires": 33,
+      "links": [
+        19,
+        32
+      ],
+      "wild": [
+        82,
+        125,
+        279
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Route 223",
+      "theme": "lake",
+      "requires": 34,
+      "links": [
+        31,
+        33
+      ],
+      "wild": [
+        279,
+        73,
+        226
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Pokemon League",
+      "theme": "league",
+      "requires": 34,
+      "links": [
+        32
+      ],
+      "wild": [
+        75,
+        437,
+        82
+      ]
+    }
+  ],
+  "events": [
+    {
+      "map": 0,
+      "name": "Mom",
+      "npc": "mom",
+      "text": "A new day in Twinleaf! Barry is waiting outside. Your clothes are ready; this is your own journey.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 0,
+      "name": "Barry",
+      "npc": "barry",
+      "text": "There you are! Let us find Professor Rowan on Route 201. No running into the tall grass without a Pokemon!",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 1,
+      "name": "Professor Rowan",
+      "npc": "prof_rowan",
+      "text": "You both want Pokemon? A partner is a responsibility. Choose Turtwig, Chimchar, or Piplup.",
+      "kind": "starter",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 1,
+      "name": "Barry",
+      "npc": "barry",
+      "text": "I picked my partner too! Let us see how our Pokemon move in a real battle!",
+      "kind": "rival",
+      "trainer": "",
+      "level": 5,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 0,
+      "name": "Mom",
+      "npc": "mom",
+      "text": "Your very first battle! I have healed your partner. Go to Lake Verity with Barry, then visit Rowan in Sandgem.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 2,
+      "name": "Cyrus",
+      "npc": "cyrus",
+      "text": "This lake holds a legend. Emotion creates conflict... One day the world will change.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 3,
+      "name": "Professor Rowan",
+      "npc": "prof_rowan",
+      "text": "You and your partner share a bond already. Take this Pokedex and record Sinnoh Pokemon. Meet my assistant on Route 202.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 4,
+      "name": "Dawn",
+      "npc": "dawn",
+      "text": "Weaken wild Pokemon before throwing a ball. A status condition also helps. Here are Pokeballs and potions. Try catching a friend!",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 5,
+      "name": "Looker",
+      "npc": "looker",
+      "text": "I am investigating Team Galactic. Barry went east toward Oreburgh. Keep your eyes open, trainer.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 6,
+      "name": "Barry",
+      "npc": "barry",
+      "text": "The Oreburgh Gym is just ahead! But first, I want another battle.",
+      "kind": "rival",
+      "trainer": "",
+      "level": 9,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 8,
+      "name": "Roark",
+      "npc": "roark",
+      "text": "I train among the miners. Rock Pokemon stand firm, but every defence has a weakness. Meet me at the Oreburgh Gym.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 7,
+      "name": "Roark",
+      "npc": "roark",
+      "text": "Welcome to the Oreburgh Gym. Show me how you and your partners handle Rock types!",
+      "kind": "trainer",
+      "trainer": "leader_roark",
+      "level": 14,
+      "badge": 0,
+      "doubles": false
+    },
+    {
+      "map": 5,
+      "name": "Team Galactic",
+      "npc": "galactic_grunt_m",
+      "text": "This research belongs to Team Galactic! Stand aside, both of you!",
+      "kind": "duo",
+      "trainer": "",
+      "level": 15,
+      "badge": -1,
+      "doubles": true
+    },
+    {
+      "map": 11,
+      "name": "Mars",
+      "npc": "mars",
+      "text": "We need the Windworks energy for our new world. You will not stop us!",
+      "kind": "trainer",
+      "trainer": "commander_mars_valley_windworks",
+      "level": 17,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 12,
+      "name": "Cheryl",
+      "npc": "cheryl",
+      "text": "Would you travel through the forest with me? We can face these wild Pokemon together.",
+      "kind": "duo",
+      "trainer": "",
+      "level": 18,
+      "badge": -1,
+      "doubles": true
+    },
+    {
+      "map": 13,
+      "name": "Gardenia",
+      "npc": "gardenia",
+      "text": "The Eterna Gym tests your bond with Grass types. Let us make this a lively match!",
+      "kind": "trainer",
+      "trainer": "leader_gardenia",
+      "level": 22,
+      "badge": 1,
+      "doubles": false
+    },
+    {
+      "map": 13,
+      "name": "Jupiter",
+      "npc": "jupiter",
+      "text": "You defeated our guards? Team Galactic has plans beyond your understanding!",
+      "kind": "trainer",
+      "trainer": "commander_jupiter_team_galactic_eterna_building",
+      "level": 23,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 15,
+      "name": "Fantina",
+      "npc": "fantina",
+      "text": "Welcome to Hearthome! Ghost Pokemon are elusive. Follow their movement, and trust your own!",
+      "kind": "trainer",
+      "trainer": "leader_fantina",
+      "level": 26,
+      "badge": 2,
+      "doubles": false
+    },
+    {
+      "map": 17,
+      "name": "Maylene",
+      "npc": "maylene",
+      "text": "I do not know how strong I am, but I train every day. Let us learn from this battle!",
+      "kind": "trainer",
+      "trainer": "leader_maylene",
+      "level": 32,
+      "badge": 3,
+      "doubles": false
+    },
+    {
+      "map": 17,
+      "name": "Dawn",
+      "npc": "dawn",
+      "text": "Team Galactic took my Pokedex! Help me recover it outside their warehouse!",
+      "kind": "duo",
+      "trainer": "",
+      "level": 32,
+      "badge": -1,
+      "doubles": true
+    },
+    {
+      "map": 19,
+      "name": "Crasher Wake",
+      "npc": "crasher_wake",
+      "text": "The Pastoria Gym is ready! Stand your ground against the power of water!",
+      "kind": "trainer",
+      "trainer": "leader_wake",
+      "level": 37,
+      "badge": 4,
+      "doubles": false
+    },
+    {
+      "map": 20,
+      "name": "Cynthia",
+      "npc": "cynthia",
+      "text": "These Psyduck need medicine. I have cleared the path. Please take this Old Charm to my grandmother in Celestic.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 21,
+      "name": "Cyrus",
+      "npc": "cyrus",
+      "text": "The ancient wall speaks of the beings of time and space. I will create a world without spirit.",
+      "kind": "trainer",
+      "trainer": "galactic_boss_cyrus_celestic_town_ruins",
+      "level": 36,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 22,
+      "name": "Byron",
+      "npc": "byron",
+      "text": "Roark told me about you. Show me a team that can overcome the steel of Canalave!",
+      "kind": "trainer",
+      "trainer": "leader_byron",
+      "level": 41,
+      "badge": 5,
+      "doubles": false
+    },
+    {
+      "map": 23,
+      "name": "Saturn",
+      "npc": "saturn",
+      "text": "The lake guardians will give us the power we need. You are too late!",
+      "kind": "trainer",
+      "trainer": "commander_saturn_valor_cavern",
+      "level": 40,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 2,
+      "name": "Mars",
+      "npc": "mars",
+      "text": "Again? I will not let you interfere with our plans for the lake guardians!",
+      "kind": "trainer",
+      "trainer": "commander_mars_lake_verity",
+      "level": 40,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 25,
+      "name": "Candice",
+      "npc": "candice",
+      "text": "Welcome to Snowpoint! I focus on more than Ice types. Keep moving and show me your focus!",
+      "kind": "trainer",
+      "trainer": "leader_candice",
+      "level": 44,
+      "badge": 6,
+      "doubles": false
+    },
+    {
+      "map": 26,
+      "name": "Jupiter",
+      "npc": "jupiter",
+      "text": "Your rival fought bravely, but we have the guardians. Come to our Veilstone headquarters if you dare.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 27,
+      "name": "Cyrus",
+      "npc": "cyrus",
+      "text": "The Red Chain will bind the legendary Pokemon. You insist on fighting for an imperfect world?",
+      "kind": "trainer",
+      "trainer": "galactic_boss_cyrus_galactic_hq",
+      "level": 46,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 27,
+      "name": "Saturn",
+      "npc": "saturn",
+      "text": "You came to free the lake guardians? Defeat me and I will release them.",
+      "kind": "trainer",
+      "trainer": "commander_saturn_galactic_hq",
+      "level": 44,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 29,
+      "name": "Mars and Jupiter",
+      "npc": "mars",
+      "text": "Spear Pillar belongs to Team Galactic! Your rival cannot save you this time!",
+      "kind": "duo",
+      "trainer": "",
+      "level": 47,
+      "badge": -1,
+      "doubles": true
+    },
+    {
+      "map": 30,
+      "name": "Cyrus",
+      "npc": "cyrus",
+      "text": "Even here, in this distorted world, I will not abandon my vision.",
+      "kind": "trainer",
+      "trainer": "galactic_boss_cyrus_distortion_world",
+      "level": 48,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 30,
+      "name": "Giratina",
+      "npc": "cynthia",
+      "text": "Giratina is before you. Face it, or try to catch it. The worlds must return to balance.",
+      "kind": "legend",
+      "trainer": "",
+      "level": 47,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 21,
+      "name": "Cynthia",
+      "npc": "cynthia",
+      "text": "The world is safe, and your bond has grown. Your last badge awaits in Sunyshore. Then take the road to the League.",
+      "kind": "talk",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 31,
+      "name": "Volkner",
+      "npc": "volkner",
+      "text": "I want a battle that brings back the excitement. Light up this Sunyshore Gym!",
+      "kind": "trainer",
+      "trainer": "leader_volkner",
+      "level": 50,
+      "badge": 7,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Aaron",
+      "npc": "aaron",
+      "text": "Welcome to the Pokemon League. My Bug types and I will give you everything we have!",
+      "kind": "trainer",
+      "trainer": "elite_four_aaron",
+      "level": 53,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Bertha",
+      "npc": "bertha",
+      "text": "A good trainer faces every challenge with care. Can you weather the strength of the earth?",
+      "kind": "trainer",
+      "trainer": "elite_four_bertha",
+      "level": 55,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Flint",
+      "npc": "flint",
+      "text": "I saw your spark in Sunyshore! Now show me a battle that burns bright!",
+      "kind": "trainer",
+      "trainer": "elite_four_flint",
+      "level": 57,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Lucian",
+      "npc": "lucian",
+      "text": "I have just finished reading. A sharp mind is essential to battle. Shall we begin?",
+      "kind": "trainer",
+      "trainer": "elite_four_lucian",
+      "level": 59,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Cynthia",
+      "npc": "cynthia",
+      "text": "You have overcome Sinnoh together. I am Cynthia, the Champion. Let our Pokemon tell the rest of our story.",
+      "kind": "trainer",
+      "trainer": "champion_cynthia",
+      "level": 62,
+      "badge": -1,
+      "doubles": false
+    },
+    {
+      "map": 33,
+      "name": "Hall of Fame",
+      "npc": "cynthia",
+      "text": "Congratulations, Champion! Your partners and your journey are recorded. Sinnoh is open for you to keep exploring.",
+      "kind": "ending",
+      "trainer": "",
+      "level": 0,
+      "badge": -1,
+      "doubles": false
+    }
+  ]
+}

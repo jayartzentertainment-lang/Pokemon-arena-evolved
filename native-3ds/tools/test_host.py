@@ -12,19 +12,19 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--ds-source',type=Path,help='Optionally verify the preserved DS project too')
 args=parser.parse_args()
 OUT=ROOT/'validation/host';OUT.mkdir(parents=True,exist_ok=True)
-flags=['-std=c11','-O1','-g','-Wall','-Wextra','-Werror',
+flags=['-std=c11','-O1','-g','-Wall','-Wextra','-Werror','-fmax-errors=4',
        '-fsanitize=address,undefined','-fno-omit-frame-pointer',
        '-Iinclude','-Ivendor/platinum096/include']
 cc=os.environ.get('CC','cc')
 core=['source/core/combat.c','source/core/move_data.c','source/vendor/arena_moves.c',
       'source/vendor/arena_navigation.c','source/vendor/arena_physics.c']
-extra=['source/game/game.c','source/game/aim.c','source/game/species_data.c']
+extra=['source/game/game.c','source/game/aim.c','source/game/species_data.c','source/game/adventure.c','source/game/adventure_data.c','source/game/adventure_save.c']
 objects={}
 
 def run(name,command):
     process=subprocess.run(command,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
     (OUT/(name+'.log')).write_text(process.stdout)
-    if process.returncode:print(process.stdout)
+    if process.returncode:print(process.stdout[-6000:])
     process.check_returncode()
     return process.stdout
 

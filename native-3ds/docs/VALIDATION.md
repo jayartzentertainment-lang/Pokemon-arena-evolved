@@ -1,72 +1,25 @@
-# Native 3DS 0.2.0 — milestone 1 validation
+# Validation — native3DS integrated adventure0.3.0
 
-Date:2026-10-21. This report covers the combat quality update, not the full game.
-
-## Build
-
-Genuine native ARM11 .3dsx built with pinned official devkitPro GCC16.1.0,
-libctru/Citro2D and tex3ds2.3.0. Binary: **461,728 bytes**.
-SHA256: `7156caccf6214a24b51439eb10f503128038b24c84d478b6396916ae50836c19`.
-
-The exact immutable hash-named candidate was launched and observed in
-Azahar2126.2 with original3DS configuration, stereo/optionalCPU speedup disabled.
-No executable was rebuilt underneath that candidate path.
+This report separates portable state checks from observed native emulator play. It does not claim a full human campaign playthrough or physical hardware profiling.
 
 ## Host checks
 
-**10/10 pass with AddressSanitizer and UndefinedBehaviorSanitizer.**
-The retained eight combat/geometry/navigation/physics/2v2 suites and native
-party adapter pass. Added quality checks cover:
+11/11 suites passed with AddressSanitizer and UndefinedBehaviorSanitizer: the8 retained battle/physics/navigation/Platinum/2v2 suites, native party adapter, aiming/status/beam-quality suite, and new adventure suite. The selected preserved DS source hashes also match.
 
-- Movement while locked to a target; enemy cycling/invalidation without switching.
-- Independent persistent free aim and continuous projectile launch vectors.
-- Rooted Swords Dance, Agility, Calm Mind and Iron Defense with real stat changes.
-- AI status casting uses the same movement lock.
-- Interrupted casts do not grant unapplied buffs; Growl debuffs its target
-  without applying a casting lock to that target.
-- Beam reach grows with the effect, steering is bounded, simultaneous growing
-  beams form a clash and switching clears its ownership/contact.
-- Every one of the 76,800 touch-screen coordinates respects aim/move separation.
+The adventure suite covers all493 base-species data/config lookup, mutable trainer choices, walking/follower trail, walkable links/story-marker/grass reachability on34 maps, six-slot switching, defeat/retry/retreat, capture, level evolution, all41 story flags,8 badges and Champion ending, bounded save encoding/CRC rejection and recovery from a corrupt primary using a known-good backup.
 
-Legacy regressions retain the portable core's existing immediate beam reach;
-the native wrapper explicitly enables synchronized growth. The added quality
-suite tests that actual native path. Passing metadata/geometry coverage does
-not imply all 467 move mechanics are implemented.
+The scripted campaign walk constructs28 battle encounters, including4 actual2v2 setups, and **injects their outcomes** to verify event progression. This is not an end-to-end gameplay victory claim. The existing core suites exercise real battle resolution separately.
 
-## Observed emulator checks
+## Actual native execution
 
-Observed the actual delivery binary's paused entry/high-low settings, reticle
-tracking, movement while locked, touch free aim after finger release, manual
-projectile PP, re-lock, guard/wind dash, 2v2 target cycling, status cast input,
-new Emerald flame stream and Hydro Pump. Captures and native telemetry are
-retained privately. `docs/reports/emulator-results.json` records final facts.
+The exact final `.3dsx` identified in reports/build.json was opened in Azahar2126.2 with original3DS configuration, normal CPU setting, stereo disabled and software OpenGL. Input came through actual emulator keyboard/touch controls; game memory and save progress were not injected for this check.
 
-The casting telemetry records `root=1` at a fixed world position. Normal enemy
-attacks can interrupt the cast: this is the designed interruption path, not
-permission to slide while a cast remains committed. Host tests also verify
-complete uninterrupted casts and the returned movement control.
+Observed: stationary layered trainer preview, changing actual hair pieces, naming the trainer ARENA, that same trainer walking in Twinleaf/Route201, dialogue and story progression, authentic Sinnoh starter selection, Turtwig/Chimchar live battle handoff, return to the adventure, on-disk save and Continue, and a four-actor2v2 battle in the separate full-roster lab. Screenshots are actual emulator captures. A fresh-process Continue check is recorded in reports/emulator-results.json.
 
-The fire preview is captured from the running emulator, not a mocked renderer.
-Core growing-clash geometry/ownership has automated evidence; a complete
-visual emulator clash playtest is not claimed unless explicitly recorded.
+The lab and adventure save were checked separately: lab entry does not advance story objectives. The opening reaches the battle naturally via NPC interaction. Native UI uses the supplied Platinum system font and window-border pieces with corrected indexed transparency. A single menu press is consumed once rather than being replayed across render frames between simulation ticks.
 
-## Performance and limits
+The native FPS/CPU/GPU HUD uses emulated time; it is not proof of real original/New3DS performance. Source conversion and the binary build succeeded within original3DS-oriented texture limits; the hair atlas is split by body and Pokemon textures use a bounded8-sheet cache. Physical hardware, exhaustive493 visual review, complete move-mechanics/ability/item parity, and full human story balancing remain pending.
 
-Native HUD FPS/CPU/GPU times are measured in **emulated time**, not on a real
-3DS. Software OpenGL/host contention affects wall-clock emulator speed. The
-final metrics are in the JSON report; no sustained original-hardware60FPS
-claim is made. Actual original/New3DS profiling and C-stick hardware testing
-remain pending. NDSP was unavailable (SFX OFF); audio was not listening-tested.
+No audio listening test: NDSP was unavailable in this emulator and the game displayed SFX OFF. Audio remains optional original prototype cues. No visually confirmed beam-clash playthrough or full campaign completion is claimed for this release; inherited/native core checks cover clash formation and ownership.
 
-Only four species and their equipped moves are in this native build. Complete
-trainer creation, native saves, all493/all467mechanics and Sinnoh progression
-remain future milestones. Held emitter cels were calibrated; exhaustive
-all-pose/new-species alignment still requires review.
-
-## Preservation
-
-The approved0.1.0 source/binary and the separate Platinum0.9.6 DS release are
-preserved. `provenance/approved-native-baseline.json` records original source
-hashes; final preservation checks are included under `docs/reports/`.
-
-Final exact-binary result: whole-party defeat after 4239 simulation ticks, 58 hits, 6 automatic/manual switches and nine texture-sheet loads. Native HUD median59.82FPS, processing0.981ms and drawing0.498ms are emulated-clock values only.
+Previous native0.1/0.2 source inputs/binaries and the DS0.9.6 integration binary were verified unchanged. Build, host, emulator and preservation details are included under reports/.

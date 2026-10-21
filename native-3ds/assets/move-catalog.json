@@ -1,0 +1,447 @@
+{
+  "source": "Supplied DS0.9.6 converted VFX family artwork; renderer chooses by move/type. Shared families, not467 individually authored effects.",
+  "families": [
+    {
+      "name": "FIRE",
+      "family_id": 0,
+      "atlas_start": 0,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Ember",
+        "Fire Punch",
+        "Flame Wheel",
+        "Fire Spin"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Ember",
+          "symbol": "MOVE_EMBER",
+          "move_id": 52
+        },
+        {
+          "name": "Fire Punch",
+          "symbol": "MOVE_FIRE_PUNCH",
+          "move_id": 7
+        },
+        {
+          "name": "Flame Wheel",
+          "symbol": "MOVE_FLAME_WHEEL",
+          "move_id": 172
+        },
+        {
+          "name": "Fire Spin",
+          "symbol": "MOVE_FIRE_SPIN",
+          "move_id": 83
+        }
+      ]
+    },
+    {
+      "name": "WATER",
+      "family_id": 1,
+      "atlas_start": 8,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Water Gun",
+        "Bubble Beam",
+        "Aqua Jet",
+        "Surf splash"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Water Gun",
+          "symbol": "MOVE_WATER_GUN",
+          "move_id": 55
+        },
+        {
+          "name": "Bubble Beam",
+          "symbol": "MOVE_BUBBLE_BEAM",
+          "move_id": 61
+        },
+        {
+          "name": "Aqua Jet",
+          "symbol": "MOVE_AQUA_JET",
+          "move_id": 453
+        }
+      ]
+    },
+    {
+      "name": "ELECTRIC",
+      "family_id": 2,
+      "atlas_start": 16,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Thunder Shock",
+        "Thunderbolt",
+        "Thunder Wave",
+        "Spark"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Thunder Shock",
+          "symbol": "MOVE_THUNDER_SHOCK",
+          "move_id": 84
+        },
+        {
+          "name": "Thunderbolt",
+          "symbol": "MOVE_THUNDERBOLT",
+          "move_id": 85
+        },
+        {
+          "name": "Thunder Wave",
+          "symbol": "MOVE_THUNDER_WAVE",
+          "move_id": 86
+        },
+        {
+          "name": "Spark",
+          "symbol": "MOVE_SPARK",
+          "move_id": 209
+        }
+      ]
+    },
+    {
+      "name": "ICE",
+      "family_id": 3,
+      "atlas_start": 24,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Ice Shard",
+        "Ice Beam contact",
+        "Icy Wind",
+        "freeze status"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Ice Shard",
+          "symbol": "MOVE_ICE_SHARD",
+          "move_id": 420
+        },
+        {
+          "name": "Icy Wind",
+          "symbol": "MOVE_ICY_WIND",
+          "move_id": 196
+        }
+      ]
+    },
+    {
+      "name": "HIT",
+      "family_id": 4,
+      "atlas_start": 32,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Tackle",
+        "Pound",
+        "Quick Attack",
+        "body contact"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Tackle",
+          "symbol": "MOVE_TACKLE",
+          "move_id": 33
+        },
+        {
+          "name": "Pound",
+          "symbol": "MOVE_POUND",
+          "move_id": 1
+        },
+        {
+          "name": "Quick Attack",
+          "symbol": "MOVE_QUICK_ATTACK",
+          "move_id": 98
+        }
+      ]
+    },
+    {
+      "name": "GUARD",
+      "family_id": 5,
+      "atlas_start": 40,
+      "frames": 8,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "guard startup",
+        "held guard",
+        "successful block"
+      ],
+      "canonical_move_candidates": []
+    },
+    {
+      "name": "CLASH",
+      "family_id": 6,
+      "atlas_start": 48,
+      "frames": 4,
+      "ticks_per_frame": 6,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "compatible projectile clash",
+        "heavy contact"
+      ],
+      "canonical_move_candidates": []
+    },
+    {
+      "name": "SLASH",
+      "family_id": 7,
+      "atlas_start": 4,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Scratch",
+        "Slash",
+        "Night Slash",
+        "Shadow Claw",
+        "Cut"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Scratch",
+          "symbol": "MOVE_SCRATCH",
+          "move_id": 10
+        },
+        {
+          "name": "Slash",
+          "symbol": "MOVE_SLASH",
+          "move_id": 163
+        },
+        {
+          "name": "Night Slash",
+          "symbol": "MOVE_NIGHT_SLASH",
+          "move_id": 400
+        },
+        {
+          "name": "Shadow Claw",
+          "symbol": "MOVE_SHADOW_CLAW",
+          "move_id": 421
+        },
+        {
+          "name": "Cut",
+          "symbol": "MOVE_CUT",
+          "move_id": 15
+        }
+      ]
+    },
+    {
+      "name": "LEAF",
+      "family_id": 8,
+      "atlas_start": 12,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Razor Leaf",
+        "Magical Leaf",
+        "Leaf Storm",
+        "grass projectile"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Razor Leaf",
+          "symbol": "MOVE_RAZOR_LEAF",
+          "move_id": 75
+        },
+        {
+          "name": "Magical Leaf",
+          "symbol": "MOVE_MAGICAL_LEAF",
+          "move_id": 345
+        },
+        {
+          "name": "Leaf Storm",
+          "symbol": "MOVE_LEAF_STORM",
+          "move_id": 437
+        }
+      ]
+    },
+    {
+      "name": "PSYCHIC",
+      "family_id": 9,
+      "atlas_start": 20,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Psycho Cut",
+        "Confusion",
+        "Psychic",
+        "Hypnosis"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Psycho Cut",
+          "symbol": "MOVE_PSYCHO_CUT",
+          "move_id": 427
+        },
+        {
+          "name": "Confusion",
+          "symbol": "MOVE_CONFUSION",
+          "move_id": 93
+        },
+        {
+          "name": "Psychic",
+          "symbol": "MOVE_PSYCHIC",
+          "move_id": 94
+        },
+        {
+          "name": "Hypnosis",
+          "symbol": "MOVE_HYPNOSIS",
+          "move_id": 95
+        }
+      ]
+    },
+    {
+      "name": "SHADOW",
+      "family_id": 10,
+      "atlas_start": 28,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Shadow Ball",
+        "Shadow Sneak",
+        "Shadow Force",
+        "Dark Pulse",
+        "poison status"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Shadow Ball",
+          "symbol": "MOVE_SHADOW_BALL",
+          "move_id": 247
+        },
+        {
+          "name": "Shadow Sneak",
+          "symbol": "MOVE_SHADOW_SNEAK",
+          "move_id": 425
+        },
+        {
+          "name": "Shadow Force",
+          "symbol": "MOVE_SHADOW_FORCE",
+          "move_id": 467
+        },
+        {
+          "name": "Dark Pulse",
+          "symbol": "MOVE_DARK_PULSE",
+          "move_id": 399
+        }
+      ]
+    },
+    {
+      "name": "BUFF",
+      "family_id": 11,
+      "atlas_start": 36,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Swords Dance",
+        "Agility",
+        "Calm Mind",
+        "stat stage increase",
+        "healing"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Swords Dance",
+          "symbol": "MOVE_SWORDS_DANCE",
+          "move_id": 14
+        },
+        {
+          "name": "Agility",
+          "symbol": "MOVE_AGILITY",
+          "move_id": 97
+        },
+        {
+          "name": "Calm Mind",
+          "symbol": "MOVE_CALM_MIND",
+          "move_id": 347
+        }
+      ]
+    },
+    {
+      "name": "DEBUFF",
+      "family_id": 12,
+      "atlas_start": 52,
+      "frames": 4,
+      "ticks_per_frame": 3,
+      "native_anchor": [
+        16,
+        16
+      ],
+      "compatible_moves": [
+        "Growl",
+        "Tail Whip",
+        "Scary Face",
+        "stat stage decrease",
+        "status application"
+      ],
+      "canonical_move_candidates": [
+        {
+          "name": "Growl",
+          "symbol": "MOVE_GROWL",
+          "move_id": 45
+        },
+        {
+          "name": "Tail Whip",
+          "symbol": "MOVE_TAIL_WHIP",
+          "move_id": 39
+        },
+        {
+          "name": "Scary Face",
+          "symbol": "MOVE_SCARY_FACE",
+          "move_id": 184
+        }
+      ]
+    }
+  ],
+  "frames": 58,
+  "swift_sha256": "48e75ed5d0a2f3c3472d693f7da76a41e90e64768a5ce1b1500767e150b22fb1",
+  "swift_images": [
+    56,
+    57
+  ]
+}
