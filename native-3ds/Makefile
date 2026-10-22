@@ -36,7 +36,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	Platinum-Arena-3DS-Prototype
 BUILD		:=	build
-SOURCES		:=	source/platform source/game source/core source/vendor
+SOURCES		:=	source/platform source/game source/imported/private source/core source/vendor
 DATA		:=	data
 INCLUDES	:=	include vendor/platinum096/include
 GRAPHICS	:=	gfx

@@ -204,6 +204,26 @@ static void Normalize(int x,int y,int16_t *ox,int16_t *oy)
     if(!length){*ox=0;*oy=256;return;}
     *ox=(int16_t)(x*256/(int)length);*oy=(int16_t)(y*256/(int)length);
 }
+void Combat_ConfigureMobility(Combat *c,unsigned actor,unsigned speed,unsigned hp,unsigned defense)
+{
+    CombatFighter *f;if(!c||actor>=c->fighterCount)return;
+    f=&c->fighters[actor];c->nativeBalance=1;
+    f->moveSpeed=(uint16_t)Clamp(110+(int)speed*2,150,510);
+    f->staminaMax=(uint8_t)Clamp(75+(int)(hp+defense)/8,85,125);
+    f->regenStep=(uint8_t)Clamp(1+(int)hp/90,1,3);
+    f->dodgeScale=(uint8_t)Clamp((170+(int)speed)/3,65,110);
+    f->resistance=(uint8_t)Clamp((int)defense,20,200);
+    if(f->stamina==COMBAT_STAMINA_MAX||f->stamina>f->staminaMax)f->stamina=f->staminaMax;
+}
+static int NativeCharge(uint16_t move)
+{
+    switch(move){
+    case MOVE_TACKLE:case MOVE_TAKE_DOWN:case MOVE_DOUBLE_EDGE:case MOVE_QUICK_ATTACK:
+    case MOVE_EXTREME_SPEED:case MOVE_AQUA_JET:case MOVE_FLAME_WHEEL:case MOVE_FLARE_BLITZ:
+    case MOVE_VOLT_TACKLE:case MOVE_HEADBUTT:case MOVE_ZEN_HEADBUTT:return 1;
+    default:return 0;
+    }
+}
 void Combat_SetAim(Combat *c,int x,int y,int enabled)
 {
     if(!c)return;
@@ -455,6 +475,7 @@ static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
         basic=1;move=MOVE_STRUGGLE;m=Combat_GetMoveInfo(move);
     }
     if(!m||target==COMBAT_FIGHTERS)return;
+    if(c->nativeBalance&&(f->stamina<(basic?4:2+m->power/40)||(basic&&f->naturalCooldown)))return;
     if(f->status==COMBAT_STATUS_PARALYSIS&&!(NextRandom(c)&3)) {f->statusLock=30;return;}
     if(f->confusionTicks&&(NextRandom(c)&1)) {
         unsigned damage=(40*Staged(f->attack,f->stages[COMBAT_STAT_ATTACK],0)/
@@ -478,12 +499,17 @@ static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
     f->actionSerial++;
     f->actionSlot=basic?4:slot&3;
     f->hitMask=0;f->terrainMask=0;f->basicAttack=basic;
-    f->animTick=0; /* Attacks spend PP only; stamina belongs to defense/mobility. */
+    f->animTick=0;
+    if(c->nativeBalance){
+        unsigned cost=basic?4:2+m->power/40;
+        f->stamina=(uint8_t)(f->stamina-cost);f->regenDelay=18;
+        if(basic){p=ArenaMoves_Get(move);f->naturalCooldown=(uint16_t)(p?Windup(f,p)+Active(f,p)+Recovery(f,p)+18:48);}
+    }
     if(!basic) {
         f->pp[slot&3]--;
         p=ArenaMoves_Get(move);
         if(p)f->cooldown[slot&3]=(uint16_t)(Windup(f,p)+Active(f,p)+Recovery(f,p)+
-            (m->category==2?45:m->power>=80?30:0));
+            (c->nativeBalance?(m->category==2?120:30+m->power):m->category==2?45:m->power>=80?30:0));
     }
 }
 static uint8_t CanCancel(const CombatFighter *f)
@@ -612,6 +638,7 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
     if(v->guardTimer&&v->stamina&&guardFacing) {
         int perfect=v->guardAge<5;
         int cost=perfect?4:10+damage/4;
+        if(c->nativeBalance&&!perfect)cost=Clamp(cost*100/(75+v->resistance/2),5,80);
         if(v->stamina>=cost) {
             v->stamina-=cost;v->regenDelay=20;c->blocked++;
             /* Heavy native moves still apply reduced pressure through a
@@ -654,7 +681,8 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
     if(move==MOVE_FALSE_SWIPE&&damage>=v->hp) damage=v->hp>1?v->hp-1:0;
     if(damage>v->hp) damage=v->hp;
     v->hp-=damage;v->hurtTimer=15;v->guardTimer=v->guardHeld=0;v->dashTimer=0;
-    v->vx=aimX*3;v->vy=aimY*3;v->regenDelay=16;EndAction(v);
+    v->vx=aimX*3;v->vy=aimY*3;
+    if(c->nativeBalance){v->vx=v->vx*100/(70+v->resistance/2);v->vy=v->vy*100/(70+v->resistance/2);}v->regenDelay=16;EndAction(v);
     if(a->hp&&(move==MOVE_ABSORB||move==MOVE_MEGA_DRAIN||move==MOVE_GIGA_DRAIN||move==MOVE_LEECH_LIFE))
         a->hp=Clamp(a->hp+(damage+1)/2,0,a->maxHp);
     if(v->status==COMBAT_STATUS_FREEZE&&m->type==10){v->status=0;v->statusTicks=0;}
@@ -698,6 +726,7 @@ static void ActionStep(Combat *c,unsigned side)
         f->phase==COMBAT_READY||Combat_BeamContact(c,side,0,0)) return;
     w=Windup(f,p);a=Active(f,p);
     Combat_AttackVector(f,&ax,&ay);reach=p->range;
+    if(c->nativeBalance&&m->category==0&&p->kind==ARENA_MOVE_RUSH&&!NativeCharge(f->actionMove))reach=28;
     f->animation=p->move==MOVE_PROTECT?COMBAT_IDLE:p->animation;f->direction=f->attackDirection;
     if(f->actionTick<w) {
         f->phase=COMBAT_WINDUP;
@@ -716,8 +745,8 @@ static void ActionStep(Combat *c,unsigned side)
             if(f->stamina) { f->guardTimer=16;f->guardAge=0; }
             if(!(f->actionTick%12)) Effect(c,f->x,f->y,RGB(10,31,31),COMBAT_BLOCK,14);
         }
-        if(p->kind==ARENA_MOVE_RUSH&&f->actionDistance<p->range*Q) {
-            unsigned step=p->speed,remaining=(unsigned)p->range*Q-f->actionDistance;
+        if(p->kind==ARENA_MOVE_RUSH&&(!c->nativeBalance||NativeCharge(f->actionMove))&&f->actionDistance<p->range*Q) {
+            unsigned step=c->nativeBalance?p->speed*3/4:p->speed,remaining=(unsigned)p->range*Q-f->actionDistance;
             if(step>remaining) step=remaining;
             MoveBody(f,ax*(int)step/Q,ay*(int)step/Q);f->actionDistance+=step;
         }
@@ -730,7 +759,7 @@ static void ActionStep(Combat *c,unsigned side)
                 int hit;
                 tx=v->x/Q;ty=v->y/Q;
                 hit=ArenaMoves_InCone(tx-px,ty-py,ax,ay,reach?reach:1,p->cone);
-                if(p->kind==ARENA_MOVE_RUSH) hit=ArenaMoves_SegmentHit(f->previousX/Q,f->previousY/Q,px,py,tx,ty,18);
+                if(p->kind==ARENA_MOVE_RUSH&&(!c->nativeBalance||NativeCharge(f->actionMove))) hit=ArenaMoves_SegmentHit(f->previousX/Q,f->previousY/Q,px,py,tx,ty,18);
                 if(hit&&ArenaNav_LineClear(px,py,tx,ty,1)&&
                     Hit(c,side,i,f->actionMove,f->basicAttack,f->x,f->y,ax,ay)) {
                     f->hitMask|=1u<<i;
@@ -1118,8 +1147,8 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
     if(f->aiTimer) f->aiTimer--;
     if(f->aiCooldown) f->aiCooldown--;
     if(f->regenDelay) f->regenDelay--;
-    else if(!(c->frame%3)&&f->stamina<COMBAT_STAMINA_MAX)
-        f->stamina=(uint8_t)Clamp(f->stamina+2,0,COMBAT_STAMINA_MAX);
+    else if(!(c->frame%(c->nativeBalance?6:3))&&f->stamina<(c->nativeBalance?f->staminaMax:COMBAT_STAMINA_MAX))
+        f->stamina=(uint8_t)Clamp(f->stamina+(c->nativeBalance?f->regenStep:2),0,c->nativeBalance?f->staminaMax:COMBAT_STAMINA_MAX);
     if(Combat_BeamContact(c,side,0,0)) {
         const struct ArenaMoveProfile *p=ArenaMoves_Get(f->actionMove);
         f->vx=f->vy=0;f->direction=f->attackDirection;
@@ -1157,6 +1186,7 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
     if(f->dashTimer) {
         static const uint16_t dashSpeedByTimer[13]={0,384,512,640,768,896,1024,1152,1280,1344,1280,1024,720};
         int dashSpeed=dashSpeedByTimer[f->dashTimer<=12?f->dashTimer:12];
+        if(c->nativeBalance)dashSpeed=dashSpeed*f->dodgeScale/100;
         if(f->dashTimer<=4&&(dx||dy)) {
             unsigned requested=Facing(dx,dy);
             unsigned turn=(requested+8-f->dashDirection)&7;
@@ -1186,7 +1216,7 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
     } else if(dx||dy) {
         if(f->phase==COMBAT_READY) f->direction=Facing(dx,dy);
     }
-    speed=Clamp(270+f->speed*2,340,620);
+    speed=c->nativeBalance?f->moveSpeed:Clamp(270+f->speed*2,340,620);
     speed=(int)Staged((unsigned)speed,f->stages[COMBAT_STAT_SPEED],0);
     if(f->status==COMBAT_STATUS_PARALYSIS)speed/=4;
     speed=(int)Clamp(speed,70,1100);
@@ -1312,6 +1342,7 @@ static void StatusStep(Combat *c)
     unsigned side,slot;
     for(side=0;side<c->fighterCount;side++) {
         CombatFighter *f=&c->fighters[side];
+        if(f->naturalCooldown)f->naturalCooldown--;
         for(slot=0;slot<4;slot++)if(f->cooldown[slot])f->cooldown[slot]--;
         if(!f->hp)continue;
         if(f->defenseBoost)f->defenseBoost--;

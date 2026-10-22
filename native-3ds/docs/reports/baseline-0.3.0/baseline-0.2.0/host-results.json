@@ -1,0 +1,64 @@
+{
+  "tests": 10,
+  "passed": 10,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "ds_project_preserved": true,
+  "results": [
+    {
+      "test": "test_combat",
+      "passed": true,
+      "output": "PASS: native combat movement, timing, PP, aim, types, guards, dodge, swept hits, terrain, input buffering and AI match"
+    },
+    {
+      "test": "test_combat_polish",
+      "passed": true,
+      "output": "PASS: held guard, exhaustion latch, heavy chip, beam/projectile clashes, critical damage/events, fluent movement and larger bounds"
+    },
+    {
+      "test": "test_combat_v096",
+      "passed": true,
+      "output": "PASS: 0.9.6 seven persistent stages, native status/ticks, natural PP, four slots, cooldowns and stat-based 2v2 clashes"
+    },
+    {
+      "test": "test_move_geometry",
+      "passed": true,
+      "output": "PASS: 19602 cone cases, range/direction, swept collision and explicit profiles"
+    },
+    {
+      "test": "test_navigation",
+      "passed": true,
+      "output": "PASS: 13068 reachable routes, swept solids, symmetry, bounds; same C as ROM\nPASS: all 128 dynamic destruction masks remain routable"
+    },
+    {
+      "test": "test_physics",
+      "passed": true,
+      "output": "PASS: reserved stones ignore ground hits, shatter at real impact, consume once\nPASS: material strength, solid removal, rebound, delayed blast, chain, determinism, bounded pool and rest"
+    },
+    {
+      "test": "test_platinum_core",
+      "passed": true,
+      "output": "PASS: all Platinum move profiles, Gen IV categories, PP bonuses, action status, fluid stamina and stable ally control"
+    },
+    {
+      "test": "test_team_combat",
+      "passed": true,
+      "output": "PASS: simultaneous 2v2 teams, nearest targets, allied AI, friendly-fire prevention, whole-team defeat, faint safety and determinism"
+    },
+    {
+      "test": "test_game",
+      "passed": true,
+      "output": "PASS native adapter: analog magnitude, D-pad, party preservation, no duplicate2v2 bindings, real buff/PP and battle result"
+    },
+    {
+      "test": "test_quality",
+      "passed": true,
+      "output": "PASS quality: strafing, target cycling/invalidation, persistent continuous aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates"
+    }
+  ],
+  "native_clash_geometry_and_cleanup": true,
+  "ai_and_player_status_casts_verified": true,
+  "soft_assist_cone_range_and_cover_verified": true
+}

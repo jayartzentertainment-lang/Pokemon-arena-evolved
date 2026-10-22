@@ -1,0 +1,16 @@
+{
+  "input_sha256": {
+    "res/fonts/font_message.png": "c29e346f51e9f9aae126173a062be3919dc75d011cef0ba5ce6c1230738cf81c",
+    "res/fonts/font_message.json": "844c9ff47fa4773a035d71fb9d49f24451dd17ca6ef0b1a49df4ea304e3b6bd1",
+    "tools/msgenc/charmap.txt": "07b54e9a3a828aca088111ad80e811a0cc697f2eee7962bfe773052da65ad495",
+    "res/graphics/windows/message_box_00.png": "e443e861dba69d7a8c460cc584e8fac424f121b2a51e267f211371773ed262cf",
+    "res/graphics/windows/standard_field.png": "90dd80aae47fdb3d8a0186c552f156d210b80c63e2f2a62a6234d708aee28ec3",
+    "res/graphics/poketch/unavailable_bg_tiles.png": "b3fbb04475d48f8371b3123c2963624137fafad3791f5847047286e47a39f485",
+    "res/graphics/poketch/unavailable.NSCR": "24b76bd2f3997b45c012468152bbe0dfd4c99daef3442d4aac1be1f7a5fadf15"
+  },
+  "glyphs": 509,
+  "unicode_mappings": 483,
+  "font": "Original FONT_MESSAGE, unscaled source pixels, original proportional widths/case/shadows",
+  "windows": "Original message_box_00 and standard_field",
+  "field_subscreen": "Original PoketchUnavailableScreen assets, used only before original Poketch acquisition"
+}

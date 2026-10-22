@@ -26,14 +26,52 @@ static void Big(ArenaView *v,int x,int y,const char *text)
         if(ch>31&&ch<128)C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->font,ch-32),x+i*16,y,.95f,&tint,2,2);
     }
 }
+static void FixedTrainer(ArenaView *v,const AdventureAppearance *p,int direction,int frame,float x,float y,float scale)
+{
+    /* Two colour masks per channel reproduce the retained DS palette edits.
+     * The source silhouette, hairstyle, hat and animation never change. */
+    static const uint8_t skin[4][2][3]={{{31,26,23},{27,20,15}},{{31,27,25},{29,22,19}},{{25,18,12},{20,13,8}},{{17,11,8},{12,7,5}}};
+    static const uint8_t hair[6][2][3]={{{7,8,10},{7,12,17}},{{4,4,5},{8,8,10}},{{9,5,3},{15,9,5}},{{16,11,4},{28,22,10}},{{13,4,3},{23,10,5}},{{13,14,17},{24,25,27}}};
+    static const uint8_t outfit[8][2][3]={{{23,7,9},{27,13,15}},{{5,11,23},{12,19,30}},{{5,16,9},{13,24,14}},{{14,7,22},{22,14,29}},{{25,11,3},{31,20,8}},{{3,16,17},{9,25,24}},{{6,7,9},{14,15,18}},{{22,19,13},{30,28,22}}};
+    unsigned first=(p->base-ADV_TRAINER_RED)*112+(direction&3)*4+(frame&3),channel,tone;
+    unsigned choices[3]={p->option[0],p->hairColour,p->outfitColour};float depth=scale>1.3f?.90f:.4f;
+    C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->fixedTrainers,first),x-16*scale,y-32*scale,depth,0,scale,scale);
+    for(channel=0;channel<3;channel++)if(choices[channel])for(tone=0;tone<2;tone++){
+        const uint8_t *rgb=channel==0?skin[choices[channel]][tone]:channel==1?hair[choices[channel]][tone]:outfit[choices[channel]][tone];C2D_ImageTint tint;
+        C2D_PlainImageTint(&tint,RGB(rgb[0]*255/31,rgb[1]*255/31,rgb[2]*255/31),1);
+        C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->fixedTrainers,first+(1+channel*2+tone)*16),x-16*scale,y-32*scale,depth,&tint,scale,scale);
+    }
+}
+static void TrainerAssets(ArenaView *v,const AdventureAppearance *p)
+{
+    static const char *groups[]={"body","bottoms","tops","hair","headgear","accessories"};unsigned g;
+    /* Release unused texture banks before loading another; never retain both. */
+    if(p->base!=ADV_TRAINER_CUSTOM&&(v->trainer[0]||v->hair[0]||v->hair[1])){
+        C3D_FrameSync();
+        for(g=0;g<6;g++)if(v->trainer[g]){C2D_SpriteSheetFree(v->trainer[g]);v->trainer[g]=NULL;}
+        for(g=0;g<2;g++)if(v->hair[g]){C2D_SpriteSheetFree(v->hair[g]);v->hair[g]=NULL;}
+    }
+    if(p->base!=ADV_TRAINER_GEN4&&v->gen4Trainer[0]){
+        C3D_FrameSync();
+        for(g=0;g<6;g++)if(v->gen4Trainer[g]){C2D_SpriteSheetFree(v->gen4Trainer[g]);v->gen4Trainer[g]=NULL;}
+    }
+    if(p->base==ADV_TRAINER_GEN4){
+        for(g=0;g<6;g++)if(!v->gen4Trainer[g]){char path[80];snprintf(path,sizeof(path),"romfs:/gfx/trainer_gen4_%s.t3x",groups[g]);v->gen4Trainer[g]=Load(v,path);}
+    }else if(p->base==ADV_TRAINER_CUSTOM){
+        for(g=0;g<6;g++)if(g!=3&&!v->trainer[g]){char path[80];snprintf(path,sizeof(path),"romfs:/gfx/trainer_%s.t3x",groups[g]);v->trainer[g]=Load(v,path);}
+        for(g=0;g<2;g++)if(!v->hair[g]){char path[80];snprintf(path,sizeof(path),"romfs:/gfx/trainer_hair_%c.t3x",'A'+g);v->hair[g]=Load(v,path);}
+    }
+}
 static void Trainer(ArenaView *v,const AdventureAppearance *p,int direction,int frame,float x,float y,float scale)
 {
     unsigned g;
     C2D_DrawEllipseSolid(x-10*scale,y-3*scale,.15f,20*scale,5*scale,C2D_Color32(18,43,34,95));
+    if(p->base==ADV_TRAINER_RED||p->base==ADV_TRAINER_BRENDAN){FixedTrainer(v,p,direction,frame,x,y,scale);return;}
     for(g=0;g<6;g++){
-        C2D_SpriteSheet sheet=g==3?v->hair[p->body]:v->trainer[g];
-        unsigned idx=(g==3?p->option[g]:p->option[g]*2+p->body)*16+(direction&3)*4+(frame&3);
-        if(sheet&&idx<C2D_SpriteSheetCount(sheet))C2D_DrawImageAt(C2D_SpriteSheetGetImage(sheet,idx),x-16*scale,y-44*scale,scale>1.3f?.90f:.4f,0,scale,scale);
+        int gen4=p->base==ADV_TRAINER_GEN4;
+        C2D_SpriteSheet sheet=gen4?v->gen4Trainer[g]:g==3?v->hair[p->body]:v->trainer[g];
+        unsigned idx=(!gen4&&g==3?p->option[g]:p->option[g]*2+p->body)*16+(direction&3)*4+(frame&3);
+        if(sheet&&idx<C2D_SpriteSheetCount(sheet))C2D_DrawImageAt(C2D_SpriteSheetGetImage(sheet,idx),x-16*scale,y-(gen4?32:44)*scale,scale>1.3f?.90f:.4f,0,scale,scale);
     }
 }
 static void SmallMon(ArenaView *v,unsigned dex,unsigned dir,unsigned anim,unsigned tick,float x,float y,float scale)
@@ -106,28 +144,134 @@ static void TrainerCard(ArenaView *v,const Adventure *a)
 }
 static void Creator(ArenaView *v,const Adventure *a)
 {
-    static const char *rows[]={"NAME","BODY","SKIN","HAIR","TOP","BOTTOM","HAT","ACCESSORY","FOLLOWER"};
-    static const unsigned group[9]={0,0,0,3,2,1,4,5,0};
-    unsigned i;char value[24];Header(v,a->returnMode==ADV_CAMP?"EDIT YOUR TRAINER":"CREATE YOUR TRAINER");
-    for(i=0;i<9;i++){
-        unsigned g=group[i];
+    static const char *customRows[]={"NAME","BASE","BODY","SKIN","HAIR","TOP","BOTTOM","HAT","ACCESSORY","FOLLOWER"};
+    static const char *gen4Rows[]={"NAME","BASE","BODY","SKIN","HAIR","TOP","BOTTOM","HAT","FOLLOWER"};
+    static const char *fixedRows[]={"NAME","BASE","SKIN","HAIR COLOUR","OUTFIT COLOUR","FOLLOWER"};
+    static const char *bases[]={"CUSTOM CLASSIC","RED","BRENDAN","CUSTOM"};
+    static const char *hairNames[]={"ORIGINAL","BLACK","BROWN","BLOND","AUBURN","SILVER"};
+    static const char *outfitNames[]={"ORIGINAL","BLUE","GREEN","PURPLE","ORANGE","TEAL","CHARCOAL","CREAM"};
+    static const unsigned group[10]={0,0,0,0,3,2,1,4,5,0};
+    const AdventureAppearance *p=&a->save.appearance;unsigned i,rows=Adventure_CreatorRows(p);int gen4=p->base==ADV_TRAINER_GEN4,custom=gen4||p->base==ADV_TRAINER_CUSTOM;char value[24];
+    Header(v,a->returnMode==ADV_CAMP||a->returnMode==ADV_PT_MENU?"EDIT YOUR TRAINER":"CREATE YOUR TRAINER");
+    for(i=0;i<rows;i++){
         if(i==0)snprintf(value,sizeof(value),"%s",a->save.name);
-        else if(i==1)snprintf(value,sizeof(value),"BODY %c",a->save.appearance.body?'B':'A');
-        else if(i==8)snprintf(value,sizeof(value),"%s",a->save.appearance.follower?"ON":"OFF");
-        else snprintf(value,sizeof(value),"%s",gAppearanceLabels[g][a->save.appearance.option[g]]);
-        if(i==a->cursor)C2D_DrawRectSolid(8,31+i*18,.7f,304,18,RGB(223,194,111));
-        Text(v,13,35+i*18,RGB(34,52,45),"%s",rows[i]);
-        Text(v,137,35+i*18,RGB(34,52,45),"< %.18s >",value);
+        else if(i==1)snprintf(value,sizeof(value),"%s",bases[p->base]);
+        else if(i==rows-1)snprintf(value,sizeof(value),"%s",p->follower?"ON":"OFF");
+        else if(!custom){
+            if(i==2)snprintf(value,sizeof(value),"SKIN %u",p->option[0]+1);
+            else snprintf(value,sizeof(value),"%s",i==3?hairNames[p->hairColour]:outfitNames[p->outfitColour]);
+        }else if(i==2)snprintf(value,sizeof(value),"BODY %c",p->body?'B':'A');
+        else if(i==3)snprintf(value,sizeof(value),"SKIN %u",p->option[0]+1);
+        else {unsigned g=group[i];if(!p->option[g])snprintf(value,sizeof(value),"NONE");else snprintf(value,sizeof(value),"%u OF %u",p->option[g],Adventure_AppearanceCount(p,g)-1);}
+        if(i==a->cursor)C2D_DrawRectSolid(8,32+i*16,.7f,304,16,RGB(223,194,111));
+        Text(v,13,36+i*16,RGB(34,52,45),"%s",gen4?gen4Rows[i]:custom?customRows[i]:fixedRows[i]);
+        Text(v,137,36+i*16,RGB(34,52,45),"< %.18s >",value);
     }
-    Panel(v,12,204,296,29,1);Text(v,46,214,RGB(34,52,45),"START: CONFIRM TRAINER");
+    Text(v,13,195,RGB(34,52,45),custom?"START BLANK / ADD YOUR LAYERS":"FIXED HAIR SHAPE / COLOURS ONLY");
+    Panel(v,12,210,296,24,1);Text(v,46,218,RGB(34,52,45),"START: CONFIRM TRAINER");
+}
+static float PtCoordinate(const PtActor *p,int z)
+{
+    float t=p->duration?1-p->ticks/(float)p->duration:1;
+    int32_t from=z?p->fromZ:p->fromX,to=z?p->z:p->x;
+    return (from+(to-from)*t)/256.0f;
+}
+static void PtPreload(ArenaView *v,const Platinum *p)
+{
+    const PtMap *m=Platinum_Map(p->header);int firstX,firstZ,k;
+    const PtActor *camera=p->cameraActive?&p->camera:&p->actors[PT_ACTORS];
+    float cx=PtCoordinate(camera,0)-128;
+    float cz=PtCoordinate(camera,1)-96;
+    firstX=(int)floorf(cx/512);firstZ=(int)floorf(cz/512);
+    if(!m)return;
+    for(k=0;k<4;k++){
+        int x=firstX+(k&1),z=firstZ+k/2;unsigned i,header=65535;
+        for(i=0;i<gPtMapCount;i++){
+            const PtMap *n=&gPtMaps[i];
+            if(n->matrix==m->matrix&&x*32>=n->minX&&z*32>=n->minZ&&x*32<n->minX+n->width&&z*32<n->minZ+n->height){header=n->header;break;}
+        }
+        if(v->ptHeader[k]==(int)header&&v->ptX[k]==x&&v->ptZ[k]==z)continue;
+        if(v->ptCells[k]){C3D_FrameSync();C2D_SpriteSheetFree(v->ptCells[k]);v->ptCells[k]=NULL;}
+        v->ptHeader[k]=(int)header;v->ptX[k]=x;v->ptZ[k]=z;
+        if(header!=65535){char path[96];snprintf(path,sizeof(path),"romfs:/gfx/h%03u_%02d_%02d.t3x",header,x,z);v->ptCells[k]=Load(v,path);}
+    }
+}
+/* Original text pixels and original proportional advances, without uppercasing. */
+static void PtOriginalText(ArenaView *v,float x,float y,const char *s,float scale)
+{
+    float start=x;
+    while(*s){unsigned cp=(unsigned char)*s++;
+        if(cp=='\n'){x=start;y+=16*scale;continue;}
+        if(cp>=0xc0){unsigned remaining=cp<0xe0?1:cp<0xf0?2:3;cp&=remaining==1?31:remaining==2?15:7;while(remaining--&&*s)cp=(cp<<6)|((unsigned char)*s++&63);}
+        {unsigned glyph=Platinum_Glyph(cp);C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ptMessageFont,glyph),x,y,.94f,0,scale,scale);x+=gPtFontWidths[glyph]*scale;}
+    }
+}
+static void PtSystemWindow(ArenaView *v,float x,float y,float w,float h)
+{
+    unsigned row,col;
+    for(row=0;row<3;row++)for(col=0;col<3;col++){
+        float xx=col==0?0:col==1?8:w-8,yy=row==0?0:row==1?8:h-8;
+        float ww=col==1?w-16:8,hh=row==1?h-16:8;
+        C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ptWindows,18+row*3+col),x+xx,y+yy,.8f,0,ww/8,hh/8);
+    }
+}
+static void PtDialogue(ArenaView *v,const Platinum *p)
+{
+    const char *s=p->text;unsigned skip=p->messagePage*2,line=0,row,col;
+    if(!p->text[0])return;
+    while(*s&&skip)if(*s++=='\n')skip--;
+    /* Original DrawMessageBoxFrame: 27x4 text tiles, 32x6 including border. */
+    for(row=0;row<6;row++)for(col=0;col<32;col++){
+        unsigned strip=row==0?0:row==5?12:6;
+        unsigned cel=col<2?col:col<29?2:col-26;
+        C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ptWindows,strip+cel),40+col*10,180+row*10,.8f,0,1.25f,1.25f);
+    }
+    while(*s&&line<2){char out[512];unsigned at=0;while(*s&&*s!='\n'&&at+1<sizeof(out))out[at++]=*s++;out[at]=0;if(*s=='\n')s++;PtOriginalText(v,55,188+line*20,out,1.25f);line++;}
+}
+static void PtTop(ArenaView *v,const Adventure *a)
+{
+    const Platinum *p=&a->platinum;const PtMap *m=Platinum_Map(p->header);unsigned k,order[PT_ACTORS+1],n=0,j;
+    if(a->mode==ADV_PT_INTRO){C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->platinumIntro,0),40,0,.1f,0,1.25f,1.25f);PtDialogue(v,p);return;}
+    if(!m)return;
+    if(p->service==2){static const unsigned dex[]={387,390,393};for(k=0;k<3;k++)SmallMon(v,dex[k],0,0,a->ticks,70+k*132,155,1.7f);return;}
+    {const PtActor *camera=p->cameraActive?&p->camera:&p->actors[PT_ACTORS];float cx=PtCoordinate(camera,0)-128,cz=PtCoordinate(camera,1)-96;
+     for(k=0;k<4;k++)if(v->ptCells[k])C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ptCells[k],0),40+(v->ptX[k]*512-cx)*1.25f,(v->ptZ[k]*512-cz)*1.25f,0,0,1.25f,1.25f);
+     for(k=0;k<m->objectCount&&k<PT_ACTORS;k++)if(p->actors[k].visible&&m->objects[k].gfx!=65535)order[n++]=k;
+     if(p->actors[PT_ACTORS-1].visible)order[n++]=PT_ACTORS-1;
+     order[n++]=PT_ACTORS;
+     for(k=0;k<n;k++)for(j=k+1;j<n;j++)if(PtCoordinate(&p->actors[order[k]],1)>PtCoordinate(&p->actors[order[j]],1)){unsigned tmp=order[k];order[k]=order[j];order[j]=tmp;}
+     for(k=0;k<n;k++){
+      unsigned id=order[k];const PtActor *actor=&p->actors[id];float x=40+(PtCoordinate(actor,0)-cx)*1.25f,y=(PtCoordinate(actor,1)-cz)*1.25f;
+      if(id==PT_ACTORS){static const unsigned dir[]={3,0,1,2};Trainer(v,&a->save.appearance,dir[actor->dir&3],actor->ticks?(a->ticks/8)%4:0,x,y,1);}
+      else {unsigned gfx=id==PT_ACTORS-1?gPtRivalGfx:m->objects[id].gfx;if(gfx==65534)gfx=gPtCounterpartGfx[!!p->gender];unsigned image=gfx*12+(actor->dir&3)*3+(actor->ticks?(a->ticks/6)%3:0);Sprite(v->platinumNpcs,image,x-20,y-35,1.25f,1.25f,0,0,0,1,0);}
+     }
+    }
+    C2D_DrawRectSolid(0,0,.65f,40,240,RGB(0,0,0));C2D_DrawRectSolid(360,0,.65f,40,240,RGB(0,0,0));PtDialogue(v,p);
+}
+static void PtBottom(ArenaView *v,const Adventure *a)
+{
+    const Platinum *p=&a->platinum;unsigned i;
+    /* Platinum owns the normal field screen. No Arena header, control panel,
+     * trainer dashboard, raw map name or tile coordinates are overlaid. */
+    C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ptFieldBottom,0),0,0,.1f,0,1.25f,1.25f);
+    if(a->mode==ADV_PT_INTRO){
+        C2D_DrawRectSolid(0,0,.2f,320,240,RGB(184,174,75));
+        if(p->introMenu){static const char *choices[]={"Control info","Adventure info","No info needed"};PtSystemWindow(v,24,45,272,125);for(i=0;i<3;i++){PtOriginalText(v,40,58+i*32,p->introChoice==i?">":" ",1.25f);PtOriginalText(v,58,58+i*32,choices[i],1.25f);}}
+        return;
+    }
+    if(a->mode==ADV_PT_MENU){static const char *labels[]={"Resume","Save","Appearance","Pokémon","Return to title"};PtSystemWindow(v,130,8,182,218);for(i=0;i<5;i++){PtOriginalText(v,140,22+i*38,a->cursor==i?">":" ",1.25f);PtOriginalText(v,155,22+i*38,labels[i],1.25f);}return;}
+    if(p->service==2){static const char *names[]={"Turtwig","Chimchar","Piplup"};PtSystemWindow(v,12,56,296,112);for(i=0;i<3;i++){PtOriginalText(v,30+i*98,95,p->choice==i?">":" ",1);PtOriginalText(v,39+i*98,95,names[i],1);}return;}
+    if(p->service==1){PtSystemWindow(v,200,40,108,82);PtOriginalText(v,216,50,p->choice?"  Yes":"> Yes",1.25f);PtOriginalText(v,216,82,p->choice?"> No":"  No",1.25f);return;}
+    if(p->blocked){PtSystemWindow(v,16,64,288,110);PtOriginalText(v,30,77,"This event still needs porting.\nB: Return to title",1.25f);return;}
 }
 static void BottomAdventure(ArenaView *v,const Adventure *a)
 {
     const AdventureSave *s=&a->save;unsigned i;u32 ink=RGB(34,52,45);
+    if(a->mode==ADV_PT_INTRO||a->mode==ADV_PT_FIELD||a->mode==ADV_PT_MENU){PtBottom(v,a);return;}
     C2D_DrawRectSolid(0,0,0,320,240,RGB(192,208,189));
     if(a->mode==ADV_TITLE){
-        static const char *items[]={"CONTINUE ADVENTURE","NEW ADVENTURE","BATTLE LAB /493 POKEMON","ABOUT THIS BUILD"};
-        Header(v,"PLATINUM ARENA /0.3.0");
+        const char *items[]={a->hasPlatinumSave?"CONTINUE PLATINUM":a->hasSave?"CONTINUE 0.3 SAVE":"NO SAVE YET","ORIGINAL PLATINUM","BATTLE LAB /493 POKEMON","IMPORT STATUS"};
+        Header(v,"PLATINUM ARENA /0.4.0");
         for(i=0;i<4;i++){Panel(v,40,60+i*40,240,30,a->cursor==i);Text(v,50,70+i*40,ink,"%s",items[i]);}
         if(a->messageTicks)Text(v,7,30,ink,"%.38s",a->message);
         else if(a->loadError)Text(v,7,30,ink,"SAVE DAMAGED: BACKUP OR NEW GAME");
@@ -155,24 +299,26 @@ static void BottomAdventure(ArenaView *v,const Adventure *a)
 }
 void View_DrawApp(ArenaView *v,const Adventure *a,float alpha,int paused,float fps,float cpu,float gpu,int audio)
 {
-    static const char *groups[]={"body","bottoms","tops","hair","headgear","accessories"};unsigned i;
+    unsigned i;
     v->app=a;
     if(a->mode==ADV_BATTLE){View_Draw(v,&a->battle,alpha,paused,fps,cpu,gpu,audio);return;}
     /* All disk loading/eviction is before C3D_FrameBegin. The cache has8 slots. */
-    for(i=0;i<6;i++)if(i!=3&&!v->trainer[i]){char path[80];snprintf(path,sizeof(path),"romfs:/gfx/trainer_%s.t3x",groups[i]);v->trainer[i]=Load(v,path);}
+    TrainerAssets(v,&a->save.appearance);
     if(!v->npcs)v->npcs=Load(v,"romfs:/gfx/story_npcs.t3x");
     if(!v->mapSheet||v->mapId!=a->save.map){char path[80];if(v->mapSheet){C3D_FrameSync();C2D_SpriteSheetFree(v->mapSheet);}snprintf(path,sizeof(path),"romfs:/gfx/map_%02u.t3x",a->save.map);v->mapSheet=Load(v,path);v->mapId=a->save.map;}
+    if(a->mode==ADV_PT_FIELD||a->mode==ADV_PT_MENU){PtPreload(v,&a->platinum);if(a->platinum.service==2){Pokemon(v,387);Pokemon(v,390);Pokemon(v,393);}}
     if(a->mode==ADV_STARTER){Pokemon(v,387);Pokemon(v,390);Pokemon(v,393);}
     else if(a->mode==ADV_LAB){Pokemon(v,a->labDex[0]);Pokemon(v,a->labDex[1]);}
     else if(a->save.partyCount)Pokemon(v,a->save.party[a->cursor<a->save.partyCount&&a->mode==ADV_PARTY?a->cursor:0].dex);
-    C3D_FrameBegin(C3D_FRAME_SYNCDRAW);C2D_TargetClear(v->top,RGB(55,82,66));C2D_SceneBegin(v->top);
-    if(a->mode==ADV_FIELD||a->mode==ADV_DIALOGUE||a->mode==ADV_ENCOUNTER)StoryMap(v,a,alpha);
+    C3D_FrameBegin(C3D_FRAME_SYNCDRAW);C2D_TargetClear(v->top,(a->mode==ADV_PT_INTRO||a->mode==ADV_PT_FIELD||a->mode==ADV_PT_MENU)?RGB(0,0,0):RGB(55,82,66));C2D_SceneBegin(v->top);
+    if(a->mode==ADV_PT_INTRO||a->mode==ADV_PT_FIELD||a->mode==ADV_PT_MENU)PtTop(v,a);
+    else if(a->mode==ADV_FIELD||a->mode==ADV_DIALOGUE||a->mode==ADV_ENCOUNTER)StoryMap(v,a,alpha);
     else if(a->mode==ADV_TITLE){
-        if(v->mapSheet)C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->mapSheet,0),-56,-70,0,0,1,1);
+        
         C2D_DrawRectSolid(0,0,.8f,400,240,C2D_Color32(21,47,43,220));
         Big(v,54,39,"PLATINUM ARENA");Text(v,76,82,RGB(242,234,201),"EVOLVED / NATIVE NINTENDO3DS");
         Trainer(v,&a->save.appearance,0,0,200,181,2);
-        Text(v,60,208,RGB(242,234,201),"A CONDENSED SINNOH ADVENTURE");
+        Text(v,60,208,RGB(242,234,201),"ORIGINAL CONTENT / DEVELOPMENT");
     }else if(a->mode==ADV_STARTER){
         static const unsigned dex[]={387,390,393};Big(v,40,25,"CHOOSE YOUR PARTNER");
         for(i=0;i<3;i++){C2D_DrawEllipseSolid(26+i*132,160,.1f,90,30,RGB(165,195,144));SmallMon(v,dex[i],0,0,a->ticks,70+i*132,177,1.7f);}

@@ -1,0 +1,30 @@
+{
+  "source_archive": {
+    "name": "pokemon png.rar",
+    "sha256": "133c8ab405d57e17e67c0239c21b52cb32b8142c63be052d851b55c96e773bc5"
+  },
+  "retained_ds_bank_sha256": "b0a764b0ed5cf75974766db7bb49e4595419ab954ca33e62f7f327bb9e9e24fc",
+  "native_cell": [
+    32,
+    32
+  ],
+  "native_direction_order": [
+    "south",
+    "west",
+    "east",
+    "north"
+  ],
+  "default": "Blank male/female body only; all optional layers None",
+  "counts_by_layer": {
+    "body": 4,
+    "bottoms": 13,
+    "tops": 25,
+    "hair": 25,
+    "headgear": 17,
+    "accessories": 1
+  },
+  "default_native_custom_base": true,
+  "named_trainer_pixels_used_in_custom": false,
+  "selected_art": "Retained DS clean body,4 hairstyles,3 tops,3 legwear,2 hats; supplied matching dyes",
+  "limits": "Walking layers converted for native field/creator; run/bike/front/back source remains retained, not yet claimed native cinematic support; carried accessories and independent shoes remain to be ported"
+}

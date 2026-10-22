@@ -1,0 +1,4085 @@
+{
+  "projection": "orthographic top-down conversion of original Nitro geometry; not original animated perspective renderer",
+  "cells": [
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_187/m_hh0202_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_111_tex020/game_h01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -160.0,
+            16.0,
+            -194.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_090_tex020/clock01.glb",
+          "position": [
+            -160.0,
+            48.0,
+            -194.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -120.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_106_tex020/bed_h01.glb",
+          "position": [
+            -104.0,
+            0.0,
+            -104.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_112_tex020/table_l01.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_138_tex020/chair02.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_156_tex020/stair_d02.glb",
+          "position": [
+            -96.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_137_tex020/poster_fs01.glb",
+          "position": [
+            -136.0,
+            24.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h415_00_00.png",
+      "header": 415,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_186/m_hh0201_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -152.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -72.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_155_tex020/stair_u02.glb",
+          "position": [
+            -112.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_088_tex020/cushion01.glb",
+          "position": [
+            -120.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_088_tex020/cushion01.glb",
+          "position": [
+            -136.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_083_tex020/sink01.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_084_tex020/ref01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_140_tex020/chair04.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -144.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -112.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -192.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h414_00_00.png",
+      "header": 414,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_000/map03_27c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_023_tex006/t1_s01.glb",
+          "position": [
+            -88.0,
+            16.0,
+            -96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_067_tex006/t1_door1.glb",
+          "position": [
+            -94.217041015625,
+            16.62158203125,
+            -74.977783203125
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_236_tex006/t1_s02.glb",
+          "position": [
+            88.0,
+            16.0,
+            64.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_067_tex006/t1_door1.glb",
+          "position": [
+            81.663330078125,
+            16.92724609375,
+            84.12939453125
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_022_tex006/t1_h01.glb",
+          "position": [
+            80.0,
+            16.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_067_tex006/t1_door1.glb",
+          "position": [
+            81.99462890625,
+            17.139892578125,
+            -75.17578125
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_022_tex006/t1_h01.glb",
+          "position": [
+            -80.0,
+            16.0,
+            72.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_067_tex006/t1_door1.glb",
+          "position": [
+            -78.005126953125,
+            17.139892578125,
+            84.823974609375
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h411_03_27.png",
+      "header": 411,
+      "cell": [
+        3,
+        27
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_184/m_hh0101_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -152.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -160.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_084_tex020/ref01.glb",
+          "position": [
+            -136.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_083_tex020/sink01.glb",
+          "position": [
+            -80.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_088_tex020/cushion01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_088_tex020/cushion01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -112.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_092_tex020/chair01.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -72.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -112.0,
+            0.0,
+            -112.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_104_tex020/stair_u01.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h412_00_00.png",
+      "header": 412,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_185/m_hh0102_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_106_tex020/bed_h01.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -104.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_112_tex020/table_l01.glb",
+          "position": [
+            -96.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_111_tex020/game_h01.glb",
+          "position": [
+            -152.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -160.0,
+            16.0,
+            -194.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_090_tex020/clock01.glb",
+          "position": [
+            -160.0,
+            48.0,
+            -194.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_105_tex020/stair_d01.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_138_tex020/chair02.glb",
+          "position": [
+            -104.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h413_00_00.png",
+      "header": 413,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_180/m_h01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_092_tex020/chair01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -176.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_080_tex020/shelf01.glb",
+          "position": [
+            -112.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -160.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -144.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h416_00_00.png",
+      "header": 416,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_180/m_h01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_092_tex020/chair01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -176.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_080_tex020/shelf01.glb",
+          "position": [
+            -112.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -160.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -144.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h417_00_00.png",
+      "header": 417,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_005/map03_26c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h342_03_26.png",
+      "header": 342,
+      "cell": [
+        3,
+        26
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_006/map04_26c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h342_04_26.png",
+      "header": 342,
+      "cell": [
+        4,
+        26
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_001/map01_25c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h334_01_25.png",
+      "header": 334,
+      "cell": [
+        1,
+        25
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_003/map02_25c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h334_02_25.png",
+      "header": 334,
+      "cell": [
+        2,
+        25
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_002/map01_26c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h334_01_26.png",
+      "header": 334,
+      "cell": [
+        1,
+        26
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_004/map02_26c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h334_02_26.png",
+      "header": 334,
+      "cell": [
+        2,
+        26
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_537/m_dun2702_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            16.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_00_00.png",
+      "header": 312,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_538/m_dun2702_01_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            16.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_01_00.png",
+      "header": 312,
+      "cell": [
+        1,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_539/m_dun2702_02_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_02_00.png",
+      "header": 312,
+      "cell": [
+        2,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_540/m_dun2702_00_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            16.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_00_01.png",
+      "header": 312,
+      "cell": [
+        0,
+        1
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_541/m_dun2702_01_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            16.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_01_01.png",
+      "header": 312,
+      "cell": [
+        1,
+        1
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_542/m_dun2702_02_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h312_02_01.png",
+      "header": 312,
+      "cell": [
+        2,
+        1
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_007/map05_26c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_024_tex006/t2_s01.glb",
+          "position": [
+            -96.0,
+            16.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_069_tex006/t2_door2.glb",
+          "position": [
+            -109.974609375,
+            17.10888671875,
+            -91.8837890625
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_025_tex006/t2_s02.glb",
+          "position": [
+            24.0,
+            16.0,
+            80.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_068_tex006/t2_door1.glb",
+          "position": [
+            17.531982421875,
+            16.994873046875,
+            100.197998046875
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_071_tex006/t2_h01.glb",
+          "position": [
+            -128.0,
+            16.0,
+            88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_068_tex006/t2_door1.glb",
+          "position": [
+            -125.8720703125,
+            17.063720703125,
+            100.782470703125
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_004_tex006/pc.glb",
+          "position": [
+            24.0,
+            16.0,
+            -112.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_070_tex006/p_door.glb",
+          "position": [
+            24.0,
+            16.0,
+            -95.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_005_tex006/fs.glb",
+          "position": [
+            192.0,
+            16.0,
+            -96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_070_tex006/p_door.glb",
+          "position": [
+            184.0,
+            16.61865234375,
+            -90.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h418_05_26.png",
+      "header": 418,
+      "cell": [
+        5,
+        26
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_222/m_labo01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_113_tex020/machine_l01.glb",
+          "position": [
+            -56.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_113_tex020/machine_l01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_114_tex020/machine_l02.glb",
+          "position": [
+            -66.0,
+            0.0,
+            -16.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_114_tex020/machine_l02.glb",
+          "position": [
+            -222.0,
+            0.0,
+            -16.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -136.0,
+            0.0,
+            -8.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_089_tex020/shelf03.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_089_tex020/shelf03.glb",
+          "position": [
+            -160.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_180_tex020/chair_l01.glb",
+          "position": [
+            -72.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_181_tex020/chair_l02.glb",
+          "position": [
+            40.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_084_tex020/ref01.glb",
+          "position": [
+            72.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_083_tex020/sink01.glb",
+          "position": [
+            48.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_149_tex020/shelf04.glb",
+          "position": [
+            24.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            -8.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            -24.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            -24.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            -24.0,
+            0.0,
+            -152.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            72.0,
+            0.0,
+            -152.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            56.0,
+            0.0,
+            -152.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex020/box01.glb",
+          "position": [
+            72.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_165_tex020/table01_3.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_237_tex020/shelf09a.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_238_tex020/shelf09b.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -112.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_238_tex020/shelf09b.glb",
+          "position": [
+            -64.0,
+            0.0,
+            -112.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_185_tex020/shelf08.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_185_tex020/shelf08.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_112_tex020/table_l01.glb",
+          "position": [
+            -64.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_150_tex020/book01.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h422_00_00.png",
+      "header": 422,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_188/m_hh0301_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -152.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -72.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex020/plant01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_081_tex020/shelf02.glb",
+          "position": [
+            -72.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -104.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_155_tex020/stair_u02.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_084_tex020/ref01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_083_tex020/sink01.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_096_tex020/window02.glb",
+          "position": [
+            -104.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_096_tex020/window02.glb",
+          "position": [
+            -200.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_139_tex020/chair03.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -136.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_139_tex020/chair03.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_139_tex020/chair03.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -136.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_139_tex020/chair03.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -104.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -128.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -160.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h423_00_00.png",
+      "header": 423,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_189/m_hh0302_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_112_tex020/table_l01.glb",
+          "position": [
+            -208.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_086_tex020/dustbox01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex020/d_mat04.glb",
+          "position": [
+            -152.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_089_tex020/shelf03.glb",
+          "position": [
+            -96.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_106_tex020/bed_h01.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_106_tex020/bed_h01.glb",
+          "position": [
+            -104.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_184_tex020/shelf07.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_156_tex020/stair_d02.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_180_tex020/chair_l01.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -184.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h424_00_00.png",
+      "header": 424,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_191/m_pc01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_117_tex005/chair_pc01.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_118_tex005/chair_pc02.glb",
+          "position": [
+            -232.0,
+            0.0,
+            -152.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_119_tex005/pc01.glb",
+          "position": [
+            -56.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_121_tex005/shelf_pc01.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_122_tex005/machine_pc01.glb",
+          "position": [
+            -88.0,
+            3.32763671875,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_124_tex005/machine_pc03.glb",
+          "position": [
+            -112.0,
+            30.074462890625,
+            -214.24072265625
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_130_tex005/stair_pc_u01.glb",
+          "position": [
+            -224.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_176_tex005/flower_pc01.glb",
+          "position": [
+            -163.5625,
+            12.82177734375,
+            -171.23046875
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_176_tex005/flower_pc01.glb",
+          "position": [
+            -76.0302734375,
+            12.82177734375,
+            -171.23046875
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex005/plant01.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_095_tex005/t_map01.glb",
+          "position": [
+            -32.0,
+            16.0,
+            -216.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex005/d_mat01.glb",
+          "position": [
+            -120.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_123_tex005/machine_pc02.glb",
+          "position": [
+            -142.16650390625,
+            0.0,
+            -198.48291015625
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_095_tex005/t_map01.glb",
+          "position": [
+            -32.0,
+            24.0,
+            -208.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_117_tex005/chair_pc01.glb",
+          "position": [
+            -56.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_118_tex005/chair_pc02.glb",
+          "position": [
+            -40.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_426_tex005/stair_pc_d02.glb",
+          "position": [
+            -16.0,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex005/d_mat04.glb",
+          "position": [
+            -198.078857421875,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_118_tex005/chair_pc02.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_117_tex005/chair_pc01.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -56.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_157_tex005/d_mat04.glb",
+          "position": [
+            -42.689453125,
+            0.0,
+            -88.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h420_00_00.png",
+      "header": 420,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_190/m_fs01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_085_tex021/plant01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_132_tex021/counter_fs01.glb",
+          "position": [
+            -185.578125,
+            13.745361328125,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_136_tex021/shelf_fs02.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_136_tex021/shelf_fs02.glb",
+          "position": [
+            -88.0,
+            0.0,
+            -160.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_179_tex021/shelf_fs06.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -96.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex021/d_mat01.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -72.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_178_tex021/sheet_fs01.glb",
+          "position": [
+            -184.0,
+            13.970703125,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex021/box01.glb",
+          "position": [
+            -216.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_094_tex021/box01.glb",
+          "position": [
+            -200.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_177_tex021/shelf_fs05.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -170.25
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_161_tex021/shelf_fs04.glb",
+          "position": [
+            -128.0,
+            0.0,
+            -155.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h419_00_00.png",
+      "header": 419,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_180/m_h01_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_078_tex020/d_mat01.glb",
+          "position": [
+            -184.0,
+            0.0,
+            -120.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_092_tex020/chair01.glb",
+          "position": [
+            -168.0,
+            0.0,
+            -168.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_079_tex020/window01.glb",
+          "position": [
+            -176.0,
+            16.0,
+            -210.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_080_tex020/shelf01.glb",
+          "position": [
+            -112.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_168_tex020/table02_2.glb",
+          "position": [
+            -192.0,
+            0.0,
+            -160.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_082_tex020/tv01.glb",
+          "position": [
+            -144.0,
+            0.0,
+            -200.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h425_00_00.png",
+      "header": 425,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_531/m_dun2701_00_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_00_00.png",
+      "header": 311,
+      "cell": [
+        0,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_532/m_dun2701_01_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_01_00.png",
+      "header": 311,
+      "cell": [
+        1,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_533/m_dun2701_02_00c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_02_00.png",
+      "header": 311,
+      "cell": [
+        2,
+        0
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_534/m_dun2701_00_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_00_01.png",
+      "header": 311,
+      "cell": [
+        0,
+        1
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_535/m_dun2701_01_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/prop_311_tex061/l_lake.glb",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_01_01.png",
+      "header": 311,
+      "cell": [
+        1,
+        1
+      ]
+    },
+    {
+      "items": [
+        {
+          "model": "/workspace/platinum-arena-3ds-v04/validation/platinum-bake/land_536/m_dun2701_02_01c.glb",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "output": "/workspace/platinum-arena-3ds-v04/gfx/private/platinum/h311_02_01.png",
+      "header": 311,
+      "cell": [
+        2,
+        1
+      ]
+    }
+  ],
+  "outputs_sha256": {
+    "h415_00_00.png": "762f9db40a9521a1404b0c80c2d9c4e1d2e2bb55c4a6cdf96f7d6ad397b873d1",
+    "h414_00_00.png": "26ac3ac9e69fac5173736eecdf7b92218091b039b44fdce8e102e1833386293b",
+    "h411_03_27.png": "138a1796dddd3fa0ca2c9a627782a5094762259b9c99285b00c362db9b8148d7",
+    "h412_00_00.png": "f592db50566c655e4c0b9a891c0991e9a0dc795871901c56ad3241a15289c34b",
+    "h413_00_00.png": "0ea136012c1d39704a440def3d1448f15b09c4b0e16c2ac2d1639f295ae53065",
+    "h416_00_00.png": "8402f605d25d83f12d383f4a856e4cc83c64cf9215461c91db92761d3641219c",
+    "h417_00_00.png": "8afc1b8fd6a85f933ce06fc8b88646b64545158db7d7226cabc800d720e4873a",
+    "h342_03_26.png": "adab4dd60a84d7e060ffa1658fe512a3e75b70ca221a34b48b3d2e19998ee633",
+    "h342_04_26.png": "72977b6aa2a1cf4ef72529a488e357fe10492fa7417fa2ea6b59dcd56e0eb1b9",
+    "h334_01_25.png": "1944f00b9657009413d63ac868d915cc5b3ae6dbfd28a88e762e41936a17f9ab",
+    "h334_02_25.png": "bc1c8f75fce255a60f72769d0050d809a5d92d552836d2d7ff1ca186e7841ce8",
+    "h334_01_26.png": "25d05bb351707efd46d6bfddc05c0abbd1cf0f9d088b85cafca3a19c0d475251",
+    "h334_02_26.png": "7594932f4dac113e130f9fd66ef81ca1f8a1bf80d56bb00344d3f172e98d27c7",
+    "h312_00_00.png": "a6ed8057cd464caf2ff3069d17ce55b1b4665e81802a3d1514e01d736fd36dc5",
+    "h312_01_00.png": "be791bd709bcb5f8ccabb2700cfc24891fca5984251531ae40983c1272824ee2",
+    "h312_02_00.png": "50d3d194620efe5c7cea1398162c2790225467c3aead64cd64c284cb58068416",
+    "h312_00_01.png": "cba5f79e416214526e578c0918acbb644b75553a6aa1cbc33304e36f949f1c8a",
+    "h312_01_01.png": "db91d39342ca90b74e11a07a5cf1d09690da602c3f0b9545479f4a07f858c0a4",
+    "h312_02_01.png": "86800881bd192986099a78f2045d550b61ad5fae7d1b330ba972d677821e1e3c",
+    "h418_05_26.png": "62b35f6c2e6da66157c2457479680ed67a4b6fefda09a4fedb9dfbf2957f60c0",
+    "h422_00_00.png": "bddcc2e604b06a6e8557a86841c947115ca3af236410ceaf72279364801e8758",
+    "h423_00_00.png": "03cd3d7cae520df3be0ff33642d32509b3bb2967753d42caedf0b6bb8fb310b9",
+    "h424_00_00.png": "43550e0c89389e1662d0cd3077728fa298b8d19326e518cce4a16f26578b2b15",
+    "h420_00_00.png": "fb52b10c4a7cb0c36b7d307beb8e3a1c4c3a89114c83f630c82141597299897a",
+    "h419_00_00.png": "3999a429bc06ac55182fd7fb8713d25752de5ae0f11ae5af139a66a2e821fd78",
+    "h425_00_00.png": "29fd113c58668b5f52823cca5c2533d2f6159a90635cdddb96a32027f926e2f8",
+    "h311_00_00.png": "2f0e1b383a77067e93b08cb32629eb567cf7597cae0aaa443ca217b319fd1a5b",
+    "h311_01_00.png": "5ed64f768c4c0d5797b8b1ab6cc3f3e9b4f60b89b5ca213ce5fd22bb73f02b5f",
+    "h311_02_00.png": "3fb49d168f7aecf7f7c0815d187cb6722656fee7ffa35233b186f37e1ffc035b",
+    "h311_00_01.png": "578a773a853a8031b39057af0ce4fc90c3e150beeffc9c383148e89db840ece2",
+    "h311_01_01.png": "a5876bc070315f177b60eb888c33b6142ea9a5218412112e086fc83ed55898d8",
+    "h311_02_01.png": "2c1a7e251c29a303169b90646a055ad8ed7484685528976bb0959cc8aababffc"
+  }
+}

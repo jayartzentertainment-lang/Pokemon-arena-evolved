@@ -1,0 +1,38 @@
+{
+  "binary_sha256": "71bcc37a52803f593fb3bc5278dcde9161f58156cd4baf4c7b1cac7974dc4f08",
+  "binary_bytes": 9071640,
+  "emulator": "Azahar2126.2",
+  "original_3ds_config": true,
+  "actual_emulator_controls_and_captures": true,
+  "observed": [
+    "stationary editable trainer preview and actual hair-layer change",
+    "ARENA name entered with real touchscreen keyboard",
+    "same trainer explores Twinleaf andRoute201",
+    "NPC dialogue/story progression and authentic Sinnoh starter choice",
+    "Turtwig versusChimchar first live-action story battle",
+    "return/retreat from actual story fight without advancing story",
+    "actual four-actor2v2 lab battle",
+    "save thenfresh-process Continue restoredARENA,appearance,onePokemon,Route201 andstory3",
+    "graceful native Start+Select exit"
+  ],
+  "story_battle_result": "retreated; no full human campaign victory claimed",
+  "full_campaign_gameplay_completed": false,
+  "scripted_campaign_outcomes_injected_only_in_host_suite": true,
+  "physical_hardware_profiled": false,
+  "audio_listening_tested": false,
+  "ndsp_unavailable": true,
+  "visual_beam_clash_completion_claimed": false,
+  "metrics_clock": "EMULATED; notphysicalhardware",
+  "samples": 278,
+  "emulated_median_fps": 59.82,
+  "emulated_median_cpu_ms": 0.685,
+  "emulated_median_gpu_ms": 0.498,
+  "screenshots": {
+    "final-custom-trainer.png": "1d25a774cc42aea9f7362b25dca547fe632df68e07117fbef527ec2fb50b52e0",
+    "final-twinleaf.png": "7f826f81fb283a82e5aa96c4a3e9523be993f8400294ec0923b4384694f9ef1e",
+    "final-first-battle.png": "ca57ad5fca2544d1f953145689782d26390c3d07e2aed4a2de685f397b069d30",
+    "final-2v2.png": "23f1dd19a902bf4223d7adbca9db06c76e10946467e972183d5abf4608afb298",
+    "final-reloaded.png": "7ebac707327a377b17b2aac5d064342adef2fa8c3ad27b0f685ec46c4d2e8176"
+  },
+  "known_limits": "Condensed adapted map/dialogue campaign; full original-game parity,all467 exactmovebehaviours,authoredhurt/faintposes,control-remapping UI,specialevolutions andexhaustive493visual/hardwaretests unfinished."
+}

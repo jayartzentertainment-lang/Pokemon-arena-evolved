@@ -1,0 +1,49 @@
+{
+  "fixed_regional_bases": [
+    {
+      "base": "red",
+      "path": "res/arena/avatar/red-state-00.png",
+      "sha256": "bca365d74733d05737530dde663e2a94ee662575e935e908c784da3e10489fd5",
+      "direction_order": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "frames_per_direction": 4,
+      "regional_hairstyle_editable": false,
+      "changes": "Source pixels/anchors retained; binary palette masks match retained DS recolour groups; no sprite geometry changes"
+    },
+    {
+      "base": "brendan",
+      "path": "res/arena/avatar/brendan-state-00.png",
+      "sha256": "61b61bbbf2975c4efd2b63656e6b6223a28c247c53ffb4fc28f121837fcbd8b2",
+      "direction_order": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "frames_per_direction": 4,
+      "regional_hairstyle_editable": false,
+      "changes": "Source pixels/anchors retained; binary palette masks match retained DS recolour groups; no sprite geometry changes"
+    }
+  ],
+  "custom_blank_bodies": [
+    {
+      "body": "A",
+      "source": "sources/base graphics/overworld walk/0A.png",
+      "sha256": "600e2c446326d15a79349dab9c7f2618add631ef8c61aea2d4f2c3a3df1e2fd6"
+    },
+    {
+      "body": "B",
+      "source": "sources/base graphics/overworld walk/0B.png",
+      "sha256": "9847ad5b01c37c943b9fefe711786ffac4b7740455007b98f49dbd27d0686c98"
+    }
+  ],
+  "custom_default_optional_layers": "None (all indices zero)",
+  "atlas_layout": "base[Red,Brendan] * 112 + layer[original,skin0,skin1,hair0,hair1,outfit0,outfit1] * 16 + direction[S,W,E,N]*4 + step",
+  "runtime_scope": "Creator, trainer card and native/legacy field use the same Trainer function; original cinematic/battle trainer poses still need integration",
+  "custom_blank_bodies_role": "Legacy Classic bodies only; new Custom default is documented in gen4-custom.json",
+  "new_custom_provenance": "provenance/gen4-custom.json"
+}

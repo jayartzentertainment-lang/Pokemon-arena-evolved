@@ -1,67 +1,54 @@
-# Platinum Arena Evolved — native3DS0.3.0
+# Platinum Arena Evolved — native 3DS original integration (unreleased work)
 
-A connected **condensed Sinnoh adventure** around the existing native3DS action-battle engine. The approved0.1.0 and combat-quality0.2.0 projects/releases remain intact.
+**Playable release withheld; source work available for review:** the user rejected the earlier custom field/story presentation. See `docs/DEVELOPMENT-CORRECTION.md`. This is unfinished source work, not the completed requested game.
 
-This is a new native2D adaptation, not the original Platinum DS executable or an exact map/script conversion. It uses newly authored small layouts built with supplied Emerald tiles, authentic Platinum NPC sprites/system font, shortened rewritten story dialogue, and Platinum trainer parties. It is an alpha for playtesting.
+This separate work begins importing **original Pokémon Platinum content** into the native Arena engine. The complete original campaign is unfinished. It does not present the old 34 condensed locations and 41 rewritten objectives as an authentic Platinum campaign. The approved v0.3.0 release remains unchanged.
 
-Included:
+The opening uses original supplied maps, original event instructions and dialogue, original NPC placements, original trainer teams and original new-game flags. The converter retains raw source data and produces native tables; a bounded compatibility interpreter executes supported commands. Unsupported events stop visibly instead of inventing dialogue or awarding progression.
 
-- 34 connected, scrolling Sinnoh locations;41 ordered story objectives from Twinleaf/starter/rival through Team Galactic,8 gyms, Giratina, Elite Four and Cynthia/Hall of Fame. Gold markers and route hints guide the current objective. Story battles return to the same adventure state; defeat and retreat do not advance objectives.
-- Plain editable trainer with2 bodies,4 skin options,12 bottom options,14 tops,28 hair options,9 hats and3 accessories, plus no-item choices. The actual supplied32x48 layers share identical anchors. The preview stands still. The same appearance/name is used in exploration and saved; editing is available later.
-- All493 **base-species** authentic directional sprite sets, source frame timing and per-direction foot anchors. Battle Lab can select any species and launch1v1/2v2. This does not claim all alternate forms or467 mechanically complete moves.
-- Six-slot persistent parties, native level-scaled stats, HP/PP/status restoration into battle, ordinary level evolutions, catching,60-slot PC, potions, shops/centers, follower toggle and smooth trail movement. Catching attempts cost balls and depend on target HP/status/catch rate. Capturing trainer Pokemon is blocked.
-- Versioned CRC-protected save with temporary-file validation and previous-save backup. Progress autosaves between scenes; an in-progress battle is not a resumable checkpoint. Combat-only0.1/0.2 versions had no compatible adventure saves to migrate.
-- Existing60Hz combat, aiming/lock-on/touch aim, dodge/guard, committed buffs,1v1/2v2 and party switching. Exact Emerald Flamethrower and Hydro VFX remain; an additional58-cel supplied family atlas and actual Swift stars provide typed effects for the expanded roster. Shared VFX families are explicitly reused.
+## What changed
+
+- Custom starts with the supplied Gen IV-proportioned male/female blank body from `pokemon png.rar` and no optional layers selected. Red and Brendan are fixed sprite bases with colour-only edits, matching the DS approach. See `docs/CHARACTER-CREATOR.md`.
+- Original Rowan introductory text/background, original proportional message font and message-box tiles, original pre-Pokétch lower-screen tilemap, stationary modular character creator at the original selection point, and an intro-only Start+Select shortcut directly to the creator. The same chosen name and appearance enter the original upstairs bedroom.
+- 18 original map headers and 32 converted geometry cells: Twinleaf and interiors, Route 201, Verity Lakefront, both relevant Lake Verity variants, Sandgem and initial interiors. These are imported layouts. Original Nitro geometry and textures are baked into a top-down view; this is not Platinum's original animated perspective renderer.
+- Original transition/load/frame/coordinate scripts, walking sequences, camera pans, house warps, new-game flags, Rowan/Barry starter sequence and original first rival team, connected to Arena combat. All trainer teams and original growth tables are retained. Imported data coverage exceeds current runtime coverage; see the import report.
+- Separate original-story save alongside appearance/party data, CRC validation and backup recovery. Existing v0.3.0 saves remain usable in their legacy campaign; they are not mapped to invented original-story flags.
+- Sticky opponent lock. Select unlocks to physical Circle Pad free aim. The lower-screen aiming pad is removed. Target selection remains available in doubles.
+- Larger readable move cards showing assigned buttons, PP and cooldowns, stamina and party indicators, using the current Arena HUD assets. The faithful original field font/windows are now imported separately; matching the whole original interface remains unfinished.
+- Slower stat-based movement, especially Blastoise; species-based stamina/defensive resistance, learned and natural attack cooldowns, stationary short strikes and explicit travel only for charge moves.
+- Dedicated directional Hurt poses for all 493 base species, loaded only for active fighters, plus corrected full-size Arceus animation sheets. The pinned SpriteCollab source and per-species credits accompany the protected editable assets. Original source hit-frame timing and white shadow anchors are preserved.
+- Existing supplied Emerald Flamethrower/beams and other converted move VFX remain. Protect uses supplied animated cels at the defending side.
 
 ## Play
 
-Open `Platinum-Arena-3DS-Prototype.3dsx` in Azahar, or copy `3ds/platinum-arena/` to the SD card of a homebrew-enabled3DS and use Homebrew Launcher. Original3DS single Circle Pad is supported; a C-stick is optional. No APK, `.nds`, `.cia` or commercial ROM is included in this release.
+Open `Platinum-Arena-3DS-Prototype.3dsx` in Azahar, or copy `3ds/platinum-arena/` to a homebrew 3DS SD card and use Homebrew Launcher. This is native 3DS homebrew, not a Nintendo DS `.nds` ROM or Android APK.
 
-The delivered download ZIP is AES256 encrypted, as with the working previous download. Use7-Zip on PC or ZArchiver on Android with the privately supplied password. The protected package includes the game, source, converted editable PNG assets, checks and actual emulator screenshots. The publicly readable source ZIP excludes private graphics.
+Choose **ORIGINAL PLATINUM** for the new import. Choose **BATTLE LAB** to try any of 493 base species in 1v1/2v2. The fourth title item describes the import status. Continue prefers the separate original-story save when present; otherwise a valid legacy v0.3.0 save remains playable.
 
-### Adventure controls
+- Original field: Circle Pad/Dpad moves; A talks/advances dialogue; hold B to run after the original Running Shoes event. Start opens the Arena overlay menu for saving, appearance and party.
+- Intro: Start+Select immediately opens the creator. Elsewhere Select+Start exits the application.
+- Creator: BASE selects Custom, Red or Brendan. Custom offers matching Gen IV body/hair/clothes/hat layers; regional bases offer colours only. Up/Down selects a row; Left/Right or A changes it; L/R rotates a stationary preview; Y edits the name; Start confirms. Touch rows also work.
+- Battle: Y natural strike; A selected learned move; X selected special; moving B dodges, standing B guards. Select toggles LOCK/FREE. R+Y or TARGET cycles opponents. Touch move cards cast moves, without touch aiming.
+- L+A / L+X cycles the corresponding learned slot; L+Y cycles natural attacks. R tap/release switches party; R+X changes the AI ally tactic. Start pauses. During original trainer battles B from pause resumes; trainer encounters cannot be escaped through that menu.
+- Lab: Left/Right selects a Dex entry; L/R skips ten; Up/Down selects the team being edited; Y toggles clash practice; A starts 1v1; X starts 2v2; B returns to title.
 
-- Circle Pad/Dpad: move; B: run. A: talk/confirm. Y: party. X: map. Start: trainer menu.
-- Creator: Up/Down selects a row, Left/Right changes its actual sprite layer; L/R rotates the stationary preview; Y edits name; Start confirms. Touch left/right of a row changes its choice. The name keyboard supports touch/Dpad/A, B deletes and Start finishes.
-- Party: Up/Down selects; A makes that Pokemon the lead/follower; X uses a40HP potion; B returns.
-- PC: Up/Down selects; A withdraws or swaps with the lead when the party is full; Y deposits the lead while leaving at least one party member; L+X releases a boxed Pokemon.
-- Map: Up/Down selects, L/R changes page, A travels to an already visited unlocked location.
-- Gold ! marker: current story character. Lower screen shows the target location and a starred road toward it. Walk to the arrow at the corresponding map edge. Open MENU to heal/buy balls in a town, save, change appearance or enter a training encounter.
+Azahar defaults: arrows = Circle Pad; T/G/F/H = Dpad; X/A/Z/S = 3DS Y/A/X/B; Q/W = L/R; M/N = Start/Select.
 
-### Battles
+## Reproduce the native build
 
-- Y: PP-free natural strike. A: selected learned move. X: special/status. B while moving: dodge/dash; standing B: guard.
-- Select: lock/facing. R+Y or TARGET>: change target. Right touch area: persistent free aim; left move cards: use move. Optional C-stick aims.
-- L+A: cycle learned move; L+Y: cycle natural. R tap/release: switch party. R+X: AI ally tactic.
-- L+R or BALL: attempt capture in a wild/Giratina encounter. Story BALL replaces the combat-demo reset button.
-- Start: pause. X while paused: high/low secondary VFX. B while paused: retreat without completing the story objective. After victory/defeat, A/B/Start returns to the adventure.
-- Lab: Left/Right chooses a Dex entry, L/R skips10, Up/Down switches edited team, Y toggles clash practice, A starts1v1 and X starts2v2. B returns to title. Lab battles never alter your adventure save.
-
-Azahar defaults: arrows=Circle Pad; T/G/F/H=Dpad; X/A/Z/S=Y/A/X/B; Q/W=L/R; M/N=Start/Select.
-
-## Source and build
-
-Pinned official toolchain: `devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5`.
-
-With the protected editable assets extracted into `gfx/private/`:
+For the source-progress snapshot, extract WIP-SOURCE.zip and WIP-PRIVATE-ASSETS.zip into the **same** directory; both create `native-3ds/`. The encrypted private-assets package contains the original-content generated private C tables, raw imported source data, converted PNGs and Hurt source/credits required to reproduce this build. The public source ZIP deliberately excludes private artwork/dialogue tables.
 
 ```sh
 python3 tools/test_host.py
 bash tools/build_native.sh
 ```
 
-To regenerate the converted artwork from the retained supplied inputs:
-
-```sh
-python3 tools/prepare_assets.py --all-species --ds-source /path/to/pokeplatinum --extra-effects /path/to/extra-effects --dp-effects /path/to/diamond-pearl-attack-graphics/source --emerald-source /path/to/arena-workspace
-python3 tools/prepare_adventure.py --ds-source /path/to/pokeplatinum --creator /path/to/customization-tools --world-source /path/to/accepted-emerald-arena/ds
-python3 tools/prepare_move_catalog.py --ds-source /path/to/pokeplatinum --dp-effects /path/to/diamond-pearl-attack-graphics/source
-```
-
-`content/campaign.json` contains editable native story data. `adventure_data.c` and `species_data.c` are generated tables. The converter verifies original input hashes, retains layer coordinates and does not download ROMs. Hair atlases are split by body to stay within Citro2D texture limits. A bounded8-sheet Pokemon cache prevents retaining all493 textures in memory.
+The build uses the pinned official image `devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5`. See `docs/IMPORT-COMPLETION.md` for original-data conversion commands and exact limits. No commercial ROM download is performed.
 
 ## Current limits
 
-The campaign is condensed: original Platinum map geometry, interiors, puzzles, script VM, cutscenes, HM traversal, contests, trading/link play, quests and postgame areas are not fully reproduced. Ordinary level evolutions work; item/trade/friendship/other special evolutions need their own systems. XP uses a simplified cubic Arena growth curve, accelerated story catch-up and auto-selected level-up moves. Full ability/held-item behaviour, natures/EVs/breeding and exact behaviour for all467 moves remain unfinished. Encounter tables are small native selections; after Hall of Fame, training encounters open the National Dex pool. The lab exposes the full roster at any time. This is not a claim of full original-game parity.
+The full original adventure is **not yet playable**. Supported original commands, services, map coverage, source-based event checks and actual emulator observations are reported separately. Unsupported events stop; original shared-script services, bag/item/wild encounter systems, full BDHC height/directional collision, NPC autonomous movement, naming/nickname services, original intro animation, Pokédex services and later campaign progression still need porting. Do not assume that every imported Sandgem event executes to completion.
 
-Audio remains the previous optional synthesized prototype cues, not Platinum's commercial audio engine; it may show SFX OFF if NDSP is unavailable. Physical original/New3DS profiling and full human campaign playtesting remain pending. See `docs/VALIDATION.md` for checks actually performed.
+Trainer teams retain species/levels/moves/IV scales, but complete abilities, held items, natures/EVs, alternate forms and all exact move mechanics are unfinished. Original battle-to-field transitions and trainer poses are not fully reproduced. Original field audio commands currently have no commercial sound-engine backend; existing optional synthesized Arena combat cues remain. Physical 3DS performance and a full human playthrough are unverified.
+
+Read `docs/VALIDATION.md`, `docs/IMPORT-COMPLETION.md` and the included machine-readable reports. Legacy condensed-campaign files are retained solely for v0.3.0 save compatibility and regression coverage.

@@ -35,3 +35,20 @@ four-species slice explicitly and makes no claim of complete animation coverage.
 The extended493 base-species directional roster retains the supplied Platinum integration metadata and per-species credits in provenance/SPRITE-CREDITS-493.md. Original Nintendo/Chunsoft artwork rights are not reassigned by a community repository license. New adventure map layouts/dialogue are re-authored; their tiles are from the supplied Emerald/Arena world pack. Authentic Platinum field NPCs and system font are converted from the supplied decomp sources. Layered trainer artwork is from the supplied character-creator pack; provenance/TRAINER-LAYER-REFERENCES.md preserves the known source information. New manifest files record hashes and selections. Original source archives are unchanged.
 
 Private converted PNGs, atlases, screenshots and executable are included only in the protected private download. Public plaintext source has code/manifests, not these graphical assets.
+
+
+Dedicated Hurt sheets and corrected Arceus are imported from PMDCollab/SpriteCollab revision 4702f10d888d19e804c5986a91170dfc92ae01b8. See https://github.com/PMDCollab/SpriteCollab/tree/4702f10d888d19e804c5986a91170dfc92ae01b8 and provenance/SpriteCollab-LICENSE.md (CC BY-NC 4.0). Full per-species credits.txt, credit_names.txt and exact source sheets are included in the protected editable-assets archive. Conversion crops/deduplicates source pixels and retains each original white shadow marker as the foot anchor; no replacement art is generated. Classic game artwork retains its original owners.
+
+## Native original-content preview v0.4.0
+
+Original Platinum map geometry, prop placements, textures, NPC sheets, messages,
+script source and generated content tables come from the supplied unmodified
+Platinum source. Private original-content data and embedded graphics remain
+inside the encrypted editable/game package; public source includes the importer,
+interpreter and provenance hashes. This preview does not relicense original
+commercial content. The v0.3.0 condensed content above remains only for legacy
+save compatibility; new-game original maps/dialogue are imported, not rewritten.
+
+Fixed Red and Brendan field sprites are reused from the preserved DS regional bundles. `provenance/trainer-bases.json` records exact inputs and palette-mask conversions. The blank Custom base is from the supplied modular trainer sources; optional layers start empty. These pixels are included only in the encrypted private-assets companion, not the public code tree.
+
+New Custom defaults use the other supplied `pokemon png.rar` Gen IV-proportioned bank, not the Classic walking-only pack. See `provenance/gen4-custom.json` and the protected retained DS path/hash/cleanup manifest. This upload contains no verified redistribution licence; artwork stays in the encrypted private companion.

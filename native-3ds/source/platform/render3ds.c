@@ -18,10 +18,11 @@ static const float direction[8][2]={{0,1},{.7071f,.7071f},{1,0},{.7071f,-.7071f}
     {0,-1},{-.7071f,-.7071f},{-1,0},{-.7071f,.7071f}};
 struct ArenaView {
     C3D_RenderTarget *top,*bottom;
-    C2D_SpriteSheet pokemon[8],effects,arena,font,props,ui,catalog,window;
+    C2D_SpriteSheet pokemon[8],hurtCache[8],effects,arena,font,props,ui,catalog,window;
+    C2D_SpriteSheet ptMessageFont,ptWindows,ptFieldBottom,fixedTrainers;
     float cameraX,cameraY,zoom,textDepth;
     unsigned loads,quality,pokemonDex[8],pokemonAge[8],age;
-    C2D_SpriteSheet trainer[6],hair[2],npcs,mapSheet;int mapId;
+    C2D_SpriteSheet trainer[6],hair[2],gen4Trainer[6],npcs,mapSheet,platinumIntro,platinumNpcs,ptCells[4];int mapId;int ptHeader[4],ptX[4],ptZ[4];
     const Adventure *app;
 };
 static float Limit(float x,float a,float b){return x<a?a:x>b?b:x;}
@@ -100,12 +101,21 @@ static const ArenaSpriteFrame *Pose(const CombatFighter *f,const ArenaSpecies *s
     unsigned slot=f->animation<5?f->animation:0;
     const ArenaSpriteAnimation *a;
     unsigned frame;
-    if(f->hurtTimer)slot=COMBAT_IDLE;
+    
     if(f->guardTimer)slot=COMBAT_ATTACK;
     a=&s->animation[slot];
     frame=AnimFrame(a,Combat_AnimationTick(f,a->totalTicks,a->hitTick));
+    
     if(f->guardTimer)frame=AnimFrame(a,a->hitTick?a->hitTick/2:0);
     return &a->frames[(f->direction&7)*a->count+frame];
+}
+static const ArenaSpriteFrame *HurtPose(const CombatFighter *f,const ArenaSpecies *s)
+{
+    const ArenaSpriteAnimation *a=ArenaSpecies_Hurt(s->dex);unsigned tick;
+    if(!a)return Pose(f,s);
+    tick=(f->hurtTimer<16?16-f->hurtTimer:0)*a->totalTicks/16;
+    if(tick>=a->totalTicks)tick=a->totalTicks-1;
+    return &a->frames[(f->direction&7)*a->count+AnimFrame(a,tick)];
 }
 static C2D_SpriteSheet Pokemon(ArenaView *v,unsigned dex)
 {
@@ -114,10 +124,20 @@ static C2D_SpriteSheet Pokemon(ArenaView *v,unsigned dex)
     for(i=0;i<8;i++)if(v->pokemon[i]&&v->pokemonDex[i]==dex){v->pokemonAge[i]=++v->age;return v->pokemon[i];}
     for(i=0;i<8;i++)if(v->pokemonAge[i]<oldest){slot=i;oldest=v->pokemonAge[i];}
     if(v->pokemon[slot]){C3D_FrameSync();C2D_SpriteSheetFree(v->pokemon[slot]);}
+    if(v->hurtCache[slot]){C2D_SpriteSheetFree(v->hurtCache[slot]);v->hurtCache[slot]=NULL;}
     v->pokemon[slot]=Load(v,s->texturePath);v->pokemonDex[slot]=dex;v->pokemonAge[slot]=++v->age;
     return v->pokemon[slot];
 }
 
+static C2D_SpriteSheet HurtSheet(ArenaView *v,unsigned dex,int load)
+{
+    unsigned i;if(!ArenaSpecies_Hurt(dex))return NULL;
+    for(i=0;i<8;i++)if(v->pokemonDex[i]==dex&&v->pokemon[i]){
+        if(!v->hurtCache[i]&&load){char path[80];snprintf(path,sizeof(path),"romfs:/gfx/hurt_%04u.t3x",dex);v->hurtCache[i]=Load(v,path);}
+        return v->hurtCache[i];
+    }
+    return NULL;
+}
 static void Camera(ArenaView *v,const ArenaGame *g)
 {
     const Combat *c=&g->combat;unsigned i;float left=1000,right=0,top=1000,bottom=0;
@@ -223,10 +243,13 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
     float x,y,scale,lift=0,opacity=1;unsigned tick=g->combat.frame;
     if(!s||(!f->hp&&g->faintTicks[actor]>=20))return;
     sheet=Pokemon(v,s->dex);if(!sheet)return;
-    p=Pose(f,s);scale=s->scale*v->zoom;
+    p=Pose(f,s);
+    if(f->hurtTimer){C2D_SpriteSheet hurt=HurtSheet(v,s->dex,0);if(hurt){sheet=hurt;p=HurtPose(f,s);}}
+    scale=s->scale*v->zoom;
     x=X(v,ActorX(f,alpha));y=Y(v,ActorY(f,alpha));
     if(!f->hp){float fade=g->faintTicks[actor]/20.0f;opacity=1-fade;scale*=1-fade*.45f;y+=fade*9;}
     else if(g->deployTicks[actor])scale*=1-g->deployTicks[actor]/24.0f;
+    if(f->hurtTimer)y-=sinf((16-f->hurtTimer)*PI/16)*3*v->zoom;
     if(s->style==2)lift=3+sinf(tick*.10f);
     else if(s->style==0&&f->animation==COMBAT_WALK)lift=fabsf(sinf(f->animTick*.7f));
     if(f->dashTimer){
@@ -246,8 +269,13 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
     if(actor==g->combat.controlActor)Text(v,x-3,y-p->height*scale-12,RGB(255,226,56),"V");
     if(f->guardTimer){
         unsigned cel=f->guardAge<8?f->guardAge/2:4;
+        float nx=direction[f->direction&7][0],ny=direction[f->direction&7][1];
         float centerY=y+(p->height*.5f-p->originY)*scale-lift;
-        Effect(v,FX_GUARD+cel,x,centerY,p->width*scale+16,p->height*scale+12,0,.80f);
+        /* The supplied Protect cels form a directional shield at the defended
+         * contact side, rather than stretching an aim bubble around the body. */
+        Effect(v,FX_GUARD+cel,x+nx*13*v->zoom,centerY+ny*13*v->zoom,
+               fmaxf(p->height*scale*.75f,25*v->zoom),13*v->zoom,
+               atan2f(ny,nx)+PI*.5f,.95f);
     }
     if(f->phase==COMBAT_ACTIVE){
         if(f->actionMove==MOVE_SWORDS_DANCE){
@@ -337,7 +365,7 @@ static void Reticle(ArenaView *v,const ArenaGame *g,float alpha)
         x=X(v,ActorX(target,alpha));y=Y(v,ActorY(target,alpha)-12);
         radius=15*v->zoom;
         if(species){
-            const ArenaSpriteFrame *pose=Pose(target,species);float scale=species->scale*v->zoom;
+            const ArenaSpriteFrame *pose=target->hurtTimer&&HurtSheet(v,species->dex,0)?HurtPose(target,species):Pose(target,species);float scale=species->scale*v->zoom;
             x=X(v,ActorX(target,alpha))+(pose->width*.5f-pose->originX)*scale;
             y=Y(v,ActorY(target,alpha))+(pose->height*.5f-pose->originY)*scale;
             if(species->style==2)y-=(3+sinf(g->combat.frame*.1f))*v->zoom;
@@ -383,66 +411,68 @@ static void TopHud(ArenaView *v,const ArenaGame *g,float fps,float cpu,float gpu
             C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->props,15),338+i*10,13,.9f,0,1,1);
     }
     C2D_DrawRectSolid(0,228,.8f,400,12,RGB(42,51,58));
-    Text(v,5,230,RGB(232,235,221),"%s  %.0fFPS CPU%.1f GPU%.1f",g->doubles?"2V2":"1V1",fps,cpu,gpu);
+    Text(v,5,230,RGB(232,235,221),"%s  %s   START: HELP",g->doubles?"2V2":"1V1",g->aim.mode==GAME_AIM_LOCK?"LOCKED":"FREE AIM");
 }
 static const char *Status(const CombatFighter *f)
 {
     static const char *labels[]={"OK","BRN","PSN","TOX","PAR","SLP","FRZ"};
     return f->status<7?labels[f->status]:"?";
 }
+static void Panel(ArenaView *v,float x,float y,float w,float h,int selected);
+static void Key(ArenaView *v,int x,int y,const char *key)
+{
+    C2D_DrawRectSolid(x,y,.80f,20,18,RGB(52,69,66));
+    Text(v,x+6,y+4,RGB(250,238,188),"%s",key);
+}
 static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
 {
     const CombatFighter *f=&g->combat.fighters[g->combat.controlActor];unsigned i;
-    const ArenaSpecies *s=Game_ActorSpecies(g,g->combat.controlActor);
-    u32 ink=RGB(38,48,43);
-    C2D_DrawRectSolid(0,0,0,320,240,RGB(205,213,187));
-    C2D_DrawRectSolid(0,0,.1f,320,23,RGB(58,73,68));
-    if(v->app&&v->app->messageTicks)Text(v,9,7,RGB(246,245,223),"%.37s",v->app->message);else Text(v,9,7,RGB(246,245,223),"PLATINUM ARENA / NATIVE 3DS");
-    Text(v,9,31,ink,"%.14s LV%u %s",s?s->name:"PLAYER",g->levels[0][g->binding[g->combat.controlActor]],Status(f));
-    Text(v,9,44,ink,"STAMINA");Bar(64,46,93,f->stamina,100,RGB(72,160,201));
-    Text(v,175,43,ink,"PARTY %u/%u",Game_Remaining(g,0),g->partyCount[0]);
-    Text(v,9,54,ink,Combat_IsCasting(f)?"CASTING: MOVEMENT LOCKED":"Y STRIKE  B DEFEND  L+A CYCLE");
+    const ArenaSpecies *target=Game_ActorSpecies(g,g->aim.target);
+    const CombatMoveInfo *natural=Combat_GetMoveInfo(Combat_NaturalMove(f));
+    u32 ink=RGB(32,48,43);int locked=g->aim.mode==GAME_AIM_LOCK;
+    (void)audio;
+    C2D_DrawRectSolid(0,0,0,320,240,RGB(191,205,181));
+    for(i=0;i<5;i++){
+        int x,y,w,h;Game_CommandRect(i,&x,&y,&w,&h);Panel(v,x,y,w,h,i==4&&locked);
+    }
+    Text(v,17,13,ink,locked?"LOCK: %.16s":"FREE AIM: CIRCLE PAD",target?target->name:"NO OPPONENT");
+    Text(v,17,26,ink,locked?"SELECT: UNLOCK":"SELECT: LOCK ON");
+    Text(v,227,13,ink,"R+Y");Text(v,227,26,ink,"TARGET >");
+    Text(v,9,47,ink,"STAMINA");Bar(73,49,77,f->stamina,f->staminaMax,RGB(43,139,164));
+    Text(v,166,47,ink,"PARTY %u/%u %s",Game_Remaining(g,0),g->partyCount[0],Status(f));
+    Panel(v,8,64,148,24,0);Panel(v,164,64,148,24,0);
+    Key(v,12,67,"Y");Text(v,38,72,ink,"%.14s",natural?natural->name:"STRIKE");
+    if(f->naturalCooldown)C2D_DrawRectSolid(38,84,.85f,110*fminf(f->naturalCooldown/100.0f,1),2,RGB(174,105,45));
+    Key(v,168,67,"B");Text(v,194,72,ink,"DODGE/GUARD");
     for(i=0;i<4;i++){
         int x,y,width,height;const CombatMoveInfo *move=Combat_GetMoveInfo(f->moves[i]);
-        Game_MoveRect(i,&x,&y,&width,&height);
-        C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ui,0),x,y,.2f,0,1,1);
-        if(i==f->selected)C2D_DrawRectSolid(x+7,y+3,.25f,width-14,1,RGB(207,115,36));
-        Text(v,x+9,y+5,ink,"%s",move?move->name:"EMPTY");
-        Text(v,x+9,y+16,ink,"PP%u/%u",f->pp[i],move?move->pp:0);
-        if(f->cooldown[i])Text(v,x+91,y+16,ink,"CD%u",(f->cooldown[i]+59)/60);
-        else if(i==f->selected)Text(v,x+138,y+16,ink,"A");
-        else if(i==f->specialSlot)Text(v,x+138,y+16,ink,"X");
+        const char *binding=i==f->selected?(i==f->specialSlot?"A+X":"A"):i==f->specialSlot?"X":"";
+        u32 color=f->pp[i]?ink:RGB(112,110,100);
+        Game_MoveRect(i,&x,&y,&width,&height);Panel(v,x,y,width,height,i==f->selected);
+        Text(v,x+8,y+7,color,"%.16s",move?move->name:"EMPTY");
+        Text(v,x+8,y+25,color,"PP%u/%u",f->pp[i],move?move->pp:0);
+        if(f->cooldown[i])Text(v,x+82,y+25,ink,"%uS",(f->cooldown[i]+59)/60);
+        Text(v,x+114,y+25,RGB(135,71,29),"%s",binding);
     }
-    {
-        const GameAim *aim=&g->aim;float dx,dy;int16_t ax,ay;
-        u32 marker=aim->blocked?RGB(221,95,72):aim->valid?RGB(66,143,111):RGB(207,139,57);
-        C2D_DrawRectSolid(182,65,.2f,132,116,RGB(60,83,77));
-        C2D_DrawRectSolid(185,68,.21f,126,110,RGB(181,201,177));
-        Text(v,193,72,ink,"TOUCH AIM");
-        Line(198,126,298,126,1,.23f,RGB(130,156,132));
-        Line(248,91,248,161,1,.23f,RGB(130,156,132));
-        if(g->combat.aimOverride){ax=g->combat.aimX;ay=g->combat.aimY;}
-        else {ax=(int16_t)(direction[f->direction&7][0]*256);ay=(int16_t)(direction[f->direction&7][1]*256);}
-        dx=ax/256.0f;dy=ay/256.0f;
-        Line(248,126,248+dx*36,126+dy*36,2,.3f,marker);
-        C2D_DrawRectSolid(245+dx*36,123+dy*36,.31f,6,6,marker);
-        Text(v,197,164,ink,"%s",aim->mode==GAME_AIM_LOCK?"LOCK":aim->mode==GAME_AIM_FREE?"FREE":"FACING");
-        Text(v,185,185,ink,"TARGET >");
-    }
-    for(i=0;i<3;i++)C2D_DrawImageAt(C2D_SpriteSheetGetImage(v->ui,1),8+i*104,198,.2f,0,1,1);
-    Text(v,17,211,ink,"R SWITCH");if(v->app&&v->app->battleKind!=ADV_LAB_BATTLE)Text(v,122,211,ink,"BALL %u",v->app->save.balls);else Text(v,122,211,ink,"NEW %s",g->doubles?"1V1":"2V2");Text(v,233,211,ink,"PAUSE");
-
-    if(!audio)Text(v,240,32,ink,"SFX OFF");
+    Text(v,9,188,ink,Combat_IsCasting(f)?"CASTING: MOVEMENT LOCKED":"L+A / L+X: CHANGE ASSIGNED MOVE");
+    Text(v,17,207,ink,"R:SWITCH");Text(v,17,220,ink,"POKEMON");
+    if(v->app&&v->app->battleKind!=ADV_LAB_BATTLE){Text(v,121,207,ink,"L+R:BALL");Text(v,121,220,ink,"LEFT %u",v->app->save.balls);}
+    else {Text(v,121,207,ink,"NEW BOUT");Text(v,121,220,ink,"%s",g->doubles?"1V1":"2V2");}
+    Text(v,225,207,ink,"START");Text(v,225,220,ink,"PAUSE/HELP");
     if(paused||g->winner){
-        C2D_DrawRectSolid(12,62,.97f,296,136,RGB(52,66,62));
-        C2D_DrawRectSolid(16,66,.98f,288,128,RGB(239,237,201));
-        v->textDepth=.99f;
-        Text(v,86,94,ink,"%s",g->winner?(g->winner==1?"VICTORY":"DEFEAT"):"PAUSED");
-        Text(v,36,116,ink,"START: %s",g->winner?"CONTINUE":"RESUME");
-        Text(v,36,137,ink,"B: RETURN / RETREAT");
-        Text(v,36,158,ink,"START+SELECT: EXIT");
-        Text(v,36,174,ink,"X: VFX %s",v->quality?"HIGH":"LOW");
-        v->textDepth=.95f;
+        C2D_DrawRectSolid(8,8,.97f,304,224,RGB(43,64,59));
+        C2D_DrawRectSolid(12,12,.98f,296,216,RGB(239,237,210));v->textDepth=.99f;
+        Text(v,24,22,ink,"%s",g->winner?(g->winner==1?"VICTORY":"DEFEAT"):"PAUSED / CONTROLS");
+        Text(v,24,45,ink,"SELECT: LOCK / FREE AIM");
+        Text(v,24,63,ink,"R+Y: NEXT ENEMY");
+        Text(v,24,81,ink,"Y:STRIKE A:MOVE X:SPECIAL");
+        Text(v,24,99,ink,"L+A / L+X: CHANGE MOVE");
+        Text(v,24,117,ink,"B+MOVE:DODGE STILL B:GUARD");
+        Text(v,24,135,ink,"R:SWITCH L+R:CATCH WILD");
+        Text(v,24,153,ink,"START: %s",g->winner?"CONTINUE":"RESUME");
+        Text(v,24,171,ink,"B: RETURN / RETREAT");
+        Text(v,24,189,ink,"X:VFX %s",v->quality?"HIGH":"LOW");
+        Text(v,24,211,ink,"START+SELECT: EXIT");v->textDepth=.95f;
     }
 }
 ArenaView *View_Create(void)
@@ -450,31 +480,42 @@ ArenaView *View_Create(void)
     ArenaView *v=calloc(1,sizeof(*v));if(!v)return 0;
     v->top=C2D_CreateScreenTarget(GFX_TOP,GFX_LEFT);v->bottom=C2D_CreateScreenTarget(GFX_BOTTOM,GFX_LEFT);
     v->effects=Load(v,"romfs:/gfx/effects.t3x");v->arena=Load(v,"romfs:/gfx/arena.t3x");
+    v->platinumIntro=Load(v,"romfs:/gfx/platinum_intro.t3x");v->platinumNpcs=Load(v,"romfs:/gfx/platinum_npcs.t3x");
+    v->ptMessageFont=Load(v,"romfs:/gfx/platinum_message_font.t3x");
+    v->ptWindows=Load(v,"romfs:/gfx/platinum_windows.t3x");
+    v->ptFieldBottom=Load(v,"romfs:/gfx/platinum_field_bottom.t3x");
+    v->fixedTrainers=Load(v,"romfs:/gfx/trainer_fixed.t3x");
     v->window=Load(v,"romfs:/gfx/window_frame.t3x");
     v->catalog=Load(v,"romfs:/gfx/move_catalog.t3x");
     v->font=Load(v,"romfs:/gfx/font.t3x");v->props=Load(v,"romfs:/gfx/props.t3x");v->ui=Load(v,"romfs:/gfx/ui.t3x");
-    if(!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui||!v->catalog||!v->window){View_Destroy(v);return 0;}
+    if(!v->fixedTrainers||!v->ptMessageFont||!v->ptWindows||!v->ptFieldBottom||!v->platinumIntro||!v->platinumNpcs||!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui||!v->catalog||!v->window){View_Destroy(v);return 0;}
     {
-        static const char *groups[]={"body","bottoms","tops","hair","headgear","accessories"};
-        unsigned i;for(i=0;i<6;i++){char path[80];if(i==3)continue;snprintf(path,sizeof(path),"romfs:/gfx/trainer_%s.t3x",groups[i]);v->trainer[i]=Load(v,path);if(!v->trainer[i]){View_Destroy(v);return 0;}}
-        v->hair[0]=Load(v,"romfs:/gfx/trainer_hair_A.t3x");v->hair[1]=Load(v,"romfs:/gfx/trainer_hair_B.t3x");
+        /* Only the selected Custom bank is loaded by View_DrawApp. */
         v->npcs=Load(v,"romfs:/gfx/story_npcs.t3x");v->mapSheet=Load(v,"romfs:/gfx/map_00.t3x");
-        if(!v->hair[0]||!v->hair[1]||!v->npcs||!v->mapSheet){View_Destroy(v);return 0;}
+        if(!v->npcs||!v->mapSheet){View_Destroy(v);return 0;}
     }
     v->zoom=1;v->textDepth=.95f;v->quality=1;return v;
 }
 void View_Destroy(ArenaView *v)
 {
     unsigned i;if(!v)return;
-    for(i=0;i<8;i++)if(v->pokemon[i])C2D_SpriteSheetFree(v->pokemon[i]);
+    for(i=0;i<8;i++){if(v->pokemon[i])C2D_SpriteSheetFree(v->pokemon[i]);if(v->hurtCache[i])C2D_SpriteSheetFree(v->hurtCache[i]);}
     if(v->effects)C2D_SpriteSheetFree(v->effects);
     if(v->arena)C2D_SpriteSheetFree(v->arena);
     if(v->font)C2D_SpriteSheetFree(v->font);
     if(v->props)C2D_SpriteSheetFree(v->props);
     if(v->ui)C2D_SpriteSheetFree(v->ui);
+    if(v->platinumIntro)C2D_SpriteSheetFree(v->platinumIntro);
+    if(v->platinumNpcs)C2D_SpriteSheetFree(v->platinumNpcs);
+    if(v->ptMessageFont)C2D_SpriteSheetFree(v->ptMessageFont);
+    if(v->ptWindows)C2D_SpriteSheetFree(v->ptWindows);
+    if(v->ptFieldBottom)C2D_SpriteSheetFree(v->ptFieldBottom);
+    if(v->fixedTrainers)C2D_SpriteSheetFree(v->fixedTrainers);
+    for(i=0;i<4;i++)if(v->ptCells[i])C2D_SpriteSheetFree(v->ptCells[i]);
     if(v->catalog)C2D_SpriteSheetFree(v->catalog);
     if(v->window)C2D_SpriteSheetFree(v->window);
     for(i=0;i<6;i++)if(v->trainer[i])C2D_SpriteSheetFree(v->trainer[i]);
+    for(i=0;i<6;i++)if(v->gen4Trainer[i])C2D_SpriteSheetFree(v->gen4Trainer[i]);
     if(v->hair[0])C2D_SpriteSheetFree(v->hair[0]);
     if(v->hair[1])C2D_SpriteSheetFree(v->hair[1]);
     if(v->npcs)C2D_SpriteSheetFree(v->npcs);
@@ -485,7 +526,7 @@ void View_Draw(ArenaView *v,const ArenaGame *g,float alpha,int paused,float fps,
 {
     unsigned i;
     /* Lazy loads occur at a species binding change, outside the GPU frame. */
-    for(i=0;i<g->combat.fighterCount;i++)Pokemon(v,g->combat.fighters[i].species);
+    for(i=0;i<g->combat.fighterCount;i++){unsigned dex=g->combat.fighters[i].species;Pokemon(v,dex);HurtSheet(v,dex,1);}
     Camera(v,g);
     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
     C2D_TargetClear(v->top,RGB(58,83,62));C2D_SceneBegin(v->top);

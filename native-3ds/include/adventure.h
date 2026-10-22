@@ -1,6 +1,7 @@
 #ifndef ARENA_NATIVE_ADVENTURE_H
 #define ARENA_NATIVE_ADVENTURE_H
 #include "game.h"
+#include "platinum.h"
 #include <stddef.h>
 #define ADVENTURE_MAPS 34
 #define ADVENTURE_EVENTS 41
@@ -8,9 +9,13 @@
 #define ADVENTURE_BOX 60
 #define ADVENTURE_SAVE_BYTES 4096
 /* Explicit native2D story state; DS overlays and scripts are not executed. */
-enum AdventureMode { ADV_TITLE,ADV_CREATOR,ADV_NAME,ADV_FIELD,ADV_DIALOGUE,ADV_STARTER,ADV_ENCOUNTER,ADV_BATTLE,ADV_CAMP,ADV_PARTY,ADV_MAP,ADV_LAB,ADV_PC };
-enum AdventureBattle { ADV_STORY_BATTLE,ADV_WILD_BATTLE,ADV_LAB_BATTLE };
-typedef struct { uint8_t body,option[6],follower; } AdventureAppearance;
+enum AdventureMode { ADV_TITLE,ADV_CREATOR,ADV_NAME,ADV_FIELD,ADV_DIALOGUE,ADV_STARTER,ADV_ENCOUNTER,ADV_BATTLE,ADV_CAMP,ADV_PARTY,ADV_MAP,ADV_LAB,ADV_PC,ADV_PT_INTRO,ADV_PT_FIELD,ADV_PT_MENU };
+enum AdventureBattle { ADV_STORY_BATTLE,ADV_WILD_BATTLE,ADV_LAB_BATTLE,ADV_PT_BATTLE };
+/* Keep legacy indices for saved appearances; new Custom uses the Gen IV bank. */
+enum AdventureTrainerBase { ADV_TRAINER_CUSTOM,ADV_TRAINER_RED,ADV_TRAINER_BRENDAN,ADV_TRAINER_GEN4,ADV_TRAINER_BASE_COUNT };
+#define ADVENTURE_HAIR_COLOURS 6
+#define ADVENTURE_OUTFIT_COLOURS 8
+typedef struct { uint8_t body,option[6],follower,base,hairColour,outfitColour; } AdventureAppearance;
 typedef struct { uint16_t dex,hp,moves[4];uint8_t pp[4],level;uint32_t xp,status; } AdventureMon;
 typedef struct {
     char name[11];AdventureAppearance appearance;
@@ -32,7 +37,7 @@ typedef struct {
     uint8_t teamCount;int8_t badge;uint8_t level,doubles;
 } AdventureEvent;
 typedef struct {
-    AdventureSave save,checkpoint;ArenaGame battle;
+    AdventureSave save,checkpoint;ArenaGame battle;Platinum platinum,platinumCheckpoint;uint8_t hasPlatinumSave;
     uint8_t mode,returnMode,hasSave,loadError,cursor,previewDirection;
     uint8_t dialoguePage,dialogueAction,battleKind,battleEvent,caughtBattle,needsSave;
     uint8_t keyboard,selectedParty,selectedBox,labSide,labClash,starterChoice;
@@ -49,11 +54,14 @@ extern const AdventureDex gAdventureDex[494];
 extern const AdventureLearn gAdventureLearn[];
 extern const AdventureEvolution gAdventureEvolution[];
 extern const uint8_t gAppearanceCounts[6];
+extern const uint8_t gGen4AppearanceCounts[6];
 extern const char *const *gAppearanceLabels[6];
 extern const char *gNpcNames[];
 extern const unsigned gNpcCount;
 void Adventure_Init(Adventure *app);
 void Adventure_New(Adventure *app);
+unsigned Adventure_CreatorRows(const AdventureAppearance *appearance);
+unsigned Adventure_AppearanceCount(const AdventureAppearance *appearance,unsigned group);
 void Adventure_Input(Adventure *app,GameInput input,int start,int touchX,int touchY,int touchDown);
 void Adventure_Tick(Adventure *app,GameInput input);
 void Adventure_FinishBattle(Adventure *app,int fled);

@@ -69,8 +69,8 @@ static void ReplacementAndResult(void)
 int main(void)
 {
     Switching();AnalogAndDigital();BuffAndPP();ReplacementAndResult();
-    assert(Game_TouchMove(10,78)==0&&Game_TouchMove(166,168)==3);
-    assert(Game_TouchMove(180,100)==-1);
+    assert(Game_TouchMove(10,100)==0&&Game_TouchMove(166,168)==3);
+    assert(Game_TouchMove(160,100)==-1);
     puts("PASS native adapter: analog magnitude, D-pad, party preservation, no duplicate2v2 bindings, real buff/PP and battle result");
     return 0;
 }

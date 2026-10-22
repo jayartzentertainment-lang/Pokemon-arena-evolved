@@ -1,14 +1,19 @@
 {
   "previous_releases_unchanged": [
     {
-      "project": "/workspace/platinum-arena-3ds",
+      "project": "platinum-arena-3ds",
       "sha256": "504e1e4ac43dadd68de984c43a6d55658e289de900f016e5ea3fa271f9f0ad99",
       "checked_unchanged_inputs": 26
     },
     {
-      "project": "/workspace/platinum-arena-3ds-next",
+      "project": "platinum-arena-3ds-next",
       "sha256": "7156caccf6214a24b51439eb10f503128038b24c84d478b6396916ae50836c19",
       "checked_unchanged_inputs": 27
+    },
+    {
+      "project": "platinum-arena-3ds-story",
+      "sha256": "71bcc37a52803f593fb3bc5278dcde9161f58156cd4baf4c7b1cac7974dc4f08",
+      "checked_unchanged_inputs": 565
     },
     {
       "project": "DS0.9.6",
@@ -16,6 +21,10 @@
     }
   ],
   "ds_source_selected_hashes_verified": true,
-  "all11_host_suites_pass": true,
-  "main_branch_modified": false
+  "host_suites_passed": 14,
+  "main_branch_modified": false,
+  "last_creator_update_rechecked_utc": "2026-10-22T11:59:07.018124+00:00",
+  "approved_native_release_inputs_and_binaries_unchanged": true,
+  "approved_ds_release_binary_unchanged": true,
+  "selected_ds_source_hashes_rechecked_by_host_suite": true
 }

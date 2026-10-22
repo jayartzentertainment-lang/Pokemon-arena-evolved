@@ -70,6 +70,8 @@ typedef struct {
     uint8_t status,toxicCounter,lightChoice,specialSlot;
     int16_t attackAimX,attackAimY;
     uint16_t beamReach;
+    uint16_t naturalCooldown,moveSpeed;
+    uint8_t staminaMax,regenStep,dodgeScale,resistance;
     uint8_t preciseAim,castRoot; /* Per-action state, cleared on interruption. */
 } CombatFighter;
 typedef struct {
@@ -107,7 +109,7 @@ typedef struct {
     uint16_t controlMagnitude; /* Q8 Circle Pad magnitude; digital fallback unchanged. */
     uint8_t analogInput;
     int16_t aimX,aimY; /* Optional independent Q8 aim; movement stays independent. */
-    uint8_t aimOverride,lockTarget,growingBeams;
+    uint8_t aimOverride,lockTarget,growingBeams,nativeBalance;
 } Combat;
 /* One live match owns the imported navigation/physics module globals. */
 void Combat_Init(Combat *combat,const CombatFighterConfig configs[2]);
@@ -134,6 +136,7 @@ unsigned Combat_AnimationTick(const CombatFighter *fighter,unsigned totalTicks,u
 unsigned Combat_PhaseTick(const CombatFighter *fighter);
 unsigned Combat_PhaseDuration(const CombatFighter *fighter);
 void Combat_SetAnalogMagnitude(Combat *combat,unsigned magnitude,int enabled);
+void Combat_ConfigureMobility(Combat *combat,unsigned actor,unsigned speed,unsigned hp,unsigned defense);
 void Combat_SetAim(Combat *combat,int x,int y,int enabled);
 void Combat_AttackVector(const CombatFighter *fighter,int16_t *x,int16_t *y);
 int Combat_MoveTargetsSelf(uint16_t move);

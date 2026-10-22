@@ -21,7 +21,8 @@ typedef struct {
     CombatFighterConfig config;
     ArenaSpriteAnimation animation[5];
 } ArenaSpecies;
-extern const ArenaSpecies gSpecies[];
+extern const ArenaSpecies gSpecies[],gNativeArceus;
+const ArenaSpriteAnimation *ArenaSpecies_Hurt(unsigned dex);
 extern const unsigned gSpeciesCount;
 const ArenaSpecies *ArenaSpecies_Find(unsigned dex);
 #endif

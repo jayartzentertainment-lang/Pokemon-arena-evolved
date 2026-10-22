@@ -32,9 +32,9 @@ static void StrafeAndTargets(void)
 static void FreeAimAndProjectile(void)
 {
     GameInput in=None();unsigned i;CombatProjectile *p=0;
-    Setup(0);in.aimActive=1;in.aimX=41;in.aimY=-17;Game_Tick(&game,in);
+    Setup(0);in.pressed=GAME_SELECT;in.axisX=41;in.axisY=-17;Game_Tick(&game,in);
     assert(game.aim.mode==GAME_AIM_FREE&&game.combat.aimX>200&&game.combat.aimY<0);
-    in=None();in.axisY=156;Game_Tick(&game,in);
+    in=None();Game_Tick(&game,in);
     assert(game.aim.mode==GAME_AIM_FREE&&game.combat.aimY<0);
     in=None();in.touchMove=0;Game_Tick(&game,in);in=None();
     for(i=0;i<100;i++){
@@ -92,11 +92,11 @@ static void BeamReachAndSteer(void)
     Setup(0);assert(Game_Switch(&game,0));assert(Game_Switch(&game,0));
     f=&game.combat.fighters[0];f->x=100*256;f->y=200*256;
     game.combat.fighters[1].x=100*256;game.combat.fighters[1].y=110*256;
-    in.aimActive=1;in.aimX=0;in.aimY=-100;in.touchMove=0;Game_Tick(&game,in);in.touchMove=-1;
+    in.pressed=GAME_SELECT;in.axisX=0;in.axisY=-100;in.touchMove=0;Game_Tick(&game,in);in.touchMove=-1;in.pressed=0;
     for(i=0;i<100&&f->phase!=COMBAT_ACTIVE;i++)Game_Tick(&game,in);
     assert(f->phase==COMBAT_ACTIVE);first=f->beamReach;
     assert(first>0&&first<=21&&game.combat.hits==0);
-    in.aimX=100;in.aimY=0;Game_Tick(&game,in);
+    in.axisX=100;in.axisY=0;Game_Tick(&game,in);
     assert(f->attackAimX>0&&f->attackAimX<25&&f->attackAimY< -240);
     assert(f->beamReach>=first);
     /* Switching interrupts ownership and discards the old emitter/action. */
@@ -105,10 +105,20 @@ static void BeamReachAndSteer(void)
 }
 static void TouchSeparation(void)
 {
-    unsigned x,y;
+    unsigned x,y,i;
     for(y=0;y<240;y++)for(x=0;x<320;x++)
-        if(Game_TouchAim(x,y))assert(Game_TouchMove(x,y)<0&&Game_TouchCommand(x,y)<0);
-    assert(Game_TouchCommand(200,189)==3);
+        assert(!(Game_TouchMove(x,y)>=0&&Game_TouchCommand(x,y)>=0));
+    for(i=0;i<4;i++){
+        int x0,y0,w,h;Game_MoveRect(i,&x0,&y0,&w,&h);
+        assert(w>=140&&h>=40&&x0>=0&&x0+w<=320&&y0+h<=240);
+        assert(Game_TouchMove(x0+w/2,y0+h/2)==(int)i);
+    }
+    for(i=0;i<5;i++){
+        int x0,y0,w,h;Game_CommandRect(i,&x0,&y0,&w,&h);
+        assert(w>=96&&h>=30&&x0>=0&&x0+w<=320&&y0+h<=240);
+        assert(Game_TouchCommand(x0+w/2,y0+h/2)==(int)i);
+    }
+    assert(Game_TouchMove(160,120)<0&&Game_TouchCommand(160,120)<0);
 }
 static void NativeClash(void)
 {
@@ -140,26 +150,31 @@ static void AICastRoot(void)
     }
     assert(enemy->stages[COMBAT_STAT_ATTACK]==2&&!enemy->castRoot);
 }
-static void SoftAssistLimits(void)
+static void ExplicitAimOnly(void)
 {
-    GameInput in=None();CombatFighter *f;int y;
-    Setup(0);game.aim.mode=GAME_AIM_FACING;f=&game.combat.fighters[0];f->direction=COMBAT_E;
-    game.combat.fighters[1].x=170*256;game.combat.fighters[1].y=168*256;
-    in.held=GAME_A;Game_AimTick(&game,in);assert(game.aim.assisted&&game.combat.aimY>0);
-    game.combat.fighters[1].x=140*256;game.combat.fighters[1].y=220*256;
-    Game_AimTick(&game,in);assert(!game.aim.assisted&&!game.combat.aimOverride);
-    game.combat.fighters[1].x=420*256;game.combat.fighters[1].y=150*256;
-    Game_AimTick(&game,in);assert(!game.aim.assisted);
-    y=(gArenaObstacles[0].top+gArenaObstacles[0].bottom)/2;
-    f->x=(gArenaObstacles[0].left-18)*256;f->y=y*256;
-    game.combat.fighters[1].x=(gArenaObstacles[0].right+18)*256;game.combat.fighters[1].y=y*256;
-    ArenaNav_SetObstacle(0,1);Game_AimTick(&game,in);
-    assert(!game.aim.assisted&&game.aim.blocked);
+    GameInput in=None();int16_t x,y;unsigned i;
+    Setup(1);in.axisX=-156;Game_AimTick(&game,in);
+    assert(game.aim.mode==GAME_AIM_LOCK&&game.combat.aimX>0);
+    game.combat.fighters[1].y=240*256;Game_AimTick(&game,in);
+    assert(game.aim.target==1&&game.combat.aimX>0&&game.combat.aimY>0);
+    in=None();in.pressed=GAME_SELECT;Game_AimTick(&game,in);
+    assert(game.aim.mode==GAME_AIM_FREE);x=game.combat.aimX;y=game.combat.aimY;
+    game.combat.fighters[1].x=20*256;game.combat.fighters[1].y=20*256;
+    for(i=0;i<30;i++){in=None();in.axisX=3;in.axisY=-3;Game_AimTick(&game,in);}
+    assert(game.combat.aimX==x&&game.combat.aimY==y); /* Neutral drift never retargets. */
+    in=None();in.held=GAME_DOWN;Game_AimTick(&game,in);
+    assert(game.combat.aimX==0&&game.combat.aimY==256);
+    game.combat.fighters[1].hp=0;Game_AimTick(&game,None());
+    assert(game.aim.mode==GAME_AIM_FREE&&game.combat.aimY==256);
+    in=None();in.pressed=GAME_SELECT;Game_AimTick(&game,in);
+    assert(game.aim.mode==GAME_AIM_LOCK&&game.aim.target==3);
+    game.combat.fighters[3].hp=0;Game_AimTick(&game,None());
+    assert(game.aim.target==COMBAT_FIGHTERS);
 }
 int main(void)
 {
     StrafeAndTargets();FreeAimAndProjectile();StatusRoots();InterruptionAndDebuff();
-    BeamReachAndSteer();TouchSeparation();NativeClash();AICastRoot();SoftAssistLimits();
-    puts("PASS quality: strafing, target cycling/invalidation, persistent continuous aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates");
+    BeamReachAndSteer();TouchSeparation();NativeClash();AICastRoot();ExplicitAimOnly();
+    puts("PASS quality: strafing, target cycling/invalidation, sticky lock and single-pad free aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates");
     return 0;
 }

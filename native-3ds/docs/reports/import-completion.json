@@ -1,0 +1,56 @@
+{
+  "version": "0.4.0-development-original-import-preview",
+  "full_original_campaign_playable": false,
+  "condensed_campaign_used_as_original_substitute": false,
+  "native_map_headers": 18,
+  "converted_original_cells": 32,
+  "raw_file_counts": {
+    "res/field": 3822,
+    "res/text": 686,
+    "res/trainers": 2898,
+    "res/items": 1160
+  },
+  "lossless_script_input_files": 1124,
+  "all_input_retention_is_runtime_support": false,
+  "source_based_opening_coverage": [
+    "upstairs television/rival",
+    "original house warps and Mom exit warning",
+    "Twinleaf rival collision/rival house",
+    "Rowan/counterpart/Barry Route201 sequence",
+    "starter grant and original first rival team",
+    "original battle continuation and Running Shoes (host injected victory)",
+    "Barry follows across map boundaries",
+    "original Lake Verity Cyrus camera/movement/dialogue sequence"
+  ],
+  "campaign_remaining": [
+    "Sandgem native services",
+    "all later map/event systems",
+    "original shared-script banks",
+    "full original adventure/gyms/Galactic/Distortion World/League"
+  ],
+  "rendering": "Original Nitro geometry/props/textures converted to orthographic top-down baked cells; original DS perspective/height renderer not ported",
+  "dedicated_hurt_species": 493,
+  "unsupported_hurt_species": {},
+  "arceus_corrected_source": "4702f10d888d19e804c5986a91170dfc92ae01b8",
+  "legacy_saves": "Preserved separate v0.3.0 campaign; no unsafe invented story flag migration",
+  "details": "docs/IMPORT-COMPLETION.md",
+  "release_status": "Playable release withheld; source WIP published separately at user request",
+  "full_original_story_runtime_ported": false,
+  "presentation_correction": "docs/DEVELOPMENT-CORRECTION.md",
+  "native_original_ui_assets": [
+    "Original FONT_MESSAGE glyph pixels and proportional widths",
+    "Original message_box_00 and standard_field tiles",
+    "Original pre-Poketch field tilemap"
+  ],
+  "custom_field_dashboard_removed_in_source": true,
+  "original_full_menu_services_complete": false,
+  "current_field_renderer_is_original_perspective": false,
+  "creator_bases": {
+    "Custom": "Supplied pokemon png.rar Gen IV-proportioned blank male/female body, matching hair/clothes/hat layers; optional layers None by default",
+    "Red": "Retained DS sprite silhouette, palette colours only",
+    "Brendan": "Retained DS sprite silhouette, palette colours only",
+    "Custom Classic": "Retained old modular pack for v0.3 appearance/save compatibility only"
+  },
+  "appearance_save": "Profile v2; new Custom uses base3, v1 reads retain base0 Classic appearance and legacy progress",
+  "gen4_custom_provenance": "provenance/gen4-custom.json"
+}

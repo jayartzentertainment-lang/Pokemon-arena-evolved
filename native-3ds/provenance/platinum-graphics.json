@@ -1,0 +1,216 @@
+{
+  "original_intro": true,
+  "npc_graphics": {
+    "OBJ_EVENT_GFX_ARROW_SIGNPOST": {
+      "supported": false,
+      "reason": "Original sprite/model service pending"
+    },
+    "OBJ_EVENT_GFX_BARRY": {
+      "supported": true,
+      "index": 0,
+      "source": "res/graphics/field_sprites/npc/barry.png",
+      "sha256": "1c5f4820959afb5b9afee37bdef90ef569c2f0b163b40036d4ae2525a8a14be9"
+    },
+    "OBJ_EVENT_GFX_BRIEFCASE": {
+      "supported": true,
+      "index": 1,
+      "source": "res/graphics/field_sprites/objects/briefcase.png",
+      "sha256": "38e3734bb6d8b424163c0f75e7aa67f23616b8bd58a1681b65cb1f648f0346ff"
+    },
+    "OBJ_EVENT_GFX_CASHIER_F": {
+      "supported": true,
+      "index": 2,
+      "source": "res/graphics/field_sprites/npc/cashier_f.png",
+      "sha256": "bcc6a5851be06767edb3e7a930ee374ffdb2cd936e003d781dc38115b74755a9"
+    },
+    "OBJ_EVENT_GFX_CASHIER_M": {
+      "supported": true,
+      "index": 3,
+      "source": "res/graphics/field_sprites/npc/cashier_m.png",
+      "sha256": "e397be2655ea0744d0735ae218c662b018d55f101e780c00bb9bde12b4614420"
+    },
+    "OBJ_EVENT_GFX_COLLECTOR": {
+      "supported": true,
+      "index": 4,
+      "source": "res/graphics/field_sprites/npc/collector.png",
+      "sha256": "f1a04a971f2c6c2fe4a1d6d79fb8082f2cedbb7be6f960be551b4d51d2577469"
+    },
+    "OBJ_EVENT_GFX_CYRUS": {
+      "supported": true,
+      "index": 5,
+      "source": "res/graphics/field_sprites/npc/cyrus.png",
+      "sha256": "9e46e09aa2ce7e215c9e4efeeba8f2c6e4e2f01d9cfc0d5b714598751006dc7d"
+    },
+    "OBJ_EVENT_GFX_EXPERT_F": {
+      "supported": true,
+      "index": 6,
+      "source": "res/graphics/field_sprites/npc/expert_f.png",
+      "sha256": "6f1144261f45dea3bed766470fa90f6f82cc0f9425dc004a9368cc5f13901764"
+    },
+    "OBJ_EVENT_GFX_EXPERT_M": {
+      "supported": true,
+      "index": 7,
+      "source": "res/graphics/field_sprites/npc/expert_m.png",
+      "sha256": "53c0b1cb5276e0a47a5ecc2e8098bce57094ad253a250c80319ba865c0ae45aa"
+    },
+    "OBJ_EVENT_GFX_GRUNT_F": {
+      "supported": true,
+      "index": 8,
+      "source": "res/graphics/field_sprites/npc/grunt_f.png",
+      "sha256": "ce454c2acd61361a92c34d5949028dde566357bba75963740213bd2eb4449e4f"
+    },
+    "OBJ_EVENT_GFX_GRUNT_M": {
+      "supported": true,
+      "index": 9,
+      "source": "res/graphics/field_sprites/npc/grunt_m.png",
+      "sha256": "8370fc401865567d90736273d53daace6285e464c633e83cebb8cc02e54052dc"
+    },
+    "OBJ_EVENT_GFX_GUITARIST": {
+      "supported": true,
+      "index": 10,
+      "source": "res/graphics/field_sprites/npc/guitarist.png",
+      "sha256": "62c86083915890c147c0dc6ffcb41c97191402540b06b6cfd38a498a4ac9dcf9"
+    },
+    "OBJ_EVENT_GFX_LASS": {
+      "supported": true,
+      "index": 11,
+      "source": "res/graphics/field_sprites/npc/lass.png",
+      "sha256": "b661180276752494093120b6690c27f98eb9fad8a7cbe20438b9ae03568e0104"
+    },
+    "OBJ_EVENT_GFX_MAILBOX": {
+      "supported": false,
+      "reason": "Original sprite/model service pending"
+    },
+    "OBJ_EVENT_GFX_MAP_SIGNPOST": {
+      "supported": false,
+      "reason": "Original sprite/model service pending"
+    },
+    "OBJ_EVENT_GFX_MARS": {
+      "supported": true,
+      "index": 12,
+      "source": "res/graphics/field_sprites/npc/mars.png",
+      "sha256": "18b8a30c3ac17a3ece750ae514f92089134e377354d55addb5f213b0a9928030"
+    },
+    "OBJ_EVENT_GFX_MOM": {
+      "supported": true,
+      "index": 13,
+      "source": "res/graphics/field_sprites/npc/mom.png",
+      "sha256": "27ba03eb4e4c1f8b1a9bf3bf8061d0e9fd42f5936182db4fffe0620637eb17ff"
+    },
+    "OBJ_EVENT_GFX_MYSTERY_GIFT_DELIVERYMAN": {
+      "supported": true,
+      "index": 14,
+      "source": "res/graphics/field_sprites/npc/mystery_gift_deliveryman.png",
+      "sha256": "5f9ae21d22810f9e6b6bc1e53fcb2636593ad2aabb766102a3af54a1a24438ae"
+    },
+    "OBJ_EVENT_GFX_PLAYER_F": {
+      "supported": true,
+      "index": 15,
+      "source": "res/graphics/field_sprites/player/player_f.png",
+      "sha256": "4644b142049fa41c6a1b17289ebad35d713b0d96b3345ada17046145261436e1"
+    },
+    "OBJ_EVENT_GFX_PLAYER_M": {
+      "supported": true,
+      "index": 16,
+      "source": "res/graphics/field_sprites/player/player_m.png",
+      "sha256": "e63e5033ca4d299760444711d51a03dd116a95bdf58bc023ed50340a8b1d80d7"
+    },
+    "OBJ_EVENT_GFX_POKEBALL": {
+      "supported": true,
+      "index": 17,
+      "source": "res/graphics/field_sprites/objects/pokeball.png",
+      "sha256": "ee2cbd5fed9c3ef1bc29973464e0428c0c157c71af6a959715a9a74e43c48e8a"
+    },
+    "OBJ_EVENT_GFX_POKECENTER_NURSE": {
+      "supported": true,
+      "index": 18,
+      "source": "res/graphics/field_sprites/npc/pokecenter_nurse.png",
+      "sha256": "7e33fd3340df2dac27575f4bc160ff6ec21461d431bd2637f232748007eb9d73"
+    },
+    "OBJ_EVENT_GFX_POKEFAN_F": {
+      "supported": true,
+      "index": 19,
+      "source": "res/graphics/field_sprites/npc/pokefan_f.png",
+      "sha256": "25c9d2ab0c04f79ece316f0dcfaa8dec395d41fd01867c959ff78016b63f55e9"
+    },
+    "OBJ_EVENT_GFX_POKEMON_BREEDER_F": {
+      "supported": true,
+      "index": 20,
+      "source": "res/graphics/field_sprites/npc/pokemon_breeder_f.png",
+      "sha256": "a64b76a7088302b31d60be1deb98df70725f2bab2841527552d0385a6550a27f"
+    },
+    "OBJ_EVENT_GFX_POKEMON_BREEDER_M": {
+      "supported": true,
+      "index": 21,
+      "source": "res/graphics/field_sprites/npc/pokemon_breeder_m.png",
+      "sha256": "6a6a02976bda5dc1c64c3b0fbc7341a185b48d6050e33bf1f935d42913c2592a"
+    },
+    "OBJ_EVENT_GFX_PROF_OAK": {
+      "supported": true,
+      "index": 22,
+      "source": "res/graphics/field_sprites/npc/prof_oak.png",
+      "sha256": "7212982d7db495d20953c195446b312b159a1934dcaa88d586674d0496bfff1b"
+    },
+    "OBJ_EVENT_GFX_PROF_ROWAN": {
+      "supported": true,
+      "index": 23,
+      "source": "res/graphics/field_sprites/npc/prof_rowan.png",
+      "sha256": "e779d55346c4bf98f63e199e0baa84e3096fe99d27eea135bb6d7b44da1c778e"
+    },
+    "OBJ_EVENT_GFX_SCHOOL_KID_M": {
+      "supported": true,
+      "index": 24,
+      "source": "res/graphics/field_sprites/npc/school_kid_m.png",
+      "sha256": "632d22a05fca4b5ea990709fdb2aa6245a7d1c9f2979cc65af74418a6320b989"
+    },
+    "OBJ_EVENT_GFX_SCIENTIST_F": {
+      "supported": true,
+      "index": 25,
+      "source": "res/graphics/field_sprites/npc/scientist_f.png",
+      "sha256": "214365cfacaf3a900212a0a3efd0a26bd4d5984f15ff7305156575bf280c5266"
+    },
+    "OBJ_EVENT_GFX_SCIENTIST_M": {
+      "supported": true,
+      "index": 26,
+      "source": "res/graphics/field_sprites/npc/scientist_m.png",
+      "sha256": "fcecfda6801dfe2d37148787aca05e302aec7ebad3e65c1d7fd7ef61fcde8b49"
+    },
+    "OBJ_EVENT_GFX_SIGNBOARD": {
+      "supported": false,
+      "reason": "Original sprite/model service pending"
+    },
+    "OBJ_EVENT_GFX_STARLY": {
+      "supported": true,
+      "index": 27,
+      "source": "res/graphics/field_sprites/pokemon/starly.png",
+      "sha256": "3342915ca7a13548640a1a4c93bc0d8b057cd09643944b527f6d5e962ab078c6"
+    },
+    "OBJ_EVENT_GFX_TEALA": {
+      "supported": true,
+      "index": 28,
+      "source": "res/graphics/field_sprites/npc/teala.png",
+      "sha256": "6cb57c12a9ca6db6929e9c39d934bbbfc9ace1e0bfda9903f72cd629fa73732f"
+    },
+    "OBJ_EVENT_GFX_TRAINER_TIPS_SIGNPOST": {
+      "supported": false,
+      "reason": "Original sprite/model service pending"
+    },
+    "OBJ_EVENT_GFX_TWIN": {
+      "supported": true,
+      "index": 29,
+      "source": "res/graphics/field_sprites/npc/twin.png",
+      "sha256": "38e25ea61ac6a42fb747d81c7ef3a9090a8d6a4e31bf25a591ee4729c23c5274"
+    },
+    "OBJ_EVENT_GFX_YOUNGSTER": {
+      "supported": true,
+      "index": 30,
+      "source": "res/graphics/field_sprites/npc/youngster.png",
+      "sha256": "ee9f513725f44f95ab095102b91b9439268817123e3bcded21087781631db49e"
+    },
+    "OBJ_EVENT_GFX_VAR_0": {
+      "supported": true,
+      "index": 65534,
+      "reason": "Original opposite-gender counterpart, resolved at runtime"
+    }
+  }
+}

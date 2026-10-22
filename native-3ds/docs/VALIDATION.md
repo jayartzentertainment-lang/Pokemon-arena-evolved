@@ -1,25 +1,23 @@
-# Validation — native3DS integrated adventure0.3.0
+# Validation — native 3DS v0.4.0 development preview
 
-This report separates portable state checks from observed native emulator play. It does not claim a full human campaign playthrough or physical hardware profiling.
+The original-content opening is tested separately from the retained v0.3.0 condensed campaign. No full original campaign, original-ROM behavioural parity or physical hardware performance is claimed.
 
 ## Host checks
 
-11/11 suites passed with AddressSanitizer and UndefinedBehaviorSanitizer: the8 retained battle/physics/navigation/Platinum/2v2 suites, native party adapter, aiming/status/beam-quality suite, and new adventure suite. The selected preserved DS source hashes also match.
+14 suites pass with AddressSanitizer, UndefinedBehaviorSanitizer and warnings treated as errors. They cover the retained eight combat/navigation/physics/Platinum core suites, the legacy adventure suite, native party/input adapter, sticky lock and physical free-aim/HUD hitboxes, native species balancing and the original-content opening interpreter/checkpoint.
 
-The adventure suite covers all493 base-species data/config lookup, mutable trainer choices, walking/follower trail, walkable links/story-marker/grass reachability on34 maps, six-slot switching, defeat/retry/retreat, capture, level evolution, all41 story flags,8 badges and Champion ending, bounded save encoding/CRC rejection and recovery from a corrupt primary using a known-good backup.
+The new source-based opening test walks original tiles and warps, executes original rival/Mom/Rowan/starter instructions, configures the original first rival team, resumes the original Running Shoes sequence after a **host-injected victory**, follows Barry across the original map edge and completes the original Lake Verity Cyrus movement/camera/dialogue event. This is not a played battle victory or a full reference-ROM comparison.
 
-The scripted campaign walk constructs28 battle encounters, including4 actual2v2 setups, and **injects their outcomes** to verify event progression. This is not an end-to-end gameplay victory claim. The existing core suites exercise real battle resolution separately.
+Native balancing checks slower Blastoise speed, species stamina, natural-attack spam cooldown, stationary Scratch, genuine Tackle travel and high-power stamina/cooldown costs. Existing core checks cover beams, clashes and 2v2. The dedicated Hurt importer validates all 493 sheets and their original white shadow markers, preserving source durations and hit-frame timing. Exhaustive visual review of every species is pending.
 
-## Actual native execution
+## Native verification
 
-The exact final `.3dsx` identified in reports/build.json was opened in Azahar2126.2 with original3DS configuration, normal CPU setting, stereo disabled and software OpenGL. Input came through actual emulator keyboard/touch controls; game memory and save progress were not injected for this check.
+Actual native emulator observations and the exact candidate hash are in `reports/emulator-results.json`. Source-based checks and emulator observations are distinguished. No audio listening or physical 3DS performance claim is made; the emulator may lack NDSP and display SFX OFF. Emulated FPS/CPU/GPU times are not measurements of real original/New 3DS hardware.
 
-Observed: stationary layered trainer preview, changing actual hair pieces, naming the trainer ARENA, that same trainer walking in Twinleaf/Route201, dialogue and story progression, authentic Sinnoh starter selection, Turtwig/Chimchar live battle handoff, return to the adventure, on-disk save and Continue, and a four-actor2v2 battle in the separate full-roster lab. Screenshots are actual emulator captures. A fresh-process Continue check is recorded in reports/emulator-results.json.
+The pinned official devkitARM build produces an ARM11 ELF and native 3DSX. Original map textures use a four-cell streaming cache; ordinary Pokémon textures and their Hurt sheets share eight LRU slots and are loaded only for Pokémon in use. All retained sprites are present on RomFS without loading the entire roster into RAM.
 
-The lab and adventure save were checked separately: lab entry does not advance story objectives. The opening reaches the battle naturally via NPC interaction. Native UI uses the supplied Platinum system font and window-border pieces with corrected indexed transparency. A single menu press is consumed once rather than being replayed across render frames between simulation ticks.
+Selected DS source hashes and approved native/DS release binaries are checked separately in `reports/preservation-final.json`. See `IMPORT-COMPLETION.md` for unported systems and honest import coverage.
 
-The native FPS/CPU/GPU HUD uses emulated time; it is not proof of real original/New3DS performance. Source conversion and the binary build succeeded within original3DS-oriented texture limits; the hair atlas is split by body and Pokemon textures use a bounded8-sheet cache. Physical hardware, exhaustive493 visual review, complete move-mechanics/ability/item parity, and full human story balancing remain pending.
+The creator suite additionally verifies Gen IV blank new games, both body/layer ranges, fixed Red/Brendan colour-only rows, pointer input, original-intro identity handoff, version2 appearance persistence and an actual retained synthetic v0.3 format1 save fixture. Current creator observations are in reports/emulator-results.json; they do not verify a completed native original-story port.
 
-No audio listening test: NDSP was unavailable in this emulator and the game displayed SFX OFF. Audio remains optional original prototype cues. No visually confirmed beam-clash playthrough or full campaign completion is claimed for this release; inherited/native core checks cover clash formation and ownership.
-
-Previous native0.1/0.2 source inputs/binaries and the DS0.9.6 integration binary were verified unchanged. Build, host, emulator and preservation details are included under reports/.
+The Gen IV update was observed in Azahar: blank defaults, real supplied layer changes, body/rotation previews, fixed regional colour controls, and the dressed Custom trainer in the imported bedroom TV event. The original full campaign and original perspective renderer remain unfinished. Screenshots are local/private; the public report identifies observations without redistributing the images.

@@ -1,6 +1,6 @@
 {
-  "tests": 11,
-  "passed": 11,
+  "tests": 14,
+  "passed": 14,
   "sanitizers": [
     "address",
     "undefined"
@@ -53,14 +53,29 @@
       "output": "Scripted campaign-state progression:41 events,28 constructed battles,4 actual2v2 setups; outcomes injected, not a gameplay playthrough.\nAdventure: roster, editable profile, movement/trail, route reachability, six-slot switching, defeat/retry/retreat, catching, level evolution, story flags, CRC save and backup recovery passed."
     },
     {
+      "test": "test_creator",
+      "passed": true,
+      "output": "PASS creator: supplied Gen IV blank Custom and matching layers, fixed Red/Brendan colour-only controls, pointer input, original intro identity, v2 save/CRC and actual v0.3 migration"
+    },
+    {
       "test": "test_game",
       "passed": true,
       "output": "PASS native adapter: analog magnitude, D-pad, party preservation, no duplicate2v2 bindings, real buff/PP and battle result"
     },
     {
+      "test": "test_native_balance",
+      "passed": true,
+      "output": "PASS native balance: slower stat-based Blastoise, species stamina, natural spam cooldown, stationary Scratch, genuine Tackle travel and high-power move cost/cooldown"
+    },
+    {
+      "test": "test_platinum_import",
+      "passed": true,
+      "output": "ORIGINAL_ROUTE_READY at114,854 facing2\nORIGINAL_STARTER_GIVEN at113,854 facing0 state1\nLAKE ENTRY header311 tile46,53 state1 visited1 pending0 pc4294967295\noriginal opening: TV state and full rival entry7 movement/message/flag sequence passed\noriginal checkpoint: flags/vars/position + compatible appearance/party payload + backup recovery passed\noriginal exploration: physical tile paths, house warps, Mom warning, Twinleaf rival thud and rival-house sequence passed\noriginal Route201: Rowan/Dawn/Barry dialogue, original yes/no branches and briefcase setup passed\noriginal briefcase: choosing Turtwig runs original grant/dialogue and records native party\noriginal first battle: actual Turtwig/Chimchar lv5 configs; host-injected victory returns through original Warp, Mom and RunningShoes events\noriginal Lake Verity: Barry follows across original map edges, original warp selection and complete Cyrus camera/movement/dialogue sequence passed\nPASS original Platinum import: original IDs/layout/TV/rival path, unsupported-event stop and native checkpoint"
+    },
+    {
       "test": "test_quality",
       "passed": true,
-      "output": "PASS quality: strafing, target cycling/invalidation, persistent continuous aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates"
+      "output": "PASS quality: strafing, target cycling/invalidation, sticky lock and single-pad free aim, projectile vectors, four rooted buffs, interruption, Growl, growing beams, bounded steering, ownership cleanup and 76800 touch coordinates"
     }
   ]
 }
