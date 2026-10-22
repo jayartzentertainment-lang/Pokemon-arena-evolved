@@ -20,7 +20,7 @@ The host test **injects a first-battle victory solely to test the original conti
 
 The native creator opens at Rowan's original selection text. Start+Select is an intro-only shortcut; confirming it starts the authentic upstairs bedroom with original new-game flags. The supplied layered trainer body/clothes/hair/hat/accessories remain editable and are used in exploration. This does not claim newly authored Generation IV trainer artwork or every original trainer animation.
 
-Original-story saves use `sdmc:/3ds/platinum-arena/platinum-v1.sav`, storing original flags/variables/position/NPC anchors/RNG/starter/Running Shoes alongside the Arena appearance/party profile. They are CRC checked with staged writes and a known-good backup. A battle/cutscene is not serialized mid-execution. Original map initialization is rerun on load. The separate `adventure-v1.sav` remains the v0.3.0 legacy campaign; incompatible story flags are not fabricated during migration.
+Original-story saves use `sdmc:/3ds/platinum-arena-preview/platinum-v1.sav`, storing original flags/variables/position/NPC anchors/RNG/starter/Running Shoes alongside the Arena appearance/party profile. They are CRC checked with staged writes and a known-good backup. A battle/cutscene is not serialized mid-execution. Original map initialization is rerun on load. The separate `adventure-v1.sav` remains the v0.3.0 legacy campaign; incompatible story flags are not fabricated during migration.
 
 The v0.3.0 project and release are unchanged, as are the earlier native and DS integration releases. The new native source/build live separately.
 

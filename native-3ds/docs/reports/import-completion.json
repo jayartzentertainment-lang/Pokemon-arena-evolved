@@ -34,7 +34,7 @@
   "arceus_corrected_source": "4702f10d888d19e804c5986a91170dfc92ae01b8",
   "legacy_saves": "Preserved separate v0.3.0 campaign; no unsafe invented story flag migration",
   "details": "docs/IMPORT-COMPLETION.md",
-  "release_status": "Playable release withheld; source WIP published separately at user request",
+  "release_status": "Playable opening / Battle Lab preview only; full original campaign remains unfinished",
   "full_original_story_runtime_ported": false,
   "presentation_correction": "docs/DEVELOPMENT-CORRECTION.md",
   "native_original_ui_assets": [
@@ -52,5 +52,6 @@
     "Custom Classic": "Retained old modular pack for v0.3 appearance/save compatibility only"
   },
   "appearance_save": "Profile v2; new Custom uses base3, v1 reads retain base0 Classic appearance and legacy progress",
-  "gen4_custom_provenance": "provenance/gen4-custom.json"
+  "gen4_custom_provenance": "provenance/gen4-custom.json",
+  "preview_save_directory": "sdmc:/3ds/platinum-arena-preview/"
 }

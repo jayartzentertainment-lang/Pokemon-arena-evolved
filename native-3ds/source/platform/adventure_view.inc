@@ -270,8 +270,8 @@ static void BottomAdventure(ArenaView *v,const Adventure *a)
     if(a->mode==ADV_PT_INTRO||a->mode==ADV_PT_FIELD||a->mode==ADV_PT_MENU){PtBottom(v,a);return;}
     C2D_DrawRectSolid(0,0,0,320,240,RGB(192,208,189));
     if(a->mode==ADV_TITLE){
-        const char *items[]={a->hasPlatinumSave?"CONTINUE PLATINUM":a->hasSave?"CONTINUE 0.3 SAVE":"NO SAVE YET","ORIGINAL PLATINUM","BATTLE LAB /493 POKEMON","IMPORT STATUS"};
-        Header(v,"PLATINUM ARENA /0.4.0");
+        const char *items[]={a->hasPlatinumSave?"CONTINUE PLATINUM":a->hasSave?"CONTINUE 0.3 SAVE":"NO SAVE YET","PLATINUM OPENING / WIP","BATTLE LAB /493 POKEMON","IMPORT STATUS"};
+        Header(v,"PLATINUM ARENA /0.4.0 PREVIEW");
         for(i=0;i<4;i++){Panel(v,40,60+i*40,240,30,a->cursor==i);Text(v,50,70+i*40,ink,"%s",items[i]);}
         if(a->messageTicks)Text(v,7,30,ink,"%.38s",a->message);
         else if(a->loadError)Text(v,7,30,ink,"SAVE DAMAGED: BACKUP OR NEW GAME");

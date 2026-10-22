@@ -33,3 +33,5 @@ The native build image is pinned in the build script. Original source/converted
 asset hashes and actual checks are recorded in provenance/ and docs/reports/.
 The earlier rejected custom field UI preview is not distributed as a finished
 story integration. The remaining work is described in DEVELOPMENT-CORRECTION.md.
+
+The later playable-preview branch adds an explicitly limited opening/Battle Lab download and isolated preview saves. Its current code is in native-3ds/; the earlier WIP-SOURCE.zip remains a historical source-only snapshot. See PLAY-PREVIEW.md. The full original campaign is still incomplete.

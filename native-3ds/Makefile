@@ -6,8 +6,8 @@ ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
 
-APP_TITLE := Platinum Arena 3DS
-APP_DESCRIPTION := Sinnoh adventure and action battles
+APP_TITLE := Platinum Arena 3DS Preview
+APP_DESCRIPTION := Opening demo, character creator and Arena battles
 APP_AUTHOR := Arena Project
 TOPDIR ?= $(CURDIR)
 include $(DEVKITARM)/3ds_rules

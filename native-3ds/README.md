@@ -1,6 +1,6 @@
-# Platinum Arena Evolved — native 3DS original integration (unreleased work)
+# Platinum Arena Evolved — native 3DS 0.4.0 playable preview
 
-**Playable release withheld; source work available for review:** the user rejected the earlier custom field/story presentation. See `docs/DEVELOPMENT-CORRECTION.md`. This is unfinished source work, not the completed requested game.
+**Opening and Battle Lab preview, not the completed Platinum campaign.** The download contains the native 3DS application with embedded assets. Original story integration remains unfinished. See `docs/PLAY-PREVIEW.md` for installation, controls and limits, and `docs/DEVELOPMENT-CORRECTION.md` for the required full-game result.
 
 This separate work begins importing **original Pokémon Platinum content** into the native Arena engine. The complete original campaign is unfinished. It does not present the old 34 condensed locations and 41 rewritten objectives as an authentic Platinum campaign. The approved v0.3.0 release remains unchanged.
 
@@ -21,9 +21,9 @@ The opening uses original supplied maps, original event instructions and dialogu
 
 ## Play
 
-Open `Platinum-Arena-3DS-Prototype.3dsx` in Azahar, or copy `3ds/platinum-arena/` to a homebrew 3DS SD card and use Homebrew Launcher. This is native 3DS homebrew, not a Nintendo DS `.nds` ROM or Android APK.
+Open `Platinum-Arena-3DS-Prototype.3dsx` in Azahar, or copy `3ds/platinum-arena-preview/` to a homebrew 3DS SD card and use Homebrew Launcher. This is native 3DS homebrew, not a Nintendo DS `.nds` ROM or Android APK.
 
-Choose **ORIGINAL PLATINUM** for the new import. Choose **BATTLE LAB** to try any of 493 base species in 1v1/2v2. The fourth title item describes the import status. Continue prefers the separate original-story save when present; otherwise a valid legacy v0.3.0 save remains playable.
+Choose **PLATINUM OPENING / WIP** for the imported opening. Choose **BATTLE LAB** to try any of 493 base species in 1v1/2v2. The fourth title item describes the import status. Continue uses the separate preview save folder. Older build saves are untouched; this preview starts fresh unless you manually copy a compatible save into its folder.
 
 - Original field: Circle Pad/Dpad moves; A talks/advances dialogue; hold B to run after the original Running Shoes event. Start opens the Arena overlay menu for saving, appearance and party.
 - Intro: Start+Select immediately opens the creator. Elsewhere Select+Start exits the application.

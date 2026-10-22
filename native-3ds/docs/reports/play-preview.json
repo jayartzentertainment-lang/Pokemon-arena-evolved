@@ -1,0 +1,32 @@
+{
+  "version": "0.4.0-play-preview",
+  "candidate_sha256": "21e8081998708335867f6ec565552cdd39de46a3b30671b8868dbfe1dec7b0ab",
+  "candidate_bytes": 13388500,
+  "emulator": "Azahar2126.2, original3DS configuration, software OpenGL",
+  "native_1v1_observed": true,
+  "native_2v2_observed": true,
+  "native_creator_observed": true,
+  "opening_bedroom_observed": true,
+  "preview_save_directory": "sdmc:/3ds/platinum-arena-preview/",
+  "earlier_save_directory_written": false,
+  "observations": [
+    "Fresh preview title and 493-species lab open",
+    "1v1: movement, learned attack VFX, a registered hit, PP/cooldown HUD and opponent lock observed",
+    "2v2: four active fighters, ongoing attacks and 2v2 HUD observed",
+    "Intro Start+Select opens supplied Gen IV blank Custom creator",
+    "Hair/top/legwear selections change actual preview; confirming displays the same dressed trainer in original bedroom TV event",
+    "App metadata says Preview; every runtime save/log path uses separate preview directory"
+  ],
+  "screenshots": [
+    "play-preview-1v1.png",
+    "play-preview-2v2.png",
+    "play-preview-gen4-creator.png",
+    "play-preview-gen4-dressed.png",
+    "play-preview-original-bedroom.png"
+  ],
+  "core_host_checks": "14 existing suites passed before this platform-only save-path/title/metadata change; core gameplay source is unchanged",
+  "full_original_campaign_playable": false,
+  "original_perspective_renderer_complete": false,
+  "physical_3ds_performance_profiled": false,
+  "audio_listening_test": false
+}

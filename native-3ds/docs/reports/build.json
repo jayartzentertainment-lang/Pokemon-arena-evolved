@@ -1,11 +1,11 @@
 {
   "format": "Native3DS homebrew3DSX, ARM11 ELF machine40",
-  "bytes": 13388452,
+  "bytes": 13388500,
   "version": "0.4.0-development-original-import-preview",
-  "sha256": "ac6a4394610b6c2183aa3dbbccffcab80661d522e6b3e93d4c3b6e8c81916918",
+  "sha256": "21e8081998708335867f6ec565552cdd39de46a3b30671b8868dbfe1dec7b0ab",
   "compiler": "devkitARM GCC16.1.0",
   "toolchain_image": "devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5",
-  "link_size": "text\t   data\t    bss\t    dec\t    hex\tfilename\n4033572\t   8048\t  56984\t4098604\t 3e8a2c\tPlatinum-Arena-3DS-Prototype.elf",
+  "link_size": "text\t   data\t    bss\t    dec\t    hex\tfilename\n4033620\t   8048\t  56984\t4098652\t 3e8a5c\tPlatinum-Arena-3DS-Prototype.elf",
   "textures": {
     "hurt_0298.t3x": 2061,
     "pokemon_0391.t3x": 17145,
@@ -1091,8 +1091,8 @@
     "source/vendor/arena_physics.c": "45cfe130854ed509e18b22d21cdb194856685fd78e3da0b1517d815133156107",
     "source/vendor/arena_navigation.c": "ed9f006613b1ca56ac67006919daa01de8415f0a83657ded60c93e41220330ec",
     "source/vendor/arena_moves.c": "9717134f9d7bc5d4e4fefdabc1e242cc7401ed7d9760c12ab85957b26cbee667",
-    "source/platform/main.c": "f5eda5c6d2788c6cfa70c731630fd588c9ee5d4c14249d7d6d44aafd1e5c8646",
-    "source/platform/adventure_view.inc": "982229194766c4acc9e1452e5a3038380ea37c9e4b9312c2f4e7da6d02bf8b49",
+    "source/platform/main.c": "fdb70ad735e51f165f80e38bb6bcb06d003cee9412e9cfd1ba5e178bc899ecf5",
+    "source/platform/adventure_view.inc": "4d190c3d74c6b4e08d8bde53188ccf32741f429c747ae313b16e9420e8ce9c96",
     "source/platform/render3ds.c": "3ec5ca56c58e9aca5fb613c4fdab60455f45e3d5cf5ed830cfe7a1a7d003a2ed",
     "source/platform/audio3ds.c": "dc07627bc610f82bc2c6175eb778220959de1a274055e39a5b11094a4a3efca7",
     "source/core/move_data.c": "d53004b1f3b9f961a5683467992c3974f4623245f142263379d4fc1ab11594a7",
@@ -3284,5 +3284,5 @@
   },
   "emulator_verified": true,
   "physical_hardware_profiled": false,
-  "emulator_verification_report": "docs/reports/emulator-results.json"
+  "emulator_verification_report": "docs/reports/play-preview.json"
 }
