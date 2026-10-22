@@ -43,6 +43,7 @@ void Game_Tick(ArenaGame *game,GameInput input);
 int Game_Switch(ArenaGame *game,unsigned actor);
 unsigned Game_Remaining(const ArenaGame *game,unsigned team);
 const ArenaSpecies *Game_ActorSpecies(const ArenaGame *game,unsigned actor);
+void Game_ConfigureMotion(ArenaGame *game,unsigned actor);
 int Game_TouchMove(unsigned x,unsigned y);
 int Game_TouchCommand(unsigned x,unsigned y);
 void Game_MoveRect(unsigned slot,int *x,int *y,int *width,int *height);

@@ -1,0 +1,11 @@
+{
+  "status": "Development integration; full original campaign incomplete",
+  "candidate_sha256": "8dc2dce80c1b6c9b321c8d7a5de6e5afb39d15fb8cfbc48d090cb635f69b8f86",
+  "package": "Platinum-Arena-3DS-INTEGRATION-DEVELOPMENT.zip",
+  "bytes": 84106494,
+  "sha256": "398315301531e21ec0aab49caf669163e3e9a19b73df44ee9b85235baea0080a",
+  "source_files": 1240,
+  "private_delta_files": 66,
+  "authenticated_archive_verified": true,
+  "full_original_campaign_playable": false
+}

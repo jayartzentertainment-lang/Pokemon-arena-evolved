@@ -31,7 +31,7 @@ void Game_AimTick(ArenaGame *g,GameInput input)
     if(input.pressed&GAME_SELECT){
         if(a->mode==GAME_AIM_LOCK){
             a->freeX=c->aimX;a->freeY=c->aimY;
-            if(Opponent(g,a->target)){
+            if(Opponent(g,a->target)&&!f->motion.cycle){
                 a->freeX=(int16_t)(c->fighters[a->target].x/256-ox);
                 a->freeY=(int16_t)(c->fighters[a->target].y/256-oy);
             }
@@ -43,10 +43,13 @@ void Game_AimTick(ArenaGame *g,GameInput input)
         c->lockTarget=255;a->target=(uint8_t)Combat_TargetFighter(c,c->controlActor);
     }
     target=a->target;c->lockAim=a->mode==GAME_AIM_LOCK;c->lockTarget=(uint8_t)target;
+    if(f->motion.cycle){int32_t x,y;Combat_AttackOrigin(f,&x,&y);ox=x/256;oy=y/256;}
     p=ArenaMoves_Get(move);a->range=p&&p->range?p->range:64;
+    if(f->motion.cycle)a->range=(uint16_t)Combat_MoveRange(f,move,target<c->fighterCount?&c->fighters[target]:0);
     dx=facing[f->direction&7][0];dy=facing[f->direction&7][1];
     if(a->mode==GAME_AIM_LOCK&&Opponent(g,target)){
-        dx=c->fighters[target].x/256-ox;dy=c->fighters[target].y/256-oy;
+        if(f->motion.cycle){CombatShape body;Combat_Hurtbox(&c->fighters[target],&body);dx=body.x0/256-ox;dy=body.y0/256-oy;}
+        else {dx=c->fighters[target].x/256-ox;dy=c->fighters[target].y/256-oy;}
     }else if(a->mode==GAME_AIM_FREE){
         if((int)input.axisX*input.axisX+(int)input.axisY*input.axisY>18*18){
             a->freeX=input.axisX;a->freeY=input.axisY;
@@ -60,7 +63,8 @@ void Game_AimTick(ArenaGame *g,GameInput input)
     Combat_SetAim(c,dx,dy,1);
     a->freeX=c->aimX;a->freeY=c->aimY;
     if(a->mode==GAME_AIM_LOCK&&Opponent(g,target)){
-        a->x=c->fighters[target].x/256;a->y=c->fighters[target].y/256;
+        if(f->motion.cycle){CombatShape body;Combat_Hurtbox(&c->fighters[target],&body);a->x=body.x0/256;a->y=body.y0/256;}
+        else {a->x=c->fighters[target].x/256;a->y=c->fighters[target].y/256;}
     }else {a->x=ox+c->aimX*a->range/256;a->y=oy+c->aimY*a->range/256;}
     dx=(int)a->x-ox;dy=(int)a->y-oy;
     a->blocked=(uint8_t)!ArenaNav_LineClear(ox,oy,(int)a->x,(int)a->y,1);

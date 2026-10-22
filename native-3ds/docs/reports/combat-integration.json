@@ -1,0 +1,145 @@
+{
+  "stage": "Phase 1 combat integration development; original campaign unfinished",
+  "candidate_sha256": "8dc2dce80c1b6c9b321c8d7a5de6e5afb39d15fb8cfbc48d090cb635f69b8f86",
+  "candidate_bytes": 13406264,
+  "date_utc": "2026-10-22T14:14:06.060619+00:00",
+  "source_branch": "codex/native-3ds-full-integration",
+  "native_compilation": "Passed: pinned devkitPro ARM11 build; real 3DSX header and ELF machine 40 checked; no compiler warnings in this build",
+  "host_checks": {
+    "passed": 15,
+    "total": 15,
+    "sanitizers": [
+      "address",
+      "undefined"
+    ],
+    "preserved_DS_inputs_unchanged": true
+  },
+  "native_emulator": "Azahar 2126.2, OpenGL software rendering, isolated config/data/SD directory",
+  "native_1v1_observed": true,
+  "native_2v2_observed": true,
+  "native_species_observed": [
+    {
+      "dex": 25,
+      "checks": "Directional travel, stop, dash, sprite proportions and ground/hover presentation captured"
+    },
+    {
+      "dex": 448,
+      "checks": "Directional travel, stop, dash, sprite proportions and ground/hover presentation captured"
+    },
+    {
+      "dex": 9,
+      "checks": "Directional travel, stop, dash, sprite proportions and ground/hover presentation captured"
+    },
+    {
+      "dex": 94,
+      "checks": "Directional travel, stop, dash, sprite proportions and ground/hover presentation captured"
+    },
+    {
+      "dex": 493,
+      "checks": "Directional travel, stop, dash, sprite proportions and ground/hover presentation captured"
+    }
+  ],
+  "native_moves_observed": {
+    "Scratch": "Confirmed native hit counter 0 -> 1; attacker position stayed 67903,43008 (Q8)",
+    "Bite": "Confirmed native hit counter 1 -> 2; attacker stayed planted at the same position",
+    "Tackle": "Confirmed native hit counter 2 -> 3 with actual root travel",
+    "Iron Tail": "Confirmed native hit counter 3 -> 4; shared source attack pose remains",
+    "Flamethrower": "Charizard mouth emitter, continuous existing fire VFX and target damage captured; real hit counter 0 -> 1",
+    "Hydro Pump": "Blastoise water beam, existing effects and target contact captured; real hit counter 0 -> 1",
+    "Thunderbolt": "Fresh Pikachu/Blastoise isolated contact confirmed real hit counter 0 -> 1; separate native 2v2 run also cast this move",
+    "Protect": "Fresh ready-state native cast consumed PP and entered committed active phase; existing guard graphics retained",
+    "Swords Dance": "Fresh ready-state native cast entered committed animation/recovery with unchanged root position"
+  },
+  "input_recovery_observation": "Early Thunderbolt/Protect attempts during the previous Flamethrower were rejected rather than firing later. They were retested from ready state; the rejected attempts are not counted as successful casts.",
+  "creator_original_field_save_reload": {
+    "intro_only_shortcut_observed": true,
+    "blank_Gen_IV_base_observed": true,
+    "changed": [
+      "skin palette 2",
+      "hair 1",
+      "top 1",
+      "bottom 1",
+      "hat 1"
+    ],
+    "original_upstairs_TV_event_with_custom_trainer_observed": true,
+    "original_save_bytes": 5353,
+    "native_application_restarted": true,
+    "original_map_reloaded": 415,
+    "preview_RGB_crop_identical_after_reload": true,
+    "limits": "Native walk/creator appearance only. Cycling, surfing, all cutscene poses, trainer-battle/card pose parity and the full adventure remain unfinished."
+  },
+  "outcome_injection": "No native battle wins, HP changes, original story flags or save results were injected. Developer-only Lab configuration selected species/moves and disabled AI for isolated checks; the doubles check used AI. The existing host original-story continuation test injects its first-battle win solely to test later source events, as previously documented.",
+  "performance": {
+    "physical_hardware_profiled": false,
+    "wall_speed": "Software emulator varied below full speed in battle/field and during texture loading; menu scenes could reach full speed. These captures cannot certify hardware FPS or perfectly judge final animation feel.",
+    "native_frame_statistics": "Emulated-clock frame timings are not treated as physical 3DS measurements."
+  },
+  "capture_note": "Initial Lucario recorder wait exceeded its 15-second host timeout; gameplay continued, the final MP4 remained valid, and the remaining species capture resumed. Capture tooling timeout is distinct from a game crash.",
+  "full_original_campaign_playable": false,
+  "new_story_content_implemented_in_this_stage": false,
+  "remaining_gaps": [
+    "18 original native map headers and 32 baked cells remain the earlier opening coverage; no later story progress is claimed",
+    "Sandgem services/common-script banks, bag, shops, Center, Pok\u00e9dex, encounters and remaining field/event/runtime systems",
+    "Remaining authentic maps, height/terrain/HM rendering, original menus/audio and original event compatibility",
+    "Gyms, Galactic, Distortion World, legendaries, League and postgame runtime progression",
+    "Complete trainer appearance/animation integration beyond current walking scenes and creator; no new costume artwork added in this stage",
+    "Generic movement calibration for most species requires individual review; stable body ellipses are not per-pose pixel masks",
+    "Bite/punch/tail pose coverage, per-species anchors, all 467 move mechanics and forms are not complete",
+    "Native beam-clash playthrough was not repeated in this stage; host beam ownership/contact/clash regressions passed",
+    "Full-speed visual tuning, competitive balance, extended stability and physical hardware profiling"
+  ],
+  "private_capture_files": [
+    "gait-25.mp4",
+    "gait-25.png",
+    "gait-448.mp4",
+    "gait-448.png",
+    "gait-9.mp4",
+    "gait-9.png",
+    "gait-94.mp4",
+    "gait-94.png",
+    "gait-493.mp4",
+    "gait-493.png",
+    "native-strikes.mp4",
+    "native-elemental.mp4",
+    "native-hydro-pump.mp4",
+    "native-doubles.mp4",
+    "native-guard-cast-projectile.mp4",
+    "native-thunder-contact.mp4",
+    "native-2v2.png",
+    "move-flamethrower.png",
+    "move-hydro-pump.png",
+    "integration-contact-approach.png",
+    "integration-creator.png",
+    "integration-creator-dressed.png",
+    "integration-original-bedroom.png",
+    "integration-original-reloaded.png",
+    "integration-creator-reloaded.png"
+  ],
+  "private_capture_sha256": {
+    "gait-25.mp4": "5a81faacef6f23ef27c2e2cbac3c77e70e94b7bf0142b4b2134837388cb577a4",
+    "gait-25.png": "1574d65099810725d35b84a08a9f6f29a396883ff0b2b9e16d03fe7ee2524398",
+    "gait-448.mp4": "2fd1650f266750747cfe8d2cb849723fe2b48c07ab4b8cb0112c21d1ac015ce5",
+    "gait-448.png": "47eae434e79a0aa6243c1f54f388cf739f2715f2f2b9e864781e2e5c50830e82",
+    "gait-9.mp4": "cc7a6bb092d74f8f096402b0d569d291830c0da3af4585d5749502cf39b46e47",
+    "gait-9.png": "b57b2e3f96a60526405306477e985fb697424120fea3e222ae4cca5e115ef0f4",
+    "gait-94.mp4": "2822bd3e47904fcbec8fd223d5fe7df683c20e47dc7a2bb906015d29f10e57c9",
+    "gait-94.png": "5997c81c5b3dd16d40e4dc401c44db932dd19a56c36435b22446c88ca19623bc",
+    "gait-493.mp4": "3c3fdddd3110b60b7cd66665e27b3aa8f495daf79868bdbf828d2666ee95e4bc",
+    "gait-493.png": "6d178af159605ee16527be21f14626b6ac196fb45e184ccba9f8a0435e89074c",
+    "native-strikes.mp4": "0bc113213f36e35a656c71f799eb9b22b7db2e28a59a861f3fff2005cb0440ea",
+    "native-elemental.mp4": "6ae6fb9fdc891cb204f6f8ad7a46e452683186182904ae86367125a7b01f8da4",
+    "native-hydro-pump.mp4": "017624a9902216780d84b0fa86ac64c25cbccf300a5a4bc113bc13a4dce8730a",
+    "native-doubles.mp4": "5b124d32f8b88e3989b0cb9ba3a0e5da7f0f6a5ec22b78b9186e75177eeb37cd",
+    "native-guard-cast-projectile.mp4": "87920491b835bf1363f34bb4006283413b13bd71462db8f89fe5e7b553e203dc",
+    "native-thunder-contact.mp4": "36a192bce26daa1f2c893f40024455a16f2f17d96104d79ef6c75ec2fea55978",
+    "native-2v2.png": "523e4bcad1903eea68f96930af0a7a9131eba547769e32f3f1d8c71ad99c1392",
+    "move-flamethrower.png": "bfd55b01ecd10b2c0baf190dccc95cfe73fb3f4bd5fd8c4a7b42dd355cfe5e5a",
+    "move-hydro-pump.png": "a8518aa6b96b46e9ea02eafacfa9d4087dffa117752958db2f13cbcf178a5551",
+    "integration-contact-approach.png": "4e00106e849fbd605918713f84c589bac37c9ba60c97b7af46343bdeb34ac617",
+    "integration-creator.png": "7729db29be3f2f90247ef6367266732362c0639bb2258df25cf4c26f916920b5",
+    "integration-creator-dressed.png": "65e516a084139ded07da246829c17b5769d5ac5e6bb23b839843206d7f13ee60",
+    "integration-original-bedroom.png": "c6d75916dc3d54ad781cb7f550f427b6d61a1e58a896091f5c81781d689e451d",
+    "integration-original-reloaded.png": "036079d7260e9229ca0e1505c5ba4d66425639a0e1af2fd4a56feb633652970d",
+    "integration-creator-reloaded.png": "b2866a68fe8d55fb134607521f1f4baf12ba70aade64688febd8bd233ae0528f"
+  }
+}

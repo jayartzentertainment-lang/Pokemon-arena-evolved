@@ -166,7 +166,7 @@ static CombatEffect *Effect(Combat *c,int32_t x,int32_t y,uint16_t color,uint8_t
     e->life=e->maxLife=kind==COMBAT_SPARK?14:kind==COMBAT_CLASH?24:kind==COMBAT_DASH_TRAIL?10:18;
     e->vx=kind==COMBAT_SPARK?(int16_t)((NextRandom(c)&511)-256):0;
     e->vy=kind==COMBAT_SPARK?(int16_t)(-100-(NextRandom(c)&255)):0;
-    e->direction=COMBAT_S;
+    e->direction=COMBAT_S;e->owner=255;e->bodySpace=0;
     return e;
 }
 static void Burst(Combat *c,int32_t x,int32_t y,uint16_t color)
@@ -258,7 +258,10 @@ static void SteerBeam(Combat *c,unsigned side)
 static unsigned BeamRange(const Combat *c,const CombatFighter *f,const struct ArenaMoveProfile *p,unsigned growth)
 {
     int16_t ax,ay;unsigned distance,maximum=p->range*(c->growingBeams?growth:6)/6;
-    int px=f->x/Q,py=f->y/Q;
+    int32_t originX=f->x,originY=f->y;
+    int px,py;
+    if(f->motion.cycle)Combat_AttackOrigin(f,&originX,&originY);
+    px=originX/Q;py=originY/Q;
     Combat_AttackVector(f,&ax,&ay);
     for(distance=1;distance<=maximum;distance++){
         int x=px+ax*(int)distance/Q,y=py+ay*(int)distance/Q;
@@ -269,7 +272,9 @@ static unsigned BeamRange(const Combat *c,const CombatFighter *f,const struct Ar
 static uint8_t Windup(const CombatFighter *f,const struct ArenaMoveProfile *p)
 {
     const CombatMoveInfo *m=Combat_GetMoveInfo(p->move);
-    return f->basicAttack?5:(uint8_t)(p->windup+(m&&m->power>=80?(p->windup+7)/8:0));
+    unsigned ticks=f->basicAttack?5:p->windup+(m&&m->power>=80?(p->windup+7)/8:0);
+    if(f->motion.cycle&&f->motion.turnTicks<=2&&ticks>=8)ticks-=ticks/10?ticks/10:1;
+    return (uint8_t)ticks;
 }
 static uint8_t Active(const CombatFighter *f,const struct ArenaMoveProfile *p)
 { return f->basicAttack?6:p->active; }
@@ -277,7 +282,9 @@ static uint8_t Recovery(const CombatFighter *f,const struct ArenaMoveProfile *p)
 {
     const CombatMoveInfo *m=Combat_GetMoveInfo(p->move);
     unsigned recovery=(unsigned)Clamp(p->recovery*2/3,10,100);
-    return f->basicAttack?12:(uint8_t)(recovery+(m&&m->power>=80?(recovery+7)/8:0));
+    recovery=f->basicAttack?12:recovery+(m&&m->power>=80?(recovery+7)/8:0);
+    if(f->motion.cycle&&f->motion.turnTicks<=2&&recovery>=10)recovery-=recovery/10;
+    return (uint8_t)recovery;
 }
 void Combat_SetAnalogMagnitude(Combat *c,unsigned magnitude,int enabled)
 {
@@ -310,8 +317,10 @@ unsigned Combat_AnimationTick(const CombatFighter *f,unsigned total,unsigned hit
     unsigned time,windup,active,recovery,tail;
     if(!f||!total)return 0;
     if(f->hurtTimer||f->guardTimer)return 0;
-    if(f->phase==COMBAT_READY||!(p=ArenaMoves_Get(f->actionMove)))
+    if(f->phase==COMBAT_READY||!(p=ArenaMoves_Get(f->actionMove))){
+        if(f->motion.cycle&&f->animation==COMBAT_WALK)return f->motion.hover==2?f->animTick%total:(f->gaitPhase/Q)%total;
         return (f->dashTimer?f->animTick*2u:f->animTick)%total;
+    }
     if(hit>=total)hit=total-1;
     /* Missing marker: reserve an anticipation third, rather than starting a
      * whole attack loop on each render frame. */
@@ -328,9 +337,20 @@ unsigned Combat_AnimationTick(const CombatFighter *f,unsigned total,unsigned hit
         time=time>windup+active?time-windup-active:0;
         return (unsigned)Clamp((int)(hit+(recovery?time*tail/recovery:tail)),0,(int)total-1);
     }
+    if(f->motion.cycle&&p->animation<5&&p->kind!=ARENA_MOVE_PROJECTILE){
+        unsigned contact=f->motion.action[p->animation].contact;
+        if(contact>tail)contact=tail;
+        if(f->phase==COMBAT_ACTIVE){
+            time=time>windup?time-windup:0;
+            return hit+(active?time*contact/active:0);
+        }
+        time=time>windup+active?time-windup-active:0;
+        return (unsigned)Clamp((int)(hit+contact+(recovery?time*(tail-contact)/recovery:tail-contact)),0,(int)total-1);
+    }
     time=time>windup?time-windup:0;
     return (unsigned)Clamp((int)(hit+time*tail/(active+recovery?active+recovery:1)),0,(int)total-1);
 }
+#include "combat_motion.inc"
 static void EndAction(CombatFighter *f)
 { f->phase=COMBAT_READY;f->actionTick=0;f->actionMove=0;f->basicAttack=0;f->castRoot=0;f->preciseAim=0;f->beamReach=0; }
 static void ReleaseAction(CombatFighter *f)
@@ -372,9 +392,10 @@ static void MoveClashContact(const Combat *c,CombatBeamClash *pair)
 {
     unsigned losing=pair->pressure<0?0:1;
     const CombatFighter *f=&c->fighters[pair->actor[losing]];
-    int amount=Abs(pair->pressure);
-    pair->x=pair->originX+(f->x-pair->originX)*amount/COMBAT_CLASH_PRESSURE_LIMIT;
-    pair->y=pair->originY+(f->y-pair->originY)*amount/COMBAT_CLASH_PRESSURE_LIMIT;
+    int amount=Abs(pair->pressure);int32_t x=f->x,y=f->y;
+    if(f->motion.cycle)Combat_AttackOrigin(f,&x,&y);
+    pair->x=pair->originX+(x-pair->originX)*amount/COMBAT_CLASH_PRESSURE_LIMIT;
+    pair->y=pair->originY+(y-pair->originY)*amount/COMBAT_CLASH_PRESSURE_LIMIT;
 }
 /* Clash ownership consumes combat input; button presses cannot add power. */
 static int ClashPushInput(Combat *c,unsigned side,CombatInput input)
@@ -441,22 +462,35 @@ static void BeamClashStep(Combat *c)
             memset(pair,0,sizeof(*pair));
     }
 }
-static void Buffer(CombatFighter *f,uint8_t action)
-{ f->buffered=action;f->bufferTimer=10; }
+static int Buffer(CombatFighter *f,uint8_t action)
+{
+    if(f->motion.cycle&&action<=2){
+        if(f->hurtTimer||f->guardTimer||f->dashTimer)return 0;
+        if(f->phase!=COMBAT_READY&&(f->phase!=COMBAT_RECOVERY||
+            Combat_PhaseTick(f)+3<Combat_PhaseDuration(f)))return 0;
+    }
+    f->buffered=action;f->bufferTimer=f->motion.cycle&&action<=2?4:10;return 1;
+}
 int Combat_QueueMove(Combat *c,unsigned side,unsigned slot)
 {
     CombatFighter *f;
     if(!c||side>=c->fighterCount||slot>=4)return 0;
     f=&c->fighters[side];
     if(!f->hp||!f->moves[slot]||!f->pp[slot]||f->cooldown[slot])return 0;
-    f->bufferedSlot=(uint8_t)slot;Buffer(f,1);return 1;
+    if(!Buffer(f,1))return 0;
+    f->bufferedSlot=(uint8_t)slot;return 1;
 }
 static void MoveBody(CombatFighter *f,int32_t dx,int32_t dy)
 {
     int32_t x=Clamp(f->x+dx,ARENA_MIN_X*Q,ARENA_MAX_X*Q);
     int32_t y=Clamp(f->y+dy,ARENA_MIN_Y*Q,ARENA_MAX_Y*Q);
-    if(ArenaNav_CanStand(x/Q,f->y/Q)) f->x=x; else f->vx=0;
-    if(ArenaNav_CanStand(f->x/Q,y/Q)) f->y=y; else f->vy=0;
+    if(f->motion.cycle){
+        if(ArenaNav_LineClear(f->x/Q,f->y/Q,x/Q,f->y/Q,f->motion.groundRadius))f->x=x;else f->vx=0;
+        if(ArenaNav_LineClear(f->x/Q,f->y/Q,f->x/Q,y/Q,f->motion.groundRadius))f->y=y;else f->vy=0;
+    }else {
+        if(ArenaNav_CanStand(x/Q,f->y/Q))f->x=x;else f->vx=0;
+        if(ArenaNav_CanStand(f->x/Q,y/Q))f->y=y;else f->vy=0;
+    }
 }
 static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
 {
@@ -493,6 +527,11 @@ static void StartAction(Combat *c,unsigned side,uint8_t basic,uint8_t slot)
     f->attackDirection=f->direction;
     f->preciseAim=(uint8_t)(side==c->controlActor&&c->aimOverride&&!NativeRule(move)->selfTarget);
     f->attackAimX=c->aimX;f->attackAimY=c->aimY;f->beamReach=0;
+    if(f->motion.cycle&&side!=c->controlActor&&!NativeRule(move)->selfTarget){
+        int32_t x,y,tx,ty;Combat_AttackOrigin(f,&x,&y);Combat_AttackOrigin(&c->fighters[target],&tx,&ty);
+        Normalize(tx-x,ty-y,&f->attackAimX,&f->attackAimY);f->preciseAim=1;
+        f->attackDirection=Facing(f->attackAimX,f->attackAimY);f->direction=f->attackDirection;
+    }
     f->castRoot=(uint8_t)(!basic&&m->category==2);
     if(f->castRoot)f->vx=f->vy=0;
     f->actionMove=move;f->actionTick=0;f->actionDistance=0;f->phase=COMBAT_WINDUP;
@@ -598,9 +637,10 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
     CombatFighter *a=&c->fighters[owner],*v=&c->fighters[victim];
     const CombatMoveInfo *m=Combat_GetMoveInfo(move);
     uint16_t mult;
-    int damage,guardFacing,critical=0;
+    int damage,guardFacing,critical=0;int32_t contactX=v->x,contactY=v->y;
     if(!m||!v->hp||!Enemies(owner,victim)) return 0;
-    if((v->dashTimer&&v->dashTimer>=5)||v->hurtTimer>10) {c->dodged++;return 0;}
+    if((v->dashTimer&&v->dashTimer>=5)||(v->motion.cycle?(v->hurtTimer&&v->reactionDuration-v->hurtTimer<4):v->hurtTimer>10)) {c->dodged++;return 0;}
+    if(v->motion.cycle){CombatShape body;Combat_Hurtbox(v,&body);contactX=body.x0-aimX*(int)body.radiusX;contactY=body.y0-aimY*(int)body.radiusY;}
     if(!basic) {
         unsigned accuracy=NativeRule(move)->accuracy;
         if(accuracy) {
@@ -613,7 +653,7 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
     if(!basic&&m->category==2) {
         if(v->guardTimer&&v->stamina) {
             c->blocked++;v->stamina--;v->regenDelay=20;
-            Impact(c,COMBAT_IMPACT_BLOCK,victim,v->x,v->y);
+            Impact(c,COMBAT_IMPACT_BLOCK,victim,contactX,contactY);
             if(!v->stamina) { v->guardTimer=v->guardHeld=0;v->guardExhausted=1; }
             return 1;
         }
@@ -648,8 +688,8 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
                 if(move==MOVE_FALSE_SWIPE&&chip>=v->hp) chip=v->hp>1?v->hp-1:0;
                 v->hp-=chip;
             }
-            Effect(c,v->x,v->y,RGB(10,31,31),COMBAT_BLOCK,14)->direction=Facing(sourceX-v->x,sourceY-v->y);
-            Impact(c,COMBAT_IMPACT_BLOCK,victim,v->x,v->y);
+            {CombatEffect *block=Effect(c,contactX,contactY,RGB(10,31,31),COMBAT_BLOCK,14);block->direction=Facing(sourceX-v->x,sourceY-v->y);block->bodySpace=!!v->motion.cycle;}
+            Impact(c,COMBAT_IMPACT_BLOCK,victim,contactX,contactY);
             c->hitstop=perfect?3:2;
             /* Contact rebounds visibly without interrupting unrelated ranged
              * actions; heavy pressure pushes both bodies apart. */
@@ -682,18 +722,29 @@ static uint8_t Hit(Combat *c,unsigned owner,unsigned victim,uint16_t move,uint8_
     if(damage>v->hp) damage=v->hp;
     v->hp-=damage;v->hurtTimer=15;v->guardTimer=v->guardHeld=0;v->dashTimer=0;
     v->vx=aimX*3;v->vy=aimY*3;
-    if(c->nativeBalance){v->vx=v->vx*100/(70+v->resistance/2);v->vy=v->vy*100/(70+v->resistance/2);}v->regenDelay=16;EndAction(v);
+    if(v->motion.cycle){
+        int force=(basic?30:m->power)+20;
+        int recoil=force*Q/(35+v->resistance);
+        if(mult>Q)recoil=recoil*5/4;
+        if(critical)recoil=recoil*3/2;
+        recoil=(int)Clamp(recoil,64,896);
+        v->vx=aimX*recoil/Q;v->vy=aimY*recoil/Q;
+        v->reactionDuration=(uint8_t)Clamp(v->motion.hurtTicks+(force>100?2:0)+(critical?2:0),6,18);
+        v->hurtTimer=v->reactionDuration;v->bufferTimer=0;
+        c->contactX=contactX;c->contactY=contactY;c->contactSerial++;
+    }else if(c->nativeBalance){v->vx=v->vx*100/(70+v->resistance/2);v->vy=v->vy*100/(70+v->resistance/2);}
+    v->regenDelay=16;EndAction(v);
     if(a->hp&&(move==MOVE_ABSORB||move==MOVE_MEGA_DRAIN||move==MOVE_GIGA_DRAIN||move==MOVE_LEECH_LIFE))
         a->hp=Clamp(a->hp+(damage+1)/2,0,a->maxHp);
     if(v->status==COMBAT_STATUS_FREEZE&&m->type==10){v->status=0;v->statusTicks=0;}
     if(!basic&&v->hp)ApplyStatus(c,owner,victim,move);
     Burst(c,v->x,v->y,Combat_TypeColor(m->type));
     {
-        CombatEffect *contact=Effect(c,v->x,v->y,Combat_TypeColor(m->type),COMBAT_CONTACT,12);
-        contact->direction=Facing(aimX,aimY);contact->move=move;
+        CombatEffect *contact=Effect(c,contactX,contactY,Combat_TypeColor(m->type),COMBAT_CONTACT,12);
+        contact->direction=Facing(aimX,aimY);contact->move=move;contact->bodySpace=!!v->motion.cycle;
     }
     c->hits++;c->hitstop=basic?2:critical?5:3;
-    if(critical&&damage) { c->criticals++;Impact(c,COMBAT_IMPACT_CRITICAL,victim,v->x,v->y); }
+    if(critical&&damage) { c->criticals++;Impact(c,COMBAT_IMPACT_CRITICAL,victim,contactX,contactY); }
     return 1;
 }
 static void SpawnProjectile(Combat *c,unsigned side,const struct ArenaMoveProfile *p)
@@ -708,7 +759,7 @@ static void SpawnProjectile(Combat *c,unsigned side,const struct ArenaMoveProfil
     shot->owner=side;shot->move=p->move;shot->type=m->type;
     shot->basic=f->basicAttack;
     {int16_t x,y;Combat_AttackVector(f,&x,&y);shot->vx=x*p->speed/Q;shot->vy=y*p->speed/Q;}
-    shot->x=f->x;shot->y=f->y;
+    shot->x=f->x;shot->y=f->y;if(f->motion.cycle)Combat_AttackOrigin(f,&shot->x,&shot->y);
     shot->previousX=shot->x;shot->previousY=shot->y;
     shot->life=(uint8_t)Clamp(p->range*Q/(p->speed?p->speed:Q),1,200);
     shot->radius=(uint8_t)Clamp(p->radius/3,3,7);
@@ -751,15 +802,19 @@ static void ActionStep(Combat *c,unsigned side)
             MoveBody(f,ax*(int)step/Q,ay*(int)step/Q);f->actionDistance+=step;
         }
         px=f->x/Q;py=f->y/Q;
+        if(f->motion.cycle){int32_t ox,oy;Combat_AttackOrigin(f,&ox,&oy);px=ox/Q;py=oy/Q;}
         if((m->category!=2||!NativeRule(p->move)->selfTarget)&&
             (p->kind==ARENA_MOVE_MELEE||p->kind==ARENA_MOVE_RUSH||p->kind==ARENA_MOVE_CONE||
-             (p->kind==ARENA_MOVE_SELF&&m->category==2))) {
+             (p->kind==ARENA_MOVE_SELF&&(m->category==2||f->motion.cycle)))) {
             for(i=0;i<c->fighterCount;i++) if(Enemies(side,i)&&c->fighters[i].hp&&!(f->hitMask&(1u<<i))) {
                 CombatFighter *v=&c->fighters[i];
                 int hit;
                 tx=v->x/Q;ty=v->y/Q;
-                hit=ArenaMoves_InCone(tx-px,ty-py,ax,ay,reach?reach:1,p->cone);
-                if(p->kind==ARENA_MOVE_RUSH&&(!c->nativeBalance||NativeCharge(f->actionMove))) hit=ArenaMoves_SegmentHit(f->previousX/Q,f->previousY/Q,px,py,tx,ty,18);
+                if(f->motion.cycle){CombatShape attack,body;Combat_AttackShape(f,&attack);Combat_Hurtbox(v,&body);hit=Combat_ShapeHits(&attack,&body);}
+                else {
+                    hit=ArenaMoves_InCone(tx-px,ty-py,ax,ay,reach?reach:1,p->cone);
+                    if(p->kind==ARENA_MOVE_RUSH&&(!c->nativeBalance||NativeCharge(f->actionMove)))hit=ArenaMoves_SegmentHit(f->previousX/Q,f->previousY/Q,px,py,tx,ty,18);
+                }
                 if(hit&&ArenaNav_LineClear(px,py,tx,ty,1)&&
                     Hit(c,side,i,f->actionMove,f->basicAttack,f->x,f->y,ax,ay)) {
                     f->hitMask|=1u<<i;
@@ -829,6 +884,8 @@ static void BeamClashes(Combat *c)
             int aX=a->x/Q,aY=a->y/Q,bX=b->x/Q,bY=b->y/Q;
             CombatBeamClash *pair;
             if(!Enemies(i,j)||!ActiveBeam(b,pb)||Combat_BeamContact(c,j,0,0)) continue;
+            if(a->motion.cycle){int32_t x,y;Combat_AttackOrigin(a,&x,&y);aX=x/Q;aY=y/Q;}
+            if(b->motion.cycle){int32_t x,y;Combat_AttackOrigin(b,&x,&y);bX=x/Q;bY=y/Q;}
             for(slot=0;slot<COMBAT_BEAM_CLASHES;slot++)
                 if(c->beamClashes[slot].phase==COMBAT_CLASH_NONE)break;
             if(slot==COMBAT_BEAM_CLASHES)return;
@@ -911,8 +968,17 @@ static void ProjectileStep(Combat *c)
             for(j=0;j<c->fighterCount;j++) if(!(considered&(1u<<j))&&
                 Enemies(p->owner,j)&&c->fighters[j].hp) {
                 CombatFighter *target=&c->fighters[j];
-                if(ArenaPlus_SweptContact(p->previousX,p->previousY,p->x,p->y,
-                    target->previousX,target->previousY,target->x,target->y,p->radius+9)) {
+                int contact;
+                if(target->motion.cycle){
+                    CombatShape body,trace={0};Combat_Hurtbox(target,&body);
+                    trace.x0=p->previousX;trace.y0=p->previousY;
+                    trace.x1=p->x-(target->x-target->previousX);trace.y1=p->y-(target->y-target->previousY);
+                    body.x0-=target->x-target->previousX;body.y0-=target->y-target->previousY;
+                    trace.radiusX=trace.radiusY=p->radius;trace.kind=COMBAT_SHAPE_CAPSULE;trace.active=1;
+                    contact=Combat_ShapeHits(&trace,&body);
+                }else contact=ArenaPlus_SweptContact(p->previousX,p->previousY,p->x,p->y,
+                    target->previousX,target->previousY,target->x,target->y,p->radius+9);
+                if(contact) {
                     int32_t along=(target->previousX-p->previousX)/Q*p->vx/Q+
                         (target->previousY-p->previousY)/Q*p->vy/Q;
                     if(along<closest) { closest=along;victim=j; }
@@ -1057,8 +1123,9 @@ static CombatInput AIInput(Combat *c,unsigned side)
         out.pressed=COMBAT_B;f->aiCooldown=40;
     } else if(!f->aiCooldown&&f->phase==COMBAT_READY) {
         const struct ArenaMoveProfile *p=ArenaMoves_Get(bestSlot>=0?f->moves[bestSlot]:Combat_NaturalMove(f));
-        int self=bestSlot>=0&&NativeRule(f->moves[bestSlot])->selfTarget;
-        if(p&&(self||(dist<=p->range+8&&ArenaNav_LineClear(f->x/Q,f->y/Q,v->x/Q,v->y/Q,1)))) {
+        int self=bestSlot>=0&&NativeRule(f->moves[bestSlot])->selfTarget,attackDistance=dist;
+        if(f->motion.cycle){CombatShape a,b;Combat_Hurtbox(f,&a);Combat_Hurtbox(v,&b);attackDistance=ArenaNav_Distance(a.x0/Q,a.y0/Q,b.x0/Q,b.y0/Q);}
+        if(p&&(self||(attackDistance<=(int)Combat_MoveRange(f,p->move,v)+(f->motion.cycle?0:8)&&ArenaNav_LineClear(f->x/Q,f->y/Q,v->x/Q,v->y/Q,1)))) {
             out.pressed=bestSlot>=0?SlotButton(bestSlot):COMBAT_L;f->aiCooldown=10;
         }
     }
@@ -1107,13 +1174,13 @@ static void QueueInput(CombatFighter *f,CombatInput input,int doubleTapEnabled)
     } else if(doubleTap&&(dx||dy)) {
         f->dashDirection=Facing(dx,dy);Buffer(f,3);
     } else if(input.pressed&COMBAT_L) Buffer(f,2);
-    else if(input.pressed&COMBAT_X) { Buffer(f,1);f->bufferedSlot=0; }
-    else if(input.pressed&COMBAT_A) { Buffer(f,1);f->bufferedSlot=f->selected; }
-    else if(input.pressed&COMBAT_ALT) { Buffer(f,1);f->bufferedSlot=f->specialSlot; }
-    else if(!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_L)) Buffer(f,2);
-    else if(!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_X)) { Buffer(f,1);f->bufferedSlot=0; }
-    else if(!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_A)) { Buffer(f,1);f->bufferedSlot=f->selected; }
-    else if(!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_ALT)) { Buffer(f,1);f->bufferedSlot=f->specialSlot; }
+    else if(input.pressed&COMBAT_X) { if(Buffer(f,1))f->bufferedSlot=0; }
+    else if(input.pressed&COMBAT_A) { if(Buffer(f,1))f->bufferedSlot=f->selected; }
+    else if(input.pressed&COMBAT_ALT) { if(Buffer(f,1))f->bufferedSlot=f->specialSlot; }
+    else if(!f->motion.cycle&&!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_L)) Buffer(f,2);
+    else if(!f->motion.cycle&&!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_X)) { if(Buffer(f,1))f->bufferedSlot=0; }
+    else if(!f->motion.cycle&&!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_A)) { if(Buffer(f,1))f->bufferedSlot=f->selected; }
+    else if(!f->motion.cycle&&!f->bufferTimer&&f->phase==COMBAT_READY&&(input.held&COMBAT_ALT)) { if(Buffer(f,1))f->bufferedSlot=f->specialSlot; }
 }
 static void FighterStep(Combat *c,unsigned side,CombatInput input)
 {
@@ -1125,7 +1192,7 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
     int holdingGuard=!!((input.held|input.pressed)&COMBAT_B);
     int speed;
     if(!f->hp) return;
-    f->animTick++;
+    f->animTick++;if(f->turnTimer)f->turnTimer--;
     if(!holdingGuard) f->guardExhausted=0;
     if(f->guardHeld&&(!holdingGuard||!f->stamina||f->hurtTimer)) {
         f->guardHeld=f->guardTimer=0;f->regenDelay=12;
@@ -1196,9 +1263,9 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
         f->direction=f->dashDirection;
         f->vx=sDirections[f->dashDirection][0]*dashSpeed/Q;
         f->vy=sDirections[f->dashDirection][1]*dashSpeed/Q;
-        MoveBody(f,f->vx,f->vy);f->animation=COMBAT_WALK;
+        MoveBody(f,f->vx,f->vy);f->animation=COMBAT_WALK;AdvanceGait(f,f->previousX,f->previousY);
         if(!(c->frame&1)&&(f->x!=f->previousX||f->y!=f->previousY))
-            Effect(c,f->x,f->y,RGB(14,23,31),COMBAT_DASH_TRAIL,7)->direction=f->dashDirection;
+        {CombatEffect *trail=Effect(c,f->x,f->y,RGB(14,23,31),COMBAT_DASH_TRAIL,7);trail->direction=f->dashDirection;trail->owner=(uint8_t)side;trail->life=trail->maxLife=f->dashTimer<6?f->dashTimer:6;}
         return;
     }
     if(f->guardTimer) {
@@ -1208,12 +1275,12 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
         else if(dx||dy) f->direction=Facing(dx,dy);
         f->vx=f->vy=0;f->animation=COMBAT_IDLE;return;
     }
-    if(side==c->controlActor&&c->aimOverride){
+    if(!f->motion.cycle&&side==c->controlActor&&c->aimOverride){
         if(f->phase==COMBAT_READY)f->direction=Facing(c->aimX,c->aimY);
-    }else if((c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS) {
+    }else if(!f->motion.cycle&&(c->lockAim||side!=c->controlActor)&&target!=COMBAT_FIGHTERS) {
         CombatFighter *v=&c->fighters[target];
         if(f->phase==COMBAT_READY) f->direction=Facing(v->x-f->x,v->y-f->y);
-    } else if(dx||dy) {
+    } else if(!f->motion.cycle&&(dx||dy)) {
         if(f->phase==COMBAT_READY) f->direction=Facing(dx,dy);
     }
     speed=c->nativeBalance?f->moveSpeed:Clamp(270+f->speed*2,340,620);
@@ -1225,14 +1292,27 @@ static void FighterStep(Combat *c,unsigned side,CombatInput input)
     if(f->phase==COMBAT_ACTIVE) speed=speed*2/3;
     if(f->phase==COMBAT_RECOVERY) speed=speed*9/10;
     if(side==c->controlActor&&c->analogInput)speed=speed*c->controlMagnitude/256;
-    motion.x=f->vx;motion.y=f->vy;
-    ArenaPlus_MoveStep(&motion,dx,dy,speed);
-    f->vx=motion.x;f->vy=motion.y;MoveBody(f,f->vx,f->vy);
+    if(f->motion.cycle&&f->phase!=COMBAT_READY){
+        /* Authored attack/cast/recovery poses are committed. Only real charge
+         * actions translate their root, in ActionStep's swept collision path. */
+        f->vx=f->vy=0;return;
+    }
+    if(f->motion.cycle)NativeMotion(f,dx,dy,speed);
+    else {motion.x=f->vx;motion.y=f->vy;ArenaPlus_MoveStep(&motion,dx,dy,speed);f->vx=motion.x;f->vy=motion.y;}
+    MoveBody(f,f->vx,f->vy);
     {
         int mx=Abs(f->x-f->previousX),my=Abs(f->y-f->previousY);
         int travelled=mx>my?mx+my*3/8:my+mx*3/8;
-        f->animation=travelled>8?COMBAT_WALK:COMBAT_IDLE;
-        if(f->animation==COMBAT_WALK&&f->phase==COMBAT_READY) {
+        if(f->motion.cycle){
+            unsigned was=f->animation;f->animation=travelled>8?COMBAT_WALK:COMBAT_IDLE;
+            if(travelled>8){TurnBody(f,Facing(f->x-f->previousX,f->y-f->previousY));AdvanceGait(f,f->previousX,f->previousY);}
+            else {
+                if(was==COMBAT_WALK){f->animTick=0;f->gaitPhase=f->gaitRemainder=0;}
+                if(side==c->controlActor&&c->aimOverride)TurnBody(f,Facing(c->aimX,c->aimY));
+                else if((c->lockAim||side!=c->controlActor)&&target<COMBAT_FIGHTERS)TurnBody(f,Facing(c->fighters[target].x-f->x,c->fighters[target].y-f->y));
+            }
+        }else f->animation=travelled>8?COMBAT_WALK:COMBAT_IDLE;
+        if(!f->motion.cycle&&f->animation==COMBAT_WALK&&f->phase==COMBAT_READY) {
             /* Two travelled pixels advance one authored timing tick. Feet
              * stop stepping against walls and track real movement speed. */
             f->animTick--;f->walkDistance=(uint16_t)(f->walkDistance+travelled);
@@ -1246,7 +1326,8 @@ static void SeparateBodies(Combat *c)
     for(i=0;i<c->fighterCount;i++) for(j=i+1;j<c->fighterCount;j++) {
         CombatFighter *a=&c->fighters[i],*b=&c->fighters[j];
         int dx=(b->x-a->x)/Q,dy=(b->y-a->y)/Q;
-        if(a->hp&&b->hp&&dx*dx+dy*dy<16*16) {
+        int separation=a->motion.cycle&&b->motion.cycle?a->motion.groundRadius+b->motion.groundRadius:16;
+        if(a->hp&&b->hp&&dx*dx+dy*dy<separation*separation) {
             int sx=Sign(dx),sy=Sign(dy);
             if(!sx&&!sy) sx=1;
             if(!Combat_BeamContact(c,i,0,0)&&!Combat_IsCasting(a))MoveBody(a,-sx*Q/2,-sy*Q/2);
@@ -1384,6 +1465,16 @@ void Combat_Tick(Combat *c,CombatInput input)
     if(input.pressed&COMBAT_Y) c->lockAim=!c->lockAim;
     if(c->hitstop) {
         c->hitstop--;
+        /* Interpolation must freeze with simulation: stale previous roots
+         * otherwise replay a tiny backwards slide on every paused frame. */
+        for(i=0;i<c->fighterCount;i++){
+            c->fighters[i].previousX=c->fighters[i].x;
+            c->fighters[i].previousY=c->fighters[i].y;
+        }
+        for(i=0;i<COMBAT_PROJECTILES;i++){
+            c->projectiles[i].previousX=c->projectiles[i].x;
+            c->projectiles[i].previousY=c->projectiles[i].y;
+        }
         if(c->fighters[c->controlActor].hp&&!ClashPushInput(c,c->controlActor,input))
             QueueInput(&c->fighters[c->controlActor],input,1);
         return;
@@ -1399,6 +1490,8 @@ void Combat_Tick(Combat *c,CombatInput input)
     BeamClashes(c);
     for(i=0;i<c->fighterCount;i++) if(!c->fighters[i].hurtTimer&&!c->fighters[i].dashTimer) ActionStep(c,i);
     SeparateBodies(c);ProjectileStep(c);ArenaPhysics_Update();
+    for(i=0;i<COMBAT_EFFECTS;i++)if(c->effects[i].kind==COMBAT_DASH_TRAIL&&c->effects[i].owner<c->fighterCount&&
+        (!c->fighters[c->effects[i].owner].dashTimer||!c->fighters[c->effects[i].owner].hp))c->effects[i].life=0;
     if(c->blastSerial!=gArenaPhysicsTelemetry.blastSerial) {
         c->blastSerial=gArenaPhysicsTelemetry.blastSerial;
         Burst(c,gArenaPhysicsTelemetry.blastX*Q,gArenaPhysicsTelemetry.blastY*Q,RGB(31,22,3));

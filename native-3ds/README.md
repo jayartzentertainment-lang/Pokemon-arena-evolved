@@ -1,6 +1,11 @@
-# Platinum Arena Evolved — native 3DS 0.4.0 playable preview
+# Platinum Arena Evolved — native 3DS integration development
 
-**Opening and Battle Lab preview, not the completed Platinum campaign.** The download contains the native 3DS application with embedded assets. Original story integration remains unfinished. See `docs/PLAY-PREVIEW.md` for installation, controls and limits, and `docs/DEVELOPMENT-CORRECTION.md` for the required full-game result.
+**The complete original Platinum campaign is unfinished.** This branch continues
+the existing native engine with animation-distance movement, registered combat
+contact and 2D dash corrections. See `docs/COMBAT-INTEGRATION.md` for the changes,
+`docs/INTEGRATION-DOWNLOAD.md` for the development package and reproducible build,
+and `docs/IMPORT-COMPLETION.md` for original-story gaps. Previous releases are
+preserved. This is not a finished-game release.
 
 This separate work begins importing **original Pokémon Platinum content** into the native Arena engine. The complete original campaign is unfinished. It does not present the old 34 condensed locations and 41 rewritten objectives as an authentic Platinum campaign. The approved v0.3.0 release remains unchanged.
 
@@ -8,6 +13,7 @@ The opening uses original supplied maps, original event instructions and dialogu
 
 ## What changed
 
+- Phase 1: authored-duration gait phases driven by travelled distance, individual motion tuning for the five requested species, stable directional body geometry, swept projectiles/charges, planted short strikes, contact-cel damage timing, actual Hurt poses and dash-bound PMD wind/dust. `docs/reports/combat-integration.json` distinguishes host checks from native observations.
 - Custom starts with the supplied Gen IV-proportioned male/female blank body from `pokemon png.rar` and no optional layers selected. Red and Brendan are fixed sprite bases with colour-only edits, matching the DS approach. See `docs/CHARACTER-CREATOR.md`.
 - Original Rowan introductory text/background, original proportional message font and message-box tiles, original pre-Pokétch lower-screen tilemap, stationary modular character creator at the original selection point, and an intro-only Start+Select shortcut directly to the creator. The same chosen name and appearance enter the original upstairs bedroom.
 - 18 original map headers and 32 converted geometry cells: Twinleaf and interiors, Route 201, Verity Lakefront, both relevant Lake Verity variants, Sandgem and initial interiors. These are imported layouts. Original Nitro geometry and textures are baked into a top-down view; this is not Platinum's original animated perspective renderer.

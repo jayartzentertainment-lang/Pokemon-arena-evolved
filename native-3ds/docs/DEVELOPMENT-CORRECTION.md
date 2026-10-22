@@ -1,8 +1,9 @@
-# Presentation correction — not released
+# Presentation correction and continuing integration
 
 The user rejected the previous native preview's custom field dashboard and
-story presentation. That preview has **not** been published or delivered.
-The approved older releases remain untouched.
+story presentation. The later opening/Battle Lab development package was
+delivered separately; it is not the completed adventure. The approved older
+releases remain untouched.
 
 Required result: play original Platinum's adventure as the chosen custom
 trainer. Original Platinum must own the maps, story, dialogue presentation,

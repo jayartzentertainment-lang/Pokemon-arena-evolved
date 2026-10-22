@@ -19,9 +19,9 @@ static const float direction[8][2]={{0,1},{.7071f,.7071f},{1,0},{.7071f,-.7071f}
 struct ArenaView {
     C3D_RenderTarget *top,*bottom;
     C2D_SpriteSheet pokemon[8],hurtCache[8],effects,arena,font,props,ui,catalog,window;
-    C2D_SpriteSheet ptMessageFont,ptWindows,ptFieldBottom,fixedTrainers;
+    C2D_SpriteSheet ptMessageFont,ptWindows,ptFieldBottom,fixedTrainers,dashSheet;
     float cameraX,cameraY,zoom,textDepth;
-    unsigned loads,quality,pokemonDex[8],pokemonAge[8],age;
+    unsigned loads,quality,debug,pokemonDex[8],pokemonAge[8],age;
     C2D_SpriteSheet trainer[6],hair[2],gen4Trainer[6],npcs,mapSheet,platinumIntro,platinumNpcs,ptCells[4];int mapId;int ptHeader[4],ptX[4],ptZ[4];
     const Adventure *app;
 };
@@ -102,6 +102,7 @@ static const ArenaSpriteFrame *Pose(const CombatFighter *f,const ArenaSpecies *s
     const ArenaSpriteAnimation *a;
     unsigned frame;
     
+    if(f->motion.hover==2&&slot==COMBAT_WALK)slot=COMBAT_IDLE;
     if(f->guardTimer)slot=COMBAT_ATTACK;
     a=&s->animation[slot];
     frame=AnimFrame(a,Combat_AnimationTick(f,a->totalTicks,a->hitTick));
@@ -113,7 +114,8 @@ static const ArenaSpriteFrame *HurtPose(const CombatFighter *f,const ArenaSpecie
 {
     const ArenaSpriteAnimation *a=ArenaSpecies_Hurt(s->dex);unsigned tick;
     if(!a)return Pose(f,s);
-    tick=(f->hurtTimer<16?16-f->hurtTimer:0)*a->totalTicks/16;
+    {unsigned duration=f->reactionDuration?f->reactionDuration:16;
+     tick=(f->hurtTimer<duration?duration-f->hurtTimer:0)*a->totalTicks/duration;}
     if(tick>=a->totalTicks)tick=a->totalTicks-1;
     return &a->frames[(f->direction&7)*a->count+AnimFrame(a,tick)];
 }
@@ -183,8 +185,9 @@ static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
     }else if(f->phase!=COMBAT_ACTIVE)return;
     if(!reach&&!clash)return;
     endX=wx+dx*reach;endY=wy+dy*reach-12;
+    if(f->motion.cycle){int32_t ox,oy;Combat_AttackOrigin(f,&ox,&oy);endX=ActorX(f,alpha)+(ox-f->x)/256.0f+dx*reach;endY=ActorY(f,alpha)+(oy-f->y)/256.0f+dy*reach;}
     if(clash){
-        endX=contactX/256.0f;endY=contactY/256.0f-12;
+        endX=contactX/256.0f;endY=contactY/256.0f-(f->motion.cycle?0:12);
         reach=sqrtf((endX-wx)*(endX-wx)+(endY+12-wy)*(endY+12-wy));
     }
     image=FX_FLAME+(g->combat.frame/4)%8;
@@ -207,7 +210,7 @@ static void Beam(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
             static const int8_t mouth[8][2]={{0,-10},{-6,-9},{19,-10},{12,-18},
                 {0,-24},{-12,-18},{-19,-10},{6,-9}};
             startX=wx+mouth[dir][0]*species->scale;
-            startY=wy+mouth[dir][1]*species->scale-3-sinf(g->combat.frame*.10f);
+            startY=wy+mouth[dir][1]*species->scale-Combat_HoverHeight(f)/256.0f;
         }
         {
             float x=X(v,startX),y=Y(v,startY),ex=X(v,endX),ey=Y(v,endY);
@@ -249,12 +252,11 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
     x=X(v,ActorX(f,alpha));y=Y(v,ActorY(f,alpha));
     if(!f->hp){float fade=g->faintTicks[actor]/20.0f;opacity=1-fade;scale*=1-fade*.45f;y+=fade*9;}
     else if(g->deployTicks[actor])scale*=1-g->deployTicks[actor]/24.0f;
-    if(f->hurtTimer)y-=sinf((16-f->hurtTimer)*PI/16)*3*v->zoom;
-    if(s->style==2)lift=3+sinf(tick*.10f);
-    else if(s->style==0&&f->animation==COMBAT_WALK)lift=fabsf(sinf(f->animTick*.7f));
+    if(f->motion.cycle)lift=Combat_HoverHeight(f)/256.0f*v->zoom;
+    else if(s->style==2)lift=(3+sinf(tick*.10f))*v->zoom;
     if(f->dashTimer){
         unsigned i;
-        for(i=2;i>0;i--){
+        for(i=1;i>0;i--){
             float dx=direction[f->dashDirection&7][0],dy=direction[f->dashDirection&7][1];
             Sprite(sheet,p->image,x-p->originX*scale-dx*i*7*v->zoom,
                    y-p->originY*scale-dy*i*7*v->zoom-lift,scale,scale,0,0,0,.11f*(3-i),0);
@@ -265,7 +267,7 @@ static void Actor(ArenaView *v,const ArenaGame *g,unsigned actor,float alpha)
         if(profile&&profile->kind==ARENA_MOVE_CONE&&ArenaMoves_Beam(f->actionMove))Beam(v,g,actor,alpha);
     }
     Sprite(sheet,p->image,x-p->originX*scale,y-p->originY*scale-lift,
-           scale,scale,0,0,0,opacity,f->hurtTimer?.45f:0);
+           scale,scale,0,0,0,opacity,f->hurtTimer&&f->hurtTimer+2>=f->reactionDuration?.25f:0);
     if(actor==g->combat.controlActor)Text(v,x-3,y-p->height*scale-12,RGB(255,226,56),"V");
     if(f->guardTimer){
         unsigned cel=f->guardAge<8?f->guardAge/2:4;
@@ -310,7 +312,8 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
     }
     for(i=0;i<c->fighterCount;i++)if(c->fighters[i].hp){
         float x=X(v,ActorX(&c->fighters[i],alpha)),y=Y(v,ActorY(&c->fighters[i],alpha));
-        C2D_DrawEllipseSolid(x-14*v->zoom,y-4*v->zoom,.15f,28*v->zoom,7*v->zoom,C2D_Color32(20,25,35,95));
+        float radius=(c->fighters[i].motion.cycle?c->fighters[i].motion.groundRadius:14)*v->zoom;
+        C2D_DrawEllipseSolid(x-radius,y-2*v->zoom,.15f,radius*2,5*v->zoom,C2D_Color32(20,25,35,95));
     }
     for(i=0;i<c->fighterCount;i++)for(j=i+1;j<c->fighterCount;j++)
         if(c->fighters[order[i]].y>c->fighters[order[j]].y){unsigned swap=order[i];order[i]=order[j];order[j]=swap;}
@@ -318,20 +321,36 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
     for(i=0;i<COMBAT_PROJECTILES;i++)if(c->projectiles[i].life){
         const CombatProjectile *p=&c->projectiles[i];
         float x=X(v,(p->previousX+(p->x-p->previousX)*alpha)/256.0f);
-        float y=Y(v,(p->previousY+(p->y-p->previousY)*alpha)/256.0f-12);
+        float y=Y(v,(p->previousY+(p->y-p->previousY)*alpha)/256.0f-(c->fighters[p->owner].motion.cycle?0:12));
         unsigned cel=(c->frame/3)&3,image=FX_AURA+cel;
         float width=25,height=25,angle=0;
         if(p->move==MOVE_THUNDERBOLT){image=FX_BOLT+cel;width=48;height=13;angle=atan2f(p->vy,p->vx);}
         else if(p->move==MOVE_WATER_PULSE){image=FX_PULSE+(cel&1);width=height=28;}
+        if(c->fighters[p->owner].motion.cycle){
+            float diameter=p->radius*2+4;
+            if(p->move==MOVE_THUNDERBOLT){float length=sqrtf((float)p->vx*p->vx+(float)p->vy*p->vy);height=diameter;if(length>0){x-=p->vx/length*(width*.5f-p->radius)*v->zoom;y-=p->vy/length*(width*.5f-p->radius)*v->zoom;}}
+            else width=height=diameter;
+        }
         if(p->move==MOVE_AURA_SPHERE||p->move==MOVE_WATER_PULSE||p->move==MOVE_THUNDERBOLT)Effect(v,image,x,y,width*v->zoom,height*v->zoom,angle,1);
-        else FamilyEffect(v,p->move,cel,x,y,(p->move==MOVE_SWIFT?18:28)*v->zoom,(p->move==MOVE_SWIFT?18:28)*v->zoom,atan2f(p->vy,p->vx),1);
+        else FamilyEffect(v,p->move,cel,x,y,(c->fighters[p->owner].motion.cycle?width:p->move==MOVE_SWIFT?18:28)*v->zoom,(c->fighters[p->owner].motion.cycle?height:p->move==MOVE_SWIFT?18:28)*v->zoom,atan2f(p->vy,p->vx),1);
     }
     for(i=0;i<COMBAT_EFFECTS;i++)if(c->effects[i].life){
         const CombatEffect *e=&c->effects[i];unsigned age=e->maxLife-e->life;
-        float x=X(v,e->x/256.0f),y=Y(v,e->y/256.0f-12);
+        float x=X(v,e->x/256.0f),y=Y(v,e->y/256.0f-(e->bodySpace?0:12));
         if(e->kind==COMBAT_DASH_TRAIL){
-            float theta=atan2f(direction[e->direction&7][1],direction[e->direction&7][0]);
-            Effect(v,FX_WIND+(age/3)%2,x,y+8,46*v->zoom,10*v->zoom,theta,e->life/(float)e->maxLife*.6f);
+            const CombatFighter *owner=e->owner<c->fighterCount?&c->fighters[e->owner]:NULL;
+            unsigned cel=age*6/(e->maxLife?e->maxLife:1);float fade=e->life/(float)e->maxLife;
+            float dx=direction[e->direction&7][0],dy=direction[e->direction&7][1];
+            if(!owner||!owner->dashTimer||!owner->hp)continue;
+            if(owner->dashTimer<3)fade*=owner->dashTimer/3.0f;
+            if(cel>5)cel=5;
+            x=X(v,e->x/256.0f);y=Y(v,e->y/256.0f);
+            Sprite(v->dashSheet,(e->direction&7)*6+cel,
+                   x-dx*(owner->motion.groundRadius+8)*v->zoom,
+                   y-dy*9*v->zoom-Combat_HoverHeight(owner)/256.0f*v->zoom-4*v->zoom,
+                   v->zoom,v->zoom,0,.5f,.5f,fade*.65f,0);
+            if(!owner->motion.hover)Sprite(v->dashSheet,48+cel,x-dx*5*v->zoom,y+2*v->zoom,
+                   v->zoom,v->zoom,0,.5f,.5f,fade*.35f,0);
         }else if((e->kind==COMBAT_CONTACT||e->kind==COMBAT_BLOCK)&&age<10){
             Effect(v,FX_IMPACT+(age/3)%4,x,y,27*v->zoom,27*v->zoom,0,1-age/12.0f);
             if(e->move&&Combat_GetMoveInfo(e->move)&&Combat_GetMoveInfo(e->move)->type!=0)FamilyEffect(v,e->move,(age/3)%4,x,y,32*v->zoom,32*v->zoom,0,1-age/12.0f);
@@ -349,7 +368,7 @@ static void Battle(ArenaView *v,const ArenaGame *g,float alpha)
     for(i=0;i<COMBAT_BEAM_CLASHES;i++)if(c->beamClashes[i].phase){
         const CombatBeamClash *pair=&c->beamClashes[i];
         float size=pair->phase==COMBAT_CLASH_PRESSURE?28:40;
-        Effect(v,FX_IMPACT+(c->frame/3)%4,X(v,pair->x/256.0f),Y(v,pair->y/256.0f-12),size,size,0,1);
+        Effect(v,FX_IMPACT+(c->frame/3)%4,X(v,pair->x/256.0f),Y(v,pair->y/256.0f-(c->fighters[pair->actor[0]].motion.cycle?0:12)),size,size,0,1);
     }
 }
 static void Reticle(ArenaView *v,const ArenaGame *g,float alpha)
@@ -357,18 +376,21 @@ static void Reticle(ArenaView *v,const ArenaGame *g,float alpha)
     const GameAim *a=&g->aim;const CombatFighter *f=&g->combat.fighters[g->combat.controlActor];
     float x,y,radius=12;unsigned k;u32 color;
     if(!f->hp||g->winner||(Combat_IsCasting(f)&&Combat_MoveTargetsSelf(f->actionMove)))return;
-    x=X(v,(float)a->x);y=Y(v,(float)a->y-12);
+    x=X(v,(float)a->x);y=Y(v,(float)a->y-(f->motion.cycle?0:12));
     if(a->mode==GAME_AIM_LOCK&&a->target<g->combat.fighterCount){
         const CombatFighter *target=&g->combat.fighters[a->target];
         const ArenaSpecies *species=Game_ActorSpecies(g,a->target);
         if(!target->hp)return;
         x=X(v,ActorX(target,alpha));y=Y(v,ActorY(target,alpha)-12);
         radius=15*v->zoom;
-        if(species){
+        if(target->motion.cycle){CombatShape body;Combat_Hurtbox(target,&body);
+            x=X(v,ActorX(target,alpha)+(body.x0-target->x)/256.0f);y=Y(v,ActorY(target,alpha)+(body.y0-target->y)/256.0f);
+            radius=fmaxf(body.radiusX,body.radiusY)*v->zoom+3;
+        }else if(species){
             const ArenaSpriteFrame *pose=target->hurtTimer&&HurtSheet(v,species->dex,0)?HurtPose(target,species):Pose(target,species);float scale=species->scale*v->zoom;
             x=X(v,ActorX(target,alpha))+(pose->width*.5f-pose->originX)*scale;
             y=Y(v,ActorY(target,alpha))+(pose->height*.5f-pose->originY)*scale;
-            if(species->style==2)y-=(3+sinf(g->combat.frame*.1f))*v->zoom;
+            y-=Combat_HoverHeight(target)/256.0f*v->zoom;
             radius=Limit(fmaxf(pose->width,pose->height)*scale*.55f,12,29);
         }
     }
@@ -475,6 +497,7 @@ static void Bottom(ArenaView *v,const ArenaGame *g,int paused,int audio)
         Text(v,24,211,ink,"START+SELECT: EXIT");v->textDepth=.95f;
     }
 }
+#include "combat_debug.inc"
 ArenaView *View_Create(void)
 {
     ArenaView *v=calloc(1,sizeof(*v));if(!v)return 0;
@@ -485,10 +508,11 @@ ArenaView *View_Create(void)
     v->ptWindows=Load(v,"romfs:/gfx/platinum_windows.t3x");
     v->ptFieldBottom=Load(v,"romfs:/gfx/platinum_field_bottom.t3x");
     v->fixedTrainers=Load(v,"romfs:/gfx/trainer_fixed.t3x");
+    v->dashSheet=Load(v,"romfs:/gfx/dash_2d.t3x");
     v->window=Load(v,"romfs:/gfx/window_frame.t3x");
     v->catalog=Load(v,"romfs:/gfx/move_catalog.t3x");
     v->font=Load(v,"romfs:/gfx/font.t3x");v->props=Load(v,"romfs:/gfx/props.t3x");v->ui=Load(v,"romfs:/gfx/ui.t3x");
-    if(!v->fixedTrainers||!v->ptMessageFont||!v->ptWindows||!v->ptFieldBottom||!v->platinumIntro||!v->platinumNpcs||!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui||!v->catalog||!v->window){View_Destroy(v);return 0;}
+    if(!v->dashSheet||!v->fixedTrainers||!v->ptMessageFont||!v->ptWindows||!v->ptFieldBottom||!v->platinumIntro||!v->platinumNpcs||!v->top||!v->bottom||!v->effects||!v->arena||!v->font||!v->props||!v->ui||!v->catalog||!v->window){View_Destroy(v);return 0;}
     {
         /* Only the selected Custom bank is loaded by View_DrawApp. */
         v->npcs=Load(v,"romfs:/gfx/story_npcs.t3x");v->mapSheet=Load(v,"romfs:/gfx/map_00.t3x");
@@ -511,6 +535,7 @@ void View_Destroy(ArenaView *v)
     if(v->ptWindows)C2D_SpriteSheetFree(v->ptWindows);
     if(v->ptFieldBottom)C2D_SpriteSheetFree(v->ptFieldBottom);
     if(v->fixedTrainers)C2D_SpriteSheetFree(v->fixedTrainers);
+    if(v->dashSheet)C2D_SpriteSheetFree(v->dashSheet);
     for(i=0;i<4;i++)if(v->ptCells[i])C2D_SpriteSheetFree(v->ptCells[i]);
     if(v->catalog)C2D_SpriteSheetFree(v->catalog);
     if(v->window)C2D_SpriteSheetFree(v->window);
@@ -530,11 +555,12 @@ void View_Draw(ArenaView *v,const ArenaGame *g,float alpha,int paused,float fps,
     Camera(v,g);
     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
     C2D_TargetClear(v->top,RGB(58,83,62));C2D_SceneBegin(v->top);
-    Battle(v,g,alpha);Reticle(v,g,alpha);TopHud(v,g,fps,cpu,gpu);
+    Battle(v,g,alpha);CombatDebug(v,g);Reticle(v,g,alpha);TopHud(v,g,fps,cpu,gpu);
     C2D_TargetClear(v->bottom,RGB(205,213,187));C2D_SceneBegin(v->bottom);Bottom(v,g,paused,audio);
     C3D_FrameEnd(0);
 }
 unsigned View_TextureLoads(const ArenaView *v){return v?v->loads:0;}
 void View_SetQuality(ArenaView *v,unsigned high){if(v)v->quality=!!high;}
+void View_SetDebug(ArenaView *v,unsigned enabled){if(v)v->debug=!!enabled;}
 
 #include "adventure_view.inc"

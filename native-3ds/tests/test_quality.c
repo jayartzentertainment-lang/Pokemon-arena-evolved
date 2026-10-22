@@ -133,7 +133,10 @@ static void NativeClash(void)
     for(i=0;i<90&&!game.combat.clashes;i++)Game_Tick(&game,in);
     assert(game.combat.clashes==1&&game.combat.hits==0);
     assert(Combat_BeamContact(&game.combat,0,&x,&y));
-    assert(x>100*256&&x<280*256&&y==150*256);
+    {int32_t ox,oy;int16_t ax,ay;Combat_AttackOrigin(&game.combat.fighters[0],&ox,&oy);Combat_AttackVector(&game.combat.fighters[0],&ax,&ay);
+     assert(x>100*256&&x<280*256);
+     /* Contact follows the registered body-height beam, not the foot plane. */
+     assert(llabs((int64_t)(x-ox)*ay-(int64_t)(y-oy)*ax)<=2LL*256*256);}
     assert(Game_Switch(&game,0));assert(!Combat_BeamContact(&game.combat,0,0,0));
     assert(!Combat_BeamContact(&game.combat,1,0,0));
 }

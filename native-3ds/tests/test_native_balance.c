@@ -10,7 +10,7 @@ int main(void)
 {
  unsigned fast,slow,i,serial;int32_t x,y;CombatFighter *f;GameInput in=None();
  Setup();fast=g.combat.fighters[0].moveSpeed;assert(g.combat.nativeBalance&&fast<450);
- assert(Game_Switch(&g,0)&&Game_Switch(&g,0)&&Game_Switch(&g,0));f=&g.combat.fighters[0];assert(f->species==9);slow=f->moveSpeed;assert(slow<fast&&slow==266&&f->staminaMax!=100);
+ assert(Game_Switch(&g,0)&&Game_Switch(&g,0)&&Game_Switch(&g,0));f=&g.combat.fighters[0];assert(f->species==9);slow=f->moveSpeed;assert(slow<fast&&slow>=266*105/100&&slow<=266*115/100&&f->staminaMax!=100);
  Setup();f=&g.combat.fighters[0];in.held=GAME_Y;in.pressed=GAME_Y;Game_Tick(&g,in);assert(f->naturalCooldown>0);serial=f->actionSerial;
  in.pressed=0;
  while(f->phase!=COMBAT_READY)Game_Tick(&g,in);

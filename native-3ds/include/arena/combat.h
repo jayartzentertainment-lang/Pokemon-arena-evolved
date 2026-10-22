@@ -49,6 +49,22 @@ typedef struct {
     uint8_t type,power,pp,category; /* Native Gen IV physical=0, special=1, status=2. */
     const char *name;
 } CombatMoveInfo;
+/* Immutable, quantized sprite registration supplied by the native game adapter.
+ * Gameplay never reads a renderer clock, texture or interpolated coordinate. */
+typedef struct { uint16_t total,hit,contact; } CombatAnimationTiming;
+typedef struct {
+    uint16_t cycle,stride,acceleration,braking; /* stride in world Q8 */
+    uint8_t turnTicks,hover,hurtTicks,groundRadius;
+    int16_t centerX[8],centerY[8]; /* stable foot-relative body centers, Q8 */
+    uint8_t radiusX[8],radiusY[8];
+    CombatAnimationTiming action[5];
+} CombatMotionProfile;
+enum CombatShapeKind { COMBAT_SHAPE_NONE,COMBAT_SHAPE_ELLIPSE,COMBAT_SHAPE_CAPSULE,COMBAT_SHAPE_ARC };
+typedef struct {
+    int32_t x0,y0,x1,y1; /* world Q8, ellipse center or capsule endpoints */
+    uint16_t radiusX,radiusY; /* world pixels */
+    uint8_t kind,active;
+} CombatShape;
 typedef struct {
     int32_t x,y,previousX,previousY,vx,vy; /* positions and velocities in Q8 */
     uint32_t actionSerial; /* Successful starts only; includes PP-free fallback. */
@@ -73,6 +89,9 @@ typedef struct {
     uint16_t naturalCooldown,moveSpeed;
     uint8_t staminaMax,regenStep,dodgeScale,resistance;
     uint8_t preciseAim,castRoot; /* Per-action state, cleared on interruption. */
+    CombatMotionProfile motion;
+    uint32_t gaitPhase,gaitRemainder; /* authored walk tick in Q8, distance remainder */
+    uint8_t turnTimer,reactionDuration;
 } CombatFighter;
 typedef struct {
     int32_t x,y,previousX,previousY;
@@ -84,7 +103,7 @@ typedef struct {
     int32_t x,y;
     int16_t vx,vy;
     uint16_t color,move; /* Native presentation: optional confirmed-hit move. */
-    uint8_t life,maxLife,radius,kind,direction;
+    uint8_t life,maxLife,radius,kind,direction,owner,bodySpace;
 } CombatEffect;
 typedef struct {
     int32_t x,y,originX,originY; /* Shared contact/origin in world Q8. */
@@ -110,6 +129,8 @@ typedef struct {
     uint8_t analogInput;
     int16_t aimX,aimY; /* Optional independent Q8 aim; movement stays independent. */
     uint8_t aimOverride,lockTarget,growingBeams,nativeBalance;
+    int32_t contactX,contactY;
+    uint32_t contactSerial;
 } Combat;
 /* One live match owns the imported navigation/physics module globals. */
 void Combat_Init(Combat *combat,const CombatFighterConfig configs[2]);
@@ -137,6 +158,13 @@ unsigned Combat_PhaseTick(const CombatFighter *fighter);
 unsigned Combat_PhaseDuration(const CombatFighter *fighter);
 void Combat_SetAnalogMagnitude(Combat *combat,unsigned magnitude,int enabled);
 void Combat_ConfigureMobility(Combat *combat,unsigned actor,unsigned speed,unsigned hp,unsigned defense);
+void Combat_ConfigureAnimation(Combat *combat,unsigned actor,const CombatMotionProfile *profile);
+void Combat_Hurtbox(const CombatFighter *fighter,CombatShape *shape);
+void Combat_AttackShape(const CombatFighter *fighter,CombatShape *shape);
+void Combat_AttackOrigin(const CombatFighter *fighter,int32_t *x,int32_t *y);
+int32_t Combat_HoverHeight(const CombatFighter *fighter);
+int Combat_ShapeHits(const CombatShape *attack,const CombatShape *body);
+unsigned Combat_MoveRange(const CombatFighter *fighter,uint16_t move,const CombatFighter *target);
 void Combat_SetAim(Combat *combat,int x,int y,int enabled);
 void Combat_AttackVector(const CombatFighter *fighter,int16_t *x,int16_t *y);
 int Combat_MoveTargetsSelf(uint16_t move);

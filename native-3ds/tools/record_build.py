@@ -12,10 +12,11 @@ assert raw[:4]==b'3DSX' and len(raw)>64 and machine==40
 inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
         for folder in ['source','include','gfx'] for p in (ROOT/folder).rglob('*')
         if p.is_file() and 'private' not in p.parts}
+inputs['Makefile']=hashlib.sha256((ROOT/'Makefile').read_bytes()).hexdigest()
 textures={p.name:p.stat().st_size for p in (ROOT/'romfs/gfx').glob('*.t3x')}
 size=(ROOT/'validation/native-size.txt').read_text()
 report={'format':'Native3DS homebrew3DSX, ARM11 ELF machine40','bytes':len(raw),
-        'version':'0.4.0-development-original-import-preview',
+        'version':'0.4.0-integration-development-motion-contact',
         'sha256':hashlib.sha256(raw).hexdigest(),'compiler':'devkitARM GCC16.1.0',
         'toolchain_image':'devkitpro/devkitarm@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5',
         'link_size':size.strip(),'textures':textures,'inputs_sha256':inputs,

@@ -10,4 +10,5 @@ void View_Draw(ArenaView *view,const ArenaGame *game,float alpha,int paused,
 void View_DrawApp(ArenaView *view,const Adventure *app,float alpha,int paused,float fps,float cpuMs,float gpuMs,int audioReady);
 unsigned View_TextureLoads(const ArenaView *view);
 void View_SetQuality(ArenaView *view,unsigned high);
+void View_SetDebug(ArenaView *view,unsigned enabled);
 #endif

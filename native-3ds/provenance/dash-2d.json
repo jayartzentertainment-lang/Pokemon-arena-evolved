@@ -1,0 +1,69 @@
+{
+  "source": "User-supplied PMD Explorers of Sky move_VFX",
+  "wind_images": "direction * 6 + cel; eight nearest-neighbour authored variants",
+  "dust_images": "48 + cel",
+  "sources": [
+    {
+      "source": "0027/000/000.png",
+      "sha256": "519a9c6c30151d5a85488ec78899545a67c6f1d686eb7b75d078245e8d1f1095",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0027/000/004.png",
+      "sha256": "b01047fe40f2b2d3df9f87369fd0744c0317cb14dca5fdcfec9bfcf0ebd49322",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0027/000/008.png",
+      "sha256": "d46ab05ec25b2ef5ac04f508076c7dea566929c74a4d7fb5190503b71d9f0124",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0027/000/012.png",
+      "sha256": "1fe5da9ed848a8c4564f55b9cbcef4e80e08b83e9ff9575f33b02b06324d8b06",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0027/000/018.png",
+      "sha256": "b01047fe40f2b2d3df9f87369fd0744c0317cb14dca5fdcfec9bfcf0ebd49322",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0027/000/024.png",
+      "sha256": "a0d867e14f8c69e1e7dcbdad10c7820a4c6799bd04e7b45e0ac8f55cb76cc168",
+      "uniform_integer_reduction": 2
+    },
+    {
+      "source": "0097/000/000.png",
+      "sha256": "a24e2c1662f8050f66371d3f8ccbe7f5e811e8a37c17b73a74fee3e445c57681",
+      "uniform_integer_reduction": 4
+    },
+    {
+      "source": "0097/000/006.png",
+      "sha256": "f674c5cc38a58564d358d75427284415f4710a14a898145aabcf2fbe07105364",
+      "uniform_integer_reduction": 4
+    },
+    {
+      "source": "0097/000/012.png",
+      "sha256": "5a4557dcc1208a08dc5c6fb418c2edba6b477fb799fbd89ce55e198982acbccd",
+      "uniform_integer_reduction": 4
+    },
+    {
+      "source": "0097/000/018.png",
+      "sha256": "404f64196cb2e99df0cc973b26de2caf5c243baf0ac76c7c17c40f2ef0eb9491",
+      "uniform_integer_reduction": 4
+    },
+    {
+      "source": "0097/000/024.png",
+      "sha256": "d42db78e10694866435c107cf942a3efd79ffbcbfc270d1b1f464e39faf671e4",
+      "uniform_integer_reduction": 4
+    },
+    {
+      "source": "0097/000/028.png",
+      "sha256": "0f8b8f67052c6915fb8a0ad54bc1c989bcf52e2c029f7d7eb9612fca65335699",
+      "uniform_integer_reduction": 4
+    }
+  ],
+  "transformations": "Uniform integer reduction and nearest-neighbour in-plane rotations; source colours/alpha retained",
+  "runtime": "Native aspect ratio, dash-owner lifecycle, no trail after dash completion, dust only on grounded actors"
+}

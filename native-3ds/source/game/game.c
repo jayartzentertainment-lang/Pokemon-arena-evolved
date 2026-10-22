@@ -8,7 +8,7 @@
 static void Mobility(ArenaGame *g,unsigned actor)
 {
     unsigned dex=g->combat.fighters[actor].species;
-    if(dex&&dex<=493){const AdventureDex *d=&gAdventureDex[dex];Combat_ConfigureMobility(&g->combat,actor,d->stats[3],d->stats[0],d->stats[2]);}
+    if(dex&&dex<=493){const AdventureDex *d=&gAdventureDex[dex];Combat_ConfigureMobility(&g->combat,actor,d->stats[3],d->stats[0],d->stats[2]);Game_ConfigureMotion(g,actor);}
 }
 static unsigned Team(unsigned actor){return actor&1;}
 static int Bound(const ArenaGame *g,unsigned team,unsigned slot,unsigned except)

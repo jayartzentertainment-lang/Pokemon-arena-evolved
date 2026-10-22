@@ -18,7 +18,7 @@ flags=['-std=c11','-O1','-g','-Wall','-Wextra','-Werror','-fmax-errors=4',
 cc=os.environ.get('CC','cc')
 core=['source/core/combat.c','source/core/move_data.c','source/vendor/arena_moves.c',
       'source/vendor/arena_navigation.c','source/vendor/arena_physics.c']
-extra=['source/game/game.c','source/game/aim.c','source/game/species_data.c','source/game/adventure.c','source/game/adventure_data.c','source/game/trainer_gen4_data.c','source/game/adventure_save.c','source/game/platinum.c','source/game/platinum_save.c','source/imported/private/platinum_data.c','source/imported/private/hurt_data.c','source/imported/private/platinum_ui_data.c']
+extra=['source/game/game.c','source/game/motion.c','source/game/aim.c','source/game/species_data.c','source/game/adventure.c','source/game/adventure_data.c','source/game/trainer_gen4_data.c','source/game/adventure_save.c','source/game/platinum.c','source/game/platinum_save.c','source/imported/private/platinum_data.c','source/imported/private/hurt_data.c','source/imported/private/platinum_ui_data.c']
 objects={}
 
 def run(name,command):
